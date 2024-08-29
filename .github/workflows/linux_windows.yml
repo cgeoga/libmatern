@@ -1,0 +1,87 @@
+name: linux
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Cache Ninja
+      id: cache-ninja
+      uses: actions/cache@v3
+      with:
+        path: /usr/bin/ninja
+        key: ${{ runner.os }}-ninja
+
+    - name: Install Ninja if not cached
+      if: steps.cache-ninja.outputs.cache-hit != 'true'
+      run: |
+       sudo apt-get update
+       sudo apt-get install ninja-build
+
+    - name: Cache llvm/clang
+      id: cache-llvm
+      uses: actions/cache@v3
+      with:
+        path: llvm-project
+        key: ${{ runner.os }}-llvm
+
+    - name: Build llvm/clang if not cached
+      if: steps.cache-llvm.outputs.cache-hit != 'true'
+      run: |
+        git clone --depth 1 https://github.com/llvm/llvm-project.git
+        cd llvm-project
+        mkdir build && cd build
+        cmake -G Ninja ../llvm \
+        -DLLVM_TARGETS_TO_BUILD="host" \
+        -DLLVM_ENABLE_PROJECTS="clang;lld" \
+        -DLLVM_ENABLE_PLUGINS=ON \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DLLVM_ENABLE_ASSERTIONS=ON
+        ninja
+
+    - name: Cache Enzyme
+      id: cache-enzyme
+      uses: actions/cache@v3
+      with:
+        path: Enzyme/enzyme/build/Enzyme/ClangEnzyme-20.so
+        key: ${{ runner.os }}-enzyme
+
+    - name: Install and build Enzyme if not cached
+      if: steps.cache-enzyme.outputs.cache-hit != 'true'
+      run: |
+        #sudo apt-get update
+        #sudo apt-get install libclang-15-dev
+        git clone https://github.com/EnzymeAD/Enzyme.git
+        cd Enzyme/enzyme
+        mkdir build
+        cd build
+        cmake -G Ninja .. -DLLVM_DIR=../../../llvm-project/build/lib/cmake/llvm \
+                          -DLLVM_EXTERNAL_LIT=../../../llvm-project/llvm/utils/lit/lit.py \
+                          #-DENZYME_CLANG=ON  \
+                          #-DClang_DIR=/usr/lib/llvm-15/lib/cmake/clang
+        ninja
+        #ninja check-enzyme
+        ls Enzyme
+
+    - name: Compile .so with Enzyme
+      working-directory: C_src
+      run: |
+        ../llvm-project/build/bin/clang-20 libmatern.c -fplugin=../Enzyme/enzyme/build/Enzyme/ClangEnzyme-20.so -O3 -lm -Wall -pedantic -shared -fPIC -o libmatern.so
+
+    - name: Run tests
+      working-directory: C_src
+      run: |
+        make runtest
+
+    - name: Upload .deb Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: libmatern.so
+        path: C_src/libmatern.so
+
