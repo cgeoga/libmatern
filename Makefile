@@ -1,5 +1,5 @@
 
-CLANG_CHRIS=clang
+CLANG=clang
 CLANG_ENZYME=/usr/lib/ClangEnzyme-18.so
 ENZYME=/usr/lib/ClangEnzyme-18.so
 OPT=opt
@@ -10,6 +10,7 @@ runtest:
 	rm -f test_script
 
 linux:
+	mkdir -p lib
 	$(CLANG) src/libmatern.c -fplugin=$(CLANG_ENZYME) -O3 -lm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -Wall -pedantic -shared -fPIC -o lib/libmatern.so
 
 linux_bitcode:
