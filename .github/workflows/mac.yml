@@ -17,15 +17,15 @@ jobs:
         brew install enzyme
 
     - name: Compile .dylib with Enzyme
-      working-directory: C_src
+      working-directory: src
       run: |
         #find /opt/homebrew/Cellar -name "ClangEnzyme-*"
-        /opt/homebrew/Cellar/llvm/18.1.8/bin/clang libmatern.c -fplugin=/opt/homebrew/Cellar/enzyme/0.0.148/lib/ClangEnzyme-18.dylib -O3 -lm -Wall -pedantic -shared -fPIC -o libmatern.dylib
+        /opt/homebrew/Cellar/llvm/18.1.8/bin/clang libmatern.c -fplugin=/opt/homebrew/Cellar/enzyme/0.0.148/lib/ClangEnzyme-18.dylib -O3 -lm -Wall -pedantic -shared -fPIC -o ../test/libmatern.dylib
 
     - name: Run tests
-      working-directory: C_src
+      working-directory: test
       run: |
-        clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/besselk_enzyme/besselk_enzyme/C_src libmatern.dylib #REPLACES make test
+        clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/libmatern/libmatern/test libmatern.dylib #REPLACES make test
         ./test_script
       
     - name: Upload Artifact
