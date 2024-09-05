@@ -16,28 +16,21 @@ jobs:
         brew update
         brew install enzyme
 
-    - name: Compile .so with Enzyme
+    - name: Compile .dylib with Enzyme
       working-directory: C_src
       run: |
-        /opt/homebrew/Cellar/llvm/18.1.8/bin/clang libmatern.c -fplugin=/opt/homebrew/Cellar/enzyme/0.0.144/lib/ClangEnzyme-18.dylib -O3 -lm -Wall -pedantic -shared -fPIC -o libmatern.so
+        #find /opt/homebrew/Cellar -name "ClangEnzyme-*"
+        /opt/homebrew/Cellar/llvm/18.1.8/bin/clang libmatern.c -fplugin=/opt/homebrew/Cellar/enzyme/0.0.148/lib/ClangEnzyme-18.dylib -O3 -lm -Wall -pedantic -shared -fPIC -o libmatern.dylib
 
     - name: Run tests
       working-directory: C_src
       run: |
-        clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/besselk_enzyme/besselk_enzyme/C_src libmatern.so #REPLACES make runtest
+        clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/besselk_enzyme/besselk_enzyme/C_src libmatern.dylib #REPLACES make test
         ./test_script
-
-    - name: Package to debian
-      working-directory: C_src
-      run: |
       
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: libmatern.so
-        path: C_src/libmatern.so
-
-    - name: Install and check for .deb Package
-      working-directory: C_src
-      run: |
+        name: libmatern.dylib
+        path: C_src/libmatern.dylib
       
