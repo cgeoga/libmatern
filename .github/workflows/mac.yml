@@ -26,6 +26,7 @@ jobs:
       working-directory: test
       run: |
         pwd
+        ls
         clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/libmatern/libmatern/test libmatern.dylib #REPLACES make test
         ./test_script
       
