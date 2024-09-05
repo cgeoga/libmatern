@@ -25,12 +25,13 @@ jobs:
     - name: Run tests
       working-directory: test
       run: |
-        clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/libmatern/libmatern/test libmatern.dylib #REPLACES make test
+        pwd
+        clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/libmatern/test libmatern.dylib #REPLACES make test
         ./test_script
       
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: libmatern.dylib
-        path: C_src/libmatern.dylib
+        path: test/libmatern.dylib
       
