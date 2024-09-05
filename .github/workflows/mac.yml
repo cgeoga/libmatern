@@ -26,7 +26,7 @@ jobs:
       working-directory: test
       run: |
         pwd
-        clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/libmatern/test libmatern.dylib #REPLACES make test
+        clang test_script.c -o test_script -L. -Wl,-rpath,/Users/runner/work/libmatern/libmatern/test libmatern.dylib #REPLACES make test
         ./test_script
       
     - name: Upload Artifact
