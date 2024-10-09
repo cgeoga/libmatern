@@ -13,6 +13,6 @@ jobs:
     - name: Clone R package
       run: |
         R -e 'install.packages("devtools")'
-        R -e 'devtools::install_github("cgeoga/besselk_enzyme", subdir = "libmatern")'
+        R -e 'devtools::install_github("cgeoga/libmatern")'
         R -e 'library("libmatern")'
         R -e 'besselk(1.1, 2.1, 0)'
