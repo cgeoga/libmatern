@@ -15,7 +15,7 @@ jobs:
         GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
       run: |
         R -e 'install.packages("devtools")'
-        R -e 'devtools::install_github("cgeoga/besselk_enzyme", subdir = "libmatern", auth_token = Sys.getenv("GITHUB_PAT"))'
+        R -e 'devtools::install_github("cgeoga/libmatern", auth_token = Sys.getenv("GITHUB_PAT"))'
         #R -e 'Sys.setenv(GITHUB_PAT = Sys.getenv("GITHUB_PAT"))'
         #R -e 'devtools::install_github("cgeoga/libmatern")'
         R -e 'library("libmatern")'
