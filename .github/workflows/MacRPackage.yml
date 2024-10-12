@@ -14,7 +14,7 @@ jobs:
       env:
         GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
       run: |
-        R -e 'install.packages("devtools")'
-        R -e 'devtools::install_github("cgeoga/libmatern")'
-        R -e 'library("libmatern")'
-        R -e 'besselk(1.1, 2.1, 0)'
+        install.packages("devtools")
+        devtools::install_github("cgeoga/libmatern")
+        library("libmatern")
+        besselk(1.1, 2.1, 0)
