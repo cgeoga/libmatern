@@ -18,6 +18,8 @@ download_artifact <- function(pkgname) {
 	if (os_type == "Linux") {
 		status <- system(paste("curl -L ", linux_url, " > libmatern.so.zip"))
 		system("unzip libmatern.so.zip && chmod +x libmatern.so && mv libmatern.so libs")
+		system("ls")
+		system("ls libs")
 		lib_file <- system.file("libs", "libmatern.so", package = pkgname)
 	} else if (os_type == "Darwin") {
 		status <- system(paste("curl -L ", mac_url, " > libmatern.dylib.zip"))
