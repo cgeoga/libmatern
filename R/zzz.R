@@ -2,6 +2,7 @@
 .onLoad <- function(libname, pkgname) {
 	lib_file <- download_artifact(pkgname)
 
+	print(lib_file)
 	dyn.load(lib_file)
 }
 
@@ -26,6 +27,7 @@ download_artifact <- function(pkgname) {
 		
 	}
 
+	print(lib_file)
 	return(lib_file)
 }
 
