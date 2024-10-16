@@ -13,8 +13,10 @@ jobs:
     - name: Clone R package
       run: |
         #sudo apt-get install -y libharfbuzz-dev libfribidi-dev libcurl4-openssl-dev
-        #R -e 'install.packages("devtools")'
+        Rscript -e 'install.packages("remotes")' \
+                -e 'remotes::install_github("cgeoga/libmatern")' \
+                -e 'library("libmatern")' \
+                -e 'besselk(1.1, 2.1, 0)'
         #R -e 'devtools::install_github("cgeoga/libmatern")'
-        install_github("cgeoga/libmatern")
-        R -e 'library("libmatern")'
-        R -e 'besselk(1.1, 2.1, 0)'
+        #R -e 'library("libmatern")'
+        #R -e 'besselk(1.1, 2.1, 0)'
