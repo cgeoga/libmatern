@@ -15,8 +15,10 @@ download_artifact <- function(pkgname) {
 	windows_url <- ""
 	status <- NULL
 
+	package_dir <- system.file(package = pkgname)
+
 	if (os_type == "Linux") {
-		status <- system(paste("curl -L ", linux_url, " > libmatern.so.zip"))
+		status <- system(paste("curl -L ", linux_url, " > ", package_dir, "/libmatern.so.zip"))
 		system("unzip libmatern.so.zip && chmod +x libmatern.so && mv libmatern.so libs")
 		system("ls")
 		system("echo lslibs")
