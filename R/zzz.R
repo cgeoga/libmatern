@@ -1,5 +1,5 @@
 #Construct so_file when the package is loaded.
-.onLoad <- function(libname, pkgname) {
+.onAttach <- function(libname, pkgname) {
 	lib_file <- download_artifact(pkgname)
 
 	print(lib_file)
