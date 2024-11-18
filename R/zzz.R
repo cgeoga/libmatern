@@ -25,7 +25,7 @@ download_artifact <- function(pkgname) {
 		##status <- system(paste("curl -L ", linux_url, " > libs/libmatern.so.zip"))
 		#system("unzip libmatern.so.zip && chmod +x libmatern.so && mv libmatern.so libs")
 		##system("cd libs && unzip libmatern.so.zip && chmod +x libmatern.so")
-		download.file(url = linux_url, destfile = file.path(package_dir, "libs", "libmatern.so"), mode = "wb")
+		download.file(url = linux_url, destfile = paste0(package_dir, "libs/libmatern.so"), mode = "wb")
 		#system("ls")
 		system("echo lslibs")
 		system("ls libs")
