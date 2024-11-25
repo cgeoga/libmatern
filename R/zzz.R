@@ -15,7 +15,8 @@ download_artifact <- function(pkgname) {
 	windows_url <- ""
 	status <- NULL
 
-	package_dir <- system.file(package = pkgname)
+	#package_dir <- system.file(package = pkgname)
+  package_dir <- .libPaths()[1]
 	print(package_dir)
 
 	if (os_type == "Linux") {
