@@ -16,7 +16,6 @@ dev*.jl
 *.bbl
 *.blg
 *.exrc
-*.so
 *.bc
 *.ll
 test_script
