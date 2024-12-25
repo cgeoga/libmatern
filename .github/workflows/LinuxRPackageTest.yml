@@ -11,6 +11,7 @@ jobs:
     steps:
     - name: Clone R package
       run: |
+        ls
         pwd
         cd test
         Rscript test_package.R
