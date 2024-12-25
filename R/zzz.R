@@ -1,7 +1,7 @@
 #Construct so_file when the package is loaded.
 .onLoad <- function(libname, pkgname) {
 	lib_file <- download_artifact(pkgname)
-
+	print(lib_file)
 	dyn.load(lib_file)
 }
 
