@@ -17,7 +17,6 @@ jobs:
       env:
         GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        ls
-        pwd
-        cd test
-        Rscript test_package.R
+        install.packages("remotes")
+        remotes::install_github("cgeoga/libmatern", auth_token = Sys.getenv("GITHUB_PAT"))
+        libmatern::besselk(1.1, 2.1, 0)
