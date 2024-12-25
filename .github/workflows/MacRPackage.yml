@@ -18,4 +18,4 @@ jobs:
         GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       run: |
         nm -U libs/libmatern.dylib
-        R -e "install.packages('remotes');install.packages('ncdf4');remotes::install_github('cgeoga/libmatern', auth_token = Sys.getenv('GITHUB_PAT'));library('libmatern');_besselk(1.1, 2.1, 0)"
+        R -e "install.packages('remotes');install.packages('ncdf4');remotes::install_github('cgeoga/libmatern', auth_token = Sys.getenv('GITHUB_PAT'));libmatern::besselk(1.1, 2.1, 0)"
