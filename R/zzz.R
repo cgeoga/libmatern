@@ -11,7 +11,8 @@ download_artifact <- function(pkgname) {
 
 	if (os_type == "Linux") {
 		print("Loading Linux binary")
-		lib_file <- file.path("libs", "libmatern.so")
+		#lib_file <- file.path("libs", "libmatern.so")
+		lib_file <- system.file("libs", "libmatern.so", package = "libmatern")
 	} else if (os_type == "Darwin") {
 		print("Loading Mac/Darwin binary")
 		lib_file <- file.path("libs", "libmatern.dylib")
