@@ -19,7 +19,7 @@ jobs:
     - name: Compile .dylib with Enzyme
       working-directory: src
       run: |
-        #find /opt/homebrew/Cellar -name "ClangEnzyme-*"
+        find /opt/homebrew/Cellar -name "ClangEnzyme-*"
         /opt/homebrew/Cellar/llvm/18.1.8/bin/clang libmatern.c -fplugin=/opt/homebrew/Cellar/enzyme/0.0.148/lib/ClangEnzyme-18.dylib -O3 -lm -Wall -pedantic -shared -fPIC -o ../test/libmatern.dylib
 
     - name: Run tests
