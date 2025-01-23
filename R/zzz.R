@@ -17,7 +17,8 @@ download_artifact <- function(pkgname) {
 	} else if (os_type == "Darwin") {
 		print("Loading Mac/Darwin binary")
 		lib_file <- system.file("libs", "libmatern.dylib", package = "libmatern")
-		dyn.load(dynlib(lib_file))
+		#dyn.load(dynlib(lib_file))
+		library.dynam(lib_file, "libmatern")
 	} else if (os_type == "Windows") {
 		print("Loading Windows binary")
 		# TODO Need to complete the compilation process for Windows	
