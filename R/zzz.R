@@ -15,7 +15,7 @@ download_artifact <- function(pkgname) {
 		lib_file <- system.file("libs", "libmatern.so", package = "libmatern")
 	} else if (os_type == "Darwin") {
 		print("Loading Mac/Darwin binary")
-		lib_file <- file.path("libs", "libmatern.dylib")
+		lib_file <- system.file("libs", "libmatern.dylib", package = "libmatern")
 	} else if (os_type == "Windows") {
 		print("Loading Windows binary")
 		# TODO Need to complete the compilation process for Windows	
