@@ -1,7 +1,6 @@
 
 CLANG=clang
-CLANG_ENZYME=/usr/lib/ClangEnzyme-18.so
-ENZYME=/usr/lib/ClangEnzyme-18.so
+CLANG_ENZYME=/usr/lib/ClangEnzyme-19.so
 OPT=opt
 
 runtest: 
@@ -11,13 +10,17 @@ runtest:
 
 linux:
 	mkdir -p lib
-	$(CLANG) src/libmatern.c -fplugin=$(CLANG_ENZYME) -O3 -lm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -Wall -pedantic -shared -fPIC -o lib/libmatern.so
+	$(CLANG) reposrc/libmatern.c -fplugin=$(CLANG_ENZYME) -O3 -lm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -Wall -pedantic -shared -fPIC -o lib/libmatern.so
 
 linux_bitcode:
 	mkdir -p lib
-	$(CLANG) src/libmatern.c -fplugin=$(CLANG_ENZYME) -O3 -Wall -pedantic -c -emit-llvm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -o lib/libmatern.bc
+	$(CLANG) reposrc/libmatern.c -fplugin=$(CLANG_ENZYME) -O3 -Wall -pedantic -c -emit-llvm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -o lib/libmatern.bc
+
+linux_ir:
+	mkdir -p lib
+	$(CLANG) reposrc/libmatern.c -fplugin=$(CLANG_ENZYME) -O3 -Wall -pedantic -S -emit-llvm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -o lib/libmatern.ll
 
 bitcode_apple_arm:
 	mkdir -p lib
-	$(CLANG) src/libmatern.c -fplugin=$(CLANG_ENZYME) --target=arm64 -O3 -Wall -pedantic -c -emit-llvm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -o lib/libmatern_apple_arm.bc
+	$(CLANG) reposrc/libmatern.c -fplugin=$(CLANG_ENZYME) --target=arm64 -O3 -Wall -pedantic -c -emit-llvm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -o lib/libmatern_apple_arm.bc
 

@@ -14,6 +14,22 @@
 // which will mean faster evaluation times.
 #define EPS 2.220446049250313e-16
 
+double _fmax(double x, double y) {
+  if(x <= y){
+    return y;
+  }else{
+    return x;
+  }
+}
+
+double _fmin(double x, double y) {
+  if(x <= y){
+    return x;
+  }else{
+    return y;
+  }
+}
+
 double horner(double x, const double* coefs, const int len) {
   double b_p1 = coefs[len-1];
   double b    = 0.0;
@@ -53,7 +69,7 @@ void __attribute__((noinline,optnone)) isconverged(double* t, double* result) {
 
 void disconverged(double* t,      double* d_t, 
                   double* result, double* d_result) {
-  *result = fmax(fabs(*t) - EPS, fabs(*d_t) - EPS);
+  *result = _fmax(fabs(*t) - EPS, fabs(*d_t) - EPS);
 }
 
 void* __enzyme_register_derivative_converged[] = {
@@ -238,7 +254,7 @@ double besselk_large_orders(double v, double x){
   double n    = zs + log(z) - log(1+zs);
   double coef = sqrt(M_PI/2)*sqrt(1/v)*exp(-v*n)/sqrt(zs);
   double p    = 1/zs;
-  double p2   = v*v/_fma(fmax(v,x), fmax(v,x), pow(fmin(v,x), 2));
+  double p2   = v*v/_fma(_fmax(v,x), _fmax(v,x), pow(_fmin(v,x), 2));
   return coef*Uk_poly_Kn(p, v, p2);
 }
 
