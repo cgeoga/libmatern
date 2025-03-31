@@ -16,7 +16,7 @@ download_artifact <- function(pkgname) {
 		#source_file <- system.file("lib", "libmatern.cbe.c", package = "libmatern")
 	} else if (os_type == "Darwin") {
 		print("Loading Mac/Darwin binary")
-		lib_file <- system.file("src", "libmatern.dylib", package = "libmatern")
+		lib_file <- system.file("src", "libmatern.so", package = "libmatern")
 		#dyn.load(dynlib(lib_file))
 		library.dynam(lib_file, "libmatern")
 	} else if (os_type == "Windows") {
