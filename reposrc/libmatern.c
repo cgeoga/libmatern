@@ -3,6 +3,8 @@
 #include<stdio.h>
 #include<stdbool.h>
 #include<math.h>
+#include<R.h>
+#include<Rinternals.h>
 
 // If you want more speed and are okay with losing a few digits in exchange for
 // speed, you could crank this down a bit.
@@ -378,8 +380,9 @@ struct doublepair besselk_temme_series(double v, double x) {
 
 
 double besselk(double v, double x) {
+
   v = fabs(v); // by symmetry
-  if (x <= 0.0) return NAN; // for now
+  if (x <= 0.0) return NAN; // was returning NAN, must return something else for R
   if (v > 25.0 || x > 35.0) return besselk_large_orders(v, x);
   if (x > v*v/36 + 24)      return besselk_large_args(v, x);
   double flv = floor(v);
@@ -449,49 +452,114 @@ double matern_dnu(double t, double sig, double rho, double nu) {
   return df;
 }
 
-void besselk_buf(double* buf, int* len, double* v, double* x) {
-  for (int j=0; j<*len; j++){
+SEXP besselk_buf(SEXP SEXPbuf, SEXP SEXPlen, SEXP SEXPv, SEXP SEXPx) {
+  // convert arg types
+  int len = INTEGER(SEXPlen)[0];
+  double* buf = REAL(SEXPbuf);
+  double* v = REAL(SEXPv);
+  double* x = REAL(SEXPx);
+
+  for (int j=0; j<len; j++){
     buf[j] = besselk(v[j], x[j]);
   }
+
+  return R_NilValue;
+
 }
 
-void besselk_dv_buf(double* buf, int* len, double* v, double* x) {
-  for (int j=0; j<*len; j++){
+SEXP besselk_dv_buf(SEXP SEXPbuf, SEXP SEXPlen, SEXP SEXPv, SEXP SEXPx) {
+  // convert arg types
+  int len = INTEGER(SEXPlen)[0];
+  double* buf = REAL(SEXPbuf);
+  double* v = REAL(SEXPv);
+  double* x = REAL(SEXPx);
+
+  for (int j=0; j<len; j++){
     buf[j] = besselk_dv(v[j], x[j]);
   }
+
+  return R_NilValue;
 }
 
-void besselk_dx_buf(double* buf, int* len, double* v, double* x) {
-  for (int j=0; j<*len; j++){
+SEXP besselk_dx_buf(SEXP SEXPbuf, SEXP SEXPlen, SEXP SEXPv, SEXP SEXPx) {
+  // convert arg types
+  int len = INTEGER(SEXPlen)[0];
+  double* buf = REAL(SEXPbuf);
+  double* v = REAL(SEXPv);
+  double* x = REAL(SEXPx);
+
+  for (int j=0; j<len; j++){
     buf[j] = besselk_dx(v[j], x[j]);
   }
+
+  return R_NilValue;
 }
 
-void matern_buf(double* buf, double* dists, int* len, 
-                double* sig, double* rho, double* nu) {
-  for (int j=0; j<*len; j++){
-    buf[j] = matern(dists[j], *sig, *rho, *nu);
+SEXP matern_buf(SEXP SEXPbuf, SEXP SEXPdists, SEXP SEXPlen, 
+                SEXP SEXPsig, SEXP SEXPrho, SEXP SEXPnu) {
+  // convert arg types
+  int len = INTEGER(SEXPlen)[0];
+  double* buf = REAL(SEXPbuf);
+  double* dists = REAL(SEXPdists);
+  double sig = REAL(SEXPsig)[0];
+  double rho = REAL(SEXPrho)[0];
+  double nu = REAL(SEXPnu)[0];
+
+  for (int j=0; j<len; j++){
+    buf[j] = matern(dists[j], sig, rho, nu);
   }
+
+  return R_NilValue;
 }
 
-void matern_dsig_buf(double* buf, double* dists, int* len, 
-                     double* sig, double* rho, double* nu) {
-  for (int j=0; j<*len; j++){
-    buf[j] = matern_dsig(dists[j], *sig, *rho, *nu);
+SEXP matern_dsig_buf(SEXP SEXPbuf, SEXP SEXPdists, SEXP SEXPlen, 
+                SEXP SEXPsig, SEXP SEXPrho, SEXP SEXPnu) {
+  // convert arg types
+  int len = INTEGER(SEXPlen)[0];
+  double* buf = REAL(SEXPbuf);
+  double* dists = REAL(SEXPdists);
+  double sig = REAL(SEXPsig)[0];
+  double rho = REAL(SEXPrho)[0];
+  double nu = REAL(SEXPnu)[0];
+
+  for (int j=0; j<len; j++){
+    buf[j] = matern_dsig(dists[j], sig, rho, nu);
   }
+
+  return R_NilValue;
 }
 
-void matern_drho_buf(double* buf, double* dists, int* len, 
-                     double* sig, double* rho, double* nu) {
-  for (int j=0; j<*len; j++){
-    buf[j] = matern_drho(dists[j], *sig, *rho, *nu);
+SEXP matern_drho_buf(SEXP SEXPbuf, SEXP SEXPdists, SEXP SEXPlen, 
+                SEXP SEXPsig, SEXP SEXPrho, SEXP SEXPnu) {
+  // convert arg types
+  int len = INTEGER(SEXPlen)[0];
+  double* buf = REAL(SEXPbuf);
+  double* dists = REAL(SEXPdists);
+  double sig = REAL(SEXPsig)[0];
+  double rho = REAL(SEXPrho)[0];
+  double nu = REAL(SEXPnu)[0];
+
+  for (int j=0; j<len; j++){
+    buf[j] = matern_drho(dists[j], sig, rho, nu);
   }
+
+  return R_NilValue;
 }
 
-void matern_dnu_buf(double* buf, double* dists, int* len, 
-                    double* sig, double* rho, double* nu) {
-  for (int j=0; j<*len; j++){
-    buf[j] = matern_dnu(dists[j], *sig, *rho, *nu);
+SEXP matern_dnu_buf(SEXP SEXPbuf, SEXP SEXPdists, SEXP SEXPlen, 
+                SEXP SEXPsig, SEXP SEXPrho, SEXP SEXPnu) {
+  // convert arg types
+  int len = INTEGER(SEXPlen)[0];
+  double* buf = REAL(SEXPbuf);
+  double* dists = REAL(SEXPdists);
+  double sig = REAL(SEXPsig)[0];
+  double rho = REAL(SEXPrho)[0];
+  double nu = REAL(SEXPnu)[0];
+
+  for (int j=0; j<len; j++){
+    buf[j] = matern_dnu(dists[j], sig, rho, nu);
   }
+
+  return R_NilValue;
 }
 

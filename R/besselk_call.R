@@ -11,8 +11,7 @@ checksizes3 <- function(a, b, c) {
 #' @export
 dbesselk_dv <- function(v, x, buf) {
   checksizes3(v, x, buf)
-	result <- .C("besselk_dv_buf", buf, as.integer(length(v)), v, x, PACKAGE = "libmatern")
-	return (result[[1]])
+  result <- .Call("besselk_dv_buf", buf, length(v), v, x)
 }
 
 #' dbesselk_dx
@@ -20,8 +19,7 @@ dbesselk_dv <- function(v, x, buf) {
 #' @export
 dbesselk_dx <- function(v, x, buf) {
   checksizes3(v, x, buf)
-	result <- .C("besselk_dx_buf", buf, as.integer(length(v)), v, x, PACKAGE = "libmatern")
-	return (result[[1]])
+  result <- .Call("besselk_dx_buf", buf, length(v), v, x)
 }
 
 #' besselk
@@ -29,8 +27,7 @@ dbesselk_dx <- function(v, x, buf) {
 #' @export
 besselk <- function(v, x, buf) {
   checksizes3(v, x, buf)
-	result <- .C("besselk_buf",    buf, as.integer(length(v)), v, x, PACKAGE = "libmatern")
-	return (result[[1]])
+  result <- .Call("besselk_buf", buf, length(v), v, x)
 }
 
 #' matern
@@ -38,9 +35,8 @@ besselk <- function(v, x, buf) {
 #' @export
 matern <- function(buf, dists, params) {
   checksizes2(buf, dists)
-  result <- .C("matern_buf", buf, dists, as.integer(length(dists)),
-               params[1], params[2], params[3], PACKAGE = "libmatern")
-  return (result[[1]])
+  result <- .Call("matern_buf", buf, dists, length(dists),
+               params[1], params[2], params[3])
 }
 
 #' matern_dsig
@@ -48,9 +44,8 @@ matern <- function(buf, dists, params) {
 #' @export
 matern_dsig <- function(buf, dists, params) {
   checksizes2(buf, dists)
-  result <- .C("matern_dsig_buf", buf, dists, as.integer(length(dists)),
-               params[1], params[2], params[3], PACKAGE = "libmatern")
-  return (result[[1]])
+  result <- .Call("matern_dsig_buf", buf, dists, length(dists),
+               params[1], params[2], params[3])
 }
 
 #' matern_drho
@@ -58,9 +53,8 @@ matern_dsig <- function(buf, dists, params) {
 #' @export
 matern_drho <- function(buf, dists, params) {
   checksizes2(buf, dists)
-  result <- .C("matern_drho_buf", buf, dists, as.integer(length(dists)),
-               params[1], params[2], params[3], PACKAGE = "libmatern")
-  return (result[[1]])
+  result <- .Call("matern_drho_buf", buf, dists, length(dists),
+               params[1], params[2], params[3])
 }
 
 #' matern_dnu 
@@ -68,8 +62,7 @@ matern_drho <- function(buf, dists, params) {
 #' @export
 matern_dnu <- function(buf, dists, params) {
   checksizes2(buf, dists)
-  result <- .C("matern_dnu_buf", buf, dists, as.integer(length(dists)),
-               params[1], params[2], params[3], PACKAGE = "libmatern")
-  return (result[[1]])
+  result <- .Call("matern_dnu_buf", buf, dists, length(dists),
+               params[1], params[2], params[3])
 }
 
