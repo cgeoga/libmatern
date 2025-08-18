@@ -10,45 +10,45 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// Rbesselk
-double Rbesselk(double x, double v);
-RcppExport SEXP _libmatern_Rbesselk(SEXP xSEXP, SEXP vSEXP) {
+// cbesselK
+double cbesselK(double x, double v);
+RcppExport SEXP _libmatern_cbesselK(SEXP xSEXP, SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rbesselk(x, v));
+    rcpp_result_gen = Rcpp::wrap(cbesselK(x, v));
     return rcpp_result_gen;
 END_RCPP
 }
-// Rbesselk_dv
-double Rbesselk_dv(double x, double v);
-RcppExport SEXP _libmatern_Rbesselk_dv(SEXP xSEXP, SEXP vSEXP) {
+// cbesselK_dv
+double cbesselK_dv(double x, double v);
+RcppExport SEXP _libmatern_cbesselK_dv(SEXP xSEXP, SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rbesselk_dv(x, v));
+    rcpp_result_gen = Rcpp::wrap(cbesselK_dv(x, v));
     return rcpp_result_gen;
 END_RCPP
 }
-// Rbesselk_dx
-double Rbesselk_dx(double x, double v);
-RcppExport SEXP _libmatern_Rbesselk_dx(SEXP xSEXP, SEXP vSEXP) {
+// cbesselK_dx
+double cbesselK_dx(double x, double v);
+RcppExport SEXP _libmatern_cbesselK_dx(SEXP xSEXP, SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rbesselk_dx(x, v));
+    rcpp_result_gen = Rcpp::wrap(cbesselK_dx(x, v));
     return rcpp_result_gen;
 END_RCPP
 }
-// Rmatern
-double Rmatern(double t, double sig, double rho, double nu);
-RcppExport SEXP _libmatern_Rmatern(SEXP tSEXP, SEXP sigSEXP, SEXP rhoSEXP, SEXP nuSEXP) {
+// cmatern
+double cmatern(double t, double sig, double rho, double nu);
+RcppExport SEXP _libmatern_cmatern(SEXP tSEXP, SEXP sigSEXP, SEXP rhoSEXP, SEXP nuSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -56,13 +56,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type sig(sigSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rmatern(t, sig, rho, nu));
+    rcpp_result_gen = Rcpp::wrap(cmatern(t, sig, rho, nu));
     return rcpp_result_gen;
 END_RCPP
 }
-// Rmatern_dsig
-double Rmatern_dsig(double t, double sig, double rho, double nu);
-RcppExport SEXP _libmatern_Rmatern_dsig(SEXP tSEXP, SEXP sigSEXP, SEXP rhoSEXP, SEXP nuSEXP) {
+// cmatern_dsig
+double cmatern_dsig(double t, double sig, double rho, double nu);
+RcppExport SEXP _libmatern_cmatern_dsig(SEXP tSEXP, SEXP sigSEXP, SEXP rhoSEXP, SEXP nuSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -70,13 +70,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type sig(sigSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rmatern_dsig(t, sig, rho, nu));
+    rcpp_result_gen = Rcpp::wrap(cmatern_dsig(t, sig, rho, nu));
     return rcpp_result_gen;
 END_RCPP
 }
-// Rmatern_drho
-double Rmatern_drho(double t, double sig, double rho, double nu);
-RcppExport SEXP _libmatern_Rmatern_drho(SEXP tSEXP, SEXP sigSEXP, SEXP rhoSEXP, SEXP nuSEXP) {
+// cmatern_drho
+double cmatern_drho(double t, double sig, double rho, double nu);
+RcppExport SEXP _libmatern_cmatern_drho(SEXP tSEXP, SEXP sigSEXP, SEXP rhoSEXP, SEXP nuSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -84,13 +84,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type sig(sigSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rmatern_drho(t, sig, rho, nu));
+    rcpp_result_gen = Rcpp::wrap(cmatern_drho(t, sig, rho, nu));
     return rcpp_result_gen;
 END_RCPP
 }
-// Rmatern_dnu
-double Rmatern_dnu(double t, double sig, double rho, double nu);
-RcppExport SEXP _libmatern_Rmatern_dnu(SEXP tSEXP, SEXP sigSEXP, SEXP rhoSEXP, SEXP nuSEXP) {
+// cmatern_dnu
+double cmatern_dnu(double t, double sig, double rho, double nu);
+RcppExport SEXP _libmatern_cmatern_dnu(SEXP tSEXP, SEXP sigSEXP, SEXP rhoSEXP, SEXP nuSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -98,19 +98,19 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type sig(sigSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rmatern_dnu(t, sig, rho, nu));
+    rcpp_result_gen = Rcpp::wrap(cmatern_dnu(t, sig, rho, nu));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_libmatern_Rbesselk", (DL_FUNC) &_libmatern_Rbesselk, 2},
-    {"_libmatern_Rbesselk_dv", (DL_FUNC) &_libmatern_Rbesselk_dv, 2},
-    {"_libmatern_Rbesselk_dx", (DL_FUNC) &_libmatern_Rbesselk_dx, 2},
-    {"_libmatern_Rmatern", (DL_FUNC) &_libmatern_Rmatern, 4},
-    {"_libmatern_Rmatern_dsig", (DL_FUNC) &_libmatern_Rmatern_dsig, 4},
-    {"_libmatern_Rmatern_drho", (DL_FUNC) &_libmatern_Rmatern_drho, 4},
-    {"_libmatern_Rmatern_dnu", (DL_FUNC) &_libmatern_Rmatern_dnu, 4},
+    {"_libmatern_cbesselK", (DL_FUNC) &_libmatern_cbesselK, 2},
+    {"_libmatern_cbesselK_dv", (DL_FUNC) &_libmatern_cbesselK_dv, 2},
+    {"_libmatern_cbesselK_dx", (DL_FUNC) &_libmatern_cbesselK_dx, 2},
+    {"_libmatern_cmatern", (DL_FUNC) &_libmatern_cmatern, 4},
+    {"_libmatern_cmatern_dsig", (DL_FUNC) &_libmatern_cmatern_dsig, 4},
+    {"_libmatern_cmatern_drho", (DL_FUNC) &_libmatern_cmatern_drho, 4},
+    {"_libmatern_cmatern_dnu", (DL_FUNC) &_libmatern_cmatern_dnu, 4},
     {NULL, NULL, 0}
 };
 
