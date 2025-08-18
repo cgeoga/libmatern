@@ -1,6 +1,5 @@
 Package: libmatern
-Title: Modified Second-Kind Bessel Functions, the Matern Covariance function,
-and their derivatives with respect to all parameters and arguments.
+Title: Modified Second-Kind Bessel Functions, the Matern Covariance function, and their derivatives with respect to all parameters and arguments.
 Version: 0.0.1
 Authors@R: 
     person("George", "Maney", "17.gmaney@gmail.com", role=c("aut", "cre"))
