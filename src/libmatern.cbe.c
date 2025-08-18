@@ -1,9 +1,9 @@
 /* Provide Declarations */
 #include <stdint.h>
 #include <math.h>
+#include <stdbool.h>
 #include "libmatern.cbe.h"
 #ifndef __cplusplus
-typedef unsigned char bool;
 #endif
 
 typedef uint64_t ConstantDoubleTy;
