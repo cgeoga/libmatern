@@ -1,16 +1,19 @@
 Package: libmatern
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Modified Second-Kind Bessel Functions, the Matern Covariance function,
+and their derivatives with respect to all parameters and arguments.
+Version: 0.0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("George", "Maney", "17.gmaney@gmail.com", role=c("aut", "cre"))
+    person("Chris",  "Geoga", "geoga@wisc.edu", role=c("aut", "cre"))
+Description: Routines for the modified second-kind Bessel function and its
+derivatives with respect to both smoothness and argument. Routines are also
+provided for the Matern covariance function and its derivatives with respect to
+parameters.
 LinkingTo:
     Rcpp
 Imports:
     Rcpp
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: use_mit_license()
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
