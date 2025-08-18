@@ -1,8 +1,9 @@
 /* Provide Declarations */
 #include <stdint.h>
 #include <math.h>
-#include <stdbool.h>
+#include "libmatern.cbe.h"
 #ifndef __cplusplus
+typedef unsigned char bool;
 #endif
 
 typedef uint64_t ConstantDoubleTy;
@@ -59,9 +60,9 @@ struct l_unnamed_2;
 
 /* Function definitions */
 
-double gamma(double _71);
+static struct l_unnamed_1 fwddiffegamma(double _2332, double _2333);
 
-struct l_unnamed_1 fwddiffegamma(double _2225, double _2226);
+double gamma(double _71);
 
 /* Types Definitions */
 struct l_struct_struct_OC_doublepair {
@@ -132,7 +133,6 @@ const static __PREFIXALIGN__(16) struct l_array_3_double __const_OC_f0_local_exp
 const static __PREFIXALIGN__(16) struct l_array_4_double __const_OC_besselk_temme_series_OC_pqkcoef __POSTFIXALIGN__(16);
 extern uint32_t enzyme_dup;
 extern uint32_t enzyme_const;
-extern void* R_NilValue;
 extern uint32_t enzyme_dupnoneed;
 
 /* Function Declarations */
@@ -140,61 +140,47 @@ double _fmax(double _1, double _2) __ATTRIBUTELIST__((nothrow));
 double _fmin(double _3, double _4) __ATTRIBUTELIST__((nothrow));
 double horner(double _5, void* _6, uint32_t _7) __ATTRIBUTELIST__((nothrow));
 double sinpi(double _19) __ATTRIBUTELIST__((nothrow));
-double sin(double _3358) __ATTRIBUTELIST__((nothrow));
+double sin(double _2683) __ATTRIBUTELIST__((nothrow));
 void isconverged(void* _41, void* _42) __ATTRIBUTELIST__((noinline, nothrow));
 void disconverged(void* _45, void* _46, void* _47, void* _48) __ATTRIBUTELIST__((nothrow));
 bool isnearint(double _55) __ATTRIBUTELIST__((nothrow));
 double _fma(double _58, double _59, double _60) __ATTRIBUTELIST__((nothrow));
 struct l_unnamed_1 fmadd(double _62, double _63, double _64, double _65, double _66) __ATTRIBUTELIST__((nothrow));
 double gamma(double _71) __ATTRIBUTELIST__((nothrow));
-double exp(double _3359) __ATTRIBUTELIST__((nothrow));
+double exp(double _2684) __ATTRIBUTELIST__((nothrow));
 double besselk_power_series(double _130, double _131) __ATTRIBUTELIST__((nothrow));
 struct l_unnamed_1 up_recurrence(double _155, double _156, double _157, double _158, double _159) __ATTRIBUTELIST__((nothrow));
 double besselkx_large_args(double _173, double _174) __ATTRIBUTELIST__((nothrow));
 double besselk_large_args(double _191, double _192) __ATTRIBUTELIST__((nothrow));
 double Uk_poly_Kn(double _210, double _211, double _212) __ATTRIBUTELIST__((nothrow));
 double besselk_large_orders(double _275, double _276) __ATTRIBUTELIST__((nothrow));
-double log(double _3360) __ATTRIBUTELIST__((nothrow));
+double log(double _2685) __ATTRIBUTELIST__((nothrow));
 double levin_scale(double _289, uint32_t _290, uint32_t _291) __ATTRIBUTELIST__((nothrow));
 void _levin(void* _295, void* _296) __ATTRIBUTELIST__((nothrow));
 void levin(void* _342, void* _343) __ATTRIBUTELIST__((nothrow));
 void derivative_levin(void* _389, void* _390, void* _391, void* _392) __ATTRIBUTELIST__((nothrow));
 double besselkx_levin(double _483, double _484) __ATTRIBUTELIST__((nothrow));
 double f0_local_expansion(double _501, double _502) __ATTRIBUTELIST__((nothrow));
-double cosh(double _3361) __ATTRIBUTELIST__((nothrow));
+double cosh(double _2686) __ATTRIBUTELIST__((nothrow));
 struct l_unnamed_1 besselk_temme_series(double _534, double _535) __ATTRIBUTELIST__((nothrow));
 double besselk(double _619, double _620) __ATTRIBUTELIST__((nothrow));
 double besselk_dv(double _751, double _752) __ATTRIBUTELIST__((nothrow));
-double besselk_dx(double _955, double _956) __ATTRIBUTELIST__((nothrow));
-double matern(double _1178, double _1179, double _1180, double _1181) __ATTRIBUTELIST__((nothrow));
-double matern_dsig(double _1194, double _1195, double _1196, double _1197) __ATTRIBUTELIST__((nothrow));
-double matern_drho(double _1210, double _1211, double _1212, double _1213) __ATTRIBUTELIST__((nothrow));
-double matern_dnu(double _1228, double _1229, double _1230, double _1231) __ATTRIBUTELIST__((nothrow));
-void* besselk_buf(void* _1254, void* _1255, void* _1256, void* _1257) __ATTRIBUTELIST__((nothrow));
-void* INTEGER(void* _3362);
-void* REAL(void* _3363);
-void* besselk_dv_buf(void* _1273, void* _1274, void* _1275, void* _1276) __ATTRIBUTELIST__((nothrow));
-void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) __ATTRIBUTELIST__((nothrow));
-void* matern_buf(void* _1732, void* _1733, void* _1734, void* _1735, void* _1736, void* _1737) __ATTRIBUTELIST__((nothrow));
-void* matern_dsig_buf(void* _1769, void* _1770, void* _1771, void* _1772, void* _1773, void* _1774) __ATTRIBUTELIST__((nothrow));
-void* matern_drho_buf(void* _1806, void* _1807, void* _1808, void* _1809, void* _1810, void* _1811) __ATTRIBUTELIST__((nothrow));
-void* matern_dnu_buf(void* _1849, void* _1850, void* _1851, void* _1852, void* _1853, void* _1854) __ATTRIBUTELIST__((nothrow));
-double exp2(double _3364) __ATTRIBUTELIST__((nothrow));
-static struct l_unnamed_1 fwddiffeUk_poly_Kn(double _1898, double _1899, double _1900, double _1901, double _1902, double _1903) __ATTRIBUTELIST__((nothrow));
-static void fixderivative_isconverged(void* _2014, void* _2015, void* _2016, void* _2017) __ATTRIBUTELIST__((nothrow));
-static void fixderivative_levin(void* _2018, void* _2019, void* _2020, void* _2021) __ATTRIBUTELIST__((nothrow));
-static struct l_unnamed_2 fwddiffebesselk_temme_series(double _2022, double _2023, double _2024) __ATTRIBUTELIST__((nothrow));
-double sinh(double _3365) __ATTRIBUTELIST__((nothrow));
-static void fixderivative_isconverged_OC_1(void* _2166, void* _2167, void* _2168, void* _2169) __ATTRIBUTELIST__((nothrow));
-static double fwddiffebesselk_power_series(double _2170, double _2171, double _2172) __ATTRIBUTELIST__((nothrow));
-struct l_unnamed_1 fwddiffegamma(double _2225, double _2226) __ATTRIBUTELIST__((nothrow));
-static struct l_unnamed_1 fwddiffeUk_poly_Kn_OC_3(double _2326, double _2327, double _2328, double _2329, double _2330) __ATTRIBUTELIST__((nothrow));
-static struct l_unnamed_2 fwddiffebesselk_temme_series_OC_4(double _2441, double _2442, double _2443) __ATTRIBUTELIST__((nothrow));
-static double fwddiffebesselk_power_series_OC_5(double _2576, double _2577) __ATTRIBUTELIST__((nothrow));
-static struct l_unnamed_1 fwddiffebesselk_OC_7(double _2623, double _2624, double _2625) __ATTRIBUTELIST__((nothrow));
-static struct l_unnamed_1 fwddiffebesselk_OC_10(double _2909, double _2910, double _2911) __ATTRIBUTELIST__((nothrow));
-double round(double _3366);
-void* memset(void* _3367, uint32_t _3368, uint64_t _3369);
+double besselk_dx(double _1136, double _1137) __ATTRIBUTELIST__((nothrow));
+double matern(double _1404, double _1405, double _1406, double _1407) __ATTRIBUTELIST__((nothrow));
+double matern_dsig(double _1420, double _1421, double _1422, double _1423) __ATTRIBUTELIST__((nothrow));
+double matern_drho(double _1436, double _1437, double _1438, double _1439) __ATTRIBUTELIST__((nothrow));
+double matern_dnu(double _1735, double _1736, double _1737, double _1738) __ATTRIBUTELIST__((nothrow));
+double exp2(double _2687) __ATTRIBUTELIST__((nothrow));
+static struct l_unnamed_1 fwddiffeUk_poly_Kn(double _2204, double _2205, double _2206, double _2207, double _2208, double _2209) __ATTRIBUTELIST__((nothrow));
+static void fixderivative_isconverged(void* _2320, void* _2321, void* _2322, void* _2323) __ATTRIBUTELIST__((nothrow));
+static void fixderivative_levin(void* _2324, void* _2325, void* _2326, void* _2327) __ATTRIBUTELIST__((nothrow));
+double sinh(double _2688) __ATTRIBUTELIST__((nothrow));
+static void fixderivative_isconverged_OC_1(void* _2328, void* _2329, void* _2330, void* _2331) __ATTRIBUTELIST__((nothrow));
+static struct l_unnamed_1 fwddiffegamma(double _2332, double _2333) __ATTRIBUTELIST__((nothrow));
+static struct l_unnamed_1 fwddiffeUk_poly_Kn_OC_3(double _2433, double _2434, double _2435, double _2436, double _2437) __ATTRIBUTELIST__((nothrow));
+static struct l_unnamed_2 fwddiffebesselk_temme_series_OC_4(double _2548, double _2549, double _2550) __ATTRIBUTELIST__((nothrow));
+double round(double _2689);
+void* memset(void* _2690, uint32_t _2691, uint64_t _2692);
 
 
 /* Global Variable Definitions and Initialization */
@@ -2842,39 +2828,39 @@ _727:
 double besselk_dv(double _751, double _752) {
   double _753;    /* Address-exposed local */
   double _754;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _755 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _756 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _757;    /* Address-exposed local */
+  double _755;    /* Address-exposed local */
+  double _756;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_5_double _757 __POSTFIXALIGN__(16);    /* Address-exposed local */
   double _758;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _759 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _760 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _759;    /* Address-exposed local */
+  double _760;    /* Address-exposed local */
   double _761;    /* Address-exposed local */
   double _762;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _763 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _764 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _763;    /* Address-exposed local */
+  double _764;    /* Address-exposed local */
   double _765;    /* Address-exposed local */
   double _766;    /* Address-exposed local */
   double _767;    /* Address-exposed local */
-  double _768;    /* Address-exposed local */
-  void* _769;
-  void* _770;
-  void* _771;
-  void* _772;
-  void* _773;
-  void* _774;
-  double _775;
-  double _776;
-  double _777;
-  double _778;
-  double _779;
-  double _780;
-  double _781;
-  double _782;
-  double _783;
-  double _784;
-  double _785;
-  double _786;
-  double _787;
+  __PREFIXALIGN__(16) struct l_array_32_double _768 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _769 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _770;    /* Address-exposed local */
+  double _771;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _772 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _773 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _774;    /* Address-exposed local */
+  double _775;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _776 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _777 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _778;    /* Address-exposed local */
+  double _779;    /* Address-exposed local */
+  double _780;    /* Address-exposed local */
+  double _781;    /* Address-exposed local */
+  void* _782;
+  void* _783;
+  void* _784;
+  void* _785;
+  void* _786;
+  void* _787;
   double _788;
   double _789;
   double _790;
@@ -2887,592 +2873,230 @@ double besselk_dv(double _751, double _752) {
   double _797;
   double _798;
   double _799;
-  struct l_unnamed_1 _800;
+  double _800;
   double _801;
   double _802;
   double _803;
   double _804;
   double _805;
   double _806;
-  double _806__PHI_TEMPORARY;
   double _807;
-  double _807__PHI_TEMPORARY;
   double _808;
-  double _808__PHI_TEMPORARY;
-  uint32_t _809;
-  uint32_t _809__PHI_TEMPORARY;
-  uint32_t _810;
-  uint32_t _811;
+  double _809;
+  double _810;
+  double _811;
   double _812;
-  double _813;
+  struct l_unnamed_1 _813;
   double _814;
   double _815;
   double _816;
   double _817;
   double _818;
   double _819;
+  double _819__PHI_TEMPORARY;
   double _820;
+  double _820__PHI_TEMPORARY;
   double _821;
-  void* _822;
-  double _823;
-  double _824;
+  double _821__PHI_TEMPORARY;
+  uint32_t _822;
+  uint32_t _822__PHI_TEMPORARY;
+  uint32_t _823;
+  uint32_t _824;
   double _825;
-  uint64_t _826;
-  uint64_t _826__PHI_TEMPORARY;
+  double _826;
   double _827;
-  double _827__PHI_TEMPORARY;
   double _828;
-  double _828__PHI_TEMPORARY;
   double _829;
-  double _829__PHI_TEMPORARY;
   double _830;
-  double _830__PHI_TEMPORARY;
-  uint64_t _831;
+  double _831;
   double _832;
   double _833;
   double _834;
-  double _835;
+  void* _835;
   double _836;
   double _837;
   double _838;
-  double _839;
+  uint64_t _839;
+  uint64_t _839__PHI_TEMPORARY;
   double _840;
+  double _840__PHI_TEMPORARY;
   double _841;
+  double _841__PHI_TEMPORARY;
   double _842;
+  double _842__PHI_TEMPORARY;
   double _843;
-  void* _844;
+  double _843__PHI_TEMPORARY;
+  uint64_t _844;
   double _845;
   double _846;
   double _847;
   double _848;
   double _849;
-  uint64_t _850;
-  uint64_t _850__PHI_TEMPORARY;
+  double _850;
   double _851;
-  double _851__PHI_TEMPORARY;
   double _852;
-  double _852__PHI_TEMPORARY;
   double _853;
-  double _853__PHI_TEMPORARY;
   double _854;
-  double _854__PHI_TEMPORARY;
-  uint64_t _855;
+  double _855;
   double _856;
-  double _857;
+  void* _857;
   double _858;
   double _859;
   double _860;
   double _861;
   double _862;
-  double _863;
+  uint64_t _863;
+  uint64_t _863__PHI_TEMPORARY;
   double _864;
+  double _864__PHI_TEMPORARY;
   double _865;
+  double _865__PHI_TEMPORARY;
   double _866;
+  double _866__PHI_TEMPORARY;
   double _867;
-  void* _868;
+  double _867__PHI_TEMPORARY;
+  uint64_t _868;
   double _869;
   double _870;
   double _871;
-  uint64_t _872;
-  uint64_t _872__PHI_TEMPORARY;
+  double _872;
   double _873;
-  double _873__PHI_TEMPORARY;
   double _874;
-  double _874__PHI_TEMPORARY;
   double _875;
-  double _875__PHI_TEMPORARY;
   double _876;
-  double _876__PHI_TEMPORARY;
-  uint64_t _877;
+  double _877;
   double _878;
   double _879;
   double _880;
-  double _881;
+  void* _881;
   double _882;
   double _883;
   double _884;
-  double _885;
+  uint64_t _885;
+  uint64_t _885__PHI_TEMPORARY;
   double _886;
+  double _886__PHI_TEMPORARY;
   double _887;
+  double _887__PHI_TEMPORARY;
   double _888;
+  double _888__PHI_TEMPORARY;
   double _889;
-  double _890;
+  double _889__PHI_TEMPORARY;
+  uint64_t _890;
   double _891;
   double _892;
   double _893;
   double _894;
   double _895;
-  double _895__PHI_TEMPORARY;
   double _896;
-  double _896__PHI_TEMPORARY;
   double _897;
-  double _897__PHI_TEMPORARY;
   double _898;
-  double _898__PHI_TEMPORARY;
   double _899;
-  double _899__PHI_TEMPORARY;
   double _900;
   double _901;
   double _902;
   double _903;
-  double _903__PHI_TEMPORARY;
   double _904;
   double _905;
   double _906;
   double _907;
   double _908;
-  struct l_unnamed_2 _909;
-  struct l_unnamed_1 _910;
+  double _908__PHI_TEMPORARY;
+  double _909;
+  double _909__PHI_TEMPORARY;
+  double _910;
+  double _910__PHI_TEMPORARY;
   double _911;
+  double _911__PHI_TEMPORARY;
   double _912;
+  double _912__PHI_TEMPORARY;
   double _913;
   double _914;
-  struct l_unnamed_1 _915;
+  double _915;
   double _916;
+  double _916__PHI_TEMPORARY;
   double _917;
   double _918;
   double _919;
   double _920;
-  double _920__PHI_TEMPORARY;
   double _921;
-  double _921__PHI_TEMPORARY;
   double _922;
-  double _922__PHI_TEMPORARY;
   double _923;
-  double _923__PHI_TEMPORARY;
   double _924;
-  double _924__PHI_TEMPORARY;
-  double _925;
+  uint64_t _925;
+  uint64_t _925__PHI_TEMPORARY;
   double _926;
+  double _926__PHI_TEMPORARY;
   double _927;
-  double _928;
+  double _927__PHI_TEMPORARY;
+  uint64_t _928;
   double _929;
-  double _929__PHI_TEMPORARY;
-
-  _769 = ((&((uint8_t*)(&_755))[((int64_t)128)]));
-  _770 = memset((&_755), 0, 256);
-  _771 = ((&((uint8_t*)(&_759))[((int64_t)128)]));
-  _772 = memset((&_759), 0, 256);
-  _773 = ((&((uint8_t*)(&_763))[((int64_t)128)]));
-  _774 = memset((&_763), 0, 256);
-  _775 =  /*tail*/ llvm_OC_fabs_OC_f64(_751);
-  _776 = llvm_select_f64((llvm_fcmp_olt(_751, 0)), -1, 1);
-  if ((llvm_fcmp_ugt(_752, 0))) {
-    goto _930;
-  } else {
-    _929__PHI_TEMPORARY = 0;   /* for PHI node */
-    goto _931;
-  }
-
-_930:
-  if (((llvm_fcmp_ogt(_775, 25)) | (llvm_fcmp_ogt(_752, 35)))) {
-    goto _932;
-  } else {
-    goto _933;
-  }
-
-_932:
-  _777 = _752 / _775;
-  _778 = -(_776);
-  _779 = _751 * _751;
-  _780 = (_778 * _752) / _779;
-  _781 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_777, _777, 1);
-  _782 =  /*tail*/ llvm_OC_sqrt_OC_f64(_781);
-  _783 = llvm_select_f64((llvm_fcmp_ueq(_781, 0)), 0, (((_777 * 2) * _780) / (_782 * 2)));
-  _784 =  /*tail*/ log(_777);
-  _785 = _782 + 1;
-  _786 =  /*tail*/ log(_785);
-  _787 = (_782 + _784) - _786;
-  _788 = 1 / _775;
-  _789 =  /*tail*/ llvm_OC_sqrt_OC_f64(_788);
-  _790 = _779 * 2;
-  _791 = _789 * 1.2533141373155001;
-  _792 = _787 * (-(_775));
-  _793 =  /*tail*/ exp(_792);
-  _794 =  /*tail*/ exp(_792);
-  _795 = _791 * _793;
-  _796 =  /*tail*/ llvm_OC_sqrt_OC_f64(_782);
-  _797 = llvm_select_f64((llvm_fcmp_ole(_775, _752)), _752, _775);
-  _798 = llvm_select_f64((llvm_fcmp_ole(_775, _752)), _775, _752);
-  _799 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_797, _797, (_798 * _798));
-  _800 =  /*tail*/ fwddiffeUk_poly_Kn((1 / _782), ((-(_783)) / _781), _775, _776, (_779 / _799), ((((_751 * 2) * _799) - (_790 * (((llvm_select_f64((llvm_fcmp_ole(_775, _752)), 0, _776)) * _797) + ((llvm_select_f64((llvm_fcmp_ole(_775, _752)), _776, 0)) * _798)))) / (_799 * _799)));
-  _801 = (((((((_794 * _791) * ((_787 * _778) - (((_783 + (_780 / _777)) - (_783 / _785)) * _775))) + (_793 * (llvm_select_f64((llvm_fcmp_ueq(_788, 0)), 0, ((_776 * -1.2533141373155001) / (_790 * _789)))))) * _796) - (_795 * (llvm_select_f64((llvm_fcmp_ueq(_782, 0)), 0, (_783 / (_796 * 2)))))) * ((_800.field0))) / _782) + (((_800.field1)) * (_795 / _796));
-  _929__PHI_TEMPORARY = _801;   /* for PHI node */
-  goto _931;
-
-_933:
-  if ((llvm_fcmp_olt((((_751 * _751) / 36) + 24), _752))) {
-    goto _934;
-  } else {
-    goto _935;
-  }
-
-_934:
-  _802 =  /*tail*/ exp((_752 * -0.5));
-  _803 = 1 / (_752 * 8);
-  _804 = _775 * 4;
-  _805 = (_803 * _776) * (_775 * 8);
-  _806__PHI_TEMPORARY = 1;   /* for PHI node */
-  _807__PHI_TEMPORARY = 0;   /* for PHI node */
-  _808__PHI_TEMPORARY = 0;   /* for PHI node */
-  _809__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _936;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_936:
-  _806 = _806__PHI_TEMPORARY;
-  _807 = _807__PHI_TEMPORARY;
-  _808 = _808__PHI_TEMPORARY;
-  _809 = _809__PHI_TEMPORARY;
-  _810 = llvm_add_u32(_809, 1);
-  _811 = llvm_add_u32((_810 << 1), -1);
-  _812 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_804, _775, (-((((double)(uint32_t)(llvm_mul_u32(_811, _811)))))));
-  _813 = ((double)(uint32_t)_810);
-  _814 = _803 * (_812 / _813);
-  _815 = _806 * _814;
-  _816 = (_814 * _807) + (((_805 * _813) * _806) / (_813 * _813));
-  _767 = _816;
-  _768 = _815;
-  _817 = _816 + _808;
-  fixderivative_isconverged((&_768), (&_767), (&_766), (&_765));
-  _818 = _766;
-  if ((llvm_select_bool((llvm_fcmp_olt(_818, 0)), 1, (_810 == 20u)))) {
-    goto _937;
-  } else {
-    _806__PHI_TEMPORARY = _815;   /* for PHI node */
-    _807__PHI_TEMPORARY = _816;   /* for PHI node */
-    _808__PHI_TEMPORARY = _817;   /* for PHI node */
-    _809__PHI_TEMPORARY = _810;   /* for PHI node */
-    goto _936;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_937:
-  _819 =  /*tail*/ sqrt((3.1415926535897931 / (_752 * 2)));
-  _820 = ((_802 * _802) * _817) * _819;
-  _929__PHI_TEMPORARY = _820;   /* for PHI node */
-  goto _931;
-
-_935:
-  _821 =  /*tail*/ llvm_OC_floor_OC_f64(_775);
-  if ((llvm_fcmp_ogt(_752, 1.5))) {
-    goto _938;
-  } else {
-    goto _939;
-  }
-
-_938:
-  if ((llvm_fcmp_olt(_775, 2))) {
-    goto _940;
-  } else {
-    goto _941;
-  }
-
-_940:
-  _761 = 0;
-  _822 = ((&((uint8_t*)(&_764))[((int64_t)128)]));
-  _823 = _775 * (_775 * 4);
-  _824 = (_775 * 8) * _776;
-  _825 = _752 * 8;
-  _826__PHI_TEMPORARY = 0;   /* for PHI node */
-  _827__PHI_TEMPORARY = 0;   /* for PHI node */
-  _828__PHI_TEMPORARY = 0;   /* for PHI node */
-  _829__PHI_TEMPORARY = 0;   /* for PHI node */
-  _830__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _942;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_942:
-  _826 = _826__PHI_TEMPORARY;
-  _827 = _827__PHI_TEMPORARY;
-  _828 = _828__PHI_TEMPORARY;
-  _829 = _829__PHI_TEMPORARY;
-  _830 = _830__PHI_TEMPORARY;
-  _831 = llvm_add_u64(_826, 1);
-  _832 = _828 + _830;
-  _833 = _829 + _827;
-  _834 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_826)])));
-  _835 = _825 * (((double)(uint32_t)(((uint32_t)_831))));
-  _836 = (_823 - _834) / _835;
-  _837 = _830 * _836;
-  _838 = (_836 * _829) + (((_824 * _835) * _830) / (_835 * _835));
-  *(double*)(((&((double*)(&_763))[((int64_t)_826)]))) = _833;
-  *(double*)(((&((double*)(&_764))[((int64_t)_826)]))) = _832;
-  *(double*)(((&((double*)_773)[((int64_t)_826)]))) = _838;
-  *(double*)(((&((double*)_822)[((int64_t)_826)]))) = _837;
-  if ((_831 == UINT64_C(16))) {
-    goto _943;
-  } else {
-    _826__PHI_TEMPORARY = _831;   /* for PHI node */
-    _827__PHI_TEMPORARY = _833;   /* for PHI node */
-    _828__PHI_TEMPORARY = _832;   /* for PHI node */
-    _829__PHI_TEMPORARY = _838;   /* for PHI node */
-    _830__PHI_TEMPORARY = _837;   /* for PHI node */
-    goto _942;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_943:
-  fixderivative_levin((&_762), (&_761), (&_764), (&_763));
-  _839 =  /*tail*/ sqrt((3.1415926535897931 / (_752 * 2)));
-  _840 = _761;
-  _841 =  /*tail*/ exp((-(_752)));
-  _842 = (_840 * _839) * _841;
-  _929__PHI_TEMPORARY = _842;   /* for PHI node */
-  goto _931;
-
-_941:
-  _843 = _775 - _821;
-  _757 = 0;
-  _758 = 0;
-  _844 = ((&((uint8_t*)(&_760))[((int64_t)128)]));
-  _845 = _843 * 4;
-  _846 = _776 * 4;
-  _847 = _843 * _845;
-  _848 = (_845 * _776) + (_846 * _843);
-  _849 = _752 * 8;
-  _850__PHI_TEMPORARY = 0;   /* for PHI node */
-  _851__PHI_TEMPORARY = 0;   /* for PHI node */
-  _852__PHI_TEMPORARY = 0;   /* for PHI node */
-  _853__PHI_TEMPORARY = 0;   /* for PHI node */
-  _854__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _944;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_944:
-  _850 = _850__PHI_TEMPORARY;
-  _851 = _851__PHI_TEMPORARY;
-  _852 = _852__PHI_TEMPORARY;
-  _853 = _853__PHI_TEMPORARY;
-  _854 = _854__PHI_TEMPORARY;
-  _855 = llvm_add_u64(_850, 1);
-  _856 = _852 + _854;
-  _857 = _853 + _851;
-  _858 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_850)])));
-  _859 = _849 * (((double)(uint32_t)(((uint32_t)_855))));
-  _860 = (_847 - _858) / _859;
-  _861 = _854 * _860;
-  _862 = (_860 * _853) + (((_859 * _848) * _854) / (_859 * _859));
-  *(double*)(((&((double*)(&_759))[((int64_t)_850)]))) = _857;
-  *(double*)(((&((double*)(&_760))[((int64_t)_850)]))) = _856;
-  *(double*)(((&((double*)_771)[((int64_t)_850)]))) = _862;
-  *(double*)(((&((double*)_844)[((int64_t)_850)]))) = _861;
-  if ((_855 == UINT64_C(16))) {
-    goto _945;
-  } else {
-    _850__PHI_TEMPORARY = _855;   /* for PHI node */
-    _851__PHI_TEMPORARY = _857;   /* for PHI node */
-    _852__PHI_TEMPORARY = _856;   /* for PHI node */
-    _853__PHI_TEMPORARY = _862;   /* for PHI node */
-    _854__PHI_TEMPORARY = _861;   /* for PHI node */
-    goto _944;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_945:
-  fixderivative_levin((&_758), (&_757), (&_760), (&_759));
-  _863 = 3.1415926535897931 / (_752 * 2);
-  _864 =  /*tail*/ sqrt(_863);
-  _865 = _757;
-  _866 = _758;
-  _867 = _843 + 1;
-  _753 = 0;
-  _754 = 0;
-  _868 = ((&((uint8_t*)(&_756))[((int64_t)128)]));
-  _869 = _867 * 4;
-  _870 = _867 * _869;
-  _871 = (_869 * _776) + (_867 * _846);
-  _872__PHI_TEMPORARY = 0;   /* for PHI node */
-  _873__PHI_TEMPORARY = 0;   /* for PHI node */
-  _874__PHI_TEMPORARY = 0;   /* for PHI node */
-  _875__PHI_TEMPORARY = 0;   /* for PHI node */
-  _876__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _946;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_946:
-  _872 = _872__PHI_TEMPORARY;
-  _873 = _873__PHI_TEMPORARY;
-  _874 = _874__PHI_TEMPORARY;
-  _875 = _875__PHI_TEMPORARY;
-  _876 = _876__PHI_TEMPORARY;
-  _877 = llvm_add_u64(_872, 1);
-  _878 = _874 + _876;
-  _879 = _875 + _873;
-  _880 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_872)])));
-  _881 = _849 * (((double)(uint32_t)(((uint32_t)_877))));
-  _882 = (_870 - _880) / _881;
-  _883 = _876 * _882;
-  _884 = (_882 * _875) + (((_881 * _871) * _876) / (_881 * _881));
-  *(double*)(((&((double*)(&_755))[((int64_t)_872)]))) = _879;
-  *(double*)(((&((double*)(&_756))[((int64_t)_872)]))) = _878;
-  *(double*)(((&((double*)_769)[((int64_t)_872)]))) = _884;
-  *(double*)(((&((double*)_868)[((int64_t)_872)]))) = _883;
-  if ((_877 == UINT64_C(16))) {
-    goto _947;
-  } else {
-    _872__PHI_TEMPORARY = _877;   /* for PHI node */
-    _873__PHI_TEMPORARY = _879;   /* for PHI node */
-    _874__PHI_TEMPORARY = _878;   /* for PHI node */
-    _875__PHI_TEMPORARY = _884;   /* for PHI node */
-    _876__PHI_TEMPORARY = _883;   /* for PHI node */
-    goto _946;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_947:
-  _885 = _865 * _864;
-  fixderivative_levin((&_754), (&_753), (&_756), (&_755));
-  _886 =  /*tail*/ sqrt(_863);
-  _887 = 2 / _752;
-  _888 = _775 + 0.5;
-  if ((llvm_fcmp_ogt(_888, _867))) {
-    goto _948;
-  } else {
-    _903__PHI_TEMPORARY = _885;   /* for PHI node */
-    goto _949;
-  }
-
-_948:
-  _889 = _754;
-  _890 = _753;
-  _891 = _864 * _866;
-  _892 = _886 * _889;
-  _893 = _890 * _886;
-  _894 = _776 * _887;
-  _895__PHI_TEMPORARY = _893;   /* for PHI node */
-  _896__PHI_TEMPORARY = _892;   /* for PHI node */
-  _897__PHI_TEMPORARY = _885;   /* for PHI node */
-  _898__PHI_TEMPORARY = _891;   /* for PHI node */
-  _899__PHI_TEMPORARY = _867;   /* for PHI node */
-  goto _950;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_950:
-  _895 = _895__PHI_TEMPORARY;
-  _896 = _896__PHI_TEMPORARY;
-  _897 = _897__PHI_TEMPORARY;
-  _898 = _898__PHI_TEMPORARY;
-  _899 = _899__PHI_TEMPORARY;
-  _900 = _887 * _899;
-  _901 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_900, _896, _898);
-  _902 = _899 + 1;
-  if ((llvm_fcmp_olt(_902, _888))) {
-    _895__PHI_TEMPORARY = ((_897 + (_894 * _896)) + (_900 * _895));   /* for PHI node */
-    _896__PHI_TEMPORARY = _901;   /* for PHI node */
-    _897__PHI_TEMPORARY = _895;   /* for PHI node */
-    _898__PHI_TEMPORARY = _896;   /* for PHI node */
-    _899__PHI_TEMPORARY = _902;   /* for PHI node */
-    goto _950;
-  } else {
-    _903__PHI_TEMPORARY = _895;   /* for PHI node */
-    goto _949;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_949:
-  _903 = _903__PHI_TEMPORARY;
-  _904 =  /*tail*/ exp((-(_752)));
-  _905 = _904 * _903;
-  _929__PHI_TEMPORARY = _905;   /* for PHI node */
-  goto _931;
-
-_939:
-  _906 = round(_775);
-  _907 =  /*tail*/ llvm_OC_fabs_OC_f64((_775 - _906));
-  if ((llvm_fcmp_olt(_907, 1.0000000000000001E-5))) {
-    goto _951;
-  } else {
-    goto _952;
-  }
-
-_951:
-  _908 = _775 - (llvm_select_f64((llvm_fcmp_ogt((_775 - _821), 0.5)), (_821 + -1), _821));
-  _909 =  /*tail*/ fwddiffebesselk_temme_series(_908, _776, _752);
-  _910 = (_909.field1);
-  _911 = (_910.field0);
-  _912 = _908 + 1;
-  _913 = 2 / _752;
-  _914 = _775 + 0.5;
-  if ((llvm_fcmp_ogt(_914, _912))) {
-    goto _953;
-  } else {
-    _929__PHI_TEMPORARY = _911;   /* for PHI node */
-    goto _931;
-  }
-
-_953:
-  _915 = (_909.field0);
-  _916 = (_915.field0);
-  _917 = (_915.field1);
-  _918 = (_910.field1);
-  _919 = _776 * _913;
-  _920__PHI_TEMPORARY = _918;   /* for PHI node */
-  _921__PHI_TEMPORARY = _917;   /* for PHI node */
-  _922__PHI_TEMPORARY = _911;   /* for PHI node */
-  _923__PHI_TEMPORARY = _916;   /* for PHI node */
-  _924__PHI_TEMPORARY = _912;   /* for PHI node */
-  goto _954;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_954:
-  _920 = _920__PHI_TEMPORARY;
-  _921 = _921__PHI_TEMPORARY;
-  _922 = _922__PHI_TEMPORARY;
-  _923 = _923__PHI_TEMPORARY;
-  _924 = _924__PHI_TEMPORARY;
-  _925 = _913 * _924;
-  _926 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_925, _921, _923);
-  _927 = _924 + 1;
-  if ((llvm_fcmp_olt(_927, _914))) {
-    _920__PHI_TEMPORARY = ((_922 + (_919 * _921)) + (_925 * _920));   /* for PHI node */
-    _921__PHI_TEMPORARY = _926;   /* for PHI node */
-    _922__PHI_TEMPORARY = _920;   /* for PHI node */
-    _923__PHI_TEMPORARY = _921;   /* for PHI node */
-    _924__PHI_TEMPORARY = _927;   /* for PHI node */
-    goto _954;
-  } else {
-    _929__PHI_TEMPORARY = _920;   /* for PHI node */
-    goto _931;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_952:
-  _928 =  /*tail*/ fwddiffebesselk_power_series(_775, _776, _752);
-  _929__PHI_TEMPORARY = _928;   /* for PHI node */
-  goto _931;
-
-_931:
-  _929 = _929__PHI_TEMPORARY;
-  return _929;
-}
-
-
-double besselk_dx(double _955, double _956) {
-  double _957;    /* Address-exposed local */
-  double _958;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _959 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _960 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _961;    /* Address-exposed local */
-  double _962;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _963 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _964 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _965;    /* Address-exposed local */
-  double _966;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _967 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _968 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _969;    /* Address-exposed local */
-  double _970;    /* Address-exposed local */
-  double _971;    /* Address-exposed local */
-  double _972;    /* Address-exposed local */
-  void* _973;
-  void* _974;
-  void* _975;
-  void* _976;
-  void* _977;
-  void* _978;
+  double _930;
+  double _931;
+  uint64_t _932;
+  uint64_t _932__PHI_TEMPORARY;
+  double _933;
+  double _933__PHI_TEMPORARY;
+  double _934;
+  double _934__PHI_TEMPORARY;
+  uint64_t _935;
+  double _936;
+  double _937;
+  double _938;
+  uint64_t _939;
+  uint64_t _939__PHI_TEMPORARY;
+  double _940;
+  double _940__PHI_TEMPORARY;
+  double _941;
+  double _941__PHI_TEMPORARY;
+  uint64_t _942;
+  double _943;
+  double _944;
+  double _945;
+  double _946;
+  double _947;
+  double _948;
+  double _949;
+  void* _950;
+  double _951;
+  uint64_t _952;
+  uint64_t _952__PHI_TEMPORARY;
+  double _953;
+  double _953__PHI_TEMPORARY;
+  double _954;
+  double _954__PHI_TEMPORARY;
+  uint64_t _955;
+  double _956;
+  double _957;
+  double _958;
+  double _959;
+  double _960;
+  double _961;
+  double _962;
+  double _963;
+  double _964;
+  double _965;
+  uint64_t _966;
+  uint64_t _966__PHI_TEMPORARY;
+  double _967;
+  double _967__PHI_TEMPORARY;
+  double _968;
+  double _968__PHI_TEMPORARY;
+  uint64_t _969;
+  double _970;
+  double _971;
+  double _972;
+  double _973;
+  double _974;
+  double _975;
+  double _976;
+  uint64_t _977;
+  uint64_t _977__PHI_TEMPORARY;
+  double _978;
+  double _978__PHI_TEMPORARY;
   double _979;
-  double _980;
+  double _979__PHI_TEMPORARY;
+  uint64_t _980;
   double _981;
   double _982;
   double _983;
@@ -3487,36 +3111,43 @@ double besselk_dx(double _955, double _956) {
   double _992;
   double _993;
   double _994;
-  double _995;
+  uint32_t _995;
+  uint32_t _995__PHI_TEMPORARY;
   double _996;
+  double _996__PHI_TEMPORARY;
   double _997;
+  double _997__PHI_TEMPORARY;
   double _998;
+  double _998__PHI_TEMPORARY;
   double _999;
-  struct l_unnamed_1 _1000;
+  double _999__PHI_TEMPORARY;
+  double _1000;
+  double _1000__PHI_TEMPORARY;
   double _1001;
+  double _1001__PHI_TEMPORARY;
   double _1002;
+  double _1002__PHI_TEMPORARY;
   double _1003;
+  double _1003__PHI_TEMPORARY;
   double _1004;
+  double _1004__PHI_TEMPORARY;
   double _1005;
+  double _1005__PHI_TEMPORARY;
   double _1006;
+  double _1006__PHI_TEMPORARY;
   double _1007;
   double _1008;
   double _1009;
-  double _1009__PHI_TEMPORARY;
   double _1010;
-  double _1010__PHI_TEMPORARY;
-  uint32_t _1011;
-  uint32_t _1011__PHI_TEMPORARY;
+  double _1011;
   double _1012;
-  double _1012__PHI_TEMPORARY;
   double _1013;
-  double _1013__PHI_TEMPORARY;
-  uint32_t _1014;
-  uint32_t _1015;
+  double _1014;
+  double _1015;
   double _1016;
   double _1017;
   double _1018;
-  double _1019;
+  uint32_t _1019;
   double _1020;
   double _1021;
   double _1022;
@@ -3529,54 +3160,59 @@ double besselk_dx(double _955, double _956) {
   double _1029;
   double _1030;
   double _1031;
-  void* _1032;
+  double _1032;
   double _1033;
   double _1034;
-  uint64_t _1035;
-  uint64_t _1035__PHI_TEMPORARY;
+  double _1035;
   double _1036;
-  double _1036__PHI_TEMPORARY;
   double _1037;
-  double _1037__PHI_TEMPORARY;
   double _1038;
-  double _1038__PHI_TEMPORARY;
   double _1039;
   double _1039__PHI_TEMPORARY;
-  uint64_t _1040;
+  double _1040;
+  double _1040__PHI_TEMPORARY;
   double _1041;
+  double _1041__PHI_TEMPORARY;
   double _1042;
+  double _1042__PHI_TEMPORARY;
   double _1043;
+  double _1043__PHI_TEMPORARY;
   double _1044;
   double _1045;
   double _1046;
-  double _1047;
+  struct l_unnamed_1 _1047;
   double _1048;
   double _1049;
   double _1050;
   double _1051;
+  double _1051__PHI_TEMPORARY;
   double _1052;
-  double _1053;
+  double _1052__PHI_TEMPORARY;
+  uint32_t _1053;
+  uint32_t _1053__PHI_TEMPORARY;
   double _1054;
+  double _1054__PHI_TEMPORARY;
   double _1055;
+  double _1055__PHI_TEMPORARY;
   double _1056;
+  double _1056__PHI_TEMPORARY;
   double _1057;
+  double _1057__PHI_TEMPORARY;
   double _1058;
+  double _1058__PHI_TEMPORARY;
   double _1059;
+  double _1059__PHI_TEMPORARY;
   double _1060;
-  void* _1061;
+  double _1060__PHI_TEMPORARY;
+  uint32_t _1061;
   double _1062;
   double _1063;
-  uint64_t _1064;
-  uint64_t _1064__PHI_TEMPORARY;
+  double _1064;
   double _1065;
-  double _1065__PHI_TEMPORARY;
   double _1066;
-  double _1066__PHI_TEMPORARY;
   double _1067;
-  double _1067__PHI_TEMPORARY;
   double _1068;
-  double _1068__PHI_TEMPORARY;
-  uint64_t _1069;
+  double _1069;
   double _1070;
   double _1071;
   double _1072;
@@ -3594,638 +3230,871 @@ double besselk_dx(double _955, double _956) {
   double _1084;
   double _1085;
   double _1086;
-  void* _1087;
+  double _1087;
   double _1088;
-  uint64_t _1089;
-  uint64_t _1089__PHI_TEMPORARY;
+  double _1089;
   double _1090;
-  double _1090__PHI_TEMPORARY;
   double _1091;
-  double _1091__PHI_TEMPORARY;
   double _1092;
-  double _1092__PHI_TEMPORARY;
   double _1093;
-  double _1093__PHI_TEMPORARY;
-  uint64_t _1094;
-  double _1095;
-  double _1096;
-  double _1097;
-  double _1098;
-  double _1099;
-  double _1100;
-  double _1101;
-  double _1102;
-  double _1103;
-  double _1104;
-  double _1105;
-  double _1106;
-  double _1107;
-  double _1108;
-  double _1109;
-  double _1110;
-  double _1111;
-  double _1112;
-  double _1113;
-  double _1114;
-  double _1115;
-  double _1115__PHI_TEMPORARY;
-  double _1116;
-  double _1116__PHI_TEMPORARY;
-  double _1117;
-  double _1117__PHI_TEMPORARY;
-  double _1118;
-  double _1118__PHI_TEMPORARY;
-  double _1119;
-  double _1119__PHI_TEMPORARY;
-  double _1120;
-  double _1121;
-  double _1122;
-  double _1123;
-  double _1123__PHI_TEMPORARY;
-  double _1124;
-  double _1124__PHI_TEMPORARY;
-  double _1125;
-  double _1126;
-  double _1127;
-  double _1128;
-  double _1129;
-  double _1130;
-  double _1131;
-  struct l_unnamed_2 _1132;
-  struct l_unnamed_1 _1133;
-  double _1134;
-  double _1135;
-  double _1136;
-  double _1137;
-  struct l_unnamed_1 _1138;
-  double _1139;
-  double _1140;
-  double _1141;
-  double _1142;
-  double _1143;
-  double _1143__PHI_TEMPORARY;
-  double _1144;
-  double _1144__PHI_TEMPORARY;
-  double _1145;
-  double _1145__PHI_TEMPORARY;
-  double _1146;
-  double _1146__PHI_TEMPORARY;
-  double _1147;
-  double _1147__PHI_TEMPORARY;
-  double _1148;
-  double _1149;
-  double _1150;
-  double _1151;
-  double _1152;
-  double _1152__PHI_TEMPORARY;
+  double _1094;
+  double _1094__PHI_TEMPORARY;
 
-  _973 = ((&((uint8_t*)(&_959))[((int64_t)128)]));
-  _974 = memset((&_959), 0, 256);
-  _975 = ((&((uint8_t*)(&_963))[((int64_t)128)]));
-  _976 = memset((&_963), 0, 256);
-  _977 = ((&((uint8_t*)(&_967))[((int64_t)128)]));
-  _978 = memset((&_967), 0, 256);
-  _979 =  /*tail*/ llvm_OC_fabs_OC_f64(_955);
-  if ((llvm_fcmp_ugt(_956, 0))) {
-    goto _1153;
+  _782 = ((&((uint8_t*)(&_768))[((int64_t)128)]));
+  _783 = memset((&_768), 0, 256);
+  _784 = ((&((uint8_t*)(&_772))[((int64_t)128)]));
+  _785 = memset((&_772), 0, 256);
+  _786 = ((&((uint8_t*)(&_776))[((int64_t)128)]));
+  _787 = memset((&_776), 0, 256);
+  _788 =  /*tail*/ llvm_OC_fabs_OC_f64(_751);
+  _789 = llvm_select_f64((llvm_fcmp_olt(_751, 0)), -1, 1);
+  if ((llvm_fcmp_ugt(_752, 0))) {
+    goto _1095;
   } else {
-    _1152__PHI_TEMPORARY = 0;   /* for PHI node */
-    goto _1154;
+    _1094__PHI_TEMPORARY = 0;   /* for PHI node */
+    goto _1096;
   }
 
-_1153:
-  if (((llvm_fcmp_ogt(_979, 25)) | (llvm_fcmp_ogt(_956, 35)))) {
-    goto _1155;
+_1095:
+  if (((llvm_fcmp_ogt(_788, 25)) | (llvm_fcmp_ogt(_752, 35)))) {
+    goto _1097;
   } else {
-    goto _1156;
+    goto _1098;
   }
 
-_1155:
-  _980 = _956 / _979;
-  _981 = _955 * _955;
-  _982 = _979 / _981;
-  _983 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_980, _980, 1);
-  _984 =  /*tail*/ llvm_OC_sqrt_OC_f64(_983);
-  _985 = llvm_select_f64((llvm_fcmp_ueq(_983, 0)), 0, (((_980 * 2) * _982) / (_984 * 2)));
-  _986 =  /*tail*/ log(_980);
-  _987 = _984 + 1;
-  _988 =  /*tail*/ log(_987);
-  _989 =  /*tail*/ llvm_OC_sqrt_OC_f64((1 / _979));
-  _990 = _989 * 1.2533141373155001;
-  _991 = -(_979);
-  _992 = ((_984 + _986) - _988) * _991;
-  _993 =  /*tail*/ exp(_992);
-  _994 =  /*tail*/ exp(_992);
-  _995 = _990 * _993;
-  _996 =  /*tail*/ llvm_OC_sqrt_OC_f64(_984);
-  _997 = llvm_select_f64((llvm_fcmp_ole(_979, _956)), _956, _979);
-  _998 = llvm_select_f64((llvm_fcmp_ole(_979, _956)), _979, _956);
-  _999 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_997, _997, (_998 * _998));
-  _1000 =  /*tail*/ fwddiffeUk_poly_Kn_OC_3((1 / _984), ((-(_985)) / _983), _979, (_981 / _999), (((_981 * -2) * _956) / (_999 * _999)));
-  _1001 = (((((((_990 * _991) * _996) * ((_985 + (_982 / _980)) - (_985 / _987))) * _994) - (_995 * (llvm_select_f64((llvm_fcmp_ueq(_984, 0)), 0, (_985 / (_996 * 2)))))) * ((_1000.field0))) / _984) + (((_1000.field1)) * (_995 / _996));
-  _1152__PHI_TEMPORARY = _1001;   /* for PHI node */
-  goto _1154;
+_1097:
+  _790 = _752 / _788;
+  _791 = -(_789);
+  _792 = _751 * _751;
+  _793 = (_791 * _752) / _792;
+  _794 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_790, _790, 1);
+  _795 =  /*tail*/ llvm_OC_sqrt_OC_f64(_794);
+  _796 = llvm_select_f64((llvm_fcmp_ueq(_794, 0)), 0, (((_790 * 2) * _793) / (_795 * 2)));
+  _797 =  /*tail*/ log(_790);
+  _798 = _795 + 1;
+  _799 =  /*tail*/ log(_798);
+  _800 = (_795 + _797) - _799;
+  _801 = 1 / _788;
+  _802 =  /*tail*/ llvm_OC_sqrt_OC_f64(_801);
+  _803 = _792 * 2;
+  _804 = _802 * 1.2533141373155001;
+  _805 = _800 * (-(_788));
+  _806 =  /*tail*/ exp(_805);
+  _807 =  /*tail*/ exp(_805);
+  _808 = _804 * _806;
+  _809 =  /*tail*/ llvm_OC_sqrt_OC_f64(_795);
+  _810 = llvm_select_f64((llvm_fcmp_ole(_788, _752)), _752, _788);
+  _811 = llvm_select_f64((llvm_fcmp_ole(_788, _752)), _788, _752);
+  _812 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_810, _810, (_811 * _811));
+  _813 =  /*tail*/ fwddiffeUk_poly_Kn((1 / _795), ((-(_796)) / _794), _788, _789, (_792 / _812), ((((_751 * 2) * _812) - (_803 * (((llvm_select_f64((llvm_fcmp_ole(_788, _752)), 0, _789)) * _810) + ((llvm_select_f64((llvm_fcmp_ole(_788, _752)), _789, 0)) * _811)))) / (_812 * _812)));
+  _814 = (((((((_807 * _804) * ((_800 * _791) - (((_796 + (_793 / _790)) - (_796 / _798)) * _788))) + (_806 * (llvm_select_f64((llvm_fcmp_ueq(_801, 0)), 0, ((_789 * -1.2533141373155001) / (_803 * _802)))))) * _809) - (_808 * (llvm_select_f64((llvm_fcmp_ueq(_795, 0)), 0, (_796 / (_809 * 2)))))) * ((_813.field0))) / _795) + (((_813.field1)) * (_808 / _809));
+  _1094__PHI_TEMPORARY = _814;   /* for PHI node */
+  goto _1096;
 
-_1156:
-  if ((llvm_fcmp_olt((((_955 * _955) / 36) + 24), _956))) {
-    goto _1157;
+_1098:
+  if ((llvm_fcmp_olt((((_751 * _751) / 36) + 24), _752))) {
+    goto _1099;
   } else {
-    goto _1158;
+    goto _1100;
   }
 
-_1157:
-  _1002 = _956 * -0.5;
-  _1003 =  /*tail*/ exp(_1002);
-  _1004 =  /*tail*/ exp(_1002);
-  _1005 = _956 * 8;
-  _1006 = 1 / _1005;
-  _1007 = _979 * 4;
-  _1008 = 1 / (_1005 * _1005);
-  _1009__PHI_TEMPORARY = 1;   /* for PHI node */
-  _1010__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1011__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1012__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1013__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1159;
+_1099:
+  _815 =  /*tail*/ exp((_752 * -0.5));
+  _816 = 1 / (_752 * 8);
+  _817 = _788 * 4;
+  _818 = (_816 * _789) * (_788 * 8);
+  _819__PHI_TEMPORARY = 1;   /* for PHI node */
+  _820__PHI_TEMPORARY = 0;   /* for PHI node */
+  _821__PHI_TEMPORARY = 0;   /* for PHI node */
+  _822__PHI_TEMPORARY = 0;   /* for PHI node */
+  goto _1101;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_1159:
-  _1009 = _1009__PHI_TEMPORARY;
-  _1010 = _1010__PHI_TEMPORARY;
-  _1011 = _1011__PHI_TEMPORARY;
-  _1012 = _1012__PHI_TEMPORARY;
-  _1013 = _1013__PHI_TEMPORARY;
-  _1014 = llvm_add_u32(_1011, 1);
-  _1015 = llvm_add_u32((_1014 << 1), -1);
-  _1016 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1007, _979, (-((((double)(uint32_t)(llvm_mul_u32(_1015, _1015)))))));
-  _1017 = _1016 / (((double)(uint32_t)_1014));
-  _1018 = _1006 * _1017;
-  _1019 = _1009 * _1018;
-  _1020 = (_1018 * _1010) - (((_1009 * 8) * _1017) * _1008);
-  _971 = _1020;
-  _972 = _1019;
-  _1021 = _1013 + _1019;
-  _1022 = _1020 + _1012;
-  fixderivative_isconverged((&_972), (&_971), (&_970), (&_969));
-  _1023 = _970;
-  if ((llvm_select_bool((llvm_fcmp_olt(_1023, 0)), 1, (_1014 == 20u)))) {
-    goto _1160;
+_1101:
+  _819 = _819__PHI_TEMPORARY;
+  _820 = _820__PHI_TEMPORARY;
+  _821 = _821__PHI_TEMPORARY;
+  _822 = _822__PHI_TEMPORARY;
+  _823 = llvm_add_u32(_822, 1);
+  _824 = llvm_add_u32((_823 << 1), -1);
+  _825 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_817, _788, (-((((double)(uint32_t)(llvm_mul_u32(_824, _824)))))));
+  _826 = ((double)(uint32_t)_823);
+  _827 = _816 * (_825 / _826);
+  _828 = _819 * _827;
+  _829 = (_827 * _820) + (((_818 * _826) * _819) / (_826 * _826));
+  _780 = _829;
+  _781 = _828;
+  _830 = _829 + _821;
+  fixderivative_isconverged((&_781), (&_780), (&_779), (&_778));
+  _831 = _779;
+  if ((llvm_select_bool((llvm_fcmp_olt(_831, 0)), 1, (_823 == 20u)))) {
+    goto _1102;
   } else {
-    _1009__PHI_TEMPORARY = _1019;   /* for PHI node */
-    _1010__PHI_TEMPORARY = _1020;   /* for PHI node */
-    _1011__PHI_TEMPORARY = _1014;   /* for PHI node */
-    _1012__PHI_TEMPORARY = _1022;   /* for PHI node */
-    _1013__PHI_TEMPORARY = _1021;   /* for PHI node */
-    goto _1159;
+    _819__PHI_TEMPORARY = _828;   /* for PHI node */
+    _820__PHI_TEMPORARY = _829;   /* for PHI node */
+    _821__PHI_TEMPORARY = _830;   /* for PHI node */
+    _822__PHI_TEMPORARY = _823;   /* for PHI node */
+    goto _1101;
   }
 
   } while (1); /* end of syntactic loop '' */
-_1160:
-  _1024 = _1004 * -0.5;
-  _1025 = _956 * 2;
-  _1026 = 3.1415926535897931 / _1025;
-  _1027 =  /*tail*/ sqrt(_1026);
-  _1028 =  /*tail*/ sqrt(_1026);
-  _1029 = _1021 * _1027;
-  _1030 = ((((((llvm_select_f64((llvm_fcmp_ueq(_1026, 0)), 0, (-6.2831853071795862 / (((_956 * 4) * _1025) * _1028)))) * _1021) + (_1027 * _1022)) * _1003) + (_1029 * _1024)) * _1003) + ((_1003 * _1029) * _1024);
-  _1152__PHI_TEMPORARY = _1030;   /* for PHI node */
-  goto _1154;
+_1102:
+  _832 =  /*tail*/ sqrt((3.1415926535897931 / (_752 * 2)));
+  _833 = ((_815 * _815) * _830) * _832;
+  _1094__PHI_TEMPORARY = _833;   /* for PHI node */
+  goto _1096;
 
-_1158:
-  _1031 =  /*tail*/ llvm_OC_floor_OC_f64(_979);
-  if ((llvm_fcmp_ogt(_956, 1.5))) {
-    goto _1161;
+_1100:
+  _834 =  /*tail*/ llvm_OC_floor_OC_f64(_788);
+  if ((llvm_fcmp_ogt(_752, 1.5))) {
+    goto _1103;
   } else {
-    goto _1162;
+    goto _1104;
   }
 
-_1161:
-  if ((llvm_fcmp_olt(_979, 2))) {
-    goto _1163;
+_1103:
+  if ((llvm_fcmp_olt(_788, 2))) {
+    goto _1105;
   } else {
-    goto _1164;
+    goto _1106;
   }
 
-_1163:
-  _965 = 0;
-  _966 = 0;
-  _1032 = ((&((uint8_t*)(&_968))[((int64_t)128)]));
-  _1033 = _979 * (_979 * 4);
-  _1034 = _956 * 8;
-  _1035__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1036__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1037__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1038__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1039__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1165;
+_1105:
+  _774 = 0;
+  _835 = ((&((uint8_t*)(&_777))[((int64_t)128)]));
+  _836 = _788 * (_788 * 4);
+  _837 = (_788 * 8) * _789;
+  _838 = _752 * 8;
+  _839__PHI_TEMPORARY = 0;   /* for PHI node */
+  _840__PHI_TEMPORARY = 0;   /* for PHI node */
+  _841__PHI_TEMPORARY = 0;   /* for PHI node */
+  _842__PHI_TEMPORARY = 0;   /* for PHI node */
+  _843__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1107;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_1165:
-  _1035 = _1035__PHI_TEMPORARY;
-  _1036 = _1036__PHI_TEMPORARY;
-  _1037 = _1037__PHI_TEMPORARY;
-  _1038 = _1038__PHI_TEMPORARY;
+_1107:
+  _839 = _839__PHI_TEMPORARY;
+  _840 = _840__PHI_TEMPORARY;
+  _841 = _841__PHI_TEMPORARY;
+  _842 = _842__PHI_TEMPORARY;
+  _843 = _843__PHI_TEMPORARY;
+  _844 = llvm_add_u64(_839, 1);
+  _845 = _841 + _843;
+  _846 = _842 + _840;
+  _847 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_839)])));
+  _848 = _838 * (((double)(uint32_t)(((uint32_t)_844))));
+  _849 = (_836 - _847) / _848;
+  _850 = _843 * _849;
+  _851 = (_849 * _842) + (((_837 * _848) * _843) / (_848 * _848));
+  *(double*)(((&((double*)(&_776))[((int64_t)_839)]))) = _846;
+  *(double*)(((&((double*)(&_777))[((int64_t)_839)]))) = _845;
+  *(double*)(((&((double*)_786)[((int64_t)_839)]))) = _851;
+  *(double*)(((&((double*)_835)[((int64_t)_839)]))) = _850;
+  if ((_844 == UINT64_C(16))) {
+    goto _1108;
+  } else {
+    _839__PHI_TEMPORARY = _844;   /* for PHI node */
+    _840__PHI_TEMPORARY = _846;   /* for PHI node */
+    _841__PHI_TEMPORARY = _845;   /* for PHI node */
+    _842__PHI_TEMPORARY = _851;   /* for PHI node */
+    _843__PHI_TEMPORARY = _850;   /* for PHI node */
+    goto _1107;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1108:
+  fixderivative_levin((&_775), (&_774), (&_777), (&_776));
+  _852 =  /*tail*/ sqrt((3.1415926535897931 / (_752 * 2)));
+  _853 = _774;
+  _854 =  /*tail*/ exp((-(_752)));
+  _855 = (_853 * _852) * _854;
+  _1094__PHI_TEMPORARY = _855;   /* for PHI node */
+  goto _1096;
+
+_1106:
+  _856 = _788 - _834;
+  _770 = 0;
+  _771 = 0;
+  _857 = ((&((uint8_t*)(&_773))[((int64_t)128)]));
+  _858 = _856 * 4;
+  _859 = _789 * 4;
+  _860 = _856 * _858;
+  _861 = (_858 * _789) + (_859 * _856);
+  _862 = _752 * 8;
+  _863__PHI_TEMPORARY = 0;   /* for PHI node */
+  _864__PHI_TEMPORARY = 0;   /* for PHI node */
+  _865__PHI_TEMPORARY = 0;   /* for PHI node */
+  _866__PHI_TEMPORARY = 0;   /* for PHI node */
+  _867__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1109;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1109:
+  _863 = _863__PHI_TEMPORARY;
+  _864 = _864__PHI_TEMPORARY;
+  _865 = _865__PHI_TEMPORARY;
+  _866 = _866__PHI_TEMPORARY;
+  _867 = _867__PHI_TEMPORARY;
+  _868 = llvm_add_u64(_863, 1);
+  _869 = _865 + _867;
+  _870 = _866 + _864;
+  _871 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_863)])));
+  _872 = _862 * (((double)(uint32_t)(((uint32_t)_868))));
+  _873 = (_860 - _871) / _872;
+  _874 = _867 * _873;
+  _875 = (_873 * _866) + (((_872 * _861) * _867) / (_872 * _872));
+  *(double*)(((&((double*)(&_772))[((int64_t)_863)]))) = _870;
+  *(double*)(((&((double*)(&_773))[((int64_t)_863)]))) = _869;
+  *(double*)(((&((double*)_784)[((int64_t)_863)]))) = _875;
+  *(double*)(((&((double*)_857)[((int64_t)_863)]))) = _874;
+  if ((_868 == UINT64_C(16))) {
+    goto _1110;
+  } else {
+    _863__PHI_TEMPORARY = _868;   /* for PHI node */
+    _864__PHI_TEMPORARY = _870;   /* for PHI node */
+    _865__PHI_TEMPORARY = _869;   /* for PHI node */
+    _866__PHI_TEMPORARY = _875;   /* for PHI node */
+    _867__PHI_TEMPORARY = _874;   /* for PHI node */
+    goto _1109;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1110:
+  fixderivative_levin((&_771), (&_770), (&_773), (&_772));
+  _876 = 3.1415926535897931 / (_752 * 2);
+  _877 =  /*tail*/ sqrt(_876);
+  _878 = _770;
+  _879 = _771;
+  _880 = _856 + 1;
+  _766 = 0;
+  _767 = 0;
+  _881 = ((&((uint8_t*)(&_769))[((int64_t)128)]));
+  _882 = _880 * 4;
+  _883 = _880 * _882;
+  _884 = (_882 * _789) + (_880 * _859);
+  _885__PHI_TEMPORARY = 0;   /* for PHI node */
+  _886__PHI_TEMPORARY = 0;   /* for PHI node */
+  _887__PHI_TEMPORARY = 0;   /* for PHI node */
+  _888__PHI_TEMPORARY = 0;   /* for PHI node */
+  _889__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1111;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1111:
+  _885 = _885__PHI_TEMPORARY;
+  _886 = _886__PHI_TEMPORARY;
+  _887 = _887__PHI_TEMPORARY;
+  _888 = _888__PHI_TEMPORARY;
+  _889 = _889__PHI_TEMPORARY;
+  _890 = llvm_add_u64(_885, 1);
+  _891 = _887 + _889;
+  _892 = _888 + _886;
+  _893 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_885)])));
+  _894 = _862 * (((double)(uint32_t)(((uint32_t)_890))));
+  _895 = (_883 - _893) / _894;
+  _896 = _889 * _895;
+  _897 = (_895 * _888) + (((_894 * _884) * _889) / (_894 * _894));
+  *(double*)(((&((double*)(&_768))[((int64_t)_885)]))) = _892;
+  *(double*)(((&((double*)(&_769))[((int64_t)_885)]))) = _891;
+  *(double*)(((&((double*)_782)[((int64_t)_885)]))) = _897;
+  *(double*)(((&((double*)_881)[((int64_t)_885)]))) = _896;
+  if ((_890 == UINT64_C(16))) {
+    goto _1112;
+  } else {
+    _885__PHI_TEMPORARY = _890;   /* for PHI node */
+    _886__PHI_TEMPORARY = _892;   /* for PHI node */
+    _887__PHI_TEMPORARY = _891;   /* for PHI node */
+    _888__PHI_TEMPORARY = _897;   /* for PHI node */
+    _889__PHI_TEMPORARY = _896;   /* for PHI node */
+    goto _1111;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1112:
+  _898 = _878 * _877;
+  fixderivative_levin((&_767), (&_766), (&_769), (&_768));
+  _899 =  /*tail*/ sqrt(_876);
+  _900 = 2 / _752;
+  _901 = _788 + 0.5;
+  if ((llvm_fcmp_ogt(_901, _880))) {
+    goto _1113;
+  } else {
+    _916__PHI_TEMPORARY = _898;   /* for PHI node */
+    goto _1114;
+  }
+
+_1113:
+  _902 = _767;
+  _903 = _766;
+  _904 = _877 * _879;
+  _905 = _899 * _902;
+  _906 = _903 * _899;
+  _907 = _789 * _900;
+  _908__PHI_TEMPORARY = _906;   /* for PHI node */
+  _909__PHI_TEMPORARY = _905;   /* for PHI node */
+  _910__PHI_TEMPORARY = _898;   /* for PHI node */
+  _911__PHI_TEMPORARY = _904;   /* for PHI node */
+  _912__PHI_TEMPORARY = _880;   /* for PHI node */
+  goto _1115;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1115:
+  _908 = _908__PHI_TEMPORARY;
+  _909 = _909__PHI_TEMPORARY;
+  _910 = _910__PHI_TEMPORARY;
+  _911 = _911__PHI_TEMPORARY;
+  _912 = _912__PHI_TEMPORARY;
+  _913 = _900 * _912;
+  _914 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_913, _909, _911);
+  _915 = _912 + 1;
+  if ((llvm_fcmp_olt(_915, _901))) {
+    _908__PHI_TEMPORARY = ((_910 + (_907 * _909)) + (_913 * _908));   /* for PHI node */
+    _909__PHI_TEMPORARY = _914;   /* for PHI node */
+    _910__PHI_TEMPORARY = _908;   /* for PHI node */
+    _911__PHI_TEMPORARY = _909;   /* for PHI node */
+    _912__PHI_TEMPORARY = _915;   /* for PHI node */
+    goto _1115;
+  } else {
+    _916__PHI_TEMPORARY = _908;   /* for PHI node */
+    goto _1114;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1114:
+  _916 = _916__PHI_TEMPORARY;
+  _917 =  /*tail*/ exp((-(_752)));
+  _918 = _917 * _916;
+  _1094__PHI_TEMPORARY = _918;   /* for PHI node */
+  goto _1096;
+
+_1104:
+  _919 = round(_788);
+  _920 =  /*tail*/ llvm_OC_fabs_OC_f64((_788 - _919));
+  if ((llvm_fcmp_olt(_920, 1.0000000000000001E-5))) {
+    goto _1116;
+  } else {
+    goto _1117;
+  }
+
+_1116:
+  _921 = _788 - (llvm_select_f64((llvm_fcmp_ogt((_788 - _834), 0.5)), (_834 + -1), _834));
+  *((double*)&_757) = 1;
+  *(double*)(((&((uint8_t*)(&_757))[((int64_t)8)]))) = 0.16666666666666666;
+  *(double*)(((&((uint8_t*)(&_757))[((int64_t)16)]))) = 0.0083333333333333332;
+  *(double*)(((&((uint8_t*)(&_757))[((int64_t)24)]))) = 1.9841269841269841E-4;
+  *(double*)(((&((uint8_t*)(&_757))[((int64_t)32)]))) = 2.7557319223985893E-6;
+  _922 =  /*tail*/ log(_752);
+  _923 = _921 * _921;
+  _924 = (_789 * 2) * _921;
+  _925__PHI_TEMPORARY = 0;   /* for PHI node */
+  _926__PHI_TEMPORARY = 0;   /* for PHI node */
+  _927__PHI_TEMPORARY = 1.9711021825948702;   /* for PHI node */
+  goto _1118;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1118:
+  _925 = _925__PHI_TEMPORARY;
+  _926 = _926__PHI_TEMPORARY;
+  _927 = _927__PHI_TEMPORARY;
+  _928 = llvm_add_u64(_925, 1);
+  _929 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_spcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _925)))])));
+  _930 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_923, _927, _929);
+  _931 = (_927 * _924) + (_926 * _923);
+  if ((_928 == UINT64_C(3))) {
+    _932__PHI_TEMPORARY = 0;   /* for PHI node */
+    _933__PHI_TEMPORARY = 0;   /* for PHI node */
+    _934__PHI_TEMPORARY = 0.042197734555544306;   /* for PHI node */
+    goto _1119;
+  } else {
+    _925__PHI_TEMPORARY = _928;   /* for PHI node */
+    _926__PHI_TEMPORARY = _931;   /* for PHI node */
+    _927__PHI_TEMPORARY = _930;   /* for PHI node */
+    goto _1118;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_1119:
+  _932 = _932__PHI_TEMPORARY;
+  _933 = _933__PHI_TEMPORARY;
+  _934 = _934__PHI_TEMPORARY;
+  _935 = llvm_add_u64(_932, 1);
+  _936 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g1coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _932)))])));
+  _937 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_923, _934, _936);
+  _938 = (_934 * _924) + (_933 * _923);
+  if ((_935 == UINT64_C(2))) {
+    _939__PHI_TEMPORARY = 0;   /* for PHI node */
+    _940__PHI_TEMPORARY = 0;   /* for PHI node */
+    _941__PHI_TEMPORARY = 0.16653861138229145;   /* for PHI node */
+    goto _1120;
+  } else {
+    _932__PHI_TEMPORARY = _935;   /* for PHI node */
+    _933__PHI_TEMPORARY = _938;   /* for PHI node */
+    _934__PHI_TEMPORARY = _937;   /* for PHI node */
+    goto _1119;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_1120:
+  _939 = _939__PHI_TEMPORARY;
+  _940 = _940__PHI_TEMPORARY;
+  _941 = _941__PHI_TEMPORARY;
+  _942 = llvm_add_u64(_939, 1);
+  _943 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _939)))])));
+  _944 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_923, _941, _943);
+  _945 = (_941 * _924) + (_940 * _923);
+  if ((_942 == UINT64_C(2))) {
+    goto _1121;
+  } else {
+    _939__PHI_TEMPORARY = _942;   /* for PHI node */
+    _940__PHI_TEMPORARY = _945;   /* for PHI node */
+    _941__PHI_TEMPORARY = _944;   /* for PHI node */
+    goto _1120;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1121:
+  _946 = 0.69314718055994529 - _922;
+  _947 = _921 * _946;
+  _948 = _946 * _789;
+  _949 = _947 * _947;
+  _950 = ((&((uint8_t*)(&_757))[((int64_t)-8)]));
+  _951 = (_947 * 2) * _948;
+  _952__PHI_TEMPORARY = 0;   /* for PHI node */
+  _953__PHI_TEMPORARY = 0;   /* for PHI node */
+  _954__PHI_TEMPORARY = 2.7557319223985893E-6;   /* for PHI node */
+  goto _1122;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1122:
+  _952 = _952__PHI_TEMPORARY;
+  _953 = _953__PHI_TEMPORARY;
+  _954 = _954__PHI_TEMPORARY;
+  _955 = llvm_add_u64(_952, 1);
+  _956 = *(double*)(((&((double*)_950)[((int64_t)(llvm_sub_u64(4, _952)))])));
+  _957 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_949, _954, _956);
+  _958 = (_951 * _954) + (_953 * _949);
+  if ((_955 == UINT64_C(4))) {
+    goto _1123;
+  } else {
+    _952__PHI_TEMPORARY = _955;   /* for PHI node */
+    _953__PHI_TEMPORARY = _958;   /* for PHI node */
+    _954__PHI_TEMPORARY = _957;   /* for PHI node */
+    goto _1122;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1123:
+  _959 = _752 * 0.5;
+  _960 =  /*tail*/ cosh(_947);
+  _961 = ((_957 * _945) + (_958 * _944)) * _946;
+  _962 = _937 * _948;
+  _963 =  /*tail*/ pow(_959, _921);
+  _964 =  /*tail*/ pow(_959, _921);
+  _965 = log(_959);
+  _966__PHI_TEMPORARY = 0;   /* for PHI node */
+  _967__PHI_TEMPORARY = 0;   /* for PHI node */
+  _968__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
+  goto _1124;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1124:
+  _966 = _966__PHI_TEMPORARY;
+  _967 = _967__PHI_TEMPORARY;
+  _968 = _968__PHI_TEMPORARY;
+  _969 = llvm_add_u64(_966, 1);
+  _970 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _966)))])));
+  _971 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_921, _968, _970);
+  _972 = (_968 * _789) + (_967 * _921);
+  if ((_969 == UINT64_C(3))) {
+    goto _1125;
+  } else {
+    _966__PHI_TEMPORARY = _969;   /* for PHI node */
+    _967__PHI_TEMPORARY = _972;   /* for PHI node */
+    _968__PHI_TEMPORARY = _971;   /* for PHI node */
+    goto _1124;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1125:
+  _973 =  /*tail*/ sinh(_947);
+  _974 = _944 * _957;
+  _975 = ((_960 * _938) + _961) + (_962 * _973);
+  _976 = -(_921);
+  _977__PHI_TEMPORARY = 0;   /* for PHI node */
+  _978__PHI_TEMPORARY = 0;   /* for PHI node */
+  _979__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
+  goto _1126;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1126:
+  _977 = _977__PHI_TEMPORARY;
+  _978 = _978__PHI_TEMPORARY;
+  _979 = _979__PHI_TEMPORARY;
+  _980 = llvm_add_u64(_977, 1);
+  _981 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _977)))])));
+  _982 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_976, _979, _981);
+  _983 = (_978 * _976) - (_979 * _789);
+  if ((_980 == UINT64_C(3))) {
+    goto _1127;
+  } else {
+    _977__PHI_TEMPORARY = _980;   /* for PHI node */
+    _978__PHI_TEMPORARY = _983;   /* for PHI node */
+    _979__PHI_TEMPORARY = _982;   /* for PHI node */
+    goto _1126;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1127:
+  _984 = _963 * 2;
+  _985 = _959 * _959;
+  _986 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_937, _960, (_946 * _974));
+  _987 = (_965 * _789) * _964;
+  _988 = _930 * _986;
+  _989 = (_975 * _930) + (_986 * _931);
+  _990 = _971 / _984;
+  _991 = ((_972 * _984) - ((_987 * 2) * _971)) / (_984 * _984);
+  _992 = (_963 * _982) * 0.5;
+  _993 = ((_982 * _987) + (_983 * _963)) * 0.5;
+  _994 = (_976 - _921) * _789;
+  _995__PHI_TEMPORARY = 0;   /* for PHI node */
+  _996__PHI_TEMPORARY = 0;   /* for PHI node */
+  _997__PHI_TEMPORARY = 0;   /* for PHI node */
+  _998__PHI_TEMPORARY = 0;   /* for PHI node */
+  _999__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1000__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1001__PHI_TEMPORARY = _993;   /* for PHI node */
+  _1002__PHI_TEMPORARY = _992;   /* for PHI node */
+  _1003__PHI_TEMPORARY = _991;   /* for PHI node */
+  _1004__PHI_TEMPORARY = _990;   /* for PHI node */
+  _1005__PHI_TEMPORARY = _989;   /* for PHI node */
+  _1006__PHI_TEMPORARY = _988;   /* for PHI node */
+  goto _1128;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1128:
+  _995 = _995__PHI_TEMPORARY;
+  _996 = _996__PHI_TEMPORARY;
+  _997 = _997__PHI_TEMPORARY;
+  _998 = _998__PHI_TEMPORARY;
+  _999 = _999__PHI_TEMPORARY;
+  _1000 = _1000__PHI_TEMPORARY;
+  _1001 = _1001__PHI_TEMPORARY;
+  _1002 = _1002__PHI_TEMPORARY;
+  _1003 = _1003__PHI_TEMPORARY;
+  _1004 = _1004__PHI_TEMPORARY;
+  _1005 = _1005__PHI_TEMPORARY;
+  _1006 = _1006__PHI_TEMPORARY;
+  _1007 = _1000 * _1006;
+  _1008 = _1005 * _1000;
+  _758 = _1008;
+  _759 = _1007;
+  _1009 = ((double)(uint32_t)_995);
+  _1010 =  /*tail*/ llvm_OC_fmuladd_OC_f64((-(_1009)), _1006, _1004);
+  _1011 = _1000 * _1010;
+  _1012 = (_1003 - (_1005 * _1009)) * _1000;
+  _760 = _1012;
+  _761 = _1011;
+  _1013 = _999 + _1007;
+  _1014 = _1008 + _998;
+  _1015 = _997 + _1011;
+  _1016 = _1012 + _996;
+  fixderivative_isconverged((&_759), (&_758), (&_763), (&_762));
+  fixderivative_isconverged_OC_1((&_761), (&_760), (&_765), (&_764));
+  _1017 = _763;
+  _1018 = _765;
+  if ((llvm_select_bool((llvm_fcmp_olt(_1017, 0)), (llvm_fcmp_olt(_1018, 0)), 0))) {
+    goto _1129;
+  } else {
+    goto _1130;
+  }
+
+_1130:
+  _1019 = llvm_add_u32(_995, 1);
+  _1020 = ((double)(uint32_t)_1019);
+  _1021 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1020, _1006, _1004);
+  _1022 = _1002 + _1021;
+  _1023 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_976, _921, (((double)(uint32_t)(llvm_mul_u32(_1019, _1019)))));
+  _1024 = _1022 / _1023;
+  _1025 = ((((_1003 + _1001) + (_1005 * _1020)) * _1023) - (_994 * _1022)) / (_1023 * _1023);
+  _1026 = _1020 - _921;
+  _1027 = _1004 / _1026;
+  _1028 = ((_1004 * _789) + (_1003 * _1026)) / (_1026 * _1026);
+  _1029 = _921 + _1020;
+  _1030 = _1002 / _1029;
+  _1031 = ((_1001 * _1029) - (_1002 * _789)) / (_1029 * _1029);
+  _1032 = (_985 / _1020) * _1000;
+  if ((_1019 == 500u)) {
+    goto _1129;
+  } else {
+    _995__PHI_TEMPORARY = _1019;   /* for PHI node */
+    _996__PHI_TEMPORARY = _1016;   /* for PHI node */
+    _997__PHI_TEMPORARY = _1015;   /* for PHI node */
+    _998__PHI_TEMPORARY = _1014;   /* for PHI node */
+    _999__PHI_TEMPORARY = _1013;   /* for PHI node */
+    _1000__PHI_TEMPORARY = _1032;   /* for PHI node */
+    _1001__PHI_TEMPORARY = _1031;   /* for PHI node */
+    _1002__PHI_TEMPORARY = _1030;   /* for PHI node */
+    _1003__PHI_TEMPORARY = _1028;   /* for PHI node */
+    _1004__PHI_TEMPORARY = _1027;   /* for PHI node */
+    _1005__PHI_TEMPORARY = _1025;   /* for PHI node */
+    _1006__PHI_TEMPORARY = _1024;   /* for PHI node */
+    goto _1128;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1129:
+  _1033 = _921 + 1;
+  _1034 = 2 / _752;
+  _1035 = _788 + 0.5;
+  if ((llvm_fcmp_ogt(_1035, _1033))) {
+    goto _1131;
+  } else {
+    _1094__PHI_TEMPORARY = _1014;   /* for PHI node */
+    goto _1096;
+  }
+
+_1131:
+  _1036 = (_1016 * _959) / _985;
+  _1037 = _1015 / _959;
+  _1038 = _789 * _1034;
+  _1039__PHI_TEMPORARY = _1036;   /* for PHI node */
+  _1040__PHI_TEMPORARY = _1037;   /* for PHI node */
+  _1041__PHI_TEMPORARY = _1014;   /* for PHI node */
+  _1042__PHI_TEMPORARY = _1013;   /* for PHI node */
+  _1043__PHI_TEMPORARY = _1033;   /* for PHI node */
+  goto _1132;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1132:
   _1039 = _1039__PHI_TEMPORARY;
-  _1040 = llvm_add_u64(_1035, 1);
-  _1041 = _1037 + _1039;
-  _1042 = _1038 + _1036;
-  _1043 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1035)])));
-  _1044 = _1033 - _1043;
-  _1045 = ((double)(uint32_t)(((uint32_t)_1040)));
-  _1046 = _1034 * _1045;
-  _1047 = _1044 / _1046;
-  _1048 = _1039 * _1047;
-  _1049 = (_1047 * _1038) - ((((_1045 * 8) * _1039) * _1044) / (_1046 * _1046));
-  *(double*)(((&((double*)(&_967))[((int64_t)_1035)]))) = _1042;
-  *(double*)(((&((double*)(&_968))[((int64_t)_1035)]))) = _1041;
-  *(double*)(((&((double*)_977)[((int64_t)_1035)]))) = _1049;
-  *(double*)(((&((double*)_1032)[((int64_t)_1035)]))) = _1048;
-  if ((_1040 == UINT64_C(16))) {
-    goto _1166;
+  _1040 = _1040__PHI_TEMPORARY;
+  _1041 = _1041__PHI_TEMPORARY;
+  _1042 = _1042__PHI_TEMPORARY;
+  _1043 = _1043__PHI_TEMPORARY;
+  _1044 = _1034 * _1043;
+  _1045 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1044, _1040, _1042);
+  _1046 = _1043 + 1;
+  if ((llvm_fcmp_olt(_1046, _1035))) {
+    _1039__PHI_TEMPORARY = ((_1041 + (_1038 * _1040)) + (_1044 * _1039));   /* for PHI node */
+    _1040__PHI_TEMPORARY = _1045;   /* for PHI node */
+    _1041__PHI_TEMPORARY = _1039;   /* for PHI node */
+    _1042__PHI_TEMPORARY = _1040;   /* for PHI node */
+    _1043__PHI_TEMPORARY = _1046;   /* for PHI node */
+    goto _1132;
   } else {
-    _1035__PHI_TEMPORARY = _1040;   /* for PHI node */
-    _1036__PHI_TEMPORARY = _1042;   /* for PHI node */
-    _1037__PHI_TEMPORARY = _1041;   /* for PHI node */
-    _1038__PHI_TEMPORARY = _1049;   /* for PHI node */
-    _1039__PHI_TEMPORARY = _1048;   /* for PHI node */
-    goto _1165;
+    _1094__PHI_TEMPORARY = _1039;   /* for PHI node */
+    goto _1096;
   }
 
   } while (1); /* end of syntactic loop '' */
-_1166:
-  fixderivative_levin((&_966), (&_965), (&_968), (&_967));
-  _1050 = _956 * 2;
-  _1051 = 3.1415926535897931 / _1050;
-  _1052 =  /*tail*/ sqrt(_1051);
-  _1053 =  /*tail*/ sqrt(_1051);
-  _1054 = _965;
-  _1055 = _966;
-  _1056 = -(_956);
-  _1057 =  /*tail*/ exp(_1056);
-  _1058 =  /*tail*/ exp(_1056);
-  _1059 = ((((llvm_select_f64((llvm_fcmp_ueq(_1051, 0)), 0, (-6.2831853071795862 / (((_956 * 4) * _1050) * _1053)))) * _1055) + (_1054 * _1052)) * _1057) - (_1058 * (_1052 * _1055));
-  _1152__PHI_TEMPORARY = _1059;   /* for PHI node */
-  goto _1154;
-
-_1164:
-  _1060 = _979 - _1031;
-  _961 = 0;
-  _962 = 0;
-  _1061 = ((&((uint8_t*)(&_964))[((int64_t)128)]));
-  _1062 = _1060 * (_1060 * 4);
-  _1063 = _956 * 8;
-  _1064__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1065__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1066__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1067__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1068__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1167;
+_1117:
+  _1047 =  /*tail*/ fwddiffegamma(_788, _789);
+  _1048 =  /*tail*/ sinpi((0.5 - _788));
+  _1049 = _752 * _752;
+  _756 = 1;
+  _1050 = _1049 * _789;
+  _1051__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1052__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1053__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1054__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1055__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1056__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1057__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1058__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1059__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1060__PHI_TEMPORARY = 4;   /* for PHI node */
+  goto _1133;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_1167:
-  _1064 = _1064__PHI_TEMPORARY;
-  _1065 = _1065__PHI_TEMPORARY;
-  _1066 = _1066__PHI_TEMPORARY;
-  _1067 = _1067__PHI_TEMPORARY;
-  _1068 = _1068__PHI_TEMPORARY;
-  _1069 = llvm_add_u64(_1064, 1);
-  _1070 = _1066 + _1068;
-  _1071 = _1067 + _1065;
-  _1072 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1064)])));
-  _1073 = _1062 - _1072;
-  _1074 = ((double)(uint32_t)(((uint32_t)_1069)));
-  _1075 = _1063 * _1074;
-  _1076 = _1073 / _1075;
-  _1077 = _1068 * _1076;
-  _1078 = (_1076 * _1067) - ((((_1074 * 8) * _1068) * _1073) / (_1075 * _1075));
-  *(double*)(((&((double*)(&_963))[((int64_t)_1064)]))) = _1071;
-  *(double*)(((&((double*)(&_964))[((int64_t)_1064)]))) = _1070;
-  *(double*)(((&((double*)_975)[((int64_t)_1064)]))) = _1078;
-  *(double*)(((&((double*)_1061)[((int64_t)_1064)]))) = _1077;
-  if ((_1069 == UINT64_C(16))) {
-    goto _1168;
+_1133:
+  _1051 = _1051__PHI_TEMPORARY;
+  _1052 = _1052__PHI_TEMPORARY;
+  _1053 = _1053__PHI_TEMPORARY;
+  _1054 = _1054__PHI_TEMPORARY;
+  _1055 = _1055__PHI_TEMPORARY;
+  _1056 = _1056__PHI_TEMPORARY;
+  _1057 = _1057__PHI_TEMPORARY;
+  _1058 = _1058__PHI_TEMPORARY;
+  _1059 = _1059__PHI_TEMPORARY;
+  _1060 = _1060__PHI_TEMPORARY;
+  _1061 = llvm_add_u32(_1053, 1);
+  _1062 = _1051 + _1055;
+  _1063 = _1054 + _1052;
+  _1064 = _1057 + _1059;
+  _1065 = _1058 + _1056;
+  _1066 = ((double)(uint32_t)_1061);
+  _1067 = (_1066 - _788) * _1060;
+  _1068 = _1049 / _1067;
+  _1069 = _1051 * _1068;
+  _1070 = _1060 * _1050;
+  _1071 = ((_1070 * _1051) / (_1067 * _1067)) + (_1068 * _1052);
+  _753 = _1071;
+  _754 = _1069;
+  fixderivative_isconverged((&_754), (&_753), (&_756), (&_755));
+  _1072 = _756;
+  if ((llvm_fcmp_olt(_1072, 0))) {
+    goto _1134;
   } else {
-    _1064__PHI_TEMPORARY = _1069;   /* for PHI node */
-    _1065__PHI_TEMPORARY = _1071;   /* for PHI node */
-    _1066__PHI_TEMPORARY = _1070;   /* for PHI node */
-    _1067__PHI_TEMPORARY = _1078;   /* for PHI node */
-    _1068__PHI_TEMPORARY = _1077;   /* for PHI node */
-    goto _1167;
+    goto _1135;
+  }
+
+_1135:
+  _1073 = (_788 + _1066) * _1060;
+  _1074 = _1049 / _1073;
+  _1075 = _1059 * _1074;
+  _1076 = (_1074 * _1058) - ((_1070 * _1059) / (_1073 * _1073));
+  _1077 = _1060 + 4;
+  if ((_1061 == 49u)) {
+    goto _1134;
+  } else {
+    _1051__PHI_TEMPORARY = _1069;   /* for PHI node */
+    _1052__PHI_TEMPORARY = _1071;   /* for PHI node */
+    _1053__PHI_TEMPORARY = _1061;   /* for PHI node */
+    _1054__PHI_TEMPORARY = _1063;   /* for PHI node */
+    _1055__PHI_TEMPORARY = _1062;   /* for PHI node */
+    _1056__PHI_TEMPORARY = _1065;   /* for PHI node */
+    _1057__PHI_TEMPORARY = _1064;   /* for PHI node */
+    _1058__PHI_TEMPORARY = _1076;   /* for PHI node */
+    _1059__PHI_TEMPORARY = _1075;   /* for PHI node */
+    _1060__PHI_TEMPORARY = _1077;   /* for PHI node */
+    goto _1133;
   }
 
   } while (1); /* end of syntactic loop '' */
-_1168:
-  fixderivative_levin((&_962), (&_961), (&_964), (&_963));
-  _1079 = _956 * 2;
-  _1080 = 3.1415926535897931 / _1079;
-  _1081 =  /*tail*/ sqrt(_1080);
-  _1082 =  /*tail*/ sqrt(_1080);
-  _1083 = -6.2831853071795862 / (((_956 * 4) * _1079) * _1082);
-  _1084 = _961;
-  _1085 = _962;
-  _1086 = _1060 + 1;
-  _957 = 0;
-  _958 = 0;
-  _1087 = ((&((uint8_t*)(&_960))[((int64_t)128)]));
-  _1088 = _1086 * (_1086 * 4);
-  _1089__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1090__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1091__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1092__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1093__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1169;
+_1134:
+  _1078 =  /*tail*/ sinpi((-(_788)));
+  _1079 = (_1047.field1);
+  _1080 = (_1047.field0);
+  _1081 = _1080 * _1078;
+  _1082 = _788 * _1081;
+  _1083 = 3.1415926535897931 / _1082;
+  _1084 = _752 * 0.5;
+  _1085 =  /*tail*/ pow(_1084, _788);
+  _1086 =  /*tail*/ pow(_1084, _788);
+  _1087 = log(_1084);
+  _1088 = (_1087 * _789) * _1086;
+  _1089 = _1085 * _1085;
+  _1090 = _1089 * _1083;
+  _1091 = _1085 * 2;
+  _1092 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1080, _1062, (_1064 * _1090));
+  _1093 = ((((((_1062 * _1079) + (_1063 * _1080)) + (_1090 * _1065)) + ((((_1083 * _1091) * _1088) - (((_1089 * 3.1415926535897931) * ((((_1078 * _1079) - (((_789 * 3.1415926535897962) * _1048) * _1080)) * _788) + (_1081 * _789))) / (_1082 * _1082))) * _1064)) * _1091) - ((_1088 * 2) * _1092)) / (_1091 * _1091);
+  _1094__PHI_TEMPORARY = _1093;   /* for PHI node */
+  goto _1096;
 
-  do {     /* Syntactic loop '' to make GCC happy */
-_1169:
-  _1089 = _1089__PHI_TEMPORARY;
-  _1090 = _1090__PHI_TEMPORARY;
-  _1091 = _1091__PHI_TEMPORARY;
-  _1092 = _1092__PHI_TEMPORARY;
-  _1093 = _1093__PHI_TEMPORARY;
-  _1094 = llvm_add_u64(_1089, 1);
-  _1095 = _1091 + _1093;
-  _1096 = _1092 + _1090;
-  _1097 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1089)])));
-  _1098 = _1088 - _1097;
-  _1099 = ((double)(uint32_t)(((uint32_t)_1094)));
-  _1100 = _1063 * _1099;
-  _1101 = _1098 / _1100;
-  _1102 = _1093 * _1101;
-  _1103 = (_1101 * _1092) - ((((_1099 * 8) * _1093) * _1098) / (_1100 * _1100));
-  *(double*)(((&((double*)(&_959))[((int64_t)_1089)]))) = _1096;
-  *(double*)(((&((double*)(&_960))[((int64_t)_1089)]))) = _1095;
-  *(double*)(((&((double*)_973)[((int64_t)_1089)]))) = _1103;
-  *(double*)(((&((double*)_1087)[((int64_t)_1089)]))) = _1102;
-  if ((_1094 == UINT64_C(16))) {
-    goto _1170;
-  } else {
-    _1089__PHI_TEMPORARY = _1094;   /* for PHI node */
-    _1090__PHI_TEMPORARY = _1096;   /* for PHI node */
-    _1091__PHI_TEMPORARY = _1095;   /* for PHI node */
-    _1092__PHI_TEMPORARY = _1103;   /* for PHI node */
-    _1093__PHI_TEMPORARY = _1102;   /* for PHI node */
-    goto _1169;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1170:
-  _1104 = llvm_select_f64((llvm_fcmp_ueq(_1080, 0)), 0, _1083);
-  _1105 = _1081 * _1085;
-  _1106 = (_1104 * _1085) + (_1084 * _1081);
-  fixderivative_levin((&_958), (&_957), (&_960), (&_959));
-  _1107 =  /*tail*/ sqrt(_1080);
-  _1108 = 2 / _956;
-  _1109 = _979 + 0.5;
-  if ((llvm_fcmp_ogt(_1109, _1086))) {
-    goto _1171;
-  } else {
-    _1123__PHI_TEMPORARY = _1106;   /* for PHI node */
-    _1124__PHI_TEMPORARY = _1105;   /* for PHI node */
-    goto _1172;
-  }
-
-_1171:
-  _1110 = _958;
-  _1111 = _957;
-  _1112 = _1107 * _1110;
-  _1113 = (_1111 * _1107) + (_1110 * _1104);
-  _1114 = 1 / (_956 * _956);
-  _1115__PHI_TEMPORARY = _1113;   /* for PHI node */
-  _1116__PHI_TEMPORARY = _1112;   /* for PHI node */
-  _1117__PHI_TEMPORARY = _1106;   /* for PHI node */
-  _1118__PHI_TEMPORARY = _1105;   /* for PHI node */
-  _1119__PHI_TEMPORARY = _1086;   /* for PHI node */
-  goto _1173;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_1173:
-  _1115 = _1115__PHI_TEMPORARY;
-  _1116 = _1116__PHI_TEMPORARY;
-  _1117 = _1117__PHI_TEMPORARY;
-  _1118 = _1118__PHI_TEMPORARY;
-  _1119 = _1119__PHI_TEMPORARY;
-  _1120 = _1108 * _1119;
-  _1121 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1120, _1116, _1118);
-  _1122 = _1119 + 1;
-  if ((llvm_fcmp_olt(_1122, _1109))) {
-    _1115__PHI_TEMPORARY = (((_1120 * _1115) + _1117) + (((_1116 * -2) * _1119) * _1114));   /* for PHI node */
-    _1116__PHI_TEMPORARY = _1121;   /* for PHI node */
-    _1117__PHI_TEMPORARY = _1115;   /* for PHI node */
-    _1118__PHI_TEMPORARY = _1116;   /* for PHI node */
-    _1119__PHI_TEMPORARY = _1122;   /* for PHI node */
-    goto _1173;
-  } else {
-    _1123__PHI_TEMPORARY = _1115;   /* for PHI node */
-    _1124__PHI_TEMPORARY = _1116;   /* for PHI node */
-    goto _1172;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1172:
-  _1123 = _1123__PHI_TEMPORARY;
-  _1124 = _1124__PHI_TEMPORARY;
-  _1125 = -(_956);
-  _1126 =  /*tail*/ exp(_1125);
-  _1127 =  /*tail*/ exp(_1125);
-  _1128 = (_1126 * _1123) - (_1127 * _1124);
-  _1152__PHI_TEMPORARY = _1128;   /* for PHI node */
-  goto _1154;
-
-_1162:
-  _1129 = round(_979);
-  _1130 =  /*tail*/ llvm_OC_fabs_OC_f64((_979 - _1129));
-  if ((llvm_fcmp_olt(_1130, 1.0000000000000001E-5))) {
-    goto _1174;
-  } else {
-    goto _1175;
-  }
-
-_1174:
-  _1131 = _979 - (llvm_select_f64((llvm_fcmp_ogt((_979 - _1031), 0.5)), (_1031 + -1), _1031));
-  _1132 =  /*tail*/ fwddiffebesselk_temme_series_OC_4(_1131, _956, 1);
-  _1133 = (_1132.field1);
-  _1134 = (_1133.field0);
-  _1135 = _1131 + 1;
-  _1136 = 2 / _956;
-  _1137 = _979 + 0.5;
-  if ((llvm_fcmp_ogt(_1137, _1135))) {
-    goto _1176;
-  } else {
-    _1152__PHI_TEMPORARY = _1134;   /* for PHI node */
-    goto _1154;
-  }
-
-_1176:
-  _1138 = (_1132.field0);
-  _1139 = (_1138.field0);
-  _1140 = (_1138.field1);
-  _1141 = (_1133.field1);
-  _1142 = 1 / (_956 * _956);
-  _1143__PHI_TEMPORARY = _1141;   /* for PHI node */
-  _1144__PHI_TEMPORARY = _1140;   /* for PHI node */
-  _1145__PHI_TEMPORARY = _1134;   /* for PHI node */
-  _1146__PHI_TEMPORARY = _1139;   /* for PHI node */
-  _1147__PHI_TEMPORARY = _1135;   /* for PHI node */
-  goto _1177;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_1177:
-  _1143 = _1143__PHI_TEMPORARY;
-  _1144 = _1144__PHI_TEMPORARY;
-  _1145 = _1145__PHI_TEMPORARY;
-  _1146 = _1146__PHI_TEMPORARY;
-  _1147 = _1147__PHI_TEMPORARY;
-  _1148 = _1136 * _1147;
-  _1149 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1148, _1144, _1146);
-  _1150 = _1147 + 1;
-  if ((llvm_fcmp_olt(_1150, _1137))) {
-    _1143__PHI_TEMPORARY = (((_1148 * _1143) + _1145) + (((_1144 * -2) * _1147) * _1142));   /* for PHI node */
-    _1144__PHI_TEMPORARY = _1149;   /* for PHI node */
-    _1145__PHI_TEMPORARY = _1143;   /* for PHI node */
-    _1146__PHI_TEMPORARY = _1144;   /* for PHI node */
-    _1147__PHI_TEMPORARY = _1150;   /* for PHI node */
-    goto _1177;
-  } else {
-    _1152__PHI_TEMPORARY = _1143;   /* for PHI node */
-    goto _1154;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1175:
-  _1151 =  /*tail*/ fwddiffebesselk_power_series_OC_5(_979, _956);
-  _1152__PHI_TEMPORARY = _1151;   /* for PHI node */
-  goto _1154;
-
-_1154:
-  _1152 = _1152__PHI_TEMPORARY;
-  return _1152;
+_1096:
+  _1094 = _1094__PHI_TEMPORARY;
+  return _1094;
 }
 
 
-double matern(double _1178, double _1179, double _1180, double _1181) {
+double besselk_dx(double _1136, double _1137) {
+  double _1138;    /* Address-exposed local */
+  double _1139;    /* Address-exposed local */
+  double _1140;    /* Address-exposed local */
+  double _1141;    /* Address-exposed local */
+  double _1142;    /* Address-exposed local */
+  double _1143;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1144 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1145 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1146;    /* Address-exposed local */
+  double _1147;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1148 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1149 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1150;    /* Address-exposed local */
+  double _1151;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1152 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1153 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1154;    /* Address-exposed local */
+  double _1155;    /* Address-exposed local */
+  double _1156;    /* Address-exposed local */
+  double _1157;    /* Address-exposed local */
+  void* _1158;
+  void* _1159;
+  void* _1160;
+  void* _1161;
+  void* _1162;
+  void* _1163;
+  double _1164;
+  double _1165;
+  double _1166;
+  double _1167;
+  double _1168;
+  double _1169;
+  double _1170;
+  double _1171;
+  double _1172;
+  double _1173;
+  double _1174;
+  double _1175;
+  double _1176;
+  double _1177;
+  double _1178;
+  double _1179;
+  double _1180;
+  double _1181;
   double _1182;
   double _1183;
   double _1184;
-  double _1185;
+  struct l_unnamed_1 _1185;
   double _1186;
   double _1187;
   double _1188;
   double _1189;
   double _1190;
-  double _1190__PHI_TEMPORARY;
-
-  if ((llvm_fcmp_oeq(_1178, 0))) {
-    goto _1191;
-  } else {
-    goto _1192;
-  }
-
-_1191:
-  _1182 = _1179 * _1179;
-  _1190__PHI_TEMPORARY = _1182;   /* for PHI node */
-  goto _1193;
-
-_1192:
-  _1183 =  /*tail*/ sqrt((_1181 * 2));
-  _1184 = (_1183 * _1178) / _1180;
-  _1185 =  /*tail*/ exp2((1 - _1181));
-  _1186 =  /*tail*/ gamma(_1181);
-  _1187 =  /*tail*/ pow(_1184, _1181);
-  _1188 =  /*tail*/ besselk(_1181, _1184);
-  _1189 = ((((_1179 * _1179) * _1185) / _1186) * _1187) * _1188;
-  _1190__PHI_TEMPORARY = _1189;   /* for PHI node */
-  goto _1193;
-
-_1193:
-  _1190 = _1190__PHI_TEMPORARY;
-  return _1190;
-}
-
-
-double matern_dsig(double _1194, double _1195, double _1196, double _1197) {
+  double _1191;
+  double _1192;
+  double _1193;
+  double _1194;
+  double _1194__PHI_TEMPORARY;
+  double _1195;
+  double _1195__PHI_TEMPORARY;
+  uint32_t _1196;
+  uint32_t _1196__PHI_TEMPORARY;
+  double _1197;
+  double _1197__PHI_TEMPORARY;
   double _1198;
-  double _1199;
-  double _1200;
+  double _1198__PHI_TEMPORARY;
+  uint32_t _1199;
+  uint32_t _1200;
   double _1201;
   double _1202;
   double _1203;
   double _1204;
   double _1205;
   double _1206;
-  double _1206__PHI_TEMPORARY;
-
-  if ((llvm_fcmp_oeq(_1194, 0))) {
-    goto _1207;
-  } else {
-    goto _1208;
-  }
-
-_1207:
-  _1198 = _1195 * 2;
-  _1206__PHI_TEMPORARY = _1198;   /* for PHI node */
-  goto _1209;
-
-_1208:
-  _1199 =  /*tail*/ sqrt((_1197 * 2));
-  _1200 = (_1199 * _1194) / _1196;
-  _1201 =  /*tail*/ exp2((1 - _1197));
-  _1202 =  /*tail*/ gamma(_1197);
-  _1203 =  /*tail*/ pow(_1200, _1197);
-  _1204 =  /*tail*/ besselk(_1197, _1200);
-  _1205 = (((((_1195 * 2) * _1201) * _1202) * _1203) * _1204) / (_1202 * _1202);
-  _1206__PHI_TEMPORARY = _1205;   /* for PHI node */
-  goto _1209;
-
-_1209:
-  _1206 = _1206__PHI_TEMPORARY;
-  return _1206;
-}
-
-
-double matern_drho(double _1210, double _1211, double _1212, double _1213) {
+  double _1207;
+  double _1208;
+  double _1209;
+  double _1210;
+  double _1211;
+  double _1212;
+  double _1213;
   double _1214;
   double _1215;
   double _1216;
-  double _1217;
+  void* _1217;
   double _1218;
   double _1219;
-  double _1220;
+  uint64_t _1220;
+  uint64_t _1220__PHI_TEMPORARY;
   double _1221;
+  double _1221__PHI_TEMPORARY;
   double _1222;
-  struct l_unnamed_1 _1223;
+  double _1222__PHI_TEMPORARY;
+  double _1223;
+  double _1223__PHI_TEMPORARY;
   double _1224;
-  double _1225;
-  double _1225__PHI_TEMPORARY;
-
-  if ((llvm_fcmp_oeq(_1210, 0))) {
-    _1225__PHI_TEMPORARY = 0;   /* for PHI node */
-    goto _1226;
-  } else {
-    goto _1227;
-  }
-
-_1227:
-  _1214 =  /*tail*/ sqrt((_1213 * 2));
-  _1215 = _1214 * _1210;
-  _1216 = _1215 / _1212;
-  _1217 = (-(_1215)) / (_1212 * _1212);
-  _1218 =  /*tail*/ exp2((1 - _1213));
-  _1219 =  /*tail*/ gamma(_1213);
-  _1220 = ((_1211 * _1211) * _1218) / _1219;
-  _1221 =  /*tail*/ pow(_1216, _1213);
-  _1222 =  /*tail*/ pow(_1216, (_1213 + -1));
-  _1223 =  /*tail*/ fwddiffebesselk_OC_7(_1213, _1216, _1217);
-  _1224 = ((((_1217 * _1213) * _1220) * _1222) * ((_1223.field0))) + (((_1223.field1)) * (_1220 * _1221));
-  _1225__PHI_TEMPORARY = _1224;   /* for PHI node */
-  goto _1226;
-
-_1226:
-  _1225 = _1225__PHI_TEMPORARY;
-  return _1225;
-}
-
-
-double matern_dnu(double _1228, double _1229, double _1230, double _1231) {
+  double _1224__PHI_TEMPORARY;
+  uint64_t _1225;
+  double _1226;
+  double _1227;
+  double _1228;
+  double _1229;
+  double _1230;
+  double _1231;
   double _1232;
   double _1233;
   double _1234;
@@ -4236,186 +4105,146 @@ double matern_dnu(double _1228, double _1229, double _1230, double _1231) {
   double _1239;
   double _1240;
   double _1241;
-  struct l_unnamed_1 _1242;
+  double _1242;
   double _1243;
   double _1244;
   double _1245;
-  double _1246;
+  void* _1246;
   double _1247;
   double _1248;
-  struct l_unnamed_1 _1249;
+  uint64_t _1249;
+  uint64_t _1249__PHI_TEMPORARY;
   double _1250;
+  double _1250__PHI_TEMPORARY;
   double _1251;
   double _1251__PHI_TEMPORARY;
-
-  if ((llvm_fcmp_oeq(_1228, 0))) {
-    _1251__PHI_TEMPORARY = 0;   /* for PHI node */
-    goto _1252;
-  } else {
-    goto _1253;
-  }
-
-_1253:
-  _1232 = _1231 * 2;
-  _1233 =  /*tail*/ sqrt(_1232);
-  _1234 =  /*tail*/ sqrt(_1232);
-  _1235 = (_1233 * _1228) / _1230;
-  _1236 = ((_1230 * _1228) * (llvm_select_f64((llvm_fcmp_ueq(_1232, 0)), 0, (1 / _1234)))) / (_1230 * _1230);
-  _1237 = _1229 * _1229;
-  _1238 = 1 - _1231;
-  _1239 =  /*tail*/ exp2(_1238);
-  _1240 =  /*tail*/ exp2(_1238);
-  _1241 = _1237 * _1239;
-  _1242 =  /*tail*/ fwddiffegamma(_1231, 1);
-  _1243 = (_1242.field0);
-  _1244 = _1241 / _1243;
-  _1245 =  /*tail*/ pow(_1235, _1231);
-  _1246 =  /*tail*/ pow(_1235, (_1231 + -1));
-  _1247 =  /*tail*/ pow(_1235, _1231);
-  _1248 = log(_1235);
-  _1249 =  /*tail*/ fwddiffebesselk_OC_10(_1231, _1235, _1236);
-  _1250 = ((((((_1246 * _1231) * _1236) + (_1247 * _1248)) * _1244) + ((((((_1237 * -0.69314718055994529) * _1240) * _1243) - (((_1242.field1)) * _1241)) * _1245) / (_1243 * _1243))) * ((_1249.field0))) + (((_1249.field1)) * (_1245 * _1244));
-  _1251__PHI_TEMPORARY = _1250;   /* for PHI node */
-  goto _1252;
-
-_1252:
-  _1251 = _1251__PHI_TEMPORARY;
-  return _1251;
-}
-
-
-void* besselk_buf(void* _1254, void* _1255, void* _1256, void* _1257) {
-  void* _1258;
-  uint32_t _1259;
-  void* _1260;
-  void* _1261;
-  void* _1262;
-  uint64_t _1263;
-  void* _1264;
-  uint64_t _1265;
-  uint64_t _1265__PHI_TEMPORARY;
+  double _1252;
+  double _1252__PHI_TEMPORARY;
+  double _1253;
+  double _1253__PHI_TEMPORARY;
+  uint64_t _1254;
+  double _1255;
+  double _1256;
+  double _1257;
+  double _1258;
+  double _1259;
+  double _1260;
+  double _1261;
+  double _1262;
+  double _1263;
+  double _1264;
+  double _1265;
   double _1266;
   double _1267;
   double _1268;
-  uint64_t _1269;
-
-  _1258 =  /*tail*/ INTEGER(_1255);
-  _1259 = *(uint32_t*)_1258;
-  _1260 =  /*tail*/ REAL(_1254);
-  _1261 =  /*tail*/ REAL(_1256);
-  _1262 =  /*tail*/ REAL(_1257);
-  if ((((int32_t)_1259) > ((int32_t)0u))) {
-    goto _1270;
-  } else {
-    goto _1271;
-  }
-
-_1270:
-  _1263 = ((uint64_t)(uint32_t)_1259);
-  _1265__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _1272;
-
-_1271:
-  _1264 = R_NilValue;
-  return _1264;
-  do {     /* Syntactic loop '' to make GCC happy */
-_1272:
-  _1265 = _1265__PHI_TEMPORARY;
-  _1266 = *(double*)(((&((double*)_1261)[((int64_t)_1265)])));
-  _1267 = *(double*)(((&((double*)_1262)[((int64_t)_1265)])));
-  _1268 =  /*tail*/ besselk(_1266, _1267);
-  *(double*)(((&((double*)_1260)[((int64_t)_1265)]))) = _1268;
-  _1269 = llvm_add_u64(_1265, 1);
-  if ((_1269 == _1263)) {
-    goto _1271;
-  } else {
-    _1265__PHI_TEMPORARY = _1269;   /* for PHI node */
-    goto _1272;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-}
-
-
-void* besselk_dv_buf(void* _1273, void* _1274, void* _1275, void* _1276) {
-  double _1277;    /* Address-exposed local */
-  double _1278;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1279 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1280 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _1281;    /* Address-exposed local */
-  double _1282;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1283 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1284 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _1285;    /* Address-exposed local */
-  double _1286;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1287 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1288 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _1289;    /* Address-exposed local */
-  double _1290;    /* Address-exposed local */
-  double _1291;    /* Address-exposed local */
-  double _1292;    /* Address-exposed local */
-  void* _1293;
-  uint32_t _1294;
-  void* _1295;
-  void* _1296;
-  void* _1297;
-  uint64_t _1298;
-  void* _1299;
-  void* _1300;
-  void* _1301;
-  void* _1302;
-  void* _1303;
-  void* _1304;
-  void* _1305;
-  uint64_t _1306;
-  uint64_t _1306__PHI_TEMPORARY;
+  double _1269;
+  double _1270;
+  double _1271;
+  void* _1272;
+  double _1273;
+  uint64_t _1274;
+  uint64_t _1274__PHI_TEMPORARY;
+  double _1275;
+  double _1275__PHI_TEMPORARY;
+  double _1276;
+  double _1276__PHI_TEMPORARY;
+  double _1277;
+  double _1277__PHI_TEMPORARY;
+  double _1278;
+  double _1278__PHI_TEMPORARY;
+  uint64_t _1279;
+  double _1280;
+  double _1281;
+  double _1282;
+  double _1283;
+  double _1284;
+  double _1285;
+  double _1286;
+  double _1287;
+  double _1288;
+  double _1289;
+  double _1290;
+  double _1291;
+  double _1292;
+  double _1293;
+  double _1294;
+  double _1295;
+  double _1296;
+  double _1297;
+  double _1298;
+  double _1299;
+  double _1300;
+  double _1300__PHI_TEMPORARY;
+  double _1301;
+  double _1301__PHI_TEMPORARY;
+  double _1302;
+  double _1302__PHI_TEMPORARY;
+  double _1303;
+  double _1303__PHI_TEMPORARY;
+  double _1304;
+  double _1304__PHI_TEMPORARY;
+  double _1305;
+  double _1306;
   double _1307;
   double _1308;
-  void* _1309;
-  void* _1310;
-  void* _1311;
+  double _1308__PHI_TEMPORARY;
+  double _1309;
+  double _1309__PHI_TEMPORARY;
+  double _1310;
+  double _1311;
   double _1312;
   double _1313;
   double _1314;
   double _1315;
   double _1316;
-  double _1317;
-  double _1318;
+  struct l_unnamed_2 _1317;
+  struct l_unnamed_1 _1318;
   double _1319;
   double _1320;
   double _1321;
   double _1322;
-  double _1323;
+  struct l_unnamed_1 _1323;
   double _1324;
   double _1325;
   double _1326;
   double _1327;
   double _1328;
+  double _1328__PHI_TEMPORARY;
   double _1329;
+  double _1329__PHI_TEMPORARY;
   double _1330;
+  double _1330__PHI_TEMPORARY;
   double _1331;
+  double _1331__PHI_TEMPORARY;
   double _1332;
+  double _1332__PHI_TEMPORARY;
   double _1333;
   double _1334;
   double _1335;
   double _1336;
-  struct l_unnamed_1 _1337;
+  double _1337;
   double _1338;
   double _1339;
+  double _1339__PHI_TEMPORARY;
   double _1340;
-  double _1341;
+  double _1340__PHI_TEMPORARY;
+  uint32_t _1341;
+  uint32_t _1341__PHI_TEMPORARY;
   double _1342;
+  double _1342__PHI_TEMPORARY;
   double _1343;
   double _1343__PHI_TEMPORARY;
   double _1344;
   double _1344__PHI_TEMPORARY;
   double _1345;
   double _1345__PHI_TEMPORARY;
-  uint32_t _1346;
-  uint32_t _1346__PHI_TEMPORARY;
-  uint32_t _1347;
-  uint32_t _1348;
-  double _1349;
+  double _1346;
+  double _1346__PHI_TEMPORARY;
+  double _1347;
+  double _1347__PHI_TEMPORARY;
+  double _1348;
+  double _1348__PHI_TEMPORARY;
+  uint32_t _1349;
   double _1350;
   double _1351;
   double _1352;
@@ -4428,17 +4257,12 @@ void* besselk_dv_buf(void* _1273, void* _1274, void* _1275, void* _1276) {
   double _1359;
   double _1360;
   double _1361;
-  uint64_t _1362;
-  uint64_t _1362__PHI_TEMPORARY;
+  double _1362;
   double _1363;
-  double _1363__PHI_TEMPORARY;
   double _1364;
-  double _1364__PHI_TEMPORARY;
   double _1365;
-  double _1365__PHI_TEMPORARY;
   double _1366;
-  double _1366__PHI_TEMPORARY;
-  uint64_t _1367;
+  double _1367;
   double _1368;
   double _1369;
   double _1370;
@@ -4447,600 +4271,708 @@ void* besselk_dv_buf(void* _1273, void* _1274, void* _1275, void* _1276) {
   double _1373;
   double _1374;
   double _1375;
-  double _1376;
-  double _1377;
-  double _1378;
-  double _1379;
-  double _1380;
-  double _1381;
-  double _1382;
-  double _1383;
-  double _1384;
-  uint64_t _1385;
-  uint64_t _1385__PHI_TEMPORARY;
-  double _1386;
-  double _1386__PHI_TEMPORARY;
-  double _1387;
-  double _1387__PHI_TEMPORARY;
-  double _1388;
-  double _1388__PHI_TEMPORARY;
-  double _1389;
-  double _1389__PHI_TEMPORARY;
-  uint64_t _1390;
-  double _1391;
-  double _1392;
-  double _1393;
-  double _1394;
-  double _1395;
-  double _1396;
-  double _1397;
-  double _1398;
-  double _1399;
-  double _1400;
-  double _1401;
-  double _1402;
-  double _1403;
-  double _1404;
-  double _1405;
-  uint64_t _1406;
-  uint64_t _1406__PHI_TEMPORARY;
-  double _1407;
-  double _1407__PHI_TEMPORARY;
+  double _1375__PHI_TEMPORARY;
+
+  _1158 = ((&((uint8_t*)(&_1144))[((int64_t)128)]));
+  _1159 = memset((&_1144), 0, 256);
+  _1160 = ((&((uint8_t*)(&_1148))[((int64_t)128)]));
+  _1161 = memset((&_1148), 0, 256);
+  _1162 = ((&((uint8_t*)(&_1152))[((int64_t)128)]));
+  _1163 = memset((&_1152), 0, 256);
+  _1164 =  /*tail*/ llvm_OC_fabs_OC_f64(_1136);
+  if ((llvm_fcmp_ugt(_1137, 0))) {
+    goto _1376;
+  } else {
+    _1375__PHI_TEMPORARY = 0;   /* for PHI node */
+    goto _1377;
+  }
+
+_1376:
+  if (((llvm_fcmp_ogt(_1164, 25)) | (llvm_fcmp_ogt(_1137, 35)))) {
+    goto _1378;
+  } else {
+    goto _1379;
+  }
+
+_1378:
+  _1165 = _1137 / _1164;
+  _1166 = _1136 * _1136;
+  _1167 = _1164 / _1166;
+  _1168 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1165, _1165, 1);
+  _1169 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1168);
+  _1170 = llvm_select_f64((llvm_fcmp_ueq(_1168, 0)), 0, (((_1165 * 2) * _1167) / (_1169 * 2)));
+  _1171 =  /*tail*/ log(_1165);
+  _1172 = _1169 + 1;
+  _1173 =  /*tail*/ log(_1172);
+  _1174 =  /*tail*/ llvm_OC_sqrt_OC_f64((1 / _1164));
+  _1175 = _1174 * 1.2533141373155001;
+  _1176 = -(_1164);
+  _1177 = ((_1169 + _1171) - _1173) * _1176;
+  _1178 =  /*tail*/ exp(_1177);
+  _1179 =  /*tail*/ exp(_1177);
+  _1180 = _1175 * _1178;
+  _1181 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1169);
+  _1182 = llvm_select_f64((llvm_fcmp_ole(_1164, _1137)), _1137, _1164);
+  _1183 = llvm_select_f64((llvm_fcmp_ole(_1164, _1137)), _1164, _1137);
+  _1184 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1182, _1182, (_1183 * _1183));
+  _1185 =  /*tail*/ fwddiffeUk_poly_Kn_OC_3((1 / _1169), ((-(_1170)) / _1168), _1164, (_1166 / _1184), (((_1166 * -2) * _1137) / (_1184 * _1184)));
+  _1186 = (((((((_1175 * _1176) * _1181) * ((_1170 + (_1167 / _1165)) - (_1170 / _1172))) * _1179) - (_1180 * (llvm_select_f64((llvm_fcmp_ueq(_1169, 0)), 0, (_1170 / (_1181 * 2)))))) * ((_1185.field0))) / _1169) + (((_1185.field1)) * (_1180 / _1181));
+  _1375__PHI_TEMPORARY = _1186;   /* for PHI node */
+  goto _1377;
+
+_1379:
+  if ((llvm_fcmp_olt((((_1136 * _1136) / 36) + 24), _1137))) {
+    goto _1380;
+  } else {
+    goto _1381;
+  }
+
+_1380:
+  _1187 = _1137 * -0.5;
+  _1188 =  /*tail*/ exp(_1187);
+  _1189 =  /*tail*/ exp(_1187);
+  _1190 = _1137 * 8;
+  _1191 = 1 / _1190;
+  _1192 = _1164 * 4;
+  _1193 = 1 / (_1190 * _1190);
+  _1194__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1195__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1196__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1197__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1198__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1382;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1382:
+  _1194 = _1194__PHI_TEMPORARY;
+  _1195 = _1195__PHI_TEMPORARY;
+  _1196 = _1196__PHI_TEMPORARY;
+  _1197 = _1197__PHI_TEMPORARY;
+  _1198 = _1198__PHI_TEMPORARY;
+  _1199 = llvm_add_u32(_1196, 1);
+  _1200 = llvm_add_u32((_1199 << 1), -1);
+  _1201 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1192, _1164, (-((((double)(uint32_t)(llvm_mul_u32(_1200, _1200)))))));
+  _1202 = _1201 / (((double)(uint32_t)_1199));
+  _1203 = _1191 * _1202;
+  _1204 = _1194 * _1203;
+  _1205 = (_1203 * _1195) - (((_1194 * 8) * _1202) * _1193);
+  _1156 = _1205;
+  _1157 = _1204;
+  _1206 = _1198 + _1204;
+  _1207 = _1205 + _1197;
+  fixderivative_isconverged((&_1157), (&_1156), (&_1155), (&_1154));
+  _1208 = _1155;
+  if ((llvm_select_bool((llvm_fcmp_olt(_1208, 0)), 1, (_1199 == 20u)))) {
+    goto _1383;
+  } else {
+    _1194__PHI_TEMPORARY = _1204;   /* for PHI node */
+    _1195__PHI_TEMPORARY = _1205;   /* for PHI node */
+    _1196__PHI_TEMPORARY = _1199;   /* for PHI node */
+    _1197__PHI_TEMPORARY = _1207;   /* for PHI node */
+    _1198__PHI_TEMPORARY = _1206;   /* for PHI node */
+    goto _1382;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1383:
+  _1209 = _1189 * -0.5;
+  _1210 = _1137 * 2;
+  _1211 = 3.1415926535897931 / _1210;
+  _1212 =  /*tail*/ sqrt(_1211);
+  _1213 =  /*tail*/ sqrt(_1211);
+  _1214 = _1206 * _1212;
+  _1215 = ((((((llvm_select_f64((llvm_fcmp_ueq(_1211, 0)), 0, (-6.2831853071795862 / (((_1137 * 4) * _1210) * _1213)))) * _1206) + (_1212 * _1207)) * _1188) + (_1214 * _1209)) * _1188) + ((_1188 * _1214) * _1209);
+  _1375__PHI_TEMPORARY = _1215;   /* for PHI node */
+  goto _1377;
+
+_1381:
+  _1216 =  /*tail*/ llvm_OC_floor_OC_f64(_1164);
+  if ((llvm_fcmp_ogt(_1137, 1.5))) {
+    goto _1384;
+  } else {
+    goto _1385;
+  }
+
+_1384:
+  if ((llvm_fcmp_olt(_1164, 2))) {
+    goto _1386;
+  } else {
+    goto _1387;
+  }
+
+_1386:
+  _1150 = 0;
+  _1151 = 0;
+  _1217 = ((&((uint8_t*)(&_1153))[((int64_t)128)]));
+  _1218 = _1164 * (_1164 * 4);
+  _1219 = _1137 * 8;
+  _1220__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1221__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1222__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1223__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1224__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1388;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1388:
+  _1220 = _1220__PHI_TEMPORARY;
+  _1221 = _1221__PHI_TEMPORARY;
+  _1222 = _1222__PHI_TEMPORARY;
+  _1223 = _1223__PHI_TEMPORARY;
+  _1224 = _1224__PHI_TEMPORARY;
+  _1225 = llvm_add_u64(_1220, 1);
+  _1226 = _1222 + _1224;
+  _1227 = _1223 + _1221;
+  _1228 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1220)])));
+  _1229 = _1218 - _1228;
+  _1230 = ((double)(uint32_t)(((uint32_t)_1225)));
+  _1231 = _1219 * _1230;
+  _1232 = _1229 / _1231;
+  _1233 = _1224 * _1232;
+  _1234 = (_1232 * _1223) - ((((_1230 * 8) * _1224) * _1229) / (_1231 * _1231));
+  *(double*)(((&((double*)(&_1152))[((int64_t)_1220)]))) = _1227;
+  *(double*)(((&((double*)(&_1153))[((int64_t)_1220)]))) = _1226;
+  *(double*)(((&((double*)_1162)[((int64_t)_1220)]))) = _1234;
+  *(double*)(((&((double*)_1217)[((int64_t)_1220)]))) = _1233;
+  if ((_1225 == UINT64_C(16))) {
+    goto _1389;
+  } else {
+    _1220__PHI_TEMPORARY = _1225;   /* for PHI node */
+    _1221__PHI_TEMPORARY = _1227;   /* for PHI node */
+    _1222__PHI_TEMPORARY = _1226;   /* for PHI node */
+    _1223__PHI_TEMPORARY = _1234;   /* for PHI node */
+    _1224__PHI_TEMPORARY = _1233;   /* for PHI node */
+    goto _1388;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1389:
+  fixderivative_levin((&_1151), (&_1150), (&_1153), (&_1152));
+  _1235 = _1137 * 2;
+  _1236 = 3.1415926535897931 / _1235;
+  _1237 =  /*tail*/ sqrt(_1236);
+  _1238 =  /*tail*/ sqrt(_1236);
+  _1239 = _1150;
+  _1240 = _1151;
+  _1241 = -(_1137);
+  _1242 =  /*tail*/ exp(_1241);
+  _1243 =  /*tail*/ exp(_1241);
+  _1244 = ((((llvm_select_f64((llvm_fcmp_ueq(_1236, 0)), 0, (-6.2831853071795862 / (((_1137 * 4) * _1235) * _1238)))) * _1240) + (_1239 * _1237)) * _1242) - (_1243 * (_1237 * _1240));
+  _1375__PHI_TEMPORARY = _1244;   /* for PHI node */
+  goto _1377;
+
+_1387:
+  _1245 = _1164 - _1216;
+  _1146 = 0;
+  _1147 = 0;
+  _1246 = ((&((uint8_t*)(&_1149))[((int64_t)128)]));
+  _1247 = _1245 * (_1245 * 4);
+  _1248 = _1137 * 8;
+  _1249__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1250__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1251__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1252__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1253__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1390;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1390:
+  _1249 = _1249__PHI_TEMPORARY;
+  _1250 = _1250__PHI_TEMPORARY;
+  _1251 = _1251__PHI_TEMPORARY;
+  _1252 = _1252__PHI_TEMPORARY;
+  _1253 = _1253__PHI_TEMPORARY;
+  _1254 = llvm_add_u64(_1249, 1);
+  _1255 = _1251 + _1253;
+  _1256 = _1252 + _1250;
+  _1257 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1249)])));
+  _1258 = _1247 - _1257;
+  _1259 = ((double)(uint32_t)(((uint32_t)_1254)));
+  _1260 = _1248 * _1259;
+  _1261 = _1258 / _1260;
+  _1262 = _1253 * _1261;
+  _1263 = (_1261 * _1252) - ((((_1259 * 8) * _1253) * _1258) / (_1260 * _1260));
+  *(double*)(((&((double*)(&_1148))[((int64_t)_1249)]))) = _1256;
+  *(double*)(((&((double*)(&_1149))[((int64_t)_1249)]))) = _1255;
+  *(double*)(((&((double*)_1160)[((int64_t)_1249)]))) = _1263;
+  *(double*)(((&((double*)_1246)[((int64_t)_1249)]))) = _1262;
+  if ((_1254 == UINT64_C(16))) {
+    goto _1391;
+  } else {
+    _1249__PHI_TEMPORARY = _1254;   /* for PHI node */
+    _1250__PHI_TEMPORARY = _1256;   /* for PHI node */
+    _1251__PHI_TEMPORARY = _1255;   /* for PHI node */
+    _1252__PHI_TEMPORARY = _1263;   /* for PHI node */
+    _1253__PHI_TEMPORARY = _1262;   /* for PHI node */
+    goto _1390;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1391:
+  fixderivative_levin((&_1147), (&_1146), (&_1149), (&_1148));
+  _1264 = _1137 * 2;
+  _1265 = 3.1415926535897931 / _1264;
+  _1266 =  /*tail*/ sqrt(_1265);
+  _1267 =  /*tail*/ sqrt(_1265);
+  _1268 = -6.2831853071795862 / (((_1137 * 4) * _1264) * _1267);
+  _1269 = _1146;
+  _1270 = _1147;
+  _1271 = _1245 + 1;
+  _1142 = 0;
+  _1143 = 0;
+  _1272 = ((&((uint8_t*)(&_1145))[((int64_t)128)]));
+  _1273 = _1271 * (_1271 * 4);
+  _1274__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1275__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1276__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1277__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1278__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1392;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1392:
+  _1274 = _1274__PHI_TEMPORARY;
+  _1275 = _1275__PHI_TEMPORARY;
+  _1276 = _1276__PHI_TEMPORARY;
+  _1277 = _1277__PHI_TEMPORARY;
+  _1278 = _1278__PHI_TEMPORARY;
+  _1279 = llvm_add_u64(_1274, 1);
+  _1280 = _1276 + _1278;
+  _1281 = _1277 + _1275;
+  _1282 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1274)])));
+  _1283 = _1273 - _1282;
+  _1284 = ((double)(uint32_t)(((uint32_t)_1279)));
+  _1285 = _1248 * _1284;
+  _1286 = _1283 / _1285;
+  _1287 = _1278 * _1286;
+  _1288 = (_1286 * _1277) - ((((_1284 * 8) * _1278) * _1283) / (_1285 * _1285));
+  *(double*)(((&((double*)(&_1144))[((int64_t)_1274)]))) = _1281;
+  *(double*)(((&((double*)(&_1145))[((int64_t)_1274)]))) = _1280;
+  *(double*)(((&((double*)_1158)[((int64_t)_1274)]))) = _1288;
+  *(double*)(((&((double*)_1272)[((int64_t)_1274)]))) = _1287;
+  if ((_1279 == UINT64_C(16))) {
+    goto _1393;
+  } else {
+    _1274__PHI_TEMPORARY = _1279;   /* for PHI node */
+    _1275__PHI_TEMPORARY = _1281;   /* for PHI node */
+    _1276__PHI_TEMPORARY = _1280;   /* for PHI node */
+    _1277__PHI_TEMPORARY = _1288;   /* for PHI node */
+    _1278__PHI_TEMPORARY = _1287;   /* for PHI node */
+    goto _1392;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1393:
+  _1289 = llvm_select_f64((llvm_fcmp_ueq(_1265, 0)), 0, _1268);
+  _1290 = _1266 * _1270;
+  _1291 = (_1289 * _1270) + (_1269 * _1266);
+  fixderivative_levin((&_1143), (&_1142), (&_1145), (&_1144));
+  _1292 =  /*tail*/ sqrt(_1265);
+  _1293 = 2 / _1137;
+  _1294 = _1164 + 0.5;
+  if ((llvm_fcmp_ogt(_1294, _1271))) {
+    goto _1394;
+  } else {
+    _1308__PHI_TEMPORARY = _1291;   /* for PHI node */
+    _1309__PHI_TEMPORARY = _1290;   /* for PHI node */
+    goto _1395;
+  }
+
+_1394:
+  _1295 = _1143;
+  _1296 = _1142;
+  _1297 = _1292 * _1295;
+  _1298 = (_1296 * _1292) + (_1295 * _1289);
+  _1299 = 1 / (_1137 * _1137);
+  _1300__PHI_TEMPORARY = _1298;   /* for PHI node */
+  _1301__PHI_TEMPORARY = _1297;   /* for PHI node */
+  _1302__PHI_TEMPORARY = _1291;   /* for PHI node */
+  _1303__PHI_TEMPORARY = _1290;   /* for PHI node */
+  _1304__PHI_TEMPORARY = _1271;   /* for PHI node */
+  goto _1396;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1396:
+  _1300 = _1300__PHI_TEMPORARY;
+  _1301 = _1301__PHI_TEMPORARY;
+  _1302 = _1302__PHI_TEMPORARY;
+  _1303 = _1303__PHI_TEMPORARY;
+  _1304 = _1304__PHI_TEMPORARY;
+  _1305 = _1293 * _1304;
+  _1306 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1305, _1301, _1303);
+  _1307 = _1304 + 1;
+  if ((llvm_fcmp_olt(_1307, _1294))) {
+    _1300__PHI_TEMPORARY = (((_1305 * _1300) + _1302) + (((_1301 * -2) * _1304) * _1299));   /* for PHI node */
+    _1301__PHI_TEMPORARY = _1306;   /* for PHI node */
+    _1302__PHI_TEMPORARY = _1300;   /* for PHI node */
+    _1303__PHI_TEMPORARY = _1301;   /* for PHI node */
+    _1304__PHI_TEMPORARY = _1307;   /* for PHI node */
+    goto _1396;
+  } else {
+    _1308__PHI_TEMPORARY = _1300;   /* for PHI node */
+    _1309__PHI_TEMPORARY = _1301;   /* for PHI node */
+    goto _1395;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1395:
+  _1308 = _1308__PHI_TEMPORARY;
+  _1309 = _1309__PHI_TEMPORARY;
+  _1310 = -(_1137);
+  _1311 =  /*tail*/ exp(_1310);
+  _1312 =  /*tail*/ exp(_1310);
+  _1313 = (_1311 * _1308) - (_1312 * _1309);
+  _1375__PHI_TEMPORARY = _1313;   /* for PHI node */
+  goto _1377;
+
+_1385:
+  _1314 = round(_1164);
+  _1315 =  /*tail*/ llvm_OC_fabs_OC_f64((_1164 - _1314));
+  if ((llvm_fcmp_olt(_1315, 1.0000000000000001E-5))) {
+    goto _1397;
+  } else {
+    goto _1398;
+  }
+
+_1397:
+  _1316 = _1164 - (llvm_select_f64((llvm_fcmp_ogt((_1164 - _1216), 0.5)), (_1216 + -1), _1216));
+  _1317 =  /*tail*/ fwddiffebesselk_temme_series_OC_4(_1316, _1137, 1);
+  _1318 = (_1317.field1);
+  _1319 = (_1318.field0);
+  _1320 = _1316 + 1;
+  _1321 = 2 / _1137;
+  _1322 = _1164 + 0.5;
+  if ((llvm_fcmp_ogt(_1322, _1320))) {
+    goto _1399;
+  } else {
+    _1375__PHI_TEMPORARY = _1319;   /* for PHI node */
+    goto _1377;
+  }
+
+_1399:
+  _1323 = (_1317.field0);
+  _1324 = (_1323.field0);
+  _1325 = (_1323.field1);
+  _1326 = (_1318.field1);
+  _1327 = 1 / (_1137 * _1137);
+  _1328__PHI_TEMPORARY = _1326;   /* for PHI node */
+  _1329__PHI_TEMPORARY = _1325;   /* for PHI node */
+  _1330__PHI_TEMPORARY = _1319;   /* for PHI node */
+  _1331__PHI_TEMPORARY = _1324;   /* for PHI node */
+  _1332__PHI_TEMPORARY = _1320;   /* for PHI node */
+  goto _1400;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1400:
+  _1328 = _1328__PHI_TEMPORARY;
+  _1329 = _1329__PHI_TEMPORARY;
+  _1330 = _1330__PHI_TEMPORARY;
+  _1331 = _1331__PHI_TEMPORARY;
+  _1332 = _1332__PHI_TEMPORARY;
+  _1333 = _1321 * _1332;
+  _1334 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1333, _1329, _1331);
+  _1335 = _1332 + 1;
+  if ((llvm_fcmp_olt(_1335, _1322))) {
+    _1328__PHI_TEMPORARY = (((_1333 * _1328) + _1330) + (((_1329 * -2) * _1332) * _1327));   /* for PHI node */
+    _1329__PHI_TEMPORARY = _1334;   /* for PHI node */
+    _1330__PHI_TEMPORARY = _1328;   /* for PHI node */
+    _1331__PHI_TEMPORARY = _1329;   /* for PHI node */
+    _1332__PHI_TEMPORARY = _1335;   /* for PHI node */
+    goto _1400;
+  } else {
+    _1375__PHI_TEMPORARY = _1328;   /* for PHI node */
+    goto _1377;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1398:
+  _1336 =  /*tail*/ gamma(_1164);
+  _1337 = _1137 * _1137;
+  _1338 = _1137 * 2;
+  _1141 = 1;
+  _1339__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1340__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1341__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1342__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1343__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1344__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1345__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1346__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1347__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1348__PHI_TEMPORARY = 4;   /* for PHI node */
+  goto _1401;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1401:
+  _1339 = _1339__PHI_TEMPORARY;
+  _1340 = _1340__PHI_TEMPORARY;
+  _1341 = _1341__PHI_TEMPORARY;
+  _1342 = _1342__PHI_TEMPORARY;
+  _1343 = _1343__PHI_TEMPORARY;
+  _1344 = _1344__PHI_TEMPORARY;
+  _1345 = _1345__PHI_TEMPORARY;
+  _1346 = _1346__PHI_TEMPORARY;
+  _1347 = _1347__PHI_TEMPORARY;
+  _1348 = _1348__PHI_TEMPORARY;
+  _1349 = llvm_add_u32(_1341, 1);
+  _1350 = _1339 + _1343;
+  _1351 = _1342 + _1340;
+  _1352 = _1345 + _1347;
+  _1353 = _1346 + _1344;
+  _1354 = ((double)(uint32_t)_1349);
+  _1355 = (_1354 - _1164) * _1348;
+  _1356 = _1337 / _1355;
+  _1357 = _1339 * _1356;
+  _1358 = (((_1339 * _1338) * _1355) / (_1355 * _1355)) + (_1356 * _1340);
+  _1138 = _1358;
+  _1139 = _1357;
+  fixderivative_isconverged((&_1139), (&_1138), (&_1141), (&_1140));
+  _1359 = _1141;
+  if ((llvm_fcmp_olt(_1359, 0))) {
+    goto _1402;
+  } else {
+    goto _1403;
+  }
+
+_1403:
+  _1360 = (_1164 + _1354) * _1348;
+  _1361 = _1337 / _1360;
+  _1362 = _1347 * _1361;
+  _1363 = (((_1347 * _1338) * _1360) / (_1360 * _1360)) + (_1361 * _1346);
+  _1364 = _1348 + 4;
+  if ((_1349 == 49u)) {
+    goto _1402;
+  } else {
+    _1339__PHI_TEMPORARY = _1357;   /* for PHI node */
+    _1340__PHI_TEMPORARY = _1358;   /* for PHI node */
+    _1341__PHI_TEMPORARY = _1349;   /* for PHI node */
+    _1342__PHI_TEMPORARY = _1351;   /* for PHI node */
+    _1343__PHI_TEMPORARY = _1350;   /* for PHI node */
+    _1344__PHI_TEMPORARY = _1353;   /* for PHI node */
+    _1345__PHI_TEMPORARY = _1352;   /* for PHI node */
+    _1346__PHI_TEMPORARY = _1363;   /* for PHI node */
+    _1347__PHI_TEMPORARY = _1362;   /* for PHI node */
+    _1348__PHI_TEMPORARY = _1364;   /* for PHI node */
+    goto _1401;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_1402:
+  _1365 =  /*tail*/ sinpi((-(_1164)));
+  _1366 = 3.1415926535897931 / (_1164 * (_1336 * _1365));
+  _1367 = _1137 * 0.5;
+  _1368 =  /*tail*/ pow(_1367, _1164);
+  _1369 =  /*tail*/ pow(_1367, (_1164 + -1));
+  _1370 = _1369 * _1164;
+  _1371 = (_1368 * _1368) * _1366;
+  _1372 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1336, _1350, (_1352 * _1371));
+  _1373 = _1368 * 2;
+  _1374 = (((((_1371 * _1353) + (_1351 * _1336)) + (((_1368 * _1352) * _1370) * _1366)) * _1373) - (_1372 * _1370)) / (_1373 * _1373);
+  _1375__PHI_TEMPORARY = _1374;   /* for PHI node */
+  goto _1377;
+
+_1377:
+  _1375 = _1375__PHI_TEMPORARY;
+  return _1375;
+}
+
+
+double matern(double _1404, double _1405, double _1406, double _1407) {
   double _1408;
-  double _1408__PHI_TEMPORARY;
   double _1409;
-  double _1409__PHI_TEMPORARY;
   double _1410;
-  double _1410__PHI_TEMPORARY;
-  uint64_t _1411;
+  double _1411;
   double _1412;
   double _1413;
   double _1414;
   double _1415;
   double _1416;
-  double _1417;
-  double _1418;
-  double _1419;
-  double _1420;
-  double _1421;
-  double _1422;
-  double _1423;
+  double _1416__PHI_TEMPORARY;
+
+  if ((llvm_fcmp_oeq(_1404, 0))) {
+    goto _1417;
+  } else {
+    goto _1418;
+  }
+
+_1417:
+  _1408 = _1405 * _1405;
+  _1416__PHI_TEMPORARY = _1408;   /* for PHI node */
+  goto _1419;
+
+_1418:
+  _1409 =  /*tail*/ sqrt((_1407 * 2));
+  _1410 = (_1409 * _1404) / _1406;
+  _1411 =  /*tail*/ exp2((1 - _1407));
+  _1412 =  /*tail*/ gamma(_1407);
+  _1413 =  /*tail*/ pow(_1410, _1407);
+  _1414 =  /*tail*/ besselk(_1407, _1410);
+  _1415 = ((((_1405 * _1405) * _1411) / _1412) * _1413) * _1414;
+  _1416__PHI_TEMPORARY = _1415;   /* for PHI node */
+  goto _1419;
+
+_1419:
+  _1416 = _1416__PHI_TEMPORARY;
+  return _1416;
+}
+
+
+double matern_dsig(double _1420, double _1421, double _1422, double _1423) {
   double _1424;
   double _1425;
   double _1426;
   double _1427;
   double _1428;
   double _1429;
-  double _1429__PHI_TEMPORARY;
   double _1430;
-  double _1430__PHI_TEMPORARY;
   double _1431;
-  double _1431__PHI_TEMPORARY;
   double _1432;
   double _1432__PHI_TEMPORARY;
-  double _1433;
-  double _1433__PHI_TEMPORARY;
-  double _1434;
-  double _1435;
-  double _1436;
-  double _1437;
-  double _1437__PHI_TEMPORARY;
-  double _1438;
-  double _1439;
-  double _1440;
-  double _1441;
-  double _1442;
-  struct l_unnamed_2 _1443;
-  struct l_unnamed_1 _1444;
-  double _1445;
-  double _1446;
-  double _1447;
-  double _1448;
-  struct l_unnamed_1 _1449;
-  double _1450;
-  double _1451;
-  double _1452;
-  double _1453;
-  double _1454;
-  double _1454__PHI_TEMPORARY;
-  double _1455;
-  double _1455__PHI_TEMPORARY;
-  double _1456;
-  double _1456__PHI_TEMPORARY;
-  double _1457;
-  double _1457__PHI_TEMPORARY;
-  double _1458;
-  double _1458__PHI_TEMPORARY;
-  double _1459;
+
+  if ((llvm_fcmp_oeq(_1420, 0))) {
+    goto _1433;
+  } else {
+    goto _1434;
+  }
+
+_1433:
+  _1424 = _1421 * 2;
+  _1432__PHI_TEMPORARY = _1424;   /* for PHI node */
+  goto _1435;
+
+_1434:
+  _1425 =  /*tail*/ sqrt((_1423 * 2));
+  _1426 = (_1425 * _1420) / _1422;
+  _1427 =  /*tail*/ exp2((1 - _1423));
+  _1428 =  /*tail*/ gamma(_1423);
+  _1429 =  /*tail*/ pow(_1426, _1423);
+  _1430 =  /*tail*/ besselk(_1423, _1426);
+  _1431 = (((((_1421 * 2) * _1427) * _1428) * _1429) * _1430) / (_1428 * _1428);
+  _1432__PHI_TEMPORARY = _1431;   /* for PHI node */
+  goto _1435;
+
+_1435:
+  _1432 = _1432__PHI_TEMPORARY;
+  return _1432;
+}
+
+
+double matern_drho(double _1436, double _1437, double _1438, double _1439) {
+  double _1440;    /* Address-exposed local */
+  double _1441;    /* Address-exposed local */
+  double _1442;    /* Address-exposed local */
+  double _1443;    /* Address-exposed local */
+  double _1444;    /* Address-exposed local */
+  double _1445;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1446 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1447 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1448;    /* Address-exposed local */
+  double _1449;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1450 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1451 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1452;    /* Address-exposed local */
+  double _1453;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1454 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1455 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1456;    /* Address-exposed local */
+  double _1457;    /* Address-exposed local */
+  double _1458;    /* Address-exposed local */
+  double _1459;    /* Address-exposed local */
   double _1460;
   double _1461;
   double _1462;
   double _1463;
-  double _1463__PHI_TEMPORARY;
-  uint64_t _1464;
-
-  _1293 =  /*tail*/ INTEGER(_1274);
-  _1294 = *(uint32_t*)_1293;
-  _1295 =  /*tail*/ REAL(_1273);
-  _1296 =  /*tail*/ REAL(_1275);
-  _1297 =  /*tail*/ REAL(_1276);
-  if ((((int32_t)_1294) > ((int32_t)0u))) {
-    goto _1465;
-  } else {
-    goto _1466;
-  }
-
-_1465:
-  _1298 = ((uint64_t)(uint32_t)_1294);
-  _1299 = ((&((uint8_t*)(&_1279))[((int64_t)128)]));
-  _1300 = ((&((uint8_t*)(&_1283))[((int64_t)128)]));
-  _1301 = ((&((uint8_t*)(&_1287))[((int64_t)128)]));
-  _1302 = ((&((uint8_t*)(&_1284))[((int64_t)128)]));
-  _1303 = ((&((uint8_t*)(&_1280))[((int64_t)128)]));
-  _1304 = ((&((uint8_t*)(&_1288))[((int64_t)128)]));
-  _1306__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _1467;
-
-_1466:
-  _1305 = R_NilValue;
-  return _1305;
-  do {     /* Syntactic loop '' to make GCC happy */
-_1467:
-  _1306 = _1306__PHI_TEMPORARY;
-  _1307 = *(double*)(((&((double*)_1296)[((int64_t)_1306)])));
-  _1308 = *(double*)(((&((double*)_1297)[((int64_t)_1306)])));
-  _1309 = memset((&_1279), 0, 256);
-  _1310 = memset((&_1283), 0, 256);
-  _1311 = memset((&_1287), 0, 256);
-  _1312 =  /*tail*/ llvm_OC_fabs_OC_f64(_1307);
-  _1313 = llvm_select_f64((llvm_fcmp_olt(_1307, 0)), -1, 1);
-  if ((llvm_fcmp_ugt(_1308, 0))) {
-    goto _1468;
-  } else {
-    _1463__PHI_TEMPORARY = 0;   /* for PHI node */
-    goto _1469;
-  }
-
-_1468:
-  if (((llvm_fcmp_ogt(_1312, 25)) | (llvm_fcmp_ogt(_1308, 35)))) {
-    goto _1470;
-  } else {
-    goto _1471;
-  }
-
-_1471:
-  if ((llvm_fcmp_olt((((_1307 * _1307) / 36) + 24), _1308))) {
-    goto _1472;
-  } else {
-    goto _1473;
-  }
-
-_1473:
-  _1358 =  /*tail*/ llvm_OC_floor_OC_f64(_1312);
-  if ((llvm_fcmp_ogt(_1308, 1.5))) {
-    goto _1474;
-  } else {
-    goto _1475;
-  }
-
-_1475:
-  _1440 = round(_1312);
-  _1441 =  /*tail*/ llvm_OC_fabs_OC_f64((_1312 - _1440));
-  if ((llvm_fcmp_olt(_1441, 1.0000000000000001E-5))) {
-    goto _1476;
-  } else {
-    goto _1477;
-  }
-
-_1477:
-  _1462 =  /*tail*/ fwddiffebesselk_power_series(_1312, _1313, _1308);
-  _1463__PHI_TEMPORARY = _1462;   /* for PHI node */
-  goto _1469;
-
-_1476:
-  _1442 = _1312 - (llvm_select_f64((llvm_fcmp_ogt((_1312 - _1358), 0.5)), (_1358 + -1), _1358));
-  _1443 =  /*tail*/ fwddiffebesselk_temme_series(_1442, _1313, _1308);
-  _1444 = (_1443.field1);
-  _1445 = (_1444.field0);
-  _1446 = _1442 + 1;
-  _1447 = 2 / _1308;
-  _1448 = _1312 + 0.5;
-  if ((llvm_fcmp_ogt(_1448, _1446))) {
-    goto _1478;
-  } else {
-    _1463__PHI_TEMPORARY = _1445;   /* for PHI node */
-    goto _1469;
-  }
-
-_1478:
-  _1449 = (_1443.field0);
-  _1450 = (_1449.field0);
-  _1451 = (_1449.field1);
-  _1452 = (_1444.field1);
-  _1453 = _1313 * _1447;
-  _1454__PHI_TEMPORARY = _1452;   /* for PHI node */
-  _1455__PHI_TEMPORARY = _1451;   /* for PHI node */
-  _1456__PHI_TEMPORARY = _1445;   /* for PHI node */
-  _1457__PHI_TEMPORARY = _1450;   /* for PHI node */
-  _1458__PHI_TEMPORARY = _1446;   /* for PHI node */
-  goto _1479;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_1479:
-  _1454 = _1454__PHI_TEMPORARY;
-  _1455 = _1455__PHI_TEMPORARY;
-  _1456 = _1456__PHI_TEMPORARY;
-  _1457 = _1457__PHI_TEMPORARY;
-  _1458 = _1458__PHI_TEMPORARY;
-  _1459 = _1447 * _1458;
-  _1460 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1459, _1455, _1457);
-  _1461 = _1458 + 1;
-  if ((llvm_fcmp_olt(_1461, _1448))) {
-    _1454__PHI_TEMPORARY = ((_1456 + (_1453 * _1455)) + (_1459 * _1454));   /* for PHI node */
-    _1455__PHI_TEMPORARY = _1460;   /* for PHI node */
-    _1456__PHI_TEMPORARY = _1454;   /* for PHI node */
-    _1457__PHI_TEMPORARY = _1455;   /* for PHI node */
-    _1458__PHI_TEMPORARY = _1461;   /* for PHI node */
-    goto _1479;
-  } else {
-    _1463__PHI_TEMPORARY = _1454;   /* for PHI node */
-    goto _1469;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1474:
-  if ((llvm_fcmp_olt(_1312, 2))) {
-    goto _1480;
-  } else {
-    goto _1481;
-  }
-
-_1481:
-  _1379 = _1312 - _1358;
-  _1281 = 0;
-  _1282 = 0;
-  _1380 = _1379 * 4;
-  _1381 = _1313 * 4;
-  _1382 = _1379 * _1380;
-  _1383 = (_1380 * _1313) + (_1381 * _1379);
-  _1384 = _1308 * 8;
-  _1385__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1386__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1387__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1388__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1389__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1482;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_1482:
-  _1385 = _1385__PHI_TEMPORARY;
-  _1386 = _1386__PHI_TEMPORARY;
-  _1387 = _1387__PHI_TEMPORARY;
-  _1388 = _1388__PHI_TEMPORARY;
-  _1389 = _1389__PHI_TEMPORARY;
-  _1390 = llvm_add_u64(_1385, 1);
-  _1391 = _1387 + _1389;
-  _1392 = _1388 + _1386;
-  _1393 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1385)])));
-  _1394 = _1384 * (((double)(uint32_t)(((uint32_t)_1390))));
-  _1395 = (_1382 - _1393) / _1394;
-  _1396 = _1389 * _1395;
-  _1397 = (_1395 * _1388) + (((_1394 * _1383) * _1389) / (_1394 * _1394));
-  *(double*)(((&((double*)(&_1283))[((int64_t)_1385)]))) = _1392;
-  *(double*)(((&((double*)(&_1284))[((int64_t)_1385)]))) = _1391;
-  *(double*)(((&((double*)_1300)[((int64_t)_1385)]))) = _1397;
-  *(double*)(((&((double*)_1302)[((int64_t)_1385)]))) = _1396;
-  if ((_1390 == UINT64_C(16))) {
-    goto _1483;
-  } else {
-    _1385__PHI_TEMPORARY = _1390;   /* for PHI node */
-    _1386__PHI_TEMPORARY = _1392;   /* for PHI node */
-    _1387__PHI_TEMPORARY = _1391;   /* for PHI node */
-    _1388__PHI_TEMPORARY = _1397;   /* for PHI node */
-    _1389__PHI_TEMPORARY = _1396;   /* for PHI node */
-    goto _1482;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1483:
-  fixderivative_levin((&_1282), (&_1281), (&_1284), (&_1283));
-  _1398 = 3.1415926535897931 / (_1308 * 2);
-  _1399 =  /*tail*/ sqrt(_1398);
-  _1400 = _1281;
-  _1401 = _1282;
-  _1402 = _1379 + 1;
-  _1277 = 0;
-  _1278 = 0;
-  _1403 = _1402 * 4;
-  _1404 = _1402 * _1403;
-  _1405 = (_1403 * _1313) + (_1402 * _1381);
-  _1406__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1407__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1408__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1409__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1410__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1484;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_1484:
-  _1406 = _1406__PHI_TEMPORARY;
-  _1407 = _1407__PHI_TEMPORARY;
-  _1408 = _1408__PHI_TEMPORARY;
-  _1409 = _1409__PHI_TEMPORARY;
-  _1410 = _1410__PHI_TEMPORARY;
-  _1411 = llvm_add_u64(_1406, 1);
-  _1412 = _1408 + _1410;
-  _1413 = _1409 + _1407;
-  _1414 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1406)])));
-  _1415 = _1384 * (((double)(uint32_t)(((uint32_t)_1411))));
-  _1416 = (_1404 - _1414) / _1415;
-  _1417 = _1410 * _1416;
-  _1418 = (_1416 * _1409) + (((_1415 * _1405) * _1410) / (_1415 * _1415));
-  *(double*)(((&((double*)(&_1279))[((int64_t)_1406)]))) = _1413;
-  *(double*)(((&((double*)(&_1280))[((int64_t)_1406)]))) = _1412;
-  *(double*)(((&((double*)_1299)[((int64_t)_1406)]))) = _1418;
-  *(double*)(((&((double*)_1303)[((int64_t)_1406)]))) = _1417;
-  if ((_1411 == UINT64_C(16))) {
-    goto _1485;
-  } else {
-    _1406__PHI_TEMPORARY = _1411;   /* for PHI node */
-    _1407__PHI_TEMPORARY = _1413;   /* for PHI node */
-    _1408__PHI_TEMPORARY = _1412;   /* for PHI node */
-    _1409__PHI_TEMPORARY = _1418;   /* for PHI node */
-    _1410__PHI_TEMPORARY = _1417;   /* for PHI node */
-    goto _1484;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1485:
-  _1419 = _1400 * _1399;
-  fixderivative_levin((&_1278), (&_1277), (&_1280), (&_1279));
-  _1420 =  /*tail*/ sqrt(_1398);
-  _1421 = 2 / _1308;
-  _1422 = _1312 + 0.5;
-  if ((llvm_fcmp_ogt(_1422, _1402))) {
-    goto _1486;
-  } else {
-    _1437__PHI_TEMPORARY = _1419;   /* for PHI node */
-    goto _1487;
-  }
-
-_1486:
-  _1423 = _1278;
-  _1424 = _1277;
-  _1425 = _1399 * _1401;
-  _1426 = _1420 * _1423;
-  _1427 = _1424 * _1420;
-  _1428 = _1313 * _1421;
-  _1429__PHI_TEMPORARY = _1427;   /* for PHI node */
-  _1430__PHI_TEMPORARY = _1426;   /* for PHI node */
-  _1431__PHI_TEMPORARY = _1419;   /* for PHI node */
-  _1432__PHI_TEMPORARY = _1425;   /* for PHI node */
-  _1433__PHI_TEMPORARY = _1402;   /* for PHI node */
-  goto _1488;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_1488:
-  _1429 = _1429__PHI_TEMPORARY;
-  _1430 = _1430__PHI_TEMPORARY;
-  _1431 = _1431__PHI_TEMPORARY;
-  _1432 = _1432__PHI_TEMPORARY;
-  _1433 = _1433__PHI_TEMPORARY;
-  _1434 = _1421 * _1433;
-  _1435 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1434, _1430, _1432);
-  _1436 = _1433 + 1;
-  if ((llvm_fcmp_olt(_1436, _1422))) {
-    _1429__PHI_TEMPORARY = ((_1431 + (_1428 * _1430)) + (_1434 * _1429));   /* for PHI node */
-    _1430__PHI_TEMPORARY = _1435;   /* for PHI node */
-    _1431__PHI_TEMPORARY = _1429;   /* for PHI node */
-    _1432__PHI_TEMPORARY = _1430;   /* for PHI node */
-    _1433__PHI_TEMPORARY = _1436;   /* for PHI node */
-    goto _1488;
-  } else {
-    _1437__PHI_TEMPORARY = _1429;   /* for PHI node */
-    goto _1487;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1487:
-  _1437 = _1437__PHI_TEMPORARY;
-  _1438 =  /*tail*/ exp((-(_1308)));
-  _1439 = _1438 * _1437;
-  _1463__PHI_TEMPORARY = _1439;   /* for PHI node */
-  goto _1469;
-
-_1480:
-  _1285 = 0;
-  _1359 = _1312 * (_1312 * 4);
-  _1360 = (_1312 * 8) * _1313;
-  _1361 = _1308 * 8;
-  _1362__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1363__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1364__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1365__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1366__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1489;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_1489:
-  _1362 = _1362__PHI_TEMPORARY;
-  _1363 = _1363__PHI_TEMPORARY;
-  _1364 = _1364__PHI_TEMPORARY;
-  _1365 = _1365__PHI_TEMPORARY;
-  _1366 = _1366__PHI_TEMPORARY;
-  _1367 = llvm_add_u64(_1362, 1);
-  _1368 = _1364 + _1366;
-  _1369 = _1365 + _1363;
-  _1370 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1362)])));
-  _1371 = _1361 * (((double)(uint32_t)(((uint32_t)_1367))));
-  _1372 = (_1359 - _1370) / _1371;
-  _1373 = _1366 * _1372;
-  _1374 = (_1372 * _1365) + (((_1360 * _1371) * _1366) / (_1371 * _1371));
-  *(double*)(((&((double*)(&_1287))[((int64_t)_1362)]))) = _1369;
-  *(double*)(((&((double*)(&_1288))[((int64_t)_1362)]))) = _1368;
-  *(double*)(((&((double*)_1301)[((int64_t)_1362)]))) = _1374;
-  *(double*)(((&((double*)_1304)[((int64_t)_1362)]))) = _1373;
-  if ((_1367 == UINT64_C(16))) {
-    goto _1490;
-  } else {
-    _1362__PHI_TEMPORARY = _1367;   /* for PHI node */
-    _1363__PHI_TEMPORARY = _1369;   /* for PHI node */
-    _1364__PHI_TEMPORARY = _1368;   /* for PHI node */
-    _1365__PHI_TEMPORARY = _1374;   /* for PHI node */
-    _1366__PHI_TEMPORARY = _1373;   /* for PHI node */
-    goto _1489;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1490:
-  fixderivative_levin((&_1286), (&_1285), (&_1288), (&_1287));
-  _1375 =  /*tail*/ sqrt((3.1415926535897931 / (_1308 * 2)));
-  _1376 = _1285;
-  _1377 =  /*tail*/ exp((-(_1308)));
-  _1378 = (_1376 * _1375) * _1377;
-  _1463__PHI_TEMPORARY = _1378;   /* for PHI node */
-  goto _1469;
-
-_1472:
-  _1339 =  /*tail*/ exp((_1308 * -0.5));
-  _1340 = 1 / (_1308 * 8);
-  _1341 = _1312 * 4;
-  _1342 = (_1340 * _1313) * (_1312 * 8);
-  _1343__PHI_TEMPORARY = 1;   /* for PHI node */
-  _1344__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1345__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1346__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _1491;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_1491:
-  _1343 = _1343__PHI_TEMPORARY;
-  _1344 = _1344__PHI_TEMPORARY;
-  _1345 = _1345__PHI_TEMPORARY;
-  _1346 = _1346__PHI_TEMPORARY;
-  _1347 = llvm_add_u32(_1346, 1);
-  _1348 = llvm_add_u32((_1347 << 1), -1);
-  _1349 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1341, _1312, (-((((double)(uint32_t)(llvm_mul_u32(_1348, _1348)))))));
-  _1350 = ((double)(uint32_t)_1347);
-  _1351 = _1340 * (_1349 / _1350);
-  _1352 = _1343 * _1351;
-  _1353 = (_1351 * _1344) + (((_1342 * _1350) * _1343) / (_1350 * _1350));
-  _1291 = _1353;
-  _1292 = _1352;
-  _1354 = _1353 + _1345;
-  fixderivative_isconverged((&_1292), (&_1291), (&_1290), (&_1289));
-  _1355 = _1290;
-  if ((llvm_select_bool((llvm_fcmp_olt(_1355, 0)), 1, (_1347 == 20u)))) {
-    goto _1492;
-  } else {
-    _1343__PHI_TEMPORARY = _1352;   /* for PHI node */
-    _1344__PHI_TEMPORARY = _1353;   /* for PHI node */
-    _1345__PHI_TEMPORARY = _1354;   /* for PHI node */
-    _1346__PHI_TEMPORARY = _1347;   /* for PHI node */
-    goto _1491;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_1492:
-  _1356 =  /*tail*/ sqrt((3.1415926535897931 / (_1308 * 2)));
-  _1357 = ((_1339 * _1339) * _1354) * _1356;
-  _1463__PHI_TEMPORARY = _1357;   /* for PHI node */
-  goto _1469;
-
-_1470:
-  _1314 = _1308 / _1312;
-  _1315 = -(_1313);
-  _1316 = _1307 * _1307;
-  _1317 = (_1308 * _1315) / _1316;
-  _1318 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1314, _1314, 1);
-  _1319 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1318);
-  _1320 = llvm_select_f64((llvm_fcmp_ueq(_1318, 0)), 0, (((_1314 * 2) * _1317) / (_1319 * 2)));
-  _1321 =  /*tail*/ log(_1314);
-  _1322 = _1319 + 1;
-  _1323 =  /*tail*/ log(_1322);
-  _1324 = (_1319 + _1321) - _1323;
-  _1325 = 1 / _1312;
-  _1326 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1325);
-  _1327 = _1316 * 2;
-  _1328 = _1326 * 1.2533141373155001;
-  _1329 = _1324 * (-(_1312));
-  _1330 =  /*tail*/ exp(_1329);
-  _1331 =  /*tail*/ exp(_1329);
-  _1332 = _1328 * _1330;
-  _1333 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1319);
-  _1334 = llvm_select_f64((llvm_fcmp_ole(_1312, _1308)), _1308, _1312);
-  _1335 = llvm_select_f64((llvm_fcmp_ole(_1312, _1308)), _1312, _1308);
-  _1336 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1334, _1334, (_1335 * _1335));
-  _1337 =  /*tail*/ fwddiffeUk_poly_Kn((1 / _1319), ((-(_1320)) / _1318), _1312, _1313, (_1316 / _1336), ((((_1307 * 2) * _1336) - (_1327 * (((llvm_select_f64((llvm_fcmp_ole(_1312, _1308)), 0, _1313)) * _1334) + ((llvm_select_f64((llvm_fcmp_ole(_1312, _1308)), _1313, 0)) * _1335)))) / (_1336 * _1336)));
-  _1338 = (((((((_1331 * _1328) * ((_1324 * _1315) - (((_1320 + (_1317 / _1314)) - (_1320 / _1322)) * _1312))) + (_1330 * (llvm_select_f64((llvm_fcmp_ueq(_1325, 0)), 0, ((_1313 * -1.2533141373155001) / (_1327 * _1326)))))) * _1333) - (_1332 * (llvm_select_f64((llvm_fcmp_ueq(_1319, 0)), 0, (_1320 / (_1333 * 2)))))) * ((_1337.field0))) / _1319) + (((_1337.field1)) * (_1332 / _1333));
-  _1463__PHI_TEMPORARY = _1338;   /* for PHI node */
-  goto _1469;
-
-_1469:
-  _1463 = _1463__PHI_TEMPORARY;
-  *(double*)(((&((double*)_1295)[((int64_t)_1306)]))) = _1463;
-  _1464 = llvm_add_u64(_1306, 1);
-  if ((_1464 == _1298)) {
-    goto _1466;
-  } else {
-    _1306__PHI_TEMPORARY = _1464;   /* for PHI node */
-    goto _1467;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-}
-
-
-void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
-  double _1497;    /* Address-exposed local */
-  double _1498;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1499 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1500 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _1501;    /* Address-exposed local */
-  double _1502;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1503 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1504 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _1505;    /* Address-exposed local */
-  double _1506;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1507 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _1508 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _1509;    /* Address-exposed local */
-  double _1510;    /* Address-exposed local */
-  double _1511;    /* Address-exposed local */
-  double _1512;    /* Address-exposed local */
-  void* _1513;
-  uint32_t _1514;
-  void* _1515;
-  void* _1516;
-  void* _1517;
-  uint64_t _1518;
-  void* _1519;
-  void* _1520;
-  void* _1521;
-  void* _1522;
-  void* _1523;
-  void* _1524;
-  void* _1525;
-  uint64_t _1526;
-  uint64_t _1526__PHI_TEMPORARY;
+  double _1464;
+  double _1465;
+  double _1466;
+  double _1467;
+  double _1468;
+  double _1469;
+  void* _1470;
+  void* _1471;
+  void* _1472;
+  void* _1473;
+  void* _1474;
+  void* _1475;
+  double _1476;
+  double _1477;
+  double _1478;
+  double _1479;
+  double _1480;
+  double _1481;
+  double _1482;
+  double _1483;
+  double _1484;
+  double _1485;
+  double _1486;
+  double _1487;
+  double _1488;
+  double _1489;
+  double _1490;
+  double _1491;
+  double _1492;
+  double _1493;
+  double _1494;
+  double _1495;
+  double _1496;
+  double _1497;
+  struct l_unnamed_1 _1498;
+  double _1499;
+  double _1500;
+  double _1501;
+  double _1502;
+  double _1503;
+  double _1504;
+  double _1505;
+  double _1506;
+  double _1507;
+  double _1508;
+  double _1509;
+  double _1510;
+  double _1510__PHI_TEMPORARY;
+  double _1511;
+  double _1511__PHI_TEMPORARY;
+  uint32_t _1512;
+  uint32_t _1512__PHI_TEMPORARY;
+  double _1513;
+  double _1513__PHI_TEMPORARY;
+  double _1514;
+  double _1514__PHI_TEMPORARY;
+  uint32_t _1515;
+  uint32_t _1516;
+  double _1517;
+  double _1518;
+  double _1519;
+  double _1520;
+  double _1521;
+  double _1522;
+  double _1523;
+  double _1524;
+  double _1525;
+  double _1526;
   double _1527;
   double _1528;
-  void* _1529;
-  void* _1530;
-  void* _1531;
+  double _1529;
+  double _1530;
+  double _1531;
   double _1532;
   double _1533;
   double _1534;
-  double _1535;
+  void* _1535;
   double _1536;
   double _1537;
   double _1538;
-  double _1539;
+  uint64_t _1539;
+  uint64_t _1539__PHI_TEMPORARY;
   double _1540;
+  double _1540__PHI_TEMPORARY;
   double _1541;
+  double _1541__PHI_TEMPORARY;
   double _1542;
+  double _1542__PHI_TEMPORARY;
   double _1543;
-  double _1544;
+  double _1543__PHI_TEMPORARY;
+  uint64_t _1544;
   double _1545;
   double _1546;
   double _1547;
@@ -5049,7 +4981,7 @@ void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
   double _1550;
   double _1551;
   double _1552;
-  struct l_unnamed_1 _1553;
+  double _1553;
   double _1554;
   double _1555;
   double _1556;
@@ -5059,25 +4991,25 @@ void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
   double _1560;
   double _1561;
   double _1562;
-  double _1562__PHI_TEMPORARY;
   double _1563;
-  double _1563__PHI_TEMPORARY;
-  uint32_t _1564;
-  uint32_t _1564__PHI_TEMPORARY;
+  double _1564;
   double _1565;
-  double _1565__PHI_TEMPORARY;
   double _1566;
-  double _1566__PHI_TEMPORARY;
-  uint32_t _1567;
-  uint32_t _1568;
+  void* _1567;
+  double _1568;
   double _1569;
   double _1570;
-  double _1571;
+  uint64_t _1571;
+  uint64_t _1571__PHI_TEMPORARY;
   double _1572;
+  double _1572__PHI_TEMPORARY;
   double _1573;
+  double _1573__PHI_TEMPORARY;
   double _1574;
+  double _1574__PHI_TEMPORARY;
   double _1575;
-  double _1576;
+  double _1575__PHI_TEMPORARY;
+  uint64_t _1576;
   double _1577;
   double _1578;
   double _1579;
@@ -5088,26 +5020,26 @@ void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
   double _1584;
   double _1585;
   double _1586;
-  uint64_t _1587;
-  uint64_t _1587__PHI_TEMPORARY;
+  double _1587;
   double _1588;
-  double _1588__PHI_TEMPORARY;
   double _1589;
-  double _1589__PHI_TEMPORARY;
   double _1590;
-  double _1590__PHI_TEMPORARY;
   double _1591;
-  double _1591__PHI_TEMPORARY;
-  uint64_t _1592;
+  double _1592;
   double _1593;
-  double _1594;
+  void* _1594;
   double _1595;
-  double _1596;
+  uint64_t _1596;
+  uint64_t _1596__PHI_TEMPORARY;
   double _1597;
+  double _1597__PHI_TEMPORARY;
   double _1598;
+  double _1598__PHI_TEMPORARY;
   double _1599;
+  double _1599__PHI_TEMPORARY;
   double _1600;
-  double _1601;
+  double _1600__PHI_TEMPORARY;
+  uint64_t _1601;
   double _1602;
   double _1603;
   double _1604;
@@ -5121,46 +5053,43 @@ void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
   double _1612;
   double _1613;
   double _1614;
-  uint64_t _1615;
-  uint64_t _1615__PHI_TEMPORARY;
+  double _1615;
   double _1616;
-  double _1616__PHI_TEMPORARY;
   double _1617;
-  double _1617__PHI_TEMPORARY;
   double _1618;
-  double _1618__PHI_TEMPORARY;
   double _1619;
-  double _1619__PHI_TEMPORARY;
-  uint64_t _1620;
+  double _1620;
   double _1621;
   double _1622;
   double _1623;
+  double _1623__PHI_TEMPORARY;
   double _1624;
+  double _1624__PHI_TEMPORARY;
   double _1625;
+  double _1625__PHI_TEMPORARY;
   double _1626;
+  double _1626__PHI_TEMPORARY;
   double _1627;
+  double _1627__PHI_TEMPORARY;
   double _1628;
   double _1629;
   double _1630;
   double _1631;
+  double _1631__PHI_TEMPORARY;
   double _1632;
+  double _1632__PHI_TEMPORARY;
   double _1633;
   double _1634;
   double _1635;
   double _1636;
   double _1637;
   double _1638;
-  uint64_t _1639;
-  uint64_t _1639__PHI_TEMPORARY;
+  double _1639;
   double _1640;
-  double _1640__PHI_TEMPORARY;
-  double _1641;
-  double _1641__PHI_TEMPORARY;
-  double _1642;
-  double _1642__PHI_TEMPORARY;
-  double _1643;
-  double _1643__PHI_TEMPORARY;
-  uint64_t _1644;
+  struct l_unnamed_2 _1641;
+  struct l_unnamed_1 _1642;
+  struct l_unnamed_1 _1643;
+  double _1644;
   double _1645;
   double _1646;
   double _1647;
@@ -5170,10 +5099,15 @@ void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
   double _1651;
   double _1652;
   double _1653;
+  double _1653__PHI_TEMPORARY;
   double _1654;
+  double _1654__PHI_TEMPORARY;
   double _1655;
+  double _1655__PHI_TEMPORARY;
   double _1656;
+  double _1656__PHI_TEMPORARY;
   double _1657;
+  double _1657__PHI_TEMPORARY;
   double _1658;
   double _1659;
   double _1660;
@@ -5181,10 +5115,11 @@ void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
   double _1662;
   double _1663;
   double _1664;
+  double _1664__PHI_TEMPORARY;
   double _1665;
   double _1665__PHI_TEMPORARY;
-  double _1666;
-  double _1666__PHI_TEMPORARY;
+  uint32_t _1666;
+  uint32_t _1666__PHI_TEMPORARY;
   double _1667;
   double _1667__PHI_TEMPORARY;
   double _1668;
@@ -5192,12 +5127,14 @@ void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
   double _1669;
   double _1669__PHI_TEMPORARY;
   double _1670;
+  double _1670__PHI_TEMPORARY;
   double _1671;
+  double _1671__PHI_TEMPORARY;
   double _1672;
+  double _1672__PHI_TEMPORARY;
   double _1673;
   double _1673__PHI_TEMPORARY;
-  double _1674;
-  double _1674__PHI_TEMPORARY;
+  uint32_t _1674;
   double _1675;
   double _1676;
   double _1677;
@@ -5205,605 +5142,639 @@ void* besselk_dx_buf(void* _1493, void* _1494, void* _1495, void* _1496) {
   double _1679;
   double _1680;
   double _1681;
-  struct l_unnamed_2 _1682;
-  struct l_unnamed_1 _1683;
+  double _1682;
+  double _1683;
   double _1684;
   double _1685;
   double _1686;
   double _1687;
-  struct l_unnamed_1 _1688;
+  double _1688;
   double _1689;
   double _1690;
   double _1691;
   double _1692;
   double _1693;
-  double _1693__PHI_TEMPORARY;
   double _1694;
-  double _1694__PHI_TEMPORARY;
   double _1695;
-  double _1695__PHI_TEMPORARY;
   double _1696;
-  double _1696__PHI_TEMPORARY;
   double _1697;
-  double _1697__PHI_TEMPORARY;
   double _1698;
   double _1699;
   double _1700;
   double _1701;
+  double _1701__PHI_TEMPORARY;
   double _1702;
   double _1702__PHI_TEMPORARY;
-  uint64_t _1703;
+  double _1703;
+  double _1704;
+  double _1704__PHI_TEMPORARY;
 
-  _1513 =  /*tail*/ INTEGER(_1494);
-  _1514 = *(uint32_t*)_1513;
-  _1515 =  /*tail*/ REAL(_1493);
-  _1516 =  /*tail*/ REAL(_1495);
-  _1517 =  /*tail*/ REAL(_1496);
-  if ((((int32_t)_1514) > ((int32_t)0u))) {
-    goto _1704;
-  } else {
+  if ((llvm_fcmp_oeq(_1436, 0))) {
+    _1704__PHI_TEMPORARY = 0;   /* for PHI node */
     goto _1705;
+  } else {
+    goto _1706;
   }
 
-_1704:
-  _1518 = ((uint64_t)(uint32_t)_1514);
-  _1519 = ((&((uint8_t*)(&_1499))[((int64_t)128)]));
-  _1520 = ((&((uint8_t*)(&_1503))[((int64_t)128)]));
-  _1521 = ((&((uint8_t*)(&_1507))[((int64_t)128)]));
-  _1522 = ((&((uint8_t*)(&_1504))[((int64_t)128)]));
-  _1523 = ((&((uint8_t*)(&_1500))[((int64_t)128)]));
-  _1524 = ((&((uint8_t*)(&_1508))[((int64_t)128)]));
-  _1526__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _1706;
-
-_1705:
-  _1525 = R_NilValue;
-  return _1525;
-  do {     /* Syntactic loop '' to make GCC happy */
 _1706:
-  _1526 = _1526__PHI_TEMPORARY;
-  _1527 = *(double*)(((&((double*)_1516)[((int64_t)_1526)])));
-  _1528 = *(double*)(((&((double*)_1517)[((int64_t)_1526)])));
-  _1529 = memset((&_1499), 0, 256);
-  _1530 = memset((&_1503), 0, 256);
-  _1531 = memset((&_1507), 0, 256);
-  _1532 =  /*tail*/ llvm_OC_fabs_OC_f64(_1527);
-  if ((llvm_fcmp_ugt(_1528, 0))) {
+  _1460 =  /*tail*/ sqrt((_1439 * 2));
+  _1461 = _1460 * _1436;
+  _1462 = _1461 / _1438;
+  _1463 = (-(_1461)) / (_1438 * _1438);
+  _1464 =  /*tail*/ exp2((1 - _1439));
+  _1465 =  /*tail*/ gamma(_1439);
+  _1466 = ((_1437 * _1437) * _1464) / _1465;
+  _1467 =  /*tail*/ pow(_1462, _1439);
+  _1468 =  /*tail*/ pow(_1462, (_1439 + -1));
+  _1469 = _1466 * _1467;
+  _1470 = ((&((uint8_t*)(&_1446))[((int64_t)128)]));
+  _1471 = memset((&_1446), 0, 256);
+  _1472 = ((&((uint8_t*)(&_1450))[((int64_t)128)]));
+  _1473 = memset((&_1450), 0, 256);
+  _1474 = ((&((uint8_t*)(&_1454))[((int64_t)128)]));
+  _1475 = memset((&_1454), 0, 256);
+  _1476 =  /*tail*/ llvm_OC_fabs_OC_f64(_1439);
+  if ((llvm_fcmp_ugt(_1462, 0))) {
     goto _1707;
   } else {
-    _1702__PHI_TEMPORARY = 0;   /* for PHI node */
+    _1701__PHI_TEMPORARY = 0;   /* for PHI node */
+    _1702__PHI_TEMPORARY = (*(double*)&FPConstant2);   /* for PHI node */
     goto _1708;
   }
 
 _1707:
-  if (((llvm_fcmp_ogt(_1532, 25)) | (llvm_fcmp_ogt(_1528, 35)))) {
+  if (((llvm_fcmp_ogt(_1476, 25)) | (llvm_fcmp_ogt(_1462, 35)))) {
     goto _1709;
   } else {
     goto _1710;
   }
 
+_1709:
+  _1477 = _1462 / _1476;
+  _1478 = _1439 * _1439;
+  _1479 = (_1463 * _1476) / _1478;
+  _1480 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1477, _1477, 1);
+  _1481 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1480);
+  _1482 = llvm_select_f64((llvm_fcmp_ueq(_1480, 0)), 0, (((_1477 * 2) * _1479) / (_1481 * 2)));
+  _1483 =  /*tail*/ log(_1477);
+  _1484 = _1481 + 1;
+  _1485 =  /*tail*/ log(_1484);
+  _1486 =  /*tail*/ llvm_OC_sqrt_OC_f64((1 / _1476));
+  _1487 = _1486 * 1.2533141373155001;
+  _1488 = -(_1476);
+  _1489 = ((_1481 + _1483) - _1485) * _1488;
+  _1490 =  /*tail*/ exp(_1489);
+  _1491 =  /*tail*/ exp(_1489);
+  _1492 = _1487 * _1490;
+  _1493 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1481);
+  _1494 = _1492 / _1493;
+  _1495 = llvm_select_f64((llvm_fcmp_ole(_1476, _1462)), _1462, _1476);
+  _1496 = llvm_select_f64((llvm_fcmp_ole(_1476, _1462)), _1476, _1462);
+  _1497 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1495, _1495, (_1496 * _1496));
+  _1498 =  /*tail*/ fwddiffeUk_poly_Kn_OC_3((1 / _1481), ((-(_1482)) / _1480), _1476, (_1478 / _1497), (((_1478 * -2) * (((llvm_select_f64((llvm_fcmp_ole(_1476, _1462)), _1463, 0)) * _1495) + ((llvm_select_f64((llvm_fcmp_ole(_1476, _1462)), 0, _1463)) * _1496))) / (_1497 * _1497)));
+  _1499 = (_1498.field0);
+  _1500 = _1494 * _1499;
+  _1501 = (((((((_1487 * _1488) * _1493) * ((_1482 + (_1479 / _1477)) - (_1482 / _1484))) * _1491) - (_1492 * (llvm_select_f64((llvm_fcmp_ueq(_1481, 0)), 0, (_1482 / (_1493 * 2)))))) * _1499) / _1481) + (((_1498.field1)) * _1494);
+  _1701__PHI_TEMPORARY = _1501;   /* for PHI node */
+  _1702__PHI_TEMPORARY = _1500;   /* for PHI node */
+  goto _1708;
+
 _1710:
-  if ((llvm_fcmp_olt((((_1527 * _1527) / 36) + 24), _1528))) {
+  if ((llvm_fcmp_olt((((_1439 * _1439) / 36) + 24), _1462))) {
     goto _1711;
   } else {
     goto _1712;
   }
 
-_1712:
-  _1584 =  /*tail*/ llvm_OC_floor_OC_f64(_1532);
-  if ((llvm_fcmp_ogt(_1528, 1.5))) {
-    goto _1713;
-  } else {
+_1711:
+  _1502 = _1462 * -0.5;
+  _1503 =  /*tail*/ exp(_1502);
+  _1504 =  /*tail*/ exp(_1502);
+  _1505 = _1462 * 8;
+  _1506 = 1 / _1505;
+  _1507 = _1463 * 8;
+  _1508 = _1476 * 4;
+  _1509 = 1 / (_1505 * _1505);
+  _1510__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1511__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1512__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1513__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1514__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1713;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_1713:
+  _1510 = _1510__PHI_TEMPORARY;
+  _1511 = _1511__PHI_TEMPORARY;
+  _1512 = _1512__PHI_TEMPORARY;
+  _1513 = _1513__PHI_TEMPORARY;
+  _1514 = _1514__PHI_TEMPORARY;
+  _1515 = llvm_add_u32(_1512, 1);
+  _1516 = llvm_add_u32((_1515 << 1), -1);
+  _1517 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1508, _1476, (-((((double)(uint32_t)(llvm_mul_u32(_1516, _1516)))))));
+  _1518 = _1517 / (((double)(uint32_t)_1515));
+  _1519 = _1506 * _1518;
+  _1520 = _1510 * _1519;
+  _1521 = (_1519 * _1511) - (((_1507 * _1510) * _1518) * _1509);
+  _1458 = _1521;
+  _1459 = _1520;
+  _1522 = _1514 + _1520;
+  _1523 = _1521 + _1513;
+  fixderivative_isconverged((&_1459), (&_1458), (&_1457), (&_1456));
+  _1524 = _1457;
+  if ((llvm_select_bool((llvm_fcmp_olt(_1524, 0)), 1, (_1515 == 20u)))) {
     goto _1714;
+  } else {
+    _1510__PHI_TEMPORARY = _1520;   /* for PHI node */
+    _1511__PHI_TEMPORARY = _1521;   /* for PHI node */
+    _1512__PHI_TEMPORARY = _1515;   /* for PHI node */
+    _1513__PHI_TEMPORARY = _1523;   /* for PHI node */
+    _1514__PHI_TEMPORARY = _1522;   /* for PHI node */
+    goto _1713;
   }
 
+  } while (1); /* end of syntactic loop '' */
 _1714:
-  _1679 = round(_1532);
-  _1680 =  /*tail*/ llvm_OC_fabs_OC_f64((_1532 - _1679));
-  if ((llvm_fcmp_olt(_1680, 1.0000000000000001E-5))) {
+  _1525 = (_1463 * -0.5) * _1504;
+  _1526 = _1462 * 2;
+  _1527 = 3.1415926535897931 / _1526;
+  _1528 =  /*tail*/ sqrt(_1527);
+  _1529 =  /*tail*/ sqrt(_1527);
+  _1530 = _1522 * _1528;
+  _1531 = _1503 * _1530;
+  _1532 = _1503 * _1531;
+  _1533 = ((((((llvm_select_f64((llvm_fcmp_ueq(_1527, 0)), 0, ((_1463 * -6.2831853071795862) / (((_1462 * 4) * _1526) * _1529)))) * _1522) + (_1528 * _1523)) * _1503) + (_1530 * _1525)) * _1503) + (_1531 * _1525);
+  _1701__PHI_TEMPORARY = _1533;   /* for PHI node */
+  _1702__PHI_TEMPORARY = _1532;   /* for PHI node */
+  goto _1708;
+
+_1712:
+  _1534 =  /*tail*/ llvm_OC_floor_OC_f64(_1476);
+  if ((llvm_fcmp_ogt(_1462, 1.5))) {
     goto _1715;
   } else {
     goto _1716;
   }
 
-_1716:
-  _1701 =  /*tail*/ fwddiffebesselk_power_series_OC_5(_1532, _1528);
-  _1702__PHI_TEMPORARY = _1701;   /* for PHI node */
-  goto _1708;
-
 _1715:
-  _1681 = _1532 - (llvm_select_f64((llvm_fcmp_ogt((_1532 - _1584), 0.5)), (_1584 + -1), _1584));
-  _1682 =  /*tail*/ fwddiffebesselk_temme_series_OC_4(_1681, _1528, 1);
-  _1683 = (_1682.field1);
-  _1684 = (_1683.field0);
-  _1685 = _1681 + 1;
-  _1686 = 2 / _1528;
-  _1687 = _1532 + 0.5;
-  if ((llvm_fcmp_ogt(_1687, _1685))) {
+  if ((llvm_fcmp_olt(_1476, 2))) {
     goto _1717;
   } else {
-    _1702__PHI_TEMPORARY = _1684;   /* for PHI node */
-    goto _1708;
+    goto _1718;
   }
 
 _1717:
-  _1688 = (_1682.field0);
-  _1689 = (_1688.field0);
-  _1690 = (_1688.field1);
-  _1691 = (_1683.field1);
-  _1692 = 1 / (_1528 * _1528);
-  _1693__PHI_TEMPORARY = _1691;   /* for PHI node */
-  _1694__PHI_TEMPORARY = _1690;   /* for PHI node */
-  _1695__PHI_TEMPORARY = _1684;   /* for PHI node */
-  _1696__PHI_TEMPORARY = _1689;   /* for PHI node */
-  _1697__PHI_TEMPORARY = _1685;   /* for PHI node */
-  goto _1718;
+  _1452 = 0;
+  _1453 = 0;
+  _1535 = ((&((uint8_t*)(&_1455))[((int64_t)128)]));
+  _1536 = _1476 * (_1476 * 4);
+  _1537 = _1462 * 8;
+  _1538 = _1463 * 8;
+  _1539__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1540__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1541__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1542__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1543__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _1719;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_1718:
-  _1693 = _1693__PHI_TEMPORARY;
-  _1694 = _1694__PHI_TEMPORARY;
-  _1695 = _1695__PHI_TEMPORARY;
-  _1696 = _1696__PHI_TEMPORARY;
-  _1697 = _1697__PHI_TEMPORARY;
-  _1698 = _1686 * _1697;
-  _1699 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1698, _1694, _1696);
-  _1700 = _1697 + 1;
-  if ((llvm_fcmp_olt(_1700, _1687))) {
-    _1693__PHI_TEMPORARY = (((_1698 * _1693) + _1695) + (((_1694 * -2) * _1697) * _1692));   /* for PHI node */
-    _1694__PHI_TEMPORARY = _1699;   /* for PHI node */
-    _1695__PHI_TEMPORARY = _1693;   /* for PHI node */
-    _1696__PHI_TEMPORARY = _1694;   /* for PHI node */
-    _1697__PHI_TEMPORARY = _1700;   /* for PHI node */
-    goto _1718;
+_1719:
+  _1539 = _1539__PHI_TEMPORARY;
+  _1540 = _1540__PHI_TEMPORARY;
+  _1541 = _1541__PHI_TEMPORARY;
+  _1542 = _1542__PHI_TEMPORARY;
+  _1543 = _1543__PHI_TEMPORARY;
+  _1544 = llvm_add_u64(_1539, 1);
+  _1545 = _1541 + _1543;
+  _1546 = _1542 + _1540;
+  _1547 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1539)])));
+  _1548 = _1536 - _1547;
+  _1549 = ((double)(uint32_t)(((uint32_t)_1544)));
+  _1550 = _1537 * _1549;
+  _1551 = _1548 / _1550;
+  _1552 = _1543 * _1551;
+  _1553 = (_1551 * _1542) - ((((_1538 * _1549) * _1543) * _1548) / (_1550 * _1550));
+  *(double*)(((&((double*)(&_1454))[((int64_t)_1539)]))) = _1546;
+  *(double*)(((&((double*)(&_1455))[((int64_t)_1539)]))) = _1545;
+  *(double*)(((&((double*)_1474)[((int64_t)_1539)]))) = _1553;
+  *(double*)(((&((double*)_1535)[((int64_t)_1539)]))) = _1552;
+  if ((_1544 == UINT64_C(16))) {
+    goto _1720;
   } else {
-    _1702__PHI_TEMPORARY = _1693;   /* for PHI node */
-    goto _1708;
+    _1539__PHI_TEMPORARY = _1544;   /* for PHI node */
+    _1540__PHI_TEMPORARY = _1546;   /* for PHI node */
+    _1541__PHI_TEMPORARY = _1545;   /* for PHI node */
+    _1542__PHI_TEMPORARY = _1553;   /* for PHI node */
+    _1543__PHI_TEMPORARY = _1552;   /* for PHI node */
+    goto _1719;
   }
 
   } while (1); /* end of syntactic loop '' */
-_1713:
-  if ((llvm_fcmp_olt(_1532, 2))) {
-    goto _1719;
-  } else {
-    goto _1720;
-  }
-
 _1720:
-  _1612 = _1532 - _1584;
-  _1501 = 0;
-  _1502 = 0;
-  _1613 = _1612 * (_1612 * 4);
-  _1614 = _1528 * 8;
-  _1615__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1616__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1617__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1618__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1619__PHI_TEMPORARY = 1;   /* for PHI node */
+  fixderivative_levin((&_1453), (&_1452), (&_1455), (&_1454));
+  _1554 = _1462 * 2;
+  _1555 = 3.1415926535897931 / _1554;
+  _1556 =  /*tail*/ sqrt(_1555);
+  _1557 =  /*tail*/ sqrt(_1555);
+  _1558 = _1452;
+  _1559 = _1453;
+  _1560 = _1556 * _1559;
+  _1561 = -(_1462);
+  _1562 =  /*tail*/ exp(_1561);
+  _1563 =  /*tail*/ exp(_1561);
+  _1564 = _1560 * _1562;
+  _1565 = ((((llvm_select_f64((llvm_fcmp_ueq(_1555, 0)), 0, ((_1463 * -6.2831853071795862) / (((_1462 * 4) * _1554) * _1557)))) * _1559) + (_1558 * _1556)) * _1562) - ((_1560 * _1463) * _1563);
+  _1701__PHI_TEMPORARY = _1565;   /* for PHI node */
+  _1702__PHI_TEMPORARY = _1564;   /* for PHI node */
+  goto _1708;
+
+_1718:
+  _1566 = _1476 - _1534;
+  _1448 = 0;
+  _1449 = 0;
+  _1567 = ((&((uint8_t*)(&_1451))[((int64_t)128)]));
+  _1568 = _1566 * (_1566 * 4);
+  _1569 = _1462 * 8;
+  _1570 = _1463 * -8;
+  _1571__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1572__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1573__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1574__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1575__PHI_TEMPORARY = 1;   /* for PHI node */
   goto _1721;
 
   do {     /* Syntactic loop '' to make GCC happy */
 _1721:
-  _1615 = _1615__PHI_TEMPORARY;
-  _1616 = _1616__PHI_TEMPORARY;
-  _1617 = _1617__PHI_TEMPORARY;
-  _1618 = _1618__PHI_TEMPORARY;
-  _1619 = _1619__PHI_TEMPORARY;
-  _1620 = llvm_add_u64(_1615, 1);
-  _1621 = _1617 + _1619;
-  _1622 = _1618 + _1616;
-  _1623 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1615)])));
-  _1624 = _1613 - _1623;
-  _1625 = ((double)(uint32_t)(((uint32_t)_1620)));
-  _1626 = _1614 * _1625;
-  _1627 = _1624 / _1626;
-  _1628 = _1619 * _1627;
-  _1629 = (_1627 * _1618) - ((((_1625 * 8) * _1619) * _1624) / (_1626 * _1626));
-  *(double*)(((&((double*)(&_1503))[((int64_t)_1615)]))) = _1622;
-  *(double*)(((&((double*)(&_1504))[((int64_t)_1615)]))) = _1621;
-  *(double*)(((&((double*)_1520)[((int64_t)_1615)]))) = _1629;
-  *(double*)(((&((double*)_1522)[((int64_t)_1615)]))) = _1628;
-  if ((_1620 == UINT64_C(16))) {
+  _1571 = _1571__PHI_TEMPORARY;
+  _1572 = _1572__PHI_TEMPORARY;
+  _1573 = _1573__PHI_TEMPORARY;
+  _1574 = _1574__PHI_TEMPORARY;
+  _1575 = _1575__PHI_TEMPORARY;
+  _1576 = llvm_add_u64(_1571, 1);
+  _1577 = _1573 + _1575;
+  _1578 = _1574 + _1572;
+  _1579 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1571)])));
+  _1580 = _1568 - _1579;
+  _1581 = ((double)(uint32_t)(((uint32_t)_1576)));
+  _1582 = _1569 * _1581;
+  _1583 = _1580 / _1582;
+  _1584 = _1575 * _1583;
+  _1585 = ((((_1570 * _1581) * _1575) * _1580) / (_1582 * _1582)) + (_1583 * _1574);
+  *(double*)(((&((double*)(&_1450))[((int64_t)_1571)]))) = _1578;
+  *(double*)(((&((double*)(&_1451))[((int64_t)_1571)]))) = _1577;
+  *(double*)(((&((double*)_1472)[((int64_t)_1571)]))) = _1585;
+  *(double*)(((&((double*)_1567)[((int64_t)_1571)]))) = _1584;
+  if ((_1576 == UINT64_C(16))) {
     goto _1722;
   } else {
-    _1615__PHI_TEMPORARY = _1620;   /* for PHI node */
-    _1616__PHI_TEMPORARY = _1622;   /* for PHI node */
-    _1617__PHI_TEMPORARY = _1621;   /* for PHI node */
-    _1618__PHI_TEMPORARY = _1629;   /* for PHI node */
-    _1619__PHI_TEMPORARY = _1628;   /* for PHI node */
+    _1571__PHI_TEMPORARY = _1576;   /* for PHI node */
+    _1572__PHI_TEMPORARY = _1578;   /* for PHI node */
+    _1573__PHI_TEMPORARY = _1577;   /* for PHI node */
+    _1574__PHI_TEMPORARY = _1585;   /* for PHI node */
+    _1575__PHI_TEMPORARY = _1584;   /* for PHI node */
     goto _1721;
   }
 
   } while (1); /* end of syntactic loop '' */
 _1722:
-  fixderivative_levin((&_1502), (&_1501), (&_1504), (&_1503));
-  _1630 = _1528 * 2;
-  _1631 = 3.1415926535897931 / _1630;
-  _1632 =  /*tail*/ sqrt(_1631);
-  _1633 =  /*tail*/ sqrt(_1631);
-  _1634 = -6.2831853071795862 / (((_1528 * 4) * _1630) * _1633);
-  _1635 = _1501;
-  _1636 = _1502;
-  _1637 = _1612 + 1;
-  _1497 = 0;
-  _1498 = 0;
-  _1638 = _1637 * (_1637 * 4);
-  _1639__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1640__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1641__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1642__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1643__PHI_TEMPORARY = 1;   /* for PHI node */
+  fixderivative_levin((&_1449), (&_1448), (&_1451), (&_1450));
+  _1586 = _1462 * 2;
+  _1587 = 3.1415926535897931 / _1586;
+  _1588 =  /*tail*/ sqrt(_1587);
+  _1589 =  /*tail*/ sqrt(_1587);
+  _1590 = ((_1462 * 4) * _1586) * _1589;
+  _1591 = _1448;
+  _1592 = _1449;
+  _1593 = _1566 + 1;
+  _1444 = 0;
+  _1445 = 0;
+  _1594 = ((&((uint8_t*)(&_1447))[((int64_t)128)]));
+  _1595 = _1593 * (_1593 * 4);
+  _1596__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1597__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1598__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1599__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1600__PHI_TEMPORARY = 1;   /* for PHI node */
   goto _1723;
 
   do {     /* Syntactic loop '' to make GCC happy */
 _1723:
-  _1639 = _1639__PHI_TEMPORARY;
-  _1640 = _1640__PHI_TEMPORARY;
-  _1641 = _1641__PHI_TEMPORARY;
-  _1642 = _1642__PHI_TEMPORARY;
-  _1643 = _1643__PHI_TEMPORARY;
-  _1644 = llvm_add_u64(_1639, 1);
-  _1645 = _1641 + _1643;
-  _1646 = _1642 + _1640;
-  _1647 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1639)])));
-  _1648 = _1638 - _1647;
-  _1649 = ((double)(uint32_t)(((uint32_t)_1644)));
-  _1650 = _1614 * _1649;
-  _1651 = _1648 / _1650;
-  _1652 = _1643 * _1651;
-  _1653 = (_1651 * _1642) - ((((_1649 * 8) * _1643) * _1648) / (_1650 * _1650));
-  *(double*)(((&((double*)(&_1499))[((int64_t)_1639)]))) = _1646;
-  *(double*)(((&((double*)(&_1500))[((int64_t)_1639)]))) = _1645;
-  *(double*)(((&((double*)_1519)[((int64_t)_1639)]))) = _1653;
-  *(double*)(((&((double*)_1523)[((int64_t)_1639)]))) = _1652;
-  if ((_1644 == UINT64_C(16))) {
+  _1596 = _1596__PHI_TEMPORARY;
+  _1597 = _1597__PHI_TEMPORARY;
+  _1598 = _1598__PHI_TEMPORARY;
+  _1599 = _1599__PHI_TEMPORARY;
+  _1600 = _1600__PHI_TEMPORARY;
+  _1601 = llvm_add_u64(_1596, 1);
+  _1602 = _1598 + _1600;
+  _1603 = _1599 + _1597;
+  _1604 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1596)])));
+  _1605 = _1595 - _1604;
+  _1606 = ((double)(uint32_t)(((uint32_t)_1601)));
+  _1607 = _1569 * _1606;
+  _1608 = _1605 / _1607;
+  _1609 = _1600 * _1608;
+  _1610 = ((((_1570 * _1606) * _1600) * _1605) / (_1607 * _1607)) + (_1608 * _1599);
+  *(double*)(((&((double*)(&_1446))[((int64_t)_1596)]))) = _1603;
+  *(double*)(((&((double*)(&_1447))[((int64_t)_1596)]))) = _1602;
+  *(double*)(((&((double*)_1470)[((int64_t)_1596)]))) = _1610;
+  *(double*)(((&((double*)_1594)[((int64_t)_1596)]))) = _1609;
+  if ((_1601 == UINT64_C(16))) {
     goto _1724;
   } else {
-    _1639__PHI_TEMPORARY = _1644;   /* for PHI node */
-    _1640__PHI_TEMPORARY = _1646;   /* for PHI node */
-    _1641__PHI_TEMPORARY = _1645;   /* for PHI node */
-    _1642__PHI_TEMPORARY = _1653;   /* for PHI node */
-    _1643__PHI_TEMPORARY = _1652;   /* for PHI node */
+    _1596__PHI_TEMPORARY = _1601;   /* for PHI node */
+    _1597__PHI_TEMPORARY = _1603;   /* for PHI node */
+    _1598__PHI_TEMPORARY = _1602;   /* for PHI node */
+    _1599__PHI_TEMPORARY = _1610;   /* for PHI node */
+    _1600__PHI_TEMPORARY = _1609;   /* for PHI node */
     goto _1723;
   }
 
   } while (1); /* end of syntactic loop '' */
 _1724:
-  _1654 = llvm_select_f64((llvm_fcmp_ueq(_1631, 0)), 0, _1634);
-  _1655 = _1632 * _1636;
-  _1656 = (_1654 * _1636) + (_1635 * _1632);
-  fixderivative_levin((&_1498), (&_1497), (&_1500), (&_1499));
-  _1657 =  /*tail*/ sqrt(_1631);
-  _1658 = 2 / _1528;
-  _1659 = _1532 + 0.5;
-  if ((llvm_fcmp_ogt(_1659, _1637))) {
+  _1611 = llvm_select_f64((llvm_fcmp_ueq(_1587, 0)), 0, ((_1463 * -6.2831853071795862) / _1590));
+  _1612 = _1588 * _1592;
+  _1613 = (_1611 * _1592) + (_1591 * _1588);
+  fixderivative_levin((&_1445), (&_1444), (&_1447), (&_1446));
+  _1614 =  /*tail*/ sqrt(_1587);
+  _1615 = 2 / _1462;
+  _1616 = _1463 * -2;
+  _1617 = _1476 + 0.5;
+  if ((llvm_fcmp_ogt(_1617, _1593))) {
     goto _1725;
   } else {
-    _1673__PHI_TEMPORARY = _1656;   /* for PHI node */
-    _1674__PHI_TEMPORARY = _1655;   /* for PHI node */
+    _1631__PHI_TEMPORARY = _1613;   /* for PHI node */
+    _1632__PHI_TEMPORARY = _1612;   /* for PHI node */
     goto _1726;
   }
 
 _1725:
-  _1660 = _1498;
-  _1661 = _1497;
-  _1662 = _1657 * _1660;
-  _1663 = (_1661 * _1657) + (_1660 * _1654);
-  _1664 = 1 / (_1528 * _1528);
-  _1665__PHI_TEMPORARY = _1663;   /* for PHI node */
-  _1666__PHI_TEMPORARY = _1662;   /* for PHI node */
-  _1667__PHI_TEMPORARY = _1656;   /* for PHI node */
-  _1668__PHI_TEMPORARY = _1655;   /* for PHI node */
-  _1669__PHI_TEMPORARY = _1637;   /* for PHI node */
+  _1618 = _1445;
+  _1619 = _1444;
+  _1620 = _1614 * _1618;
+  _1621 = (_1619 * _1614) + (_1618 * _1611);
+  _1622 = 1 / (_1462 * _1462);
+  _1623__PHI_TEMPORARY = _1621;   /* for PHI node */
+  _1624__PHI_TEMPORARY = _1620;   /* for PHI node */
+  _1625__PHI_TEMPORARY = _1613;   /* for PHI node */
+  _1626__PHI_TEMPORARY = _1612;   /* for PHI node */
+  _1627__PHI_TEMPORARY = _1593;   /* for PHI node */
   goto _1727;
 
   do {     /* Syntactic loop '' to make GCC happy */
 _1727:
-  _1665 = _1665__PHI_TEMPORARY;
-  _1666 = _1666__PHI_TEMPORARY;
-  _1667 = _1667__PHI_TEMPORARY;
-  _1668 = _1668__PHI_TEMPORARY;
-  _1669 = _1669__PHI_TEMPORARY;
-  _1670 = _1658 * _1669;
-  _1671 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1670, _1666, _1668);
-  _1672 = _1669 + 1;
-  if ((llvm_fcmp_olt(_1672, _1659))) {
-    _1665__PHI_TEMPORARY = (((_1670 * _1665) + _1667) + (((_1666 * -2) * _1669) * _1664));   /* for PHI node */
-    _1666__PHI_TEMPORARY = _1671;   /* for PHI node */
-    _1667__PHI_TEMPORARY = _1665;   /* for PHI node */
-    _1668__PHI_TEMPORARY = _1666;   /* for PHI node */
-    _1669__PHI_TEMPORARY = _1672;   /* for PHI node */
+  _1623 = _1623__PHI_TEMPORARY;
+  _1624 = _1624__PHI_TEMPORARY;
+  _1625 = _1625__PHI_TEMPORARY;
+  _1626 = _1626__PHI_TEMPORARY;
+  _1627 = _1627__PHI_TEMPORARY;
+  _1628 = _1615 * _1627;
+  _1629 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1628, _1624, _1626);
+  _1630 = _1627 + 1;
+  if ((llvm_fcmp_olt(_1630, _1617))) {
+    _1623__PHI_TEMPORARY = (((_1628 * _1623) + _1625) + (((_1616 * _1624) * _1627) * _1622));   /* for PHI node */
+    _1624__PHI_TEMPORARY = _1629;   /* for PHI node */
+    _1625__PHI_TEMPORARY = _1623;   /* for PHI node */
+    _1626__PHI_TEMPORARY = _1624;   /* for PHI node */
+    _1627__PHI_TEMPORARY = _1630;   /* for PHI node */
     goto _1727;
   } else {
-    _1673__PHI_TEMPORARY = _1665;   /* for PHI node */
-    _1674__PHI_TEMPORARY = _1666;   /* for PHI node */
+    _1631__PHI_TEMPORARY = _1623;   /* for PHI node */
+    _1632__PHI_TEMPORARY = _1624;   /* for PHI node */
     goto _1726;
   }
 
   } while (1); /* end of syntactic loop '' */
 _1726:
-  _1673 = _1673__PHI_TEMPORARY;
-  _1674 = _1674__PHI_TEMPORARY;
-  _1675 = -(_1528);
-  _1676 =  /*tail*/ exp(_1675);
-  _1677 =  /*tail*/ exp(_1675);
-  _1678 = (_1676 * _1673) - (_1677 * _1674);
-  _1702__PHI_TEMPORARY = _1678;   /* for PHI node */
+  _1631 = _1631__PHI_TEMPORARY;
+  _1632 = _1632__PHI_TEMPORARY;
+  _1633 = -(_1462);
+  _1634 =  /*tail*/ exp(_1633);
+  _1635 =  /*tail*/ exp(_1633);
+  _1636 = _1632 * _1634;
+  _1637 = (_1634 * _1631) - ((_1632 * _1463) * _1635);
+  _1701__PHI_TEMPORARY = _1637;   /* for PHI node */
+  _1702__PHI_TEMPORARY = _1636;   /* for PHI node */
   goto _1708;
 
-_1719:
-  _1505 = 0;
-  _1506 = 0;
-  _1585 = _1532 * (_1532 * 4);
-  _1586 = _1528 * 8;
-  _1587__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1588__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1589__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1590__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1591__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1728;
+_1716:
+  _1638 = round(_1476);
+  _1639 =  /*tail*/ llvm_OC_fabs_OC_f64((_1476 - _1638));
+  if ((llvm_fcmp_olt(_1639, 1.0000000000000001E-5))) {
+    goto _1728;
+  } else {
+    goto _1729;
+  }
+
+_1728:
+  _1640 = _1476 - (llvm_select_f64((llvm_fcmp_ogt((_1476 - _1534), 0.5)), (_1534 + -1), _1534));
+  _1641 =  /*tail*/ fwddiffebesselk_temme_series_OC_4(_1640, _1462, _1463);
+  _1642 = (_1641.field0);
+  _1643 = (_1641.field1);
+  _1644 = (_1642.field0);
+  _1645 = (_1643.field0);
+  _1646 = _1640 + 1;
+  _1647 = 2 / _1462;
+  _1648 = _1463 * -2;
+  _1649 = _1476 + 0.5;
+  if ((llvm_fcmp_ogt(_1649, _1646))) {
+    goto _1730;
+  } else {
+    _1701__PHI_TEMPORARY = _1645;   /* for PHI node */
+    _1702__PHI_TEMPORARY = _1644;   /* for PHI node */
+    goto _1708;
+  }
+
+_1730:
+  _1650 = (_1642.field1);
+  _1651 = (_1643.field1);
+  _1652 = 1 / (_1462 * _1462);
+  _1653__PHI_TEMPORARY = _1651;   /* for PHI node */
+  _1654__PHI_TEMPORARY = _1650;   /* for PHI node */
+  _1655__PHI_TEMPORARY = _1645;   /* for PHI node */
+  _1656__PHI_TEMPORARY = _1644;   /* for PHI node */
+  _1657__PHI_TEMPORARY = _1646;   /* for PHI node */
+  goto _1731;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_1728:
-  _1587 = _1587__PHI_TEMPORARY;
-  _1588 = _1588__PHI_TEMPORARY;
-  _1589 = _1589__PHI_TEMPORARY;
-  _1590 = _1590__PHI_TEMPORARY;
-  _1591 = _1591__PHI_TEMPORARY;
-  _1592 = llvm_add_u64(_1587, 1);
-  _1593 = _1589 + _1591;
-  _1594 = _1590 + _1588;
-  _1595 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1587)])));
-  _1596 = _1585 - _1595;
-  _1597 = ((double)(uint32_t)(((uint32_t)_1592)));
-  _1598 = _1586 * _1597;
-  _1599 = _1596 / _1598;
-  _1600 = _1591 * _1599;
-  _1601 = (_1599 * _1590) - ((((_1597 * 8) * _1591) * _1596) / (_1598 * _1598));
-  *(double*)(((&((double*)(&_1507))[((int64_t)_1587)]))) = _1594;
-  *(double*)(((&((double*)(&_1508))[((int64_t)_1587)]))) = _1593;
-  *(double*)(((&((double*)_1521)[((int64_t)_1587)]))) = _1601;
-  *(double*)(((&((double*)_1524)[((int64_t)_1587)]))) = _1600;
-  if ((_1592 == UINT64_C(16))) {
-    goto _1729;
+_1731:
+  _1653 = _1653__PHI_TEMPORARY;
+  _1654 = _1654__PHI_TEMPORARY;
+  _1655 = _1655__PHI_TEMPORARY;
+  _1656 = _1656__PHI_TEMPORARY;
+  _1657 = _1657__PHI_TEMPORARY;
+  _1658 = _1647 * _1657;
+  _1659 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1658, _1654, _1656);
+  _1660 = _1657 + 1;
+  if ((llvm_fcmp_olt(_1660, _1649))) {
+    _1653__PHI_TEMPORARY = (((_1658 * _1653) + _1655) + (((_1648 * _1654) * _1657) * _1652));   /* for PHI node */
+    _1654__PHI_TEMPORARY = _1659;   /* for PHI node */
+    _1655__PHI_TEMPORARY = _1653;   /* for PHI node */
+    _1656__PHI_TEMPORARY = _1654;   /* for PHI node */
+    _1657__PHI_TEMPORARY = _1660;   /* for PHI node */
+    goto _1731;
   } else {
-    _1587__PHI_TEMPORARY = _1592;   /* for PHI node */
-    _1588__PHI_TEMPORARY = _1594;   /* for PHI node */
-    _1589__PHI_TEMPORARY = _1593;   /* for PHI node */
-    _1590__PHI_TEMPORARY = _1601;   /* for PHI node */
-    _1591__PHI_TEMPORARY = _1600;   /* for PHI node */
-    goto _1728;
+    _1701__PHI_TEMPORARY = _1653;   /* for PHI node */
+    _1702__PHI_TEMPORARY = _1654;   /* for PHI node */
+    goto _1708;
   }
 
   } while (1); /* end of syntactic loop '' */
 _1729:
-  fixderivative_levin((&_1506), (&_1505), (&_1508), (&_1507));
-  _1602 = _1528 * 2;
-  _1603 = 3.1415926535897931 / _1602;
-  _1604 =  /*tail*/ sqrt(_1603);
-  _1605 =  /*tail*/ sqrt(_1603);
-  _1606 = _1505;
-  _1607 = _1506;
-  _1608 = -(_1528);
-  _1609 =  /*tail*/ exp(_1608);
-  _1610 =  /*tail*/ exp(_1608);
-  _1611 = ((((llvm_select_f64((llvm_fcmp_ueq(_1603, 0)), 0, (-6.2831853071795862 / (((_1528 * 4) * _1602) * _1605)))) * _1607) + (_1606 * _1604)) * _1609) - (_1610 * (_1604 * _1607));
-  _1702__PHI_TEMPORARY = _1611;   /* for PHI node */
-  goto _1708;
-
-_1711:
-  _1555 = _1528 * -0.5;
-  _1556 =  /*tail*/ exp(_1555);
-  _1557 =  /*tail*/ exp(_1555);
-  _1558 = _1528 * 8;
-  _1559 = 1 / _1558;
-  _1560 = _1532 * 4;
-  _1561 = 1 / (_1558 * _1558);
-  _1562__PHI_TEMPORARY = 1;   /* for PHI node */
-  _1563__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1564__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1565__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1566__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _1730;
+  _1661 =  /*tail*/ gamma(_1476);
+  _1662 = _1462 * _1462;
+  _1663 = (_1462 * 2) * _1463;
+  _1443 = 1;
+  _1664__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1665__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1666__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1667__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1668__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1669__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1670__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1671__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1672__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1673__PHI_TEMPORARY = 4;   /* for PHI node */
+  goto _1732;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_1730:
-  _1562 = _1562__PHI_TEMPORARY;
-  _1563 = _1563__PHI_TEMPORARY;
-  _1564 = _1564__PHI_TEMPORARY;
-  _1565 = _1565__PHI_TEMPORARY;
-  _1566 = _1566__PHI_TEMPORARY;
-  _1567 = llvm_add_u32(_1564, 1);
-  _1568 = llvm_add_u32((_1567 << 1), -1);
-  _1569 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1560, _1532, (-((((double)(uint32_t)(llvm_mul_u32(_1568, _1568)))))));
-  _1570 = _1569 / (((double)(uint32_t)_1567));
-  _1571 = _1559 * _1570;
-  _1572 = _1562 * _1571;
-  _1573 = (_1571 * _1563) - (((_1562 * 8) * _1570) * _1561);
-  _1511 = _1573;
-  _1512 = _1572;
-  _1574 = _1566 + _1572;
-  _1575 = _1573 + _1565;
-  fixderivative_isconverged((&_1512), (&_1511), (&_1510), (&_1509));
-  _1576 = _1510;
-  if ((llvm_select_bool((llvm_fcmp_olt(_1576, 0)), 1, (_1567 == 20u)))) {
-    goto _1731;
+_1732:
+  _1664 = _1664__PHI_TEMPORARY;
+  _1665 = _1665__PHI_TEMPORARY;
+  _1666 = _1666__PHI_TEMPORARY;
+  _1667 = _1667__PHI_TEMPORARY;
+  _1668 = _1668__PHI_TEMPORARY;
+  _1669 = _1669__PHI_TEMPORARY;
+  _1670 = _1670__PHI_TEMPORARY;
+  _1671 = _1671__PHI_TEMPORARY;
+  _1672 = _1672__PHI_TEMPORARY;
+  _1673 = _1673__PHI_TEMPORARY;
+  _1674 = llvm_add_u32(_1666, 1);
+  _1675 = _1664 + _1668;
+  _1676 = _1667 + _1665;
+  _1677 = _1670 + _1672;
+  _1678 = _1671 + _1669;
+  _1679 = ((double)(uint32_t)_1674);
+  _1680 = (_1679 - _1476) * _1673;
+  _1681 = _1662 / _1680;
+  _1682 = _1664 * _1681;
+  _1683 = (((_1664 * _1663) * _1680) / (_1680 * _1680)) + (_1681 * _1665);
+  _1440 = _1683;
+  _1441 = _1682;
+  fixderivative_isconverged((&_1441), (&_1440), (&_1443), (&_1442));
+  _1684 = _1443;
+  if ((llvm_fcmp_olt(_1684, 0))) {
+    goto _1733;
   } else {
-    _1562__PHI_TEMPORARY = _1572;   /* for PHI node */
-    _1563__PHI_TEMPORARY = _1573;   /* for PHI node */
-    _1564__PHI_TEMPORARY = _1567;   /* for PHI node */
-    _1565__PHI_TEMPORARY = _1575;   /* for PHI node */
-    _1566__PHI_TEMPORARY = _1574;   /* for PHI node */
-    goto _1730;
+    goto _1734;
+  }
+
+_1734:
+  _1685 = (_1476 + _1679) * _1673;
+  _1686 = _1662 / _1685;
+  _1687 = _1672 * _1686;
+  _1688 = (((_1672 * _1663) * _1685) / (_1685 * _1685)) + (_1686 * _1671);
+  _1689 = _1673 + 4;
+  if ((_1674 == 49u)) {
+    goto _1733;
+  } else {
+    _1664__PHI_TEMPORARY = _1682;   /* for PHI node */
+    _1665__PHI_TEMPORARY = _1683;   /* for PHI node */
+    _1666__PHI_TEMPORARY = _1674;   /* for PHI node */
+    _1667__PHI_TEMPORARY = _1676;   /* for PHI node */
+    _1668__PHI_TEMPORARY = _1675;   /* for PHI node */
+    _1669__PHI_TEMPORARY = _1678;   /* for PHI node */
+    _1670__PHI_TEMPORARY = _1677;   /* for PHI node */
+    _1671__PHI_TEMPORARY = _1688;   /* for PHI node */
+    _1672__PHI_TEMPORARY = _1687;   /* for PHI node */
+    _1673__PHI_TEMPORARY = _1689;   /* for PHI node */
+    goto _1732;
   }
 
   } while (1); /* end of syntactic loop '' */
-_1731:
-  _1577 = _1557 * -0.5;
-  _1578 = _1528 * 2;
-  _1579 = 3.1415926535897931 / _1578;
-  _1580 =  /*tail*/ sqrt(_1579);
-  _1581 =  /*tail*/ sqrt(_1579);
-  _1582 = _1574 * _1580;
-  _1583 = ((((((llvm_select_f64((llvm_fcmp_ueq(_1579, 0)), 0, (-6.2831853071795862 / (((_1528 * 4) * _1578) * _1581)))) * _1574) + (_1580 * _1575)) * _1556) + (_1582 * _1577)) * _1556) + ((_1556 * _1582) * _1577);
-  _1702__PHI_TEMPORARY = _1583;   /* for PHI node */
-  goto _1708;
-
-_1709:
-  _1533 = _1528 / _1532;
-  _1534 = _1527 * _1527;
-  _1535 = _1532 / _1534;
-  _1536 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1533, _1533, 1);
-  _1537 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1536);
-  _1538 = llvm_select_f64((llvm_fcmp_ueq(_1536, 0)), 0, (((_1533 * 2) * _1535) / (_1537 * 2)));
-  _1539 =  /*tail*/ log(_1533);
-  _1540 = _1537 + 1;
-  _1541 =  /*tail*/ log(_1540);
-  _1542 =  /*tail*/ llvm_OC_sqrt_OC_f64((1 / _1532));
-  _1543 = _1542 * 1.2533141373155001;
-  _1544 = -(_1532);
-  _1545 = ((_1537 + _1539) - _1541) * _1544;
-  _1546 =  /*tail*/ exp(_1545);
-  _1547 =  /*tail*/ exp(_1545);
-  _1548 = _1543 * _1546;
-  _1549 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1537);
-  _1550 = llvm_select_f64((llvm_fcmp_ole(_1532, _1528)), _1528, _1532);
-  _1551 = llvm_select_f64((llvm_fcmp_ole(_1532, _1528)), _1532, _1528);
-  _1552 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1550, _1550, (_1551 * _1551));
-  _1553 =  /*tail*/ fwddiffeUk_poly_Kn_OC_3((1 / _1537), ((-(_1538)) / _1536), _1532, (_1534 / _1552), (((_1534 * -2) * _1528) / (_1552 * _1552)));
-  _1554 = (((((((_1543 * _1544) * _1549) * ((_1538 + (_1535 / _1533)) - (_1538 / _1540))) * _1547) - (_1548 * (llvm_select_f64((llvm_fcmp_ueq(_1537, 0)), 0, (_1538 / (_1549 * 2)))))) * ((_1553.field0))) / _1537) + (((_1553.field1)) * (_1548 / _1549));
-  _1702__PHI_TEMPORARY = _1554;   /* for PHI node */
+_1733:
+  _1690 =  /*tail*/ sinpi((-(_1476)));
+  _1691 = 3.1415926535897931 / (_1476 * (_1661 * _1690));
+  _1692 = _1462 * 0.5;
+  _1693 =  /*tail*/ pow(_1692, _1476);
+  _1694 =  /*tail*/ pow(_1692, (_1476 + -1));
+  _1695 = ((_1463 * _1476) * 0.5) * _1694;
+  _1696 = (_1693 * _1693) * _1691;
+  _1697 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1661, _1675, (_1677 * _1696));
+  _1698 = _1693 * 2;
+  _1699 = _1697 / _1698;
+  _1700 = (((((_1696 * _1678) + (_1676 * _1661)) + ((((_1677 * 2) * _1693) * _1695) * _1691)) * _1698) - ((_1695 * 2) * _1697)) / (_1698 * _1698);
+  _1701__PHI_TEMPORARY = _1700;   /* for PHI node */
+  _1702__PHI_TEMPORARY = _1699;   /* for PHI node */
   goto _1708;
 
 _1708:
+  _1701 = _1701__PHI_TEMPORARY;
   _1702 = _1702__PHI_TEMPORARY;
-  *(double*)(((&((double*)_1515)[((int64_t)_1526)]))) = _1702;
-  _1703 = llvm_add_u64(_1526, 1);
-  if ((_1703 == _1518)) {
-    goto _1705;
-  } else {
-    _1526__PHI_TEMPORARY = _1703;   /* for PHI node */
-    goto _1706;
-  }
+  _1703 = ((((_1463 * _1439) * _1466) * _1468) * _1702) + (_1701 * _1469);
+  _1704__PHI_TEMPORARY = _1703;   /* for PHI node */
+  goto _1705;
 
-  } while (1); /* end of syntactic loop '' */
+_1705:
+  _1704 = _1704__PHI_TEMPORARY;
+  return _1704;
 }
 
 
-void* matern_buf(void* _1732, void* _1733, void* _1734, void* _1735, void* _1736, void* _1737) {
-  void* _1738;
-  uint32_t _1739;
-  void* _1740;
-  void* _1741;
-  void* _1742;
-  double _1743;
-  void* _1744;
-  double _1745;
-  void* _1746;
-  double _1747;
-  double _1748;
-  double _1749;
-  double _1750;
-  uint64_t _1751;
-  void* _1752;
-  uint64_t _1753;
-  uint64_t _1753__PHI_TEMPORARY;
-  double _1754;
-  double _1755;
-  double _1756;
-  double _1757;
-  double _1758;
-  double _1759;
-  double _1760;
-  double _1761;
-  double _1762;
-  double _1762__PHI_TEMPORARY;
-  uint64_t _1763;
-
-  _1738 =  /*tail*/ INTEGER(_1734);
-  _1739 = *(uint32_t*)_1738;
-  _1740 =  /*tail*/ REAL(_1732);
-  _1741 =  /*tail*/ REAL(_1733);
-  _1742 =  /*tail*/ REAL(_1735);
-  _1743 = *(double*)_1742;
-  _1744 =  /*tail*/ REAL(_1736);
-  _1745 = *(double*)_1744;
-  _1746 =  /*tail*/ REAL(_1737);
-  _1747 = *(double*)_1746;
-  if ((((int32_t)_1739) > ((int32_t)0u))) {
-    goto _1764;
-  } else {
-    goto _1765;
-  }
-
-_1764:
-  _1748 = _1747 * 2;
-  _1749 = _1743 * _1743;
-  _1750 = 1 - _1747;
-  _1751 = ((uint64_t)(uint32_t)_1739);
-  _1753__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _1766;
-
-_1765:
-  _1752 = R_NilValue;
-  return _1752;
-  do {     /* Syntactic loop '' to make GCC happy */
-_1766:
-  _1753 = _1753__PHI_TEMPORARY;
-  _1754 = *(double*)(((&((double*)_1741)[((int64_t)_1753)])));
-  if ((llvm_fcmp_oeq(_1754, 0))) {
-    _1762__PHI_TEMPORARY = _1749;   /* for PHI node */
-    goto _1767;
-  } else {
-    goto _1768;
-  }
-
-_1768:
-  _1755 =  /*tail*/ sqrt(_1748);
-  _1756 = (_1754 * _1755) / _1745;
-  _1757 =  /*tail*/ exp2(_1750);
-  _1758 =  /*tail*/ gamma(_1747);
-  _1759 =  /*tail*/ pow(_1756, _1747);
-  _1760 =  /*tail*/ besselk(_1747, _1756);
-  _1761 = (((_1749 * _1757) / _1758) * _1759) * _1760;
-  _1762__PHI_TEMPORARY = _1761;   /* for PHI node */
-  goto _1767;
-
-_1767:
-  _1762 = _1762__PHI_TEMPORARY;
-  *(double*)(((&((double*)_1740)[((int64_t)_1753)]))) = _1762;
-  _1763 = llvm_add_u64(_1753, 1);
-  if ((_1763 == _1751)) {
-    goto _1765;
-  } else {
-    _1753__PHI_TEMPORARY = _1763;   /* for PHI node */
-    goto _1766;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-}
-
-
-void* matern_dsig_buf(void* _1769, void* _1770, void* _1771, void* _1772, void* _1773, void* _1774) {
-  void* _1775;
-  uint32_t _1776;
-  void* _1777;
-  void* _1778;
-  void* _1779;
+double matern_dnu(double _1735, double _1736, double _1737, double _1738) {
+  double _1739;    /* Address-exposed local */
+  double _1740;    /* Address-exposed local */
+  double _1741;    /* Address-exposed local */
+  double _1742;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_5_double _1743 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1744;    /* Address-exposed local */
+  double _1745;    /* Address-exposed local */
+  double _1746;    /* Address-exposed local */
+  double _1747;    /* Address-exposed local */
+  double _1748;    /* Address-exposed local */
+  double _1749;    /* Address-exposed local */
+  double _1750;    /* Address-exposed local */
+  double _1751;    /* Address-exposed local */
+  double _1752;    /* Address-exposed local */
+  double _1753;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1754 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1755 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1756;    /* Address-exposed local */
+  double _1757;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1758 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1759 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1760;    /* Address-exposed local */
+  double _1761;    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1762 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_32_double _1763 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _1764;    /* Address-exposed local */
+  double _1765;    /* Address-exposed local */
+  double _1766;    /* Address-exposed local */
+  double _1767;    /* Address-exposed local */
+  double _1768;
+  double _1769;
+  double _1770;
+  double _1771;
+  double _1772;
+  double _1773;
+  double _1774;
+  double _1775;
+  double _1776;
+  double _1777;
+  struct l_unnamed_1 _1778;
+  double _1779;
   double _1780;
-  void* _1781;
+  double _1781;
   double _1782;
-  void* _1783;
+  double _1783;
   double _1784;
-  uint64_t _1785;
+  double _1785;
   double _1786;
-  double _1787;
-  double _1788;
+  void* _1787;
+  void* _1788;
   void* _1789;
-  uint64_t _1790;
-  uint64_t _1790__PHI_TEMPORARY;
-  double _1791;
-  double _1792;
+  void* _1790;
+  void* _1791;
+  void* _1792;
   double _1793;
   double _1794;
   double _1795;
@@ -5811,200 +5782,90 @@ void* matern_dsig_buf(void* _1769, void* _1770, void* _1771, void* _1772, void* 
   double _1797;
   double _1798;
   double _1799;
-  double _1799__PHI_TEMPORARY;
-  uint64_t _1800;
-
-  _1775 =  /*tail*/ INTEGER(_1771);
-  _1776 = *(uint32_t*)_1775;
-  _1777 =  /*tail*/ REAL(_1769);
-  _1778 =  /*tail*/ REAL(_1770);
-  _1779 =  /*tail*/ REAL(_1772);
-  _1780 = *(double*)_1779;
-  _1781 =  /*tail*/ REAL(_1773);
-  _1782 = *(double*)_1781;
-  _1783 =  /*tail*/ REAL(_1774);
-  _1784 = *(double*)_1783;
-  if ((((int32_t)_1776) > ((int32_t)0u))) {
-    goto _1801;
-  } else {
-    goto _1802;
-  }
-
-_1801:
-  _1785 = ((uint64_t)(uint32_t)_1776);
-  _1786 = _1784 * 2;
-  _1787 = _1780 * 2;
-  _1788 = 1 - _1784;
-  _1790__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _1803;
-
-_1802:
-  _1789 = R_NilValue;
-  return _1789;
-  do {     /* Syntactic loop '' to make GCC happy */
-_1803:
-  _1790 = _1790__PHI_TEMPORARY;
-  _1791 = *(double*)(((&((double*)_1778)[((int64_t)_1790)])));
-  if ((llvm_fcmp_oeq(_1791, 0))) {
-    _1799__PHI_TEMPORARY = _1787;   /* for PHI node */
-    goto _1804;
-  } else {
-    goto _1805;
-  }
-
-_1805:
-  _1792 =  /*tail*/ sqrt(_1786);
-  _1793 = (_1791 * _1792) / _1782;
-  _1794 =  /*tail*/ exp2(_1788);
-  _1795 =  /*tail*/ gamma(_1784);
-  _1796 =  /*tail*/ pow(_1793, _1784);
-  _1797 =  /*tail*/ besselk(_1784, _1793);
-  _1798 = ((((_1787 * _1794) * _1795) * _1796) * _1797) / (_1795 * _1795);
-  _1799__PHI_TEMPORARY = _1798;   /* for PHI node */
-  goto _1804;
-
-_1804:
-  _1799 = _1799__PHI_TEMPORARY;
-  *(double*)(((&((double*)_1777)[((int64_t)_1790)]))) = _1799;
-  _1800 = llvm_add_u64(_1790, 1);
-  if ((_1800 == _1785)) {
-    goto _1802;
-  } else {
-    _1790__PHI_TEMPORARY = _1800;   /* for PHI node */
-    goto _1803;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-}
-
-
-void* matern_drho_buf(void* _1806, void* _1807, void* _1808, void* _1809, void* _1810, void* _1811) {
-  void* _1812;
-  uint32_t _1813;
-  void* _1814;
-  void* _1815;
-  void* _1816;
+  double _1800;
+  double _1801;
+  double _1802;
+  double _1803;
+  double _1804;
+  double _1805;
+  double _1806;
+  double _1807;
+  double _1808;
+  double _1809;
+  double _1810;
+  double _1811;
+  double _1812;
+  double _1813;
+  double _1814;
+  double _1815;
+  double _1816;
   double _1817;
-  void* _1818;
+  struct l_unnamed_1 _1818;
   double _1819;
-  void* _1820;
+  double _1820;
   double _1821;
-  uint64_t _1822;
+  double _1822;
   double _1823;
   double _1824;
   double _1825;
   double _1826;
   double _1827;
-  void* _1828;
-  uint64_t _1829;
-  uint64_t _1829__PHI_TEMPORARY;
+  double _1828;
+  double _1829;
   double _1830;
   double _1831;
+  double _1831__PHI_TEMPORARY;
   double _1832;
-  double _1833;
+  double _1832__PHI_TEMPORARY;
+  uint32_t _1833;
+  uint32_t _1833__PHI_TEMPORARY;
   double _1834;
+  double _1834__PHI_TEMPORARY;
   double _1835;
-  double _1836;
-  double _1837;
+  double _1835__PHI_TEMPORARY;
+  uint32_t _1836;
+  uint32_t _1837;
   double _1838;
   double _1839;
-  struct l_unnamed_1 _1840;
+  double _1840;
   double _1841;
   double _1842;
-  double _1842__PHI_TEMPORARY;
-  uint64_t _1843;
-
-  _1812 =  /*tail*/ INTEGER(_1808);
-  _1813 = *(uint32_t*)_1812;
-  _1814 =  /*tail*/ REAL(_1806);
-  _1815 =  /*tail*/ REAL(_1807);
-  _1816 =  /*tail*/ REAL(_1809);
-  _1817 = *(double*)_1816;
-  _1818 =  /*tail*/ REAL(_1810);
-  _1819 = *(double*)_1818;
-  _1820 =  /*tail*/ REAL(_1811);
-  _1821 = *(double*)_1820;
-  if ((((int32_t)_1813) > ((int32_t)0u))) {
-    goto _1844;
-  } else {
-    goto _1845;
-  }
-
-_1844:
-  _1822 = ((uint64_t)(uint32_t)_1813);
-  _1823 = _1821 * 2;
-  _1824 = _1817 * _1817;
-  _1825 = 1 - _1821;
-  _1826 = _1821 + -1;
-  _1827 = 1 / (_1819 * _1819);
-  _1829__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _1846;
-
-_1845:
-  _1828 = R_NilValue;
-  return _1828;
-  do {     /* Syntactic loop '' to make GCC happy */
-_1846:
-  _1829 = _1829__PHI_TEMPORARY;
-  _1830 = *(double*)(((&((double*)_1815)[((int64_t)_1829)])));
-  if ((llvm_fcmp_oeq(_1830, 0))) {
-    _1842__PHI_TEMPORARY = 0;   /* for PHI node */
-    goto _1847;
-  } else {
-    goto _1848;
-  }
-
-_1848:
-  _1831 =  /*tail*/ sqrt(_1823);
-  _1832 = _1830 * _1831;
-  _1833 = _1832 / _1819;
-  _1834 = (-(_1832)) * _1827;
-  _1835 =  /*tail*/ exp2(_1825);
-  _1836 =  /*tail*/ gamma(_1821);
-  _1837 = (_1824 * _1835) / _1836;
-  _1838 =  /*tail*/ pow(_1833, _1821);
-  _1839 =  /*tail*/ pow(_1833, _1826);
-  _1840 =  /*tail*/ fwddiffebesselk_OC_7(_1821, _1833, _1834);
-  _1841 = ((((_1834 * _1821) * _1837) * _1839) * ((_1840.field0))) + (((_1840.field1)) * (_1837 * _1838));
-  _1842__PHI_TEMPORARY = _1841;   /* for PHI node */
-  goto _1847;
-
-_1847:
-  _1842 = _1842__PHI_TEMPORARY;
-  *(double*)(((&((double*)_1814)[((int64_t)_1829)]))) = _1842;
-  _1843 = llvm_add_u64(_1829, 1);
-  if ((_1843 == _1822)) {
-    goto _1845;
-  } else {
-    _1829__PHI_TEMPORARY = _1843;   /* for PHI node */
-    goto _1846;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-}
-
-
-void* matern_dnu_buf(void* _1849, void* _1850, void* _1851, void* _1852, void* _1853, void* _1854) {
-  void* _1855;
-  uint32_t _1856;
+  double _1843;
+  double _1844;
+  double _1845;
+  double _1846;
+  double _1847;
+  double _1848;
+  double _1849;
+  double _1850;
+  double _1851;
+  double _1852;
+  double _1853;
+  double _1854;
+  double _1855;
+  double _1856;
   void* _1857;
-  void* _1858;
-  void* _1859;
+  double _1858;
+  double _1859;
   double _1860;
-  void* _1861;
-  double _1862;
-  void* _1863;
+  double _1861;
+  uint64_t _1862;
+  uint64_t _1862__PHI_TEMPORARY;
+  double _1863;
+  double _1863__PHI_TEMPORARY;
   double _1864;
-  uint64_t _1865;
+  double _1864__PHI_TEMPORARY;
+  double _1865;
+  double _1865__PHI_TEMPORARY;
   double _1866;
-  double _1867;
+  double _1866__PHI_TEMPORARY;
+  uint64_t _1867;
   double _1868;
   double _1869;
   double _1870;
   double _1871;
-  void* _1872;
-  uint64_t _1873;
-  uint64_t _1873__PHI_TEMPORARY;
+  double _1872;
+  double _1873;
   double _1874;
   double _1875;
   double _1876;
@@ -6013,601 +5874,256 @@ void* matern_dnu_buf(void* _1849, void* _1850, void* _1851, void* _1852, void* _
   double _1879;
   double _1880;
   double _1881;
-  struct l_unnamed_1 _1882;
+  double _1882;
   double _1883;
   double _1884;
   double _1885;
   double _1886;
   double _1887;
   double _1888;
-  struct l_unnamed_1 _1889;
-  double _1890;
+  double _1889;
+  void* _1890;
   double _1891;
-  double _1891__PHI_TEMPORARY;
-  uint64_t _1892;
-
-  _1855 =  /*tail*/ INTEGER(_1851);
-  _1856 = *(uint32_t*)_1855;
-  _1857 =  /*tail*/ REAL(_1849);
-  _1858 =  /*tail*/ REAL(_1850);
-  _1859 =  /*tail*/ REAL(_1852);
-  _1860 = *(double*)_1859;
-  _1861 =  /*tail*/ REAL(_1853);
-  _1862 = *(double*)_1861;
-  _1863 =  /*tail*/ REAL(_1854);
-  _1864 = *(double*)_1863;
-  if ((((int32_t)_1856) > ((int32_t)0u))) {
-    goto _1893;
-  } else {
-    goto _1894;
-  }
-
-_1893:
-  _1865 = ((uint64_t)(uint32_t)_1856);
-  _1866 = _1864 * 2;
-  _1867 = _1860 * _1860;
-  _1868 = 1 - _1864;
-  _1869 = _1867 * -0.69314718055994529;
-  _1870 = _1864 + -1;
-  _1871 = 1 / (_1862 * _1862);
-  _1873__PHI_TEMPORARY = 0;   /* for PHI node */
-  goto _1895;
-
-_1894:
-  _1872 = R_NilValue;
-  return _1872;
-  do {     /* Syntactic loop '' to make GCC happy */
-_1895:
-  _1873 = _1873__PHI_TEMPORARY;
-  _1874 = *(double*)(((&((double*)_1858)[((int64_t)_1873)])));
-  if ((llvm_fcmp_oeq(_1874, 0))) {
-    _1891__PHI_TEMPORARY = 0;   /* for PHI node */
-    goto _1896;
-  } else {
-    goto _1897;
-  }
-
-_1897:
-  _1875 =  /*tail*/ sqrt(_1866);
-  _1876 =  /*tail*/ sqrt(_1866);
-  _1877 = (_1874 * _1875) / _1862;
-  _1878 = ((_1874 * _1862) * (llvm_select_f64((llvm_fcmp_ueq(_1866, 0)), 0, (1 / _1876)))) * _1871;
-  _1879 =  /*tail*/ exp2(_1868);
-  _1880 =  /*tail*/ exp2(_1868);
-  _1881 = _1867 * _1879;
-  _1882 =  /*tail*/ fwddiffegamma(_1864, 1);
-  _1883 = (_1882.field0);
-  _1884 = _1881 / _1883;
-  _1885 =  /*tail*/ pow(_1877, _1864);
-  _1886 =  /*tail*/ pow(_1877, _1870);
-  _1887 =  /*tail*/ pow(_1877, _1864);
-  _1888 = log(_1877);
-  _1889 =  /*tail*/ fwddiffebesselk_OC_10(_1864, _1877, _1878);
-  _1890 = ((((((_1886 * _1864) * _1878) + (_1887 * _1888)) * _1884) + (((((_1869 * _1880) * _1883) - (((_1882.field1)) * _1881)) * _1885) / (_1883 * _1883))) * ((_1889.field0))) + (((_1889.field1)) * (_1885 * _1884));
-  _1891__PHI_TEMPORARY = _1890;   /* for PHI node */
-  goto _1896;
-
-_1896:
-  _1891 = _1891__PHI_TEMPORARY;
-  *(double*)(((&((double*)_1857)[((int64_t)_1873)]))) = _1891;
-  _1892 = llvm_add_u64(_1873, 1);
-  if ((_1892 == _1865)) {
-    goto _1894;
-  } else {
-    _1873__PHI_TEMPORARY = _1892;   /* for PHI node */
-    goto _1895;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-}
-
-
-static struct l_unnamed_1 fwddiffeUk_poly_Kn(double _1898, double _1899, double _1900, double _1901, double _1902, double _1903) {
-  __PREFIXALIGN__(16) struct l_array_6_double _1904 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_5_double _1905 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_11_double _1906 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  void* _1907;
-  void* _1908;
-  void* _1909;
-  void* _1910;
-  void* _1911;
-  void* _1912;
-  void* _1913;
-  void* _1914;
-  void* _1915;
-  void* _1916;
-  __PREFIXALIGN__(16) struct l_array_11_double _1917 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  uint64_t _1918;
-  uint64_t _1918__PHI_TEMPORARY;
+  double _1892;
+  double _1893;
+  double _1894;
+  double _1895;
+  double _1896;
+  uint64_t _1897;
+  uint64_t _1897__PHI_TEMPORARY;
+  double _1898;
+  double _1898__PHI_TEMPORARY;
+  double _1899;
+  double _1899__PHI_TEMPORARY;
+  double _1900;
+  double _1900__PHI_TEMPORARY;
+  double _1901;
+  double _1901__PHI_TEMPORARY;
+  uint64_t _1902;
+  double _1903;
+  double _1904;
+  double _1905;
+  double _1906;
+  double _1907;
+  double _1908;
+  double _1909;
+  double _1910;
+  double _1911;
+  double _1912;
+  double _1913;
+  double _1914;
+  double _1915;
+  double _1916;
+  double _1917;
+  double _1918;
   double _1919;
-  double _1919__PHI_TEMPORARY;
-  double _1920;
-  double _1920__PHI_TEMPORARY;
-  uint64_t _1921;
+  void* _1920;
+  double _1921;
   double _1922;
   double _1923;
-  double _1924;
-  uint64_t _1925;
-  uint64_t _1925__PHI_TEMPORARY;
+  uint64_t _1924;
+  uint64_t _1924__PHI_TEMPORARY;
+  double _1925;
+  double _1925__PHI_TEMPORARY;
   double _1926;
   double _1926__PHI_TEMPORARY;
   double _1927;
   double _1927__PHI_TEMPORARY;
-  uint64_t _1928;
-  double _1929;
+  double _1928;
+  double _1928__PHI_TEMPORARY;
+  uint64_t _1929;
   double _1930;
   double _1931;
-  uint64_t _1932;
-  uint64_t _1932__PHI_TEMPORARY;
+  double _1932;
   double _1933;
-  double _1933__PHI_TEMPORARY;
   double _1934;
-  double _1934__PHI_TEMPORARY;
-  uint64_t _1935;
+  double _1935;
   double _1936;
   double _1937;
   double _1938;
-  uint64_t _1939;
-  uint64_t _1939__PHI_TEMPORARY;
+  double _1939;
   double _1940;
-  double _1940__PHI_TEMPORARY;
   double _1941;
-  double _1941__PHI_TEMPORARY;
-  uint64_t _1942;
+  double _1942;
   double _1943;
   double _1944;
   double _1945;
-  uint64_t _1946;
-  uint64_t _1946__PHI_TEMPORARY;
+  double _1946;
   double _1947;
-  double _1947__PHI_TEMPORARY;
   double _1948;
-  double _1948__PHI_TEMPORARY;
-  uint64_t _1949;
+  double _1949;
   double _1950;
   double _1951;
   double _1952;
-  void* _1953;
-  uint64_t _1954;
-  uint64_t _1954__PHI_TEMPORARY;
+  double _1952__PHI_TEMPORARY;
+  double _1953;
+  double _1953__PHI_TEMPORARY;
+  double _1954;
+  double _1954__PHI_TEMPORARY;
   double _1955;
   double _1955__PHI_TEMPORARY;
   double _1956;
   double _1956__PHI_TEMPORARY;
-  uint64_t _1957;
+  double _1957;
   double _1958;
   double _1959;
   double _1960;
-  void* _1961;
-  uint64_t _1962;
-  uint64_t _1962__PHI_TEMPORARY;
+  double _1960__PHI_TEMPORARY;
+  double _1961;
+  double _1961__PHI_TEMPORARY;
+  double _1962;
   double _1963;
-  double _1963__PHI_TEMPORARY;
   double _1964;
-  double _1964__PHI_TEMPORARY;
-  uint64_t _1965;
+  double _1965;
   double _1966;
   double _1967;
   double _1968;
-  uint64_t _1969;
-  uint64_t _1969__PHI_TEMPORARY;
+  double _1969;
   double _1970;
-  double _1970__PHI_TEMPORARY;
   double _1971;
-  double _1971__PHI_TEMPORARY;
-  uint64_t _1972;
-  double _1973;
+  double _1972;
+  uint64_t _1973;
+  uint64_t _1973__PHI_TEMPORARY;
   double _1974;
+  double _1974__PHI_TEMPORARY;
   double _1975;
+  double _1975__PHI_TEMPORARY;
   uint64_t _1976;
-  uint64_t _1976__PHI_TEMPORARY;
   double _1977;
-  double _1977__PHI_TEMPORARY;
   double _1978;
-  double _1978__PHI_TEMPORARY;
-  uint64_t _1979;
-  double _1980;
+  double _1979;
+  uint64_t _1980;
+  uint64_t _1980__PHI_TEMPORARY;
   double _1981;
+  double _1981__PHI_TEMPORARY;
   double _1982;
-  double _1983;
+  double _1982__PHI_TEMPORARY;
+  uint64_t _1983;
   double _1984;
   double _1985;
-  void* _1986;
-  void* _1987;
+  double _1986;
+  uint64_t _1987;
+  uint64_t _1987__PHI_TEMPORARY;
   double _1988;
-  uint64_t _1989;
-  uint64_t _1989__PHI_TEMPORARY;
-  double _1990;
-  double _1990__PHI_TEMPORARY;
+  double _1988__PHI_TEMPORARY;
+  double _1989;
+  double _1989__PHI_TEMPORARY;
+  uint64_t _1990;
   double _1991;
-  double _1991__PHI_TEMPORARY;
-  uint64_t _1992;
-  uint64_t _1993;
+  double _1992;
+  double _1993;
   double _1994;
   double _1995;
   double _1996;
   double _1997;
-  struct l_unnamed_1 _1998;
-  struct l_unnamed_1 _1999;
-
-  _1907 = ((&((uint8_t*)(&_1906))[((int64_t)8)]));
-  _1908 = ((&((uint8_t*)(&_1906))[((int64_t)16)]));
-  _1909 = ((&((uint8_t*)(&_1906))[((int64_t)24)]));
-  _1910 = ((&((uint8_t*)(&_1906))[((int64_t)32)]));
-  _1911 = ((&((uint8_t*)(&_1906))[((int64_t)40)]));
-  _1912 = ((&((uint8_t*)(&_1906))[((int64_t)48)]));
-  _1913 = ((&((uint8_t*)(&_1906))[((int64_t)56)]));
-  _1914 = ((&((uint8_t*)(&_1906))[((int64_t)64)]));
-  _1915 = ((&((uint8_t*)(&_1906))[((int64_t)72)]));
-  _1916 = ((&((uint8_t*)(&_1906))[((int64_t)80)]));
-  *((double*)&_1904) = 0.22710800170898438;
-  *(double*)(((&((uint8_t*)(&_1904))[((int64_t)8)]))) = -7.3687943594796321;
-  *(double*)(((&((uint8_t*)(&_1904))[((int64_t)16)]))) = 42.534998745388457;
-  *(double*)(((&((uint8_t*)(&_1904))[((int64_t)24)]))) = -91.81824154324002;
-  *(double*)(((&((uint8_t*)(&_1904))[((int64_t)32)]))) = 84.636217674600729;
-  *(double*)(((&((uint8_t*)(&_1904))[((int64_t)40)]))) = -28.212072558200244;
-  *((double*)&_1905) = 0.112152099609375;
-  *(double*)(((&((uint8_t*)(&_1905))[((int64_t)8)]))) = -2.3640869140624998;
-  *(double*)(((&((uint8_t*)(&_1905))[((int64_t)16)]))) = 8.78912353515625;
-  *(double*)(((&((uint8_t*)(&_1905))[((int64_t)24)]))) = -11.207002616222994;
-  *(double*)(((&((uint8_t*)(&_1905))[((int64_t)32)]))) = 4.6695844234262474;
-  _1918__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1919__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1920__PHI_TEMPORARY = 3284469.8530720379;   /* for PHI node */
-  goto _2000;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2000:
-  _1918 = _1918__PHI_TEMPORARY;
-  _1919 = _1919__PHI_TEMPORARY;
-  _1920 = _1920__PHI_TEMPORARY;
-  _1921 = llvm_add_u64(_1918, 1);
-  _1922 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u10coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(10, _1918)))])));
-  _1923 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1920, _1922);
-  _1924 = (_1920 * _1903) + (_1919 * _1902);
-  if ((_1921 == UINT64_C(10))) {
-    _1925__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1926__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1927__PHI_TEMPORARY = -242919.18790055133;   /* for PHI node */
-    goto _2001;
-  } else {
-    _1918__PHI_TEMPORARY = _1921;   /* for PHI node */
-    _1919__PHI_TEMPORARY = _1924;   /* for PHI node */
-    _1920__PHI_TEMPORARY = _1923;   /* for PHI node */
-    goto _2000;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2001:
-  _1925 = _1925__PHI_TEMPORARY;
-  _1926 = _1926__PHI_TEMPORARY;
-  _1927 = _1927__PHI_TEMPORARY;
-  _1928 = llvm_add_u64(_1925, 1);
-  _1929 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u9coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(9, _1925)))])));
-  _1930 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1927, _1929);
-  _1931 = (_1927 * _1903) + (_1926 * _1902);
-  if ((_1928 == UINT64_C(9))) {
-    _1932__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1933__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1934__PHI_TEMPORARY = 20204.291330966149;   /* for PHI node */
-    goto _2002;
-  } else {
-    _1925__PHI_TEMPORARY = _1928;   /* for PHI node */
-    _1926__PHI_TEMPORARY = _1931;   /* for PHI node */
-    _1927__PHI_TEMPORARY = _1930;   /* for PHI node */
-    goto _2001;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2002:
-  _1932 = _1932__PHI_TEMPORARY;
-  _1933 = _1933__PHI_TEMPORARY;
-  _1934 = _1934__PHI_TEMPORARY;
-  _1935 = llvm_add_u64(_1932, 1);
-  _1936 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u8coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(8, _1932)))])));
-  _1937 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1934, _1936);
-  _1938 = (_1934 * _1903) + (_1933 * _1902);
-  if ((_1935 == UINT64_C(8))) {
-    _1939__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1940__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1941__PHI_TEMPORARY = -1919.4576623184071;   /* for PHI node */
-    goto _2003;
-  } else {
-    _1932__PHI_TEMPORARY = _1935;   /* for PHI node */
-    _1933__PHI_TEMPORARY = _1938;   /* for PHI node */
-    _1934__PHI_TEMPORARY = _1937;   /* for PHI node */
-    goto _2002;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2003:
-  _1939 = _1939__PHI_TEMPORARY;
-  _1940 = _1940__PHI_TEMPORARY;
-  _1941 = _1941__PHI_TEMPORARY;
-  _1942 = llvm_add_u64(_1939, 1);
-  _1943 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u7coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(7, _1939)))])));
-  _1944 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1941, _1943);
-  _1945 = (_1941 * _1903) + (_1940 * _1902);
-  if ((_1942 == UINT64_C(7))) {
-    _1946__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1947__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1948__PHI_TEMPORARY = 212.57013003921713;   /* for PHI node */
-    goto _2004;
-  } else {
-    _1939__PHI_TEMPORARY = _1942;   /* for PHI node */
-    _1940__PHI_TEMPORARY = _1945;   /* for PHI node */
-    _1941__PHI_TEMPORARY = _1944;   /* for PHI node */
-    goto _2003;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2004:
-  _1946 = _1946__PHI_TEMPORARY;
-  _1947 = _1947__PHI_TEMPORARY;
-  _1948 = _1948__PHI_TEMPORARY;
-  _1949 = llvm_add_u64(_1946, 1);
-  _1950 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u6coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(6, _1946)))])));
-  _1951 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1948, _1950);
-  _1952 = (_1948 * _1903) + (_1947 * _1902);
-  if ((_1949 == UINT64_C(6))) {
-    goto _2005;
-  } else {
-    _1946__PHI_TEMPORARY = _1949;   /* for PHI node */
-    _1947__PHI_TEMPORARY = _1952;   /* for PHI node */
-    _1948__PHI_TEMPORARY = _1951;   /* for PHI node */
-    goto _2004;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2005:
-  _1953 = ((&((uint8_t*)(&_1904))[((int64_t)-8)]));
-  _1954__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1955__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1956__PHI_TEMPORARY = -28.212072558200244;   /* for PHI node */
-  goto _2006;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2006:
-  _1954 = _1954__PHI_TEMPORARY;
-  _1955 = _1955__PHI_TEMPORARY;
-  _1956 = _1956__PHI_TEMPORARY;
-  _1957 = llvm_add_u64(_1954, 1);
-  _1958 = *(double*)(((&((double*)_1953)[((int64_t)(llvm_sub_u64(5, _1954)))])));
-  _1959 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1956, _1958);
-  _1960 = (_1956 * _1903) + (_1955 * _1902);
-  if ((_1957 == UINT64_C(5))) {
-    goto _2007;
-  } else {
-    _1954__PHI_TEMPORARY = _1957;   /* for PHI node */
-    _1955__PHI_TEMPORARY = _1960;   /* for PHI node */
-    _1956__PHI_TEMPORARY = _1959;   /* for PHI node */
-    goto _2006;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2007:
-  _1961 = ((&((uint8_t*)(&_1905))[((int64_t)-8)]));
-  _1962__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1963__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1964__PHI_TEMPORARY = 4.6695844234262474;   /* for PHI node */
-  goto _2008;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2008:
-  _1962 = _1962__PHI_TEMPORARY;
-  _1963 = _1963__PHI_TEMPORARY;
-  _1964 = _1964__PHI_TEMPORARY;
-  _1965 = llvm_add_u64(_1962, 1);
-  _1966 = *(double*)(((&((double*)_1961)[((int64_t)(llvm_sub_u64(4, _1962)))])));
-  _1967 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1964, _1966);
-  _1968 = (_1964 * _1903) + (_1963 * _1902);
-  if ((_1965 == UINT64_C(4))) {
-    _1969__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1970__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1971__PHI_TEMPORARY = -1.0258125964506173;   /* for PHI node */
-    goto _2009;
-  } else {
-    _1962__PHI_TEMPORARY = _1965;   /* for PHI node */
-    _1963__PHI_TEMPORARY = _1968;   /* for PHI node */
-    _1964__PHI_TEMPORARY = _1967;   /* for PHI node */
-    goto _2008;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2009:
-  _1969 = _1969__PHI_TEMPORARY;
-  _1970 = _1970__PHI_TEMPORARY;
-  _1971 = _1971__PHI_TEMPORARY;
-  _1972 = llvm_add_u64(_1969, 1);
-  _1973 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u3coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _1969)))])));
-  _1974 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1971, _1973);
-  _1975 = (_1971 * _1903) + (_1970 * _1902);
-  if ((_1972 == UINT64_C(3))) {
-    _1976__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1977__PHI_TEMPORARY = 0;   /* for PHI node */
-    _1978__PHI_TEMPORARY = 0.3342013888888889;   /* for PHI node */
-    goto _2010;
-  } else {
-    _1969__PHI_TEMPORARY = _1972;   /* for PHI node */
-    _1970__PHI_TEMPORARY = _1975;   /* for PHI node */
-    _1971__PHI_TEMPORARY = _1974;   /* for PHI node */
-    goto _2009;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2010:
-  _1976 = _1976__PHI_TEMPORARY;
-  _1977 = _1977__PHI_TEMPORARY;
-  _1978 = _1978__PHI_TEMPORARY;
-  _1979 = llvm_add_u64(_1976, 1);
-  _1980 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _1976)))])));
-  _1981 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, _1978, _1980);
-  _1982 = (_1978 * _1903) + (_1977 * _1902);
-  if ((_1979 == UINT64_C(2))) {
-    goto _2011;
-  } else {
-    _1976__PHI_TEMPORARY = _1979;   /* for PHI node */
-    _1977__PHI_TEMPORARY = _1982;   /* for PHI node */
-    _1978__PHI_TEMPORARY = _1981;   /* for PHI node */
-    goto _2010;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2011:
-  _1983 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1902, -0.20833333333333334, 0.125);
-  *((double*)&_1906) = 0;
-  *((double*)&_1917) = 1;
-  *(double*)_1907 = (_1903 * -0.20833333333333334);
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)8)]))) = _1983;
-  *(double*)_1908 = _1982;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)16)]))) = _1981;
-  *(double*)_1909 = _1975;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)24)]))) = _1974;
-  *(double*)_1910 = _1968;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)32)]))) = _1967;
-  *(double*)_1911 = _1960;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)40)]))) = _1959;
-  *(double*)_1912 = _1952;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)48)]))) = _1951;
-  *(double*)_1913 = _1945;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)56)]))) = _1944;
-  *(double*)_1914 = _1938;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)64)]))) = _1937;
-  *(double*)_1915 = _1931;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)72)]))) = _1930;
-  *(double*)_1916 = _1924;
-  *(double*)(((&((uint8_t*)(&_1917))[((int64_t)80)]))) = _1923;
-  _1984 = (-(_1898)) / _1900;
-  _1985 = (_1901 * _1898) - (_1900 * _1899);
-  _1986 = ((&((uint8_t*)(&_1906))[((int64_t)-8)]));
-  _1987 = ((&((uint8_t*)(&_1917))[((int64_t)-8)]));
-  _1988 = 1 / (_1900 * _1900);
-  _1989__PHI_TEMPORARY = 0;   /* for PHI node */
-  _1990__PHI_TEMPORARY = _1924;   /* for PHI node */
-  _1991__PHI_TEMPORARY = _1923;   /* for PHI node */
-  goto _2012;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2012:
-  _1989 = _1989__PHI_TEMPORARY;
-  _1990 = _1990__PHI_TEMPORARY;
-  _1991 = _1991__PHI_TEMPORARY;
-  _1992 = llvm_add_u64(_1989, 1);
-  _1993 = llvm_sub_u64(10, _1989);
-  _1994 = *(double*)(((&((double*)_1986)[((int64_t)_1993)])));
-  _1995 = *(double*)(((&((double*)_1987)[((int64_t)_1993)])));
-  _1996 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1984, _1991, _1995);
-  _1997 = (_1994 + (_1990 * _1984)) + ((_1985 * _1991) * _1988);
-  if ((_1992 == UINT64_C(10))) {
-    goto _2013;
-  } else {
-    _1989__PHI_TEMPORARY = _1992;   /* for PHI node */
-    _1990__PHI_TEMPORARY = _1997;   /* for PHI node */
-    _1991__PHI_TEMPORARY = _1996;   /* for PHI node */
-    goto _2012;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2013:
-  _1998 = llvm_ctor_unnamed_1(0, 0);
-  _1998.field0 = _1996;
-  _1999 = _1998;
-  _1999.field1 = _1997;
-  return _1999;
-}
-
-
-static void fixderivative_isconverged(void* _2014, void* _2015, void* _2016, void* _2017) {
-   /*tail*/ disconverged(_2014, _2015, _2016, /*UNDEF*/((void*)/*NULL*/0));
-}
-
-
-static void fixderivative_levin(void* _2018, void* _2019, void* _2020, void* _2021) {
-   /*tail*/ derivative_levin(_2018, _2019, _2020, _2021);
-}
-
-
-static struct l_unnamed_2 fwddiffebesselk_temme_series(double _2022, double _2023, double _2024) {
-  __PREFIXALIGN__(16) struct l_array_5_double _2025 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2026;    /* Address-exposed local */
-  double _2027;    /* Address-exposed local */
-  double _2028;    /* Address-exposed local */
-  double _2029;    /* Address-exposed local */
-  double _2030;    /* Address-exposed local */
-  double _2031;    /* Address-exposed local */
-  double _2032;    /* Address-exposed local */
-  double _2033;    /* Address-exposed local */
+  double _1998;
+  void* _1999;
+  double _2000;
+  uint64_t _2001;
+  uint64_t _2001__PHI_TEMPORARY;
+  double _2002;
+  double _2002__PHI_TEMPORARY;
+  double _2003;
+  double _2003__PHI_TEMPORARY;
+  uint64_t _2004;
+  double _2005;
+  double _2006;
+  double _2007;
+  double _2008;
+  double _2009;
+  double _2010;
+  double _2011;
+  double _2012;
+  double _2013;
+  double _2014;
+  double _2015;
+  double _2016;
+  double _2017;
+  uint64_t _2018;
+  uint64_t _2018__PHI_TEMPORARY;
+  double _2019;
+  double _2019__PHI_TEMPORARY;
+  double _2020;
+  double _2020__PHI_TEMPORARY;
+  uint64_t _2021;
+  double _2022;
+  double _2023;
+  double _2024;
+  double _2025;
+  double _2026;
+  double _2027;
+  double _2028;
+  double _2029;
+  uint64_t _2030;
+  uint64_t _2030__PHI_TEMPORARY;
+  double _2031;
+  double _2031__PHI_TEMPORARY;
+  double _2032;
+  double _2032__PHI_TEMPORARY;
+  uint64_t _2033;
   double _2034;
   double _2035;
   double _2036;
-  uint64_t _2037;
-  uint64_t _2037__PHI_TEMPORARY;
+  double _2037;
   double _2038;
-  double _2038__PHI_TEMPORARY;
   double _2039;
-  double _2039__PHI_TEMPORARY;
-  uint64_t _2040;
+  double _2040;
   double _2041;
   double _2042;
   double _2043;
   double _2044;
-  uint64_t _2045;
-  uint64_t _2045__PHI_TEMPORARY;
+  double _2045;
   double _2046;
-  double _2046__PHI_TEMPORARY;
   double _2047;
-  double _2047__PHI_TEMPORARY;
-  uint64_t _2048;
+  double _2048;
   double _2049;
-  double _2050;
+  uint32_t _2050;
+  uint32_t _2050__PHI_TEMPORARY;
   double _2051;
-  uint64_t _2052;
-  uint64_t _2052__PHI_TEMPORARY;
+  double _2051__PHI_TEMPORARY;
+  double _2052;
+  double _2052__PHI_TEMPORARY;
   double _2053;
   double _2053__PHI_TEMPORARY;
   double _2054;
   double _2054__PHI_TEMPORARY;
-  uint64_t _2055;
+  double _2055;
+  double _2055__PHI_TEMPORARY;
   double _2056;
+  double _2056__PHI_TEMPORARY;
   double _2057;
+  double _2057__PHI_TEMPORARY;
   double _2058;
+  double _2058__PHI_TEMPORARY;
   double _2059;
+  double _2059__PHI_TEMPORARY;
   double _2060;
+  double _2060__PHI_TEMPORARY;
   double _2061;
+  double _2061__PHI_TEMPORARY;
   double _2062;
-  void* _2063;
+  double _2062__PHI_TEMPORARY;
+  double _2063;
   double _2064;
-  uint64_t _2065;
-  uint64_t _2065__PHI_TEMPORARY;
+  double _2065;
   double _2066;
-  double _2066__PHI_TEMPORARY;
   double _2067;
-  double _2067__PHI_TEMPORARY;
-  uint64_t _2068;
+  double _2068;
   double _2069;
   double _2070;
   double _2071;
   double _2072;
   double _2073;
   double _2074;
-  double _2075;
+  uint32_t _2075;
   double _2076;
   double _2077;
   double _2078;
   double _2079;
-  uint64_t _2080;
-  uint64_t _2080__PHI_TEMPORARY;
+  double _2080;
   double _2081;
-  double _2081__PHI_TEMPORARY;
   double _2082;
-  double _2082__PHI_TEMPORARY;
-  uint64_t _2083;
+  double _2083;
   double _2084;
   double _2085;
   double _2086;
@@ -6615,40 +6131,38 @@ static struct l_unnamed_2 fwddiffebesselk_temme_series(double _2022, double _202
   double _2088;
   double _2089;
   double _2090;
-  uint64_t _2091;
-  uint64_t _2091__PHI_TEMPORARY;
+  double _2091;
   double _2092;
-  double _2092__PHI_TEMPORARY;
   double _2093;
-  double _2093__PHI_TEMPORARY;
-  uint64_t _2094;
+  double _2094;
   double _2095;
   double _2096;
   double _2097;
   double _2098;
   double _2099;
+  double _2099__PHI_TEMPORARY;
   double _2100;
+  double _2100__PHI_TEMPORARY;
   double _2101;
+  double _2101__PHI_TEMPORARY;
   double _2102;
+  double _2102__PHI_TEMPORARY;
   double _2103;
+  double _2103__PHI_TEMPORARY;
   double _2104;
   double _2105;
   double _2106;
-  double _2107;
-  uint32_t _2108;
-  uint32_t _2108__PHI_TEMPORARY;
+  struct l_unnamed_1 _2107;
+  double _2108;
   double _2109;
-  double _2109__PHI_TEMPORARY;
   double _2110;
-  double _2110__PHI_TEMPORARY;
   double _2111;
-  double _2111__PHI_TEMPORARY;
   double _2112;
   double _2112__PHI_TEMPORARY;
   double _2113;
   double _2113__PHI_TEMPORARY;
-  double _2114;
-  double _2114__PHI_TEMPORARY;
+  uint32_t _2114;
+  uint32_t _2114__PHI_TEMPORARY;
   double _2115;
   double _2115__PHI_TEMPORARY;
   double _2116;
@@ -6660,8 +6174,10 @@ static struct l_unnamed_2 fwddiffebesselk_temme_series(double _2022, double _202
   double _2119;
   double _2119__PHI_TEMPORARY;
   double _2120;
+  double _2120__PHI_TEMPORARY;
   double _2121;
-  double _2122;
+  double _2121__PHI_TEMPORARY;
+  uint32_t _2122;
   double _2123;
   double _2124;
   double _2125;
@@ -6671,7 +6187,7 @@ static struct l_unnamed_2 fwddiffebesselk_temme_series(double _2022, double _202
   double _2129;
   double _2130;
   double _2131;
-  uint32_t _2132;
+  double _2132;
   double _2133;
   double _2134;
   double _2135;
@@ -6685,217 +6201,792 @@ static struct l_unnamed_2 fwddiffebesselk_temme_series(double _2022, double _202
   double _2143;
   double _2144;
   double _2145;
-  struct l_unnamed_1 _2146;
-  struct l_unnamed_1 _2147;
-  struct l_unnamed_1 _2148;
-  struct l_unnamed_1 _2149;
-  struct l_unnamed_2 _2150;
-  struct l_unnamed_2 _2151;
+  double _2146;
+  double _2147;
+  double _2148;
+  double _2149;
+  double _2150;
+  double _2151;
+  double _2152;
+  double _2153;
+  double _2154;
+  double _2155;
+  double _2156;
+  double _2157;
+  double _2157__PHI_TEMPORARY;
+  double _2158;
+  double _2158__PHI_TEMPORARY;
+  double _2159;
+  double _2160;
+  double _2160__PHI_TEMPORARY;
 
-  *((double*)&_2025) = 1;
-  *(double*)(((&((uint8_t*)(&_2025))[((int64_t)8)]))) = 0.16666666666666666;
-  *(double*)(((&((uint8_t*)(&_2025))[((int64_t)16)]))) = 0.0083333333333333332;
-  *(double*)(((&((uint8_t*)(&_2025))[((int64_t)24)]))) = 1.9841269841269841E-4;
-  *(double*)(((&((uint8_t*)(&_2025))[((int64_t)32)]))) = 2.7557319223985893E-6;
-  _2034 =  /*tail*/ log(_2024);
-  _2035 = _2022 * _2022;
-  _2036 = (_2022 * 2) * _2023;
-  _2037__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2038__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2039__PHI_TEMPORARY = 1.9711021825948702;   /* for PHI node */
-  goto _2152;
+  if ((llvm_fcmp_oeq(_1735, 0))) {
+    _2160__PHI_TEMPORARY = 0;   /* for PHI node */
+    goto _2161;
+  } else {
+    goto _2162;
+  }
+
+_2162:
+  _1768 = _1738 * 2;
+  _1769 =  /*tail*/ sqrt(_1768);
+  _1770 =  /*tail*/ sqrt(_1768);
+  _1771 = (_1769 * _1735) / _1737;
+  _1772 = ((_1737 * _1735) * (llvm_select_f64((llvm_fcmp_ueq(_1768, 0)), 0, (1 / _1770)))) / (_1737 * _1737);
+  _1773 = _1736 * _1736;
+  _1774 = 1 - _1738;
+  _1775 =  /*tail*/ exp2(_1774);
+  _1776 =  /*tail*/ exp2(_1774);
+  _1777 = _1773 * _1775;
+  _1778 =  /*tail*/ fwddiffegamma(_1738, 1);
+  _1779 = (_1778.field0);
+  _1780 = _1777 / _1779;
+  _1781 =  /*tail*/ pow(_1771, _1738);
+  _1782 =  /*tail*/ pow(_1771, (_1738 + -1));
+  _1783 =  /*tail*/ pow(_1771, _1738);
+  _1784 = log(_1771);
+  _1785 = _1781 * _1780;
+  _1786 = ((((_1782 * _1738) * _1772) + (_1783 * _1784)) * _1780) + ((((((_1773 * -0.69314718055994529) * _1776) * _1779) - (((_1778.field1)) * _1777)) * _1781) / (_1779 * _1779));
+  _1787 = ((&((uint8_t*)(&_1754))[((int64_t)128)]));
+  _1788 = memset((&_1754), 0, 256);
+  _1789 = ((&((uint8_t*)(&_1758))[((int64_t)128)]));
+  _1790 = memset((&_1758), 0, 256);
+  _1791 = ((&((uint8_t*)(&_1762))[((int64_t)128)]));
+  _1792 = memset((&_1762), 0, 256);
+  _1793 =  /*tail*/ llvm_OC_fabs_OC_f64(_1738);
+  _1794 = llvm_select_f64((llvm_fcmp_olt(_1738, 0)), -1, 1);
+  if ((llvm_fcmp_ugt(_1771, 0))) {
+    goto _2163;
+  } else {
+    _2157__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2158__PHI_TEMPORARY = (*(double*)&FPConstant2);   /* for PHI node */
+    goto _2164;
+  }
+
+_2163:
+  if (((llvm_fcmp_ogt(_1793, 25)) | (llvm_fcmp_ogt(_1771, 35)))) {
+    goto _2165;
+  } else {
+    goto _2166;
+  }
+
+_2165:
+  _1795 = _1771 / _1793;
+  _1796 = _1738 * _1738;
+  _1797 = ((_1772 * _1793) - (_1771 * _1794)) / _1796;
+  _1798 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1795, _1795, 1);
+  _1799 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1798);
+  _1800 = llvm_select_f64((llvm_fcmp_ueq(_1798, 0)), 0, (((_1795 * 2) * _1797) / (_1799 * 2)));
+  _1801 =  /*tail*/ log(_1795);
+  _1802 = _1799 + 1;
+  _1803 =  /*tail*/ log(_1802);
+  _1804 = (_1799 + _1801) - _1803;
+  _1805 = 1 / _1793;
+  _1806 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1805);
+  _1807 = _1796 * 2;
+  _1808 = _1806 * 1.2533141373155001;
+  _1809 = _1804 * (-(_1793));
+  _1810 =  /*tail*/ exp(_1809);
+  _1811 =  /*tail*/ exp(_1809);
+  _1812 = _1808 * _1810;
+  _1813 =  /*tail*/ llvm_OC_sqrt_OC_f64(_1799);
+  _1814 = _1812 / _1813;
+  _1815 = llvm_select_f64((llvm_fcmp_ole(_1793, _1771)), _1771, _1793);
+  _1816 = llvm_select_f64((llvm_fcmp_ole(_1793, _1771)), _1793, _1771);
+  _1817 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1815, _1815, (_1816 * _1816));
+  _1818 =  /*tail*/ fwddiffeUk_poly_Kn((1 / _1799), ((-(_1800)) / _1798), _1793, _1794, (_1796 / _1817), (((_1817 * _1768) - ((((llvm_select_f64((llvm_fcmp_ole(_1793, _1771)), _1772, _1794)) * _1815) + ((llvm_select_f64((llvm_fcmp_ole(_1793, _1771)), _1794, _1772)) * _1816)) * _1807)) / (_1817 * _1817)));
+  _1819 = (_1818.field0);
+  _1820 = _1814 * _1819;
+  _1821 = (((((((_1811 * _1808) * ((_1804 * (-(_1794))) - (((_1800 + (_1797 / _1795)) - (_1800 / _1802)) * _1793))) + (_1810 * (llvm_select_f64((llvm_fcmp_ueq(_1805, 0)), 0, ((_1794 * -1.2533141373155001) / (_1806 * _1807)))))) * _1813) - (_1812 * (llvm_select_f64((llvm_fcmp_ueq(_1799, 0)), 0, (_1800 / (_1813 * 2)))))) * _1819) / _1799) + (((_1818.field1)) * _1814);
+  _2157__PHI_TEMPORARY = _1821;   /* for PHI node */
+  _2158__PHI_TEMPORARY = _1820;   /* for PHI node */
+  goto _2164;
+
+_2166:
+  if ((llvm_fcmp_olt((((_1738 * _1738) / 36) + 24), _1771))) {
+    goto _2167;
+  } else {
+    goto _2168;
+  }
+
+_2167:
+  _1822 = _1771 * -0.5;
+  _1823 =  /*tail*/ exp(_1822);
+  _1824 =  /*tail*/ exp(_1822);
+  _1825 = _1771 * 8;
+  _1826 = 1 / _1825;
+  _1827 = _1772 * 8;
+  _1828 = _1793 * 4;
+  _1829 = ((_1793 * 8) * _1794) * _1826;
+  _1830 = 1 / (_1825 * _1825);
+  _1831__PHI_TEMPORARY = 1;   /* for PHI node */
+  _1832__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1833__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1834__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1835__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _2169;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2152:
-  _2037 = _2037__PHI_TEMPORARY;
-  _2038 = _2038__PHI_TEMPORARY;
-  _2039 = _2039__PHI_TEMPORARY;
-  _2040 = llvm_add_u64(_2037, 1);
-  _2041 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_spcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2037)))])));
-  _2042 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2035, _2039, _2041);
-  _2043 = (_2039 * _2036) + (_2038 * _2035);
-  if ((_2040 == UINT64_C(3))) {
-    goto _2153;
+_2169:
+  _1831 = _1831__PHI_TEMPORARY;
+  _1832 = _1832__PHI_TEMPORARY;
+  _1833 = _1833__PHI_TEMPORARY;
+  _1834 = _1834__PHI_TEMPORARY;
+  _1835 = _1835__PHI_TEMPORARY;
+  _1836 = llvm_add_u32(_1833, 1);
+  _1837 = llvm_add_u32((_1836 << 1), -1);
+  _1838 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1828, _1793, (-((((double)(uint32_t)(llvm_mul_u32(_1837, _1837)))))));
+  _1839 = ((double)(uint32_t)_1836);
+  _1840 = _1838 / _1839;
+  _1841 = _1826 * _1840;
+  _1842 = _1831 * _1841;
+  _1843 = ((((_1829 * _1839) / (_1839 * _1839)) - ((_1827 * _1840) * _1830)) * _1831) + (_1841 * _1832);
+  _1766 = _1843;
+  _1767 = _1842;
+  _1844 = _1835 + _1842;
+  _1845 = _1843 + _1834;
+  fixderivative_isconverged((&_1767), (&_1766), (&_1765), (&_1764));
+  _1846 = _1765;
+  if ((llvm_select_bool((llvm_fcmp_olt(_1846, 0)), 1, (_1836 == 20u)))) {
+    goto _2170;
   } else {
-    _2037__PHI_TEMPORARY = _2040;   /* for PHI node */
-    _2038__PHI_TEMPORARY = _2043;   /* for PHI node */
-    _2039__PHI_TEMPORARY = _2042;   /* for PHI node */
-    goto _2152;
+    _1831__PHI_TEMPORARY = _1842;   /* for PHI node */
+    _1832__PHI_TEMPORARY = _1843;   /* for PHI node */
+    _1833__PHI_TEMPORARY = _1836;   /* for PHI node */
+    _1834__PHI_TEMPORARY = _1845;   /* for PHI node */
+    _1835__PHI_TEMPORARY = _1844;   /* for PHI node */
+    goto _2169;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2153:
-  _2044 = _2024 * 0.5;
-  _2045__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2046__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2047__PHI_TEMPORARY = 0.042197734555544306;   /* for PHI node */
-  goto _2154;
+_2170:
+  _1847 = (_1772 * -0.5) * _1824;
+  _1848 = _1771 * 2;
+  _1849 = 3.1415926535897931 / _1848;
+  _1850 =  /*tail*/ sqrt(_1849);
+  _1851 =  /*tail*/ sqrt(_1849);
+  _1852 = _1844 * _1850;
+  _1853 = _1823 * _1852;
+  _1854 = _1823 * _1853;
+  _1855 = ((((((llvm_select_f64((llvm_fcmp_ueq(_1849, 0)), 0, ((_1772 * -6.2831853071795862) / (((_1771 * 4) * _1848) * _1851)))) * _1844) + (_1850 * _1845)) * _1823) + (_1852 * _1847)) * _1823) + (_1853 * _1847);
+  _2157__PHI_TEMPORARY = _1855;   /* for PHI node */
+  _2158__PHI_TEMPORARY = _1854;   /* for PHI node */
+  goto _2164;
+
+_2168:
+  _1856 =  /*tail*/ llvm_OC_floor_OC_f64(_1793);
+  if ((llvm_fcmp_ogt(_1771, 1.5))) {
+    goto _2171;
+  } else {
+    goto _2172;
+  }
+
+_2171:
+  if ((llvm_fcmp_olt(_1793, 2))) {
+    goto _2173;
+  } else {
+    goto _2174;
+  }
+
+_2173:
+  _1760 = 0;
+  _1761 = 0;
+  _1857 = ((&((uint8_t*)(&_1763))[((int64_t)128)]));
+  _1858 = _1793 * (_1793 * 4);
+  _1859 = (_1793 * 8) * _1794;
+  _1860 = _1771 * 8;
+  _1861 = _1772 * 8;
+  _1862__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1863__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1864__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1865__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1866__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _2175;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2154:
-  _2045 = _2045__PHI_TEMPORARY;
-  _2046 = _2046__PHI_TEMPORARY;
-  _2047 = _2047__PHI_TEMPORARY;
-  _2048 = llvm_add_u64(_2045, 1);
-  _2049 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g1coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2045)))])));
-  _2050 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2035, _2047, _2049);
-  _2051 = (_2047 * _2036) + (_2046 * _2035);
-  if ((_2048 == UINT64_C(2))) {
-    _2052__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2053__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2054__PHI_TEMPORARY = 0.16653861138229145;   /* for PHI node */
-    goto _2155;
+_2175:
+  _1862 = _1862__PHI_TEMPORARY;
+  _1863 = _1863__PHI_TEMPORARY;
+  _1864 = _1864__PHI_TEMPORARY;
+  _1865 = _1865__PHI_TEMPORARY;
+  _1866 = _1866__PHI_TEMPORARY;
+  _1867 = llvm_add_u64(_1862, 1);
+  _1868 = _1864 + _1866;
+  _1869 = _1865 + _1863;
+  _1870 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1862)])));
+  _1871 = _1858 - _1870;
+  _1872 = ((double)(uint32_t)(((uint32_t)_1867)));
+  _1873 = _1860 * _1872;
+  _1874 = _1871 / _1873;
+  _1875 = _1866 * _1874;
+  _1876 = ((((_1859 * _1873) - ((_1861 * _1872) * _1871)) * _1866) / (_1873 * _1873)) + (_1874 * _1865);
+  *(double*)(((&((double*)(&_1762))[((int64_t)_1862)]))) = _1869;
+  *(double*)(((&((double*)(&_1763))[((int64_t)_1862)]))) = _1868;
+  *(double*)(((&((double*)_1791)[((int64_t)_1862)]))) = _1876;
+  *(double*)(((&((double*)_1857)[((int64_t)_1862)]))) = _1875;
+  if ((_1867 == UINT64_C(16))) {
+    goto _2176;
   } else {
-    _2045__PHI_TEMPORARY = _2048;   /* for PHI node */
-    _2046__PHI_TEMPORARY = _2051;   /* for PHI node */
-    _2047__PHI_TEMPORARY = _2050;   /* for PHI node */
-    goto _2154;
+    _1862__PHI_TEMPORARY = _1867;   /* for PHI node */
+    _1863__PHI_TEMPORARY = _1869;   /* for PHI node */
+    _1864__PHI_TEMPORARY = _1868;   /* for PHI node */
+    _1865__PHI_TEMPORARY = _1876;   /* for PHI node */
+    _1866__PHI_TEMPORARY = _1875;   /* for PHI node */
+    goto _2175;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2176:
+  fixderivative_levin((&_1761), (&_1760), (&_1763), (&_1762));
+  _1877 = _1771 * 2;
+  _1878 = 3.1415926535897931 / _1877;
+  _1879 =  /*tail*/ sqrt(_1878);
+  _1880 =  /*tail*/ sqrt(_1878);
+  _1881 = _1760;
+  _1882 = _1761;
+  _1883 = _1879 * _1882;
+  _1884 = -(_1771);
+  _1885 =  /*tail*/ exp(_1884);
+  _1886 =  /*tail*/ exp(_1884);
+  _1887 = _1883 * _1885;
+  _1888 = ((((llvm_select_f64((llvm_fcmp_ueq(_1878, 0)), 0, ((_1772 * -6.2831853071795862) / (((_1771 * 4) * _1877) * _1880)))) * _1882) + (_1881 * _1879)) * _1885) - ((_1883 * _1772) * _1886);
+  _2157__PHI_TEMPORARY = _1888;   /* for PHI node */
+  _2158__PHI_TEMPORARY = _1887;   /* for PHI node */
+  goto _2164;
+
+_2174:
+  _1889 = _1793 - _1856;
+  _1756 = 0;
+  _1757 = 0;
+  _1890 = ((&((uint8_t*)(&_1759))[((int64_t)128)]));
+  _1891 = _1889 * 4;
+  _1892 = _1794 * 4;
+  _1893 = _1889 * _1891;
+  _1894 = (_1891 * _1794) + (_1892 * _1889);
+  _1895 = _1771 * 8;
+  _1896 = _1772 * 8;
+  _1897__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1898__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1899__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1900__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1901__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _2177;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2177:
+  _1897 = _1897__PHI_TEMPORARY;
+  _1898 = _1898__PHI_TEMPORARY;
+  _1899 = _1899__PHI_TEMPORARY;
+  _1900 = _1900__PHI_TEMPORARY;
+  _1901 = _1901__PHI_TEMPORARY;
+  _1902 = llvm_add_u64(_1897, 1);
+  _1903 = _1899 + _1901;
+  _1904 = _1900 + _1898;
+  _1905 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1897)])));
+  _1906 = _1893 - _1905;
+  _1907 = ((double)(uint32_t)(((uint32_t)_1902)));
+  _1908 = _1895 * _1907;
+  _1909 = _1906 / _1908;
+  _1910 = _1901 * _1909;
+  _1911 = ((((_1908 * _1894) - ((_1896 * _1907) * _1906)) * _1901) / (_1908 * _1908)) + (_1909 * _1900);
+  *(double*)(((&((double*)(&_1758))[((int64_t)_1897)]))) = _1904;
+  *(double*)(((&((double*)(&_1759))[((int64_t)_1897)]))) = _1903;
+  *(double*)(((&((double*)_1789)[((int64_t)_1897)]))) = _1911;
+  *(double*)(((&((double*)_1890)[((int64_t)_1897)]))) = _1910;
+  if ((_1902 == UINT64_C(16))) {
+    goto _2178;
+  } else {
+    _1897__PHI_TEMPORARY = _1902;   /* for PHI node */
+    _1898__PHI_TEMPORARY = _1904;   /* for PHI node */
+    _1899__PHI_TEMPORARY = _1903;   /* for PHI node */
+    _1900__PHI_TEMPORARY = _1911;   /* for PHI node */
+    _1901__PHI_TEMPORARY = _1910;   /* for PHI node */
+    goto _2177;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2178:
+  fixderivative_levin((&_1757), (&_1756), (&_1759), (&_1758));
+  _1912 = _1771 * 2;
+  _1913 = 3.1415926535897931 / _1912;
+  _1914 =  /*tail*/ sqrt(_1913);
+  _1915 =  /*tail*/ sqrt(_1913);
+  _1916 = ((_1771 * 4) * _1912) * _1915;
+  _1917 = _1756;
+  _1918 = _1757;
+  _1919 = _1889 + 1;
+  _1752 = 0;
+  _1753 = 0;
+  _1920 = ((&((uint8_t*)(&_1755))[((int64_t)128)]));
+  _1921 = _1919 * 4;
+  _1922 = _1919 * _1921;
+  _1923 = (_1921 * _1794) + (_1919 * _1892);
+  _1924__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1925__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1926__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1927__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1928__PHI_TEMPORARY = 1;   /* for PHI node */
+  goto _2179;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2179:
+  _1924 = _1924__PHI_TEMPORARY;
+  _1925 = _1925__PHI_TEMPORARY;
+  _1926 = _1926__PHI_TEMPORARY;
+  _1927 = _1927__PHI_TEMPORARY;
+  _1928 = _1928__PHI_TEMPORARY;
+  _1929 = llvm_add_u64(_1924, 1);
+  _1930 = _1926 + _1928;
+  _1931 = _1927 + _1925;
+  _1932 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_1924)])));
+  _1933 = _1922 - _1932;
+  _1934 = ((double)(uint32_t)(((uint32_t)_1929)));
+  _1935 = _1895 * _1934;
+  _1936 = _1933 / _1935;
+  _1937 = _1928 * _1936;
+  _1938 = ((((_1935 * _1923) - ((_1896 * _1934) * _1933)) * _1928) / (_1935 * _1935)) + (_1936 * _1927);
+  *(double*)(((&((double*)(&_1754))[((int64_t)_1924)]))) = _1931;
+  *(double*)(((&((double*)(&_1755))[((int64_t)_1924)]))) = _1930;
+  *(double*)(((&((double*)_1787)[((int64_t)_1924)]))) = _1938;
+  *(double*)(((&((double*)_1920)[((int64_t)_1924)]))) = _1937;
+  if ((_1929 == UINT64_C(16))) {
+    goto _2180;
+  } else {
+    _1924__PHI_TEMPORARY = _1929;   /* for PHI node */
+    _1925__PHI_TEMPORARY = _1931;   /* for PHI node */
+    _1926__PHI_TEMPORARY = _1930;   /* for PHI node */
+    _1927__PHI_TEMPORARY = _1938;   /* for PHI node */
+    _1928__PHI_TEMPORARY = _1937;   /* for PHI node */
+    goto _2179;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2180:
+  _1939 = llvm_select_f64((llvm_fcmp_ueq(_1913, 0)), 0, ((_1772 * -6.2831853071795862) / _1916));
+  _1940 = _1914 * _1918;
+  _1941 = (_1939 * _1918) + (_1917 * _1914);
+  fixderivative_levin((&_1753), (&_1752), (&_1755), (&_1754));
+  _1942 =  /*tail*/ sqrt(_1913);
+  _1943 = 2 / _1771;
+  _1944 = _1793 + 0.5;
+  if ((llvm_fcmp_ogt(_1944, _1919))) {
+    goto _2181;
+  } else {
+    _1960__PHI_TEMPORARY = _1941;   /* for PHI node */
+    _1961__PHI_TEMPORARY = _1940;   /* for PHI node */
+    goto _2182;
+  }
+
+_2181:
+  _1945 = _1772 * 2;
+  _1946 = _1753;
+  _1947 = _1752;
+  _1948 = _1942 * _1946;
+  _1949 = (_1947 * _1942) + (_1946 * _1939);
+  _1950 = _1943 * _1794;
+  _1951 = 1 / (_1771 * _1771);
+  _1952__PHI_TEMPORARY = _1949;   /* for PHI node */
+  _1953__PHI_TEMPORARY = _1948;   /* for PHI node */
+  _1954__PHI_TEMPORARY = _1941;   /* for PHI node */
+  _1955__PHI_TEMPORARY = _1940;   /* for PHI node */
+  _1956__PHI_TEMPORARY = _1919;   /* for PHI node */
+  goto _2183;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2183:
+  _1952 = _1952__PHI_TEMPORARY;
+  _1953 = _1953__PHI_TEMPORARY;
+  _1954 = _1954__PHI_TEMPORARY;
+  _1955 = _1955__PHI_TEMPORARY;
+  _1956 = _1956__PHI_TEMPORARY;
+  _1957 = _1943 * _1956;
+  _1958 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1957, _1953, _1955);
+  _1959 = _1956 + 1;
+  if ((llvm_fcmp_olt(_1959, _1944))) {
+    _1952__PHI_TEMPORARY = (((_1957 * _1952) + _1954) + ((_1950 - ((_1945 * _1956) * _1951)) * _1953));   /* for PHI node */
+    _1953__PHI_TEMPORARY = _1958;   /* for PHI node */
+    _1954__PHI_TEMPORARY = _1952;   /* for PHI node */
+    _1955__PHI_TEMPORARY = _1953;   /* for PHI node */
+    _1956__PHI_TEMPORARY = _1959;   /* for PHI node */
+    goto _2183;
+  } else {
+    _1960__PHI_TEMPORARY = _1952;   /* for PHI node */
+    _1961__PHI_TEMPORARY = _1953;   /* for PHI node */
+    goto _2182;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2182:
+  _1960 = _1960__PHI_TEMPORARY;
+  _1961 = _1961__PHI_TEMPORARY;
+  _1962 = -(_1771);
+  _1963 =  /*tail*/ exp(_1962);
+  _1964 =  /*tail*/ exp(_1962);
+  _1965 = _1961 * _1963;
+  _1966 = (_1963 * _1960) - ((_1961 * _1772) * _1964);
+  _2157__PHI_TEMPORARY = _1966;   /* for PHI node */
+  _2158__PHI_TEMPORARY = _1965;   /* for PHI node */
+  goto _2164;
+
+_2172:
+  _1967 = round(_1793);
+  _1968 =  /*tail*/ llvm_OC_fabs_OC_f64((_1793 - _1967));
+  if ((llvm_fcmp_olt(_1968, 1.0000000000000001E-5))) {
+    goto _2184;
+  } else {
+    goto _2185;
+  }
+
+_2184:
+  _1969 = _1793 - (llvm_select_f64((llvm_fcmp_ogt((_1793 - _1856), 0.5)), (_1856 + -1), _1856));
+  *((double*)&_1743) = 1;
+  *(double*)(((&((uint8_t*)(&_1743))[((int64_t)8)]))) = 0.16666666666666666;
+  *(double*)(((&((uint8_t*)(&_1743))[((int64_t)16)]))) = 0.0083333333333333332;
+  *(double*)(((&((uint8_t*)(&_1743))[((int64_t)24)]))) = 1.9841269841269841E-4;
+  *(double*)(((&((uint8_t*)(&_1743))[((int64_t)32)]))) = 2.7557319223985893E-6;
+  _1970 =  /*tail*/ log(_1771);
+  _1971 = _1969 * _1969;
+  _1972 = (_1794 * 2) * _1969;
+  _1973__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1974__PHI_TEMPORARY = 0;   /* for PHI node */
+  _1975__PHI_TEMPORARY = 1.9711021825948702;   /* for PHI node */
+  goto _2186;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2186:
+  _1973 = _1973__PHI_TEMPORARY;
+  _1974 = _1974__PHI_TEMPORARY;
+  _1975 = _1975__PHI_TEMPORARY;
+  _1976 = llvm_add_u64(_1973, 1);
+  _1977 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_spcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _1973)))])));
+  _1978 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1971, _1975, _1977);
+  _1979 = (_1975 * _1972) + (_1974 * _1971);
+  if ((_1976 == UINT64_C(3))) {
+    _1980__PHI_TEMPORARY = 0;   /* for PHI node */
+    _1981__PHI_TEMPORARY = 0;   /* for PHI node */
+    _1982__PHI_TEMPORARY = 0.042197734555544306;   /* for PHI node */
+    goto _2187;
+  } else {
+    _1973__PHI_TEMPORARY = _1976;   /* for PHI node */
+    _1974__PHI_TEMPORARY = _1979;   /* for PHI node */
+    _1975__PHI_TEMPORARY = _1978;   /* for PHI node */
+    goto _2186;
   }
 
   } while (1); /* end of syntactic loop '' */
   do {     /* Syntactic loop '' to make GCC happy */
-_2155:
+_2187:
+  _1980 = _1980__PHI_TEMPORARY;
+  _1981 = _1981__PHI_TEMPORARY;
+  _1982 = _1982__PHI_TEMPORARY;
+  _1983 = llvm_add_u64(_1980, 1);
+  _1984 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g1coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _1980)))])));
+  _1985 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1971, _1982, _1984);
+  _1986 = (_1982 * _1972) + (_1981 * _1971);
+  if ((_1983 == UINT64_C(2))) {
+    _1987__PHI_TEMPORARY = 0;   /* for PHI node */
+    _1988__PHI_TEMPORARY = 0;   /* for PHI node */
+    _1989__PHI_TEMPORARY = 0.16653861138229145;   /* for PHI node */
+    goto _2188;
+  } else {
+    _1980__PHI_TEMPORARY = _1983;   /* for PHI node */
+    _1981__PHI_TEMPORARY = _1986;   /* for PHI node */
+    _1982__PHI_TEMPORARY = _1985;   /* for PHI node */
+    goto _2187;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_2188:
+  _1987 = _1987__PHI_TEMPORARY;
+  _1988 = _1988__PHI_TEMPORARY;
+  _1989 = _1989__PHI_TEMPORARY;
+  _1990 = llvm_add_u64(_1987, 1);
+  _1991 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _1987)))])));
+  _1992 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1971, _1989, _1991);
+  _1993 = (_1989 * _1972) + (_1988 * _1971);
+  if ((_1990 == UINT64_C(2))) {
+    goto _2189;
+  } else {
+    _1987__PHI_TEMPORARY = _1990;   /* for PHI node */
+    _1988__PHI_TEMPORARY = _1993;   /* for PHI node */
+    _1989__PHI_TEMPORARY = _1992;   /* for PHI node */
+    goto _2188;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2189:
+  _1994 = 0.69314718055994529 - _1970;
+  _1995 = (-(_1772)) / _1771;
+  _1996 = _1969 * _1994;
+  _1997 = (_1994 * _1794) + (_1995 * _1969);
+  _1998 = _1996 * _1996;
+  _1999 = ((&((uint8_t*)(&_1743))[((int64_t)-8)]));
+  _2000 = (_1996 * 2) * _1997;
+  _2001__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2002__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2003__PHI_TEMPORARY = 2.7557319223985893E-6;   /* for PHI node */
+  goto _2190;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2190:
+  _2001 = _2001__PHI_TEMPORARY;
+  _2002 = _2002__PHI_TEMPORARY;
+  _2003 = _2003__PHI_TEMPORARY;
+  _2004 = llvm_add_u64(_2001, 1);
+  _2005 = *(double*)(((&((double*)_1999)[((int64_t)(llvm_sub_u64(4, _2001)))])));
+  _2006 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1998, _2003, _2005);
+  _2007 = (_2000 * _2003) + (_2002 * _1998);
+  if ((_2004 == UINT64_C(4))) {
+    goto _2191;
+  } else {
+    _2001__PHI_TEMPORARY = _2004;   /* for PHI node */
+    _2002__PHI_TEMPORARY = _2007;   /* for PHI node */
+    _2003__PHI_TEMPORARY = _2006;   /* for PHI node */
+    goto _2190;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2191:
+  _2008 = _1771 * 0.5;
+  _2009 =  /*tail*/ cosh(_1996);
+  _2010 = _1992 * _2006;
+  _2011 = _2007 * _1992;
+  _2012 = _2010 * _1995;
+  _2013 = _2009 * _1986;
+  _2014 =  /*tail*/ pow(_2008, _1969);
+  _2015 =  /*tail*/ pow(_2008, (_1969 + -1));
+  _2016 =  /*tail*/ pow(_2008, _1969);
+  _2017 = log(_2008);
+  _2018__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2019__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2020__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
+  goto _2192;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2192:
+  _2018 = _2018__PHI_TEMPORARY;
+  _2019 = _2019__PHI_TEMPORARY;
+  _2020 = _2020__PHI_TEMPORARY;
+  _2021 = llvm_add_u64(_2018, 1);
+  _2022 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2018)))])));
+  _2023 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1969, _2020, _2022);
+  _2024 = (_2020 * _1794) + (_2019 * _1969);
+  if ((_2021 == UINT64_C(3))) {
+    goto _2193;
+  } else {
+    _2018__PHI_TEMPORARY = _2021;   /* for PHI node */
+    _2019__PHI_TEMPORARY = _2024;   /* for PHI node */
+    _2020__PHI_TEMPORARY = _2023;   /* for PHI node */
+    goto _2192;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2193:
+  _2025 = (((_2006 * _1993) + _2011) * _1994) + _2012;
+  _2026 = _1772 * 0.5;
+  _2027 = _2026 * _1969;
+  _2028 = _1994 * _2010;
+  _2029 = -(_1969);
+  _2030__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2031__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2032__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
+  goto _2194;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2194:
+  _2030 = _2030__PHI_TEMPORARY;
+  _2031 = _2031__PHI_TEMPORARY;
+  _2032 = _2032__PHI_TEMPORARY;
+  _2033 = llvm_add_u64(_2030, 1);
+  _2034 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2030)))])));
+  _2035 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2029, _2032, _2034);
+  _2036 = (_2031 * _2029) - (_2032 * _1794);
+  if ((_2033 == UINT64_C(3))) {
+    goto _2195;
+  } else {
+    _2030__PHI_TEMPORARY = _2033;   /* for PHI node */
+    _2031__PHI_TEMPORARY = _2036;   /* for PHI node */
+    _2032__PHI_TEMPORARY = _2035;   /* for PHI node */
+    goto _2194;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2195:
+  _2037 =  /*tail*/ sinh(_1996);
+  _2038 = _2014 * 2;
+  _2039 = _2008 * _2008;
+  _2040 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_1985, _2009, _2028);
+  _2041 = ((_2017 * _1794) * _2016) + (_2027 * _2015);
+  _2042 = _1978 * _2040;
+  _2043 = (((_2025 + _2013) + ((_1985 * _1997) * _2037)) * _1978) + (_2040 * _1979);
+  _2044 = _2023 / _2038;
+  _2045 = ((_2024 * _2038) - ((_2041 * 2) * _2023)) / (_2038 * _2038);
+  _2046 = (_2014 * _2035) * 0.5;
+  _2047 = ((_2035 * _2041) + (_2036 * _2014)) * 0.5;
+  _2048 = (_2029 - _1969) * _1794;
+  _2049 = (_2008 * _2026) * 2;
+  _2050__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2051__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2052__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2053__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2054__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2055__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2056__PHI_TEMPORARY = 1;   /* for PHI node */
+  _2057__PHI_TEMPORARY = _2047;   /* for PHI node */
+  _2058__PHI_TEMPORARY = _2046;   /* for PHI node */
+  _2059__PHI_TEMPORARY = _2045;   /* for PHI node */
+  _2060__PHI_TEMPORARY = _2044;   /* for PHI node */
+  _2061__PHI_TEMPORARY = _2043;   /* for PHI node */
+  _2062__PHI_TEMPORARY = _2042;   /* for PHI node */
+  goto _2196;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2196:
+  _2050 = _2050__PHI_TEMPORARY;
+  _2051 = _2051__PHI_TEMPORARY;
   _2052 = _2052__PHI_TEMPORARY;
   _2053 = _2053__PHI_TEMPORARY;
   _2054 = _2054__PHI_TEMPORARY;
-  _2055 = llvm_add_u64(_2052, 1);
-  _2056 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2052)))])));
-  _2057 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2035, _2054, _2056);
-  _2058 = (_2054 * _2036) + (_2053 * _2035);
-  if ((_2055 == UINT64_C(2))) {
-    goto _2156;
+  _2055 = _2055__PHI_TEMPORARY;
+  _2056 = _2056__PHI_TEMPORARY;
+  _2057 = _2057__PHI_TEMPORARY;
+  _2058 = _2058__PHI_TEMPORARY;
+  _2059 = _2059__PHI_TEMPORARY;
+  _2060 = _2060__PHI_TEMPORARY;
+  _2061 = _2061__PHI_TEMPORARY;
+  _2062 = _2062__PHI_TEMPORARY;
+  _2063 = _2056 * _2062;
+  _2064 = (_2062 * _2055) + (_2061 * _2056);
+  _1744 = _2064;
+  _1745 = _2063;
+  _2065 = ((double)(uint32_t)_2050);
+  _2066 =  /*tail*/ llvm_OC_fmuladd_OC_f64((-(_2065)), _2062, _2060);
+  _2067 = _2056 * _2066;
+  _2068 = (_2066 * _2055) + ((_2059 - (_2061 * _2065)) * _2056);
+  _1746 = _2068;
+  _1747 = _2067;
+  _2069 = _2054 + _2063;
+  _2070 = _2064 + _2053;
+  _2071 = _2052 + _2067;
+  _2072 = _2068 + _2051;
+  fixderivative_isconverged((&_1745), (&_1744), (&_1749), (&_1748));
+  fixderivative_isconverged_OC_1((&_1747), (&_1746), (&_1751), (&_1750));
+  _2073 = _1749;
+  _2074 = _1751;
+  if ((llvm_select_bool((llvm_fcmp_olt(_2073, 0)), (llvm_fcmp_olt(_2074, 0)), 0))) {
+    goto _2197;
   } else {
-    _2052__PHI_TEMPORARY = _2055;   /* for PHI node */
-    _2053__PHI_TEMPORARY = _2058;   /* for PHI node */
-    _2054__PHI_TEMPORARY = _2057;   /* for PHI node */
-    goto _2155;
+    goto _2198;
+  }
+
+_2198:
+  _2075 = llvm_add_u32(_2050, 1);
+  _2076 = ((double)(uint32_t)_2075);
+  _2077 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2076, _2062, _2060);
+  _2078 = _2058 + _2077;
+  _2079 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2029, _1969, (((double)(uint32_t)(llvm_mul_u32(_2075, _2075)))));
+  _2080 = _2078 / _2079;
+  _2081 = ((((_2059 + _2057) + (_2061 * _2076)) * _2079) - (_2048 * _2078)) / (_2079 * _2079);
+  _2082 = _2076 - _1969;
+  _2083 = _2060 / _2082;
+  _2084 = ((_2060 * _1794) + (_2059 * _2082)) / (_2082 * _2082);
+  _2085 = _1969 + _2076;
+  _2086 = _2058 / _2085;
+  _2087 = ((_2057 * _2085) - (_2058 * _1794)) / (_2085 * _2085);
+  _2088 = _2039 / _2076;
+  _2089 = _2088 * _2056;
+  _2090 = (((_2049 * _2076) * _2056) / (_2076 * _2076)) + (_2055 * _2088);
+  if ((_2075 == 500u)) {
+    goto _2197;
+  } else {
+    _2050__PHI_TEMPORARY = _2075;   /* for PHI node */
+    _2051__PHI_TEMPORARY = _2072;   /* for PHI node */
+    _2052__PHI_TEMPORARY = _2071;   /* for PHI node */
+    _2053__PHI_TEMPORARY = _2070;   /* for PHI node */
+    _2054__PHI_TEMPORARY = _2069;   /* for PHI node */
+    _2055__PHI_TEMPORARY = _2090;   /* for PHI node */
+    _2056__PHI_TEMPORARY = _2089;   /* for PHI node */
+    _2057__PHI_TEMPORARY = _2087;   /* for PHI node */
+    _2058__PHI_TEMPORARY = _2086;   /* for PHI node */
+    _2059__PHI_TEMPORARY = _2084;   /* for PHI node */
+    _2060__PHI_TEMPORARY = _2083;   /* for PHI node */
+    _2061__PHI_TEMPORARY = _2081;   /* for PHI node */
+    _2062__PHI_TEMPORARY = _2080;   /* for PHI node */
+    goto _2196;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2156:
-  _2059 = 0.69314718055994529 - _2034;
-  _2060 = _2059 * _2022;
-  _2061 = _2059 * _2023;
-  _2062 = _2060 * _2060;
-  _2063 = ((&((uint8_t*)(&_2025))[((int64_t)-8)]));
-  _2064 = (_2060 * 2) * _2061;
-  _2065__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2066__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2067__PHI_TEMPORARY = 2.7557319223985893E-6;   /* for PHI node */
-  goto _2157;
+_2197:
+  _2091 = _1969 + 1;
+  _2092 = 2 / _1771;
+  _2093 = _1793 + 0.5;
+  if ((llvm_fcmp_ogt(_2093, _2091))) {
+    goto _2199;
+  } else {
+    _2157__PHI_TEMPORARY = _2070;   /* for PHI node */
+    _2158__PHI_TEMPORARY = _2069;   /* for PHI node */
+    goto _2164;
+  }
+
+_2199:
+  _2094 = _1772 * 2;
+  _2095 = ((_2072 * _2008) - (_2071 * _2026)) / _2039;
+  _2096 = _2071 / _2008;
+  _2097 = _2092 * _1794;
+  _2098 = 1 / (_1771 * _1771);
+  _2099__PHI_TEMPORARY = _2095;   /* for PHI node */
+  _2100__PHI_TEMPORARY = _2096;   /* for PHI node */
+  _2101__PHI_TEMPORARY = _2070;   /* for PHI node */
+  _2102__PHI_TEMPORARY = _2069;   /* for PHI node */
+  _2103__PHI_TEMPORARY = _2091;   /* for PHI node */
+  goto _2200;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2157:
-  _2065 = _2065__PHI_TEMPORARY;
-  _2066 = _2066__PHI_TEMPORARY;
-  _2067 = _2067__PHI_TEMPORARY;
-  _2068 = llvm_add_u64(_2065, 1);
-  _2069 = *(double*)(((&((double*)_2063)[((int64_t)(llvm_sub_u64(4, _2065)))])));
-  _2070 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2062, _2067, _2069);
-  _2071 = (_2064 * _2067) + (_2066 * _2062);
-  if ((_2068 == UINT64_C(4))) {
-    goto _2158;
+_2200:
+  _2099 = _2099__PHI_TEMPORARY;
+  _2100 = _2100__PHI_TEMPORARY;
+  _2101 = _2101__PHI_TEMPORARY;
+  _2102 = _2102__PHI_TEMPORARY;
+  _2103 = _2103__PHI_TEMPORARY;
+  _2104 = _2092 * _2103;
+  _2105 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2104, _2100, _2102);
+  _2106 = _2103 + 1;
+  if ((llvm_fcmp_olt(_2106, _2093))) {
+    _2099__PHI_TEMPORARY = (((_2104 * _2099) + _2101) + ((_2097 - ((_2094 * _2103) * _2098)) * _2100));   /* for PHI node */
+    _2100__PHI_TEMPORARY = _2105;   /* for PHI node */
+    _2101__PHI_TEMPORARY = _2099;   /* for PHI node */
+    _2102__PHI_TEMPORARY = _2100;   /* for PHI node */
+    _2103__PHI_TEMPORARY = _2106;   /* for PHI node */
+    goto _2200;
   } else {
-    _2065__PHI_TEMPORARY = _2068;   /* for PHI node */
-    _2066__PHI_TEMPORARY = _2071;   /* for PHI node */
-    _2067__PHI_TEMPORARY = _2070;   /* for PHI node */
-    goto _2157;
+    _2157__PHI_TEMPORARY = _2099;   /* for PHI node */
+    _2158__PHI_TEMPORARY = _2100;   /* for PHI node */
+    goto _2164;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2158:
-  _2072 =  /*tail*/ cosh(_2060);
-  _2073 =  /*tail*/ sinh(_2060);
-  _2074 = _2050 * _2061;
-  _2075 = (_2072 * _2051) + (((_2070 * _2058) + (_2071 * _2057)) * _2059);
-  _2076 =  /*tail*/ pow(_2044, _2022);
-  _2077 =  /*tail*/ pow(_2044, _2022);
-  _2078 = log(_2044);
-  _2079 = _2078 * _2023;
-  _2080__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2081__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2082__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
-  goto _2159;
+_2185:
+  _2107 =  /*tail*/ fwddiffegamma(_1793, _1794);
+  _2108 =  /*tail*/ sinpi((0.5 - _1793));
+  _2109 = _1771 * _1771;
+  _2110 = (_1772 * 2) * _1771;
+  _1742 = 1;
+  _2111 = _2109 * _1794;
+  _2112__PHI_TEMPORARY = 1;   /* for PHI node */
+  _2113__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2114__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2115__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2116__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2117__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2118__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2119__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2120__PHI_TEMPORARY = 1;   /* for PHI node */
+  _2121__PHI_TEMPORARY = 4;   /* for PHI node */
+  goto _2201;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2159:
-  _2080 = _2080__PHI_TEMPORARY;
-  _2081 = _2081__PHI_TEMPORARY;
-  _2082 = _2082__PHI_TEMPORARY;
-  _2083 = llvm_add_u64(_2080, 1);
-  _2084 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2080)))])));
-  _2085 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2022, _2082, _2084);
-  _2086 = (_2082 * _2023) + (_2081 * _2022);
-  if ((_2083 == UINT64_C(3))) {
-    goto _2160;
-  } else {
-    _2080__PHI_TEMPORARY = _2083;   /* for PHI node */
-    _2081__PHI_TEMPORARY = _2086;   /* for PHI node */
-    _2082__PHI_TEMPORARY = _2085;   /* for PHI node */
-    goto _2159;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2160:
-  _2087 = _2059 * (_2057 * _2070);
-  _2088 = _2075 + (_2074 * _2073);
-  _2089 = _2076 * 2;
-  _2090 = -(_2022);
-  _2091__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2092__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2093__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
-  goto _2161;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2161:
-  _2091 = _2091__PHI_TEMPORARY;
-  _2092 = _2092__PHI_TEMPORARY;
-  _2093 = _2093__PHI_TEMPORARY;
-  _2094 = llvm_add_u64(_2091, 1);
-  _2095 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2091)))])));
-  _2096 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2090, _2093, _2095);
-  _2097 = (_2092 * _2090) - (_2093 * _2023);
-  if ((_2094 == UINT64_C(3))) {
-    goto _2162;
-  } else {
-    _2091__PHI_TEMPORARY = _2094;   /* for PHI node */
-    _2092__PHI_TEMPORARY = _2097;   /* for PHI node */
-    _2093__PHI_TEMPORARY = _2096;   /* for PHI node */
-    goto _2161;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2162:
-  _2098 = _2044 * _2044;
-  _2099 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2050, _2072, _2087);
-  _2100 = _2079 * _2077;
-  _2101 = _2042 * _2099;
-  _2102 = (_2088 * _2042) + (_2099 * _2043);
-  _2103 = _2085 / _2089;
-  _2104 = ((_2086 * _2089) - ((_2100 * 2) * _2085)) / (_2089 * _2089);
-  _2105 = (_2076 * _2096) * 0.5;
-  _2106 = ((_2096 * _2100) + (_2097 * _2076)) * 0.5;
-  _2107 = (_2090 - _2022) * _2023;
-  _2108__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2109__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2110__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2111__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2112__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2113__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2114__PHI_TEMPORARY = _2106;   /* for PHI node */
-  _2115__PHI_TEMPORARY = _2105;   /* for PHI node */
-  _2116__PHI_TEMPORARY = _2104;   /* for PHI node */
-  _2117__PHI_TEMPORARY = _2103;   /* for PHI node */
-  _2118__PHI_TEMPORARY = _2102;   /* for PHI node */
-  _2119__PHI_TEMPORARY = _2101;   /* for PHI node */
-  goto _2163;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2163:
-  _2108 = _2108__PHI_TEMPORARY;
-  _2109 = _2109__PHI_TEMPORARY;
-  _2110 = _2110__PHI_TEMPORARY;
-  _2111 = _2111__PHI_TEMPORARY;
+_2201:
   _2112 = _2112__PHI_TEMPORARY;
   _2113 = _2113__PHI_TEMPORARY;
   _2114 = _2114__PHI_TEMPORARY;
@@ -6904,313 +6995,184 @@ _2163:
   _2117 = _2117__PHI_TEMPORARY;
   _2118 = _2118__PHI_TEMPORARY;
   _2119 = _2119__PHI_TEMPORARY;
-  _2120 = _2113 * _2119;
-  _2121 = _2118 * _2113;
-  _2026 = _2121;
-  _2027 = _2120;
-  _2122 = ((double)(uint32_t)_2108);
-  _2123 =  /*tail*/ llvm_OC_fmuladd_OC_f64((-(_2122)), _2119, _2117);
-  _2124 = _2113 * _2123;
-  _2125 = (_2116 - (_2118 * _2122)) * _2113;
-  _2028 = _2125;
-  _2029 = _2124;
-  _2126 = _2112 + _2120;
-  _2127 = _2121 + _2111;
-  _2128 = _2110 + _2124;
-  _2129 = _2125 + _2109;
-  fixderivative_isconverged((&_2027), (&_2026), (&_2031), (&_2030));
-  fixderivative_isconverged_OC_1((&_2029), (&_2028), (&_2033), (&_2032));
-  _2130 = _2031;
-  _2131 = _2033;
-  if ((llvm_select_bool((llvm_fcmp_olt(_2130, 0)), (llvm_fcmp_olt(_2131, 0)), 0))) {
-    goto _2164;
+  _2120 = _2120__PHI_TEMPORARY;
+  _2121 = _2121__PHI_TEMPORARY;
+  _2122 = llvm_add_u32(_2114, 1);
+  _2123 = _2112 + _2116;
+  _2124 = _2115 + _2113;
+  _2125 = _2118 + _2120;
+  _2126 = _2119 + _2117;
+  _2127 = ((double)(uint32_t)_2122);
+  _2128 = (_2127 - _1793) * _2121;
+  _2129 = _2109 / _2128;
+  _2130 = _2111 * _2121;
+  _2131 = _2112 * _2129;
+  _2132 = ((((_2128 * _2110) + _2130) * _2112) / (_2128 * _2128)) + (_2129 * _2113);
+  _1739 = _2132;
+  _1740 = _2131;
+  fixderivative_isconverged((&_1740), (&_1739), (&_1742), (&_1741));
+  _2133 = _1742;
+  if ((llvm_fcmp_olt(_2133, 0))) {
+    goto _2202;
   } else {
-    goto _2165;
+    goto _2203;
   }
 
-_2165:
-  _2132 = llvm_add_u32(_2108, 1);
-  _2133 = ((double)(uint32_t)_2132);
-  _2134 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2133, _2119, _2117);
-  _2135 = _2115 + _2134;
-  _2136 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2090, _2022, (((double)(uint32_t)(llvm_mul_u32(_2132, _2132)))));
-  _2137 = _2135 / _2136;
-  _2138 = ((((_2116 + _2114) + (_2118 * _2133)) * _2136) - (_2107 * _2135)) / (_2136 * _2136);
-  _2139 = _2133 - _2022;
-  _2140 = _2117 / _2139;
-  _2141 = ((_2117 * _2023) + (_2116 * _2139)) / (_2139 * _2139);
-  _2142 = _2133 + _2022;
-  _2143 = _2115 / _2142;
-  _2144 = ((_2114 * _2142) - (_2115 * _2023)) / (_2142 * _2142);
-  _2145 = (_2098 / _2133) * _2113;
-  if ((_2132 == 500u)) {
-    goto _2164;
+_2203:
+  _2134 = (_1793 + _2127) * _2121;
+  _2135 = _2109 / _2134;
+  _2136 = _2120 * _2135;
+  _2137 = ((((_2134 * _2110) - _2130) * _2120) / (_2134 * _2134)) + (_2135 * _2119);
+  _2138 = _2121 + 4;
+  if ((_2122 == 49u)) {
+    goto _2202;
   } else {
-    _2108__PHI_TEMPORARY = _2132;   /* for PHI node */
-    _2109__PHI_TEMPORARY = _2129;   /* for PHI node */
-    _2110__PHI_TEMPORARY = _2128;   /* for PHI node */
-    _2111__PHI_TEMPORARY = _2127;   /* for PHI node */
-    _2112__PHI_TEMPORARY = _2126;   /* for PHI node */
-    _2113__PHI_TEMPORARY = _2145;   /* for PHI node */
-    _2114__PHI_TEMPORARY = _2144;   /* for PHI node */
-    _2115__PHI_TEMPORARY = _2143;   /* for PHI node */
-    _2116__PHI_TEMPORARY = _2141;   /* for PHI node */
-    _2117__PHI_TEMPORARY = _2140;   /* for PHI node */
-    _2118__PHI_TEMPORARY = _2138;   /* for PHI node */
+    _2112__PHI_TEMPORARY = _2131;   /* for PHI node */
+    _2113__PHI_TEMPORARY = _2132;   /* for PHI node */
+    _2114__PHI_TEMPORARY = _2122;   /* for PHI node */
+    _2115__PHI_TEMPORARY = _2124;   /* for PHI node */
+    _2116__PHI_TEMPORARY = _2123;   /* for PHI node */
+    _2117__PHI_TEMPORARY = _2126;   /* for PHI node */
+    _2118__PHI_TEMPORARY = _2125;   /* for PHI node */
     _2119__PHI_TEMPORARY = _2137;   /* for PHI node */
-    goto _2163;
+    _2120__PHI_TEMPORARY = _2136;   /* for PHI node */
+    _2121__PHI_TEMPORARY = _2138;   /* for PHI node */
+    goto _2201;
   }
 
   } while (1); /* end of syntactic loop '' */
+_2202:
+  _2139 =  /*tail*/ sinpi((-(_1793)));
+  _2140 = (_2107.field1);
+  _2141 = (_2107.field0);
+  _2142 = _2141 * _2139;
+  _2143 = _1793 * _2142;
+  _2144 = 3.1415926535897931 / _2143;
+  _2145 = _1771 * 0.5;
+  _2146 =  /*tail*/ pow(_2145, _1793);
+  _2147 =  /*tail*/ pow(_2145, (_1793 + -1));
+  _2148 =  /*tail*/ pow(_2145, _1793);
+  _2149 = log(_2145);
+  _2150 = ((_2149 * _1794) * _2148) + (((_1772 * 0.5) * _1793) * _2147);
+  _2151 = _2146 * _2146;
+  _2152 = _2151 * _2144;
+  _2153 = _2146 * 2;
+  _2154 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2141, _2123, (_2125 * _2152));
+  _2155 = _2154 / _2153;
+  _2156 = ((((((_2123 * _2140) + (_2124 * _2141)) + (_2152 * _2126)) + ((((_2144 * _2153) * _2150) - (((_2151 * 3.1415926535897931) * ((((_2139 * _2140) - (((_1794 * 3.1415926535897962) * _2108) * _2141)) * _1793) + (_2142 * _1794))) / (_2143 * _2143))) * _2125)) * _2153) - ((_2150 * 2) * _2154)) / (_2153 * _2153);
+  _2157__PHI_TEMPORARY = _2156;   /* for PHI node */
+  _2158__PHI_TEMPORARY = _2155;   /* for PHI node */
+  goto _2164;
+
 _2164:
-  _2146 = llvm_ctor_unnamed_1(0, 0);
-  _2146.field0 = _2127;
-  _2147 = llvm_ctor_unnamed_1(0, 0);
-  _2147.field0 = _2126;
-  _2148 = _2146;
-  _2148.field1 = ((_2129 * _2044) / _2098);
-  _2149 = _2147;
-  _2149.field1 = (_2128 / _2044);
-  _2150 = llvm_ctor_unnamed_2(llvm_ctor_unnamed_1(0, 0), llvm_ctor_unnamed_1(0, 0));
-  _2150.field0 = _2149;
-  _2151 = _2150;
-  _2151.field1 = _2148;
-  return _2151;
+  _2157 = _2157__PHI_TEMPORARY;
+  _2158 = _2158__PHI_TEMPORARY;
+  _2159 = (_2158 * _1786) + (_2157 * _1785);
+  _2160__PHI_TEMPORARY = _2159;   /* for PHI node */
+  goto _2161;
+
+_2161:
+  _2160 = _2160__PHI_TEMPORARY;
+  return _2160;
 }
 
 
-static void fixderivative_isconverged_OC_1(void* _2166, void* _2167, void* _2168, void* _2169) {
-   /*tail*/ disconverged(_2166, _2167, _2168, /*UNDEF*/((void*)/*NULL*/0));
-}
-
-
-static double fwddiffebesselk_power_series(double _2170, double _2171, double _2172) {
-  double _2173;    /* Address-exposed local */
-  double _2174;    /* Address-exposed local */
-  double _2175;    /* Address-exposed local */
-  double _2176;    /* Address-exposed local */
-  struct l_unnamed_1 _2177;
-  double _2178;
-  double _2179;
-  double _2180;
-  double _2181;
-  double _2181__PHI_TEMPORARY;
-  double _2182;
-  double _2182__PHI_TEMPORARY;
-  uint32_t _2183;
-  uint32_t _2183__PHI_TEMPORARY;
-  double _2184;
-  double _2184__PHI_TEMPORARY;
-  double _2185;
-  double _2185__PHI_TEMPORARY;
-  double _2186;
-  double _2186__PHI_TEMPORARY;
-  double _2187;
-  double _2187__PHI_TEMPORARY;
-  double _2188;
-  double _2188__PHI_TEMPORARY;
-  double _2189;
-  double _2189__PHI_TEMPORARY;
-  double _2190;
-  double _2190__PHI_TEMPORARY;
-  uint32_t _2191;
-  double _2192;
-  double _2193;
-  double _2194;
-  double _2195;
-  double _2196;
-  double _2197;
-  double _2198;
-  double _2199;
-  double _2200;
-  double _2201;
-  double _2202;
-  double _2203;
-  double _2204;
-  double _2205;
-  double _2206;
-  double _2207;
-  double _2208;
-  double _2209;
-  double _2210;
-  double _2211;
-  double _2212;
-  double _2213;
-  double _2214;
-  double _2215;
-  double _2216;
-  double _2217;
-  double _2218;
-  double _2219;
-  double _2220;
-  double _2221;
-
-  _2177 =  /*tail*/ fwddiffegamma(_2170, _2171);
-  _2178 =  /*tail*/ sinpi((0.5 - _2170));
-  _2179 = _2172 * _2172;
-  _2176 = 1;
-  _2180 = _2179 * _2171;
-  _2181__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2182__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2183__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2184__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2185__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2186__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2187__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2188__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2189__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2190__PHI_TEMPORARY = 4;   /* for PHI node */
-  goto _2222;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2222:
-  _2181 = _2181__PHI_TEMPORARY;
-  _2182 = _2182__PHI_TEMPORARY;
-  _2183 = _2183__PHI_TEMPORARY;
-  _2184 = _2184__PHI_TEMPORARY;
-  _2185 = _2185__PHI_TEMPORARY;
-  _2186 = _2186__PHI_TEMPORARY;
-  _2187 = _2187__PHI_TEMPORARY;
-  _2188 = _2188__PHI_TEMPORARY;
-  _2189 = _2189__PHI_TEMPORARY;
-  _2190 = _2190__PHI_TEMPORARY;
-  _2191 = llvm_add_u32(_2183, 1);
-  _2192 = _2185 + _2181;
-  _2193 = _2182 + _2184;
-  _2194 = _2187 + _2189;
-  _2195 = _2188 + _2186;
-  _2196 = ((double)(uint32_t)_2191);
-  _2197 = (_2196 - _2170) * _2190;
-  _2198 = _2179 / _2197;
-  _2199 = _2198 * _2181;
-  _2200 = (((_2180 * _2190) * _2181) / (_2197 * _2197)) + (_2198 * _2182);
-  _2173 = _2200;
-  _2174 = _2199;
-  fixderivative_isconverged((&_2174), (&_2173), (&_2176), (&_2175));
-  _2201 = _2176;
-  if ((llvm_fcmp_olt(_2201, 0))) {
-    goto _2223;
-  } else {
-    goto _2224;
-  }
-
-_2224:
-  _2202 = (_2196 + _2170) * _2190;
-  _2203 = _2179 / _2202;
-  _2204 = _2189 * _2203;
-  _2205 = (_2203 * _2188) - (((_2180 * _2189) * _2190) / (_2202 * _2202));
-  _2206 = _2190 + 4;
-  if ((_2191 == 49u)) {
-    goto _2223;
-  } else {
-    _2181__PHI_TEMPORARY = _2199;   /* for PHI node */
-    _2182__PHI_TEMPORARY = _2200;   /* for PHI node */
-    _2183__PHI_TEMPORARY = _2191;   /* for PHI node */
-    _2184__PHI_TEMPORARY = _2193;   /* for PHI node */
-    _2185__PHI_TEMPORARY = _2192;   /* for PHI node */
-    _2186__PHI_TEMPORARY = _2195;   /* for PHI node */
-    _2187__PHI_TEMPORARY = _2194;   /* for PHI node */
-    _2188__PHI_TEMPORARY = _2205;   /* for PHI node */
-    _2189__PHI_TEMPORARY = _2204;   /* for PHI node */
-    _2190__PHI_TEMPORARY = _2206;   /* for PHI node */
-    goto _2222;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2223:
-  _2207 =  /*tail*/ sinpi((-(_2170)));
-  _2208 = (_2177.field1);
-  _2209 = (_2177.field0);
-  _2210 = _2209 * _2207;
-  _2211 = _2210 * _2170;
-  _2212 = 3.1415926535897931 / _2211;
-  _2213 = _2172 * 0.5;
-  _2214 =  /*tail*/ pow(_2213, _2170);
-  _2215 =  /*tail*/ pow(_2213, _2170);
-  _2216 = log(_2213);
-  _2217 = (_2216 * _2171) * _2215;
-  _2218 = _2214 * _2214;
-  _2219 = _2218 * _2212;
-  _2220 = _2214 * 2;
-  _2221 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2209, _2192, (_2194 * _2219));
-  return (((((((_2192 * _2208) + (_2193 * _2209)) + (_2219 * _2195)) + ((((_2220 * _2212) * _2217) - (((_2218 * 3.1415926535897931) * ((((_2207 * _2208) - (((_2171 * 3.1415926535897962) * _2178) * _2209)) * _2170) + (_2210 * _2171))) / (_2211 * _2211))) * _2194)) * _2220) - ((_2217 * 2) * _2221)) / (_2220 * _2220));
-}
-
-
-struct l_unnamed_1 fwddiffegamma(double _2225, double _2226) {
-  double _2227;
+static struct l_unnamed_1 fwddiffeUk_poly_Kn(double _2204, double _2205, double _2206, double _2207, double _2208, double _2209) {
+  __PREFIXALIGN__(16) struct l_array_6_double _2210 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_5_double _2211 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_11_double _2212 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  void* _2213;
+  void* _2214;
+  void* _2215;
+  void* _2216;
+  void* _2217;
+  void* _2218;
+  void* _2219;
+  void* _2220;
+  void* _2221;
+  void* _2222;
+  __PREFIXALIGN__(16) struct l_array_11_double _2223 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  uint64_t _2224;
+  uint64_t _2224__PHI_TEMPORARY;
+  double _2225;
+  double _2225__PHI_TEMPORARY;
+  double _2226;
+  double _2226__PHI_TEMPORARY;
+  uint64_t _2227;
   double _2228;
   double _2229;
   double _2230;
-  double _2231;
+  uint64_t _2231;
+  uint64_t _2231__PHI_TEMPORARY;
   double _2232;
+  double _2232__PHI_TEMPORARY;
   double _2233;
   double _2233__PHI_TEMPORARY;
-  double _2234;
-  double _2234__PHI_TEMPORARY;
+  uint64_t _2234;
   double _2235;
-  double _2235__PHI_TEMPORARY;
   double _2236;
-  double _2236__PHI_TEMPORARY;
   double _2237;
-  double _2238;
+  uint64_t _2238;
+  uint64_t _2238__PHI_TEMPORARY;
   double _2239;
-  uint64_t _2240;
-  uint64_t _2240__PHI_TEMPORARY;
-  double _2241;
-  double _2241__PHI_TEMPORARY;
+  double _2239__PHI_TEMPORARY;
+  double _2240;
+  double _2240__PHI_TEMPORARY;
+  uint64_t _2241;
   double _2242;
-  double _2242__PHI_TEMPORARY;
-  uint64_t _2243;
+  double _2243;
   double _2244;
-  double _2245;
+  uint64_t _2245;
+  uint64_t _2245__PHI_TEMPORARY;
   double _2246;
+  double _2246__PHI_TEMPORARY;
   double _2247;
-  double _2248;
+  double _2247__PHI_TEMPORARY;
+  uint64_t _2248;
   double _2249;
   double _2250;
   double _2251;
-  double _2252;
+  uint64_t _2252;
+  uint64_t _2252__PHI_TEMPORARY;
   double _2253;
+  double _2253__PHI_TEMPORARY;
   double _2254;
-  double _2255;
+  double _2254__PHI_TEMPORARY;
+  uint64_t _2255;
   double _2256;
   double _2257;
   double _2258;
-  double _2259;
-  double _2260;
+  void* _2259;
+  uint64_t _2260;
+  uint64_t _2260__PHI_TEMPORARY;
   double _2261;
+  double _2261__PHI_TEMPORARY;
   double _2262;
-  double _2263;
-  double _2263__PHI_TEMPORARY;
+  double _2262__PHI_TEMPORARY;
+  uint64_t _2263;
   double _2264;
-  double _2264__PHI_TEMPORARY;
   double _2265;
-  double _2265__PHI_TEMPORARY;
   double _2266;
-  double _2266__PHI_TEMPORARY;
-  double _2267;
-  double _2267__PHI_TEMPORARY;
-  double _2268;
-  double _2268__PHI_TEMPORARY;
+  void* _2267;
+  uint64_t _2268;
+  uint64_t _2268__PHI_TEMPORARY;
   double _2269;
+  double _2269__PHI_TEMPORARY;
   double _2270;
-  double _2271;
+  double _2270__PHI_TEMPORARY;
+  uint64_t _2271;
   double _2272;
-  double _2272__PHI_TEMPORARY;
   double _2273;
-  double _2273__PHI_TEMPORARY;
   double _2274;
-  double _2274__PHI_TEMPORARY;
-  double _2275;
+  uint64_t _2275;
+  uint64_t _2275__PHI_TEMPORARY;
   double _2276;
+  double _2276__PHI_TEMPORARY;
   double _2277;
-  double _2278;
-  double _2278__PHI_TEMPORARY;
+  double _2277__PHI_TEMPORARY;
+  uint64_t _2278;
   double _2279;
-  double _2279__PHI_TEMPORARY;
   double _2280;
-  double _2280__PHI_TEMPORARY;
   double _2281;
   uint64_t _2282;
   uint64_t _2282__PHI_TEMPORARY;
@@ -7222,366 +7184,410 @@ struct l_unnamed_1 fwddiffegamma(double _2225, double _2226) {
   double _2286;
   double _2287;
   double _2288;
-  uint64_t _2289;
-  uint64_t _2289__PHI_TEMPORARY;
+  double _2289;
   double _2290;
-  double _2290__PHI_TEMPORARY;
   double _2291;
-  double _2291__PHI_TEMPORARY;
-  uint64_t _2292;
-  double _2293;
+  void* _2292;
+  void* _2293;
   double _2294;
-  double _2295;
+  uint64_t _2295;
+  uint64_t _2295__PHI_TEMPORARY;
   double _2296;
+  double _2296__PHI_TEMPORARY;
   double _2297;
-  double _2298;
-  double _2299;
+  double _2297__PHI_TEMPORARY;
+  uint64_t _2298;
+  uint64_t _2299;
   double _2300;
   double _2301;
   double _2302;
   double _2303;
-  double _2304;
-  double _2304__PHI_TEMPORARY;
-  double _2305;
-  double _2305__PHI_TEMPORARY;
-  struct l_unnamed_1 _2306;
-  struct l_unnamed_1 _2307;
+  struct l_unnamed_1 _2304;
+  struct l_unnamed_1 _2305;
 
-  if ((llvm_fcmp_olt(_2225, 0))) {
+  _2213 = ((&((uint8_t*)(&_2212))[((int64_t)8)]));
+  _2214 = ((&((uint8_t*)(&_2212))[((int64_t)16)]));
+  _2215 = ((&((uint8_t*)(&_2212))[((int64_t)24)]));
+  _2216 = ((&((uint8_t*)(&_2212))[((int64_t)32)]));
+  _2217 = ((&((uint8_t*)(&_2212))[((int64_t)40)]));
+  _2218 = ((&((uint8_t*)(&_2212))[((int64_t)48)]));
+  _2219 = ((&((uint8_t*)(&_2212))[((int64_t)56)]));
+  _2220 = ((&((uint8_t*)(&_2212))[((int64_t)64)]));
+  _2221 = ((&((uint8_t*)(&_2212))[((int64_t)72)]));
+  _2222 = ((&((uint8_t*)(&_2212))[((int64_t)80)]));
+  *((double*)&_2210) = 0.22710800170898438;
+  *(double*)(((&((uint8_t*)(&_2210))[((int64_t)8)]))) = -7.3687943594796321;
+  *(double*)(((&((uint8_t*)(&_2210))[((int64_t)16)]))) = 42.534998745388457;
+  *(double*)(((&((uint8_t*)(&_2210))[((int64_t)24)]))) = -91.81824154324002;
+  *(double*)(((&((uint8_t*)(&_2210))[((int64_t)32)]))) = 84.636217674600729;
+  *(double*)(((&((uint8_t*)(&_2210))[((int64_t)40)]))) = -28.212072558200244;
+  *((double*)&_2211) = 0.112152099609375;
+  *(double*)(((&((uint8_t*)(&_2211))[((int64_t)8)]))) = -2.3640869140624998;
+  *(double*)(((&((uint8_t*)(&_2211))[((int64_t)16)]))) = 8.78912353515625;
+  *(double*)(((&((uint8_t*)(&_2211))[((int64_t)24)]))) = -11.207002616222994;
+  *(double*)(((&((uint8_t*)(&_2211))[((int64_t)32)]))) = 4.6695844234262474;
+  _2224__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2225__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2226__PHI_TEMPORARY = 3284469.8530720379;   /* for PHI node */
+  goto _2306;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2306:
+  _2224 = _2224__PHI_TEMPORARY;
+  _2225 = _2225__PHI_TEMPORARY;
+  _2226 = _2226__PHI_TEMPORARY;
+  _2227 = llvm_add_u64(_2224, 1);
+  _2228 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u10coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(10, _2224)))])));
+  _2229 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2226, _2228);
+  _2230 = (_2226 * _2209) + (_2225 * _2208);
+  if ((_2227 == UINT64_C(10))) {
+    _2231__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2232__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2233__PHI_TEMPORARY = -242919.18790055133;   /* for PHI node */
+    goto _2307;
+  } else {
+    _2224__PHI_TEMPORARY = _2227;   /* for PHI node */
+    _2225__PHI_TEMPORARY = _2230;   /* for PHI node */
+    _2226__PHI_TEMPORARY = _2229;   /* for PHI node */
+    goto _2306;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_2307:
+  _2231 = _2231__PHI_TEMPORARY;
+  _2232 = _2232__PHI_TEMPORARY;
+  _2233 = _2233__PHI_TEMPORARY;
+  _2234 = llvm_add_u64(_2231, 1);
+  _2235 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u9coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(9, _2231)))])));
+  _2236 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2233, _2235);
+  _2237 = (_2233 * _2209) + (_2232 * _2208);
+  if ((_2234 == UINT64_C(9))) {
+    _2238__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2239__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2240__PHI_TEMPORARY = 20204.291330966149;   /* for PHI node */
     goto _2308;
   } else {
-    _2233__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2235__PHI_TEMPORARY = _2226;   /* for PHI node */
-    _2236__PHI_TEMPORARY = _2225;   /* for PHI node */
+    _2231__PHI_TEMPORARY = _2234;   /* for PHI node */
+    _2232__PHI_TEMPORARY = _2237;   /* for PHI node */
+    _2233__PHI_TEMPORARY = _2236;   /* for PHI node */
+    goto _2307;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_2308:
+  _2238 = _2238__PHI_TEMPORARY;
+  _2239 = _2239__PHI_TEMPORARY;
+  _2240 = _2240__PHI_TEMPORARY;
+  _2241 = llvm_add_u64(_2238, 1);
+  _2242 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u8coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(8, _2238)))])));
+  _2243 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2240, _2242);
+  _2244 = (_2240 * _2209) + (_2239 * _2208);
+  if ((_2241 == UINT64_C(8))) {
+    _2245__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2246__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2247__PHI_TEMPORARY = -1919.4576623184071;   /* for PHI node */
+    goto _2309;
+  } else {
+    _2238__PHI_TEMPORARY = _2241;   /* for PHI node */
+    _2239__PHI_TEMPORARY = _2244;   /* for PHI node */
+    _2240__PHI_TEMPORARY = _2243;   /* for PHI node */
+    goto _2308;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_2309:
+  _2245 = _2245__PHI_TEMPORARY;
+  _2246 = _2246__PHI_TEMPORARY;
+  _2247 = _2247__PHI_TEMPORARY;
+  _2248 = llvm_add_u64(_2245, 1);
+  _2249 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u7coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(7, _2245)))])));
+  _2250 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2247, _2249);
+  _2251 = (_2247 * _2209) + (_2246 * _2208);
+  if ((_2248 == UINT64_C(7))) {
+    _2252__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2253__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2254__PHI_TEMPORARY = 212.57013003921713;   /* for PHI node */
+    goto _2310;
+  } else {
+    _2245__PHI_TEMPORARY = _2248;   /* for PHI node */
+    _2246__PHI_TEMPORARY = _2251;   /* for PHI node */
+    _2247__PHI_TEMPORARY = _2250;   /* for PHI node */
     goto _2309;
   }
 
-_2308:
-  _2227 =  /*tail*/ sinpi(_2225);
-  _2228 =  /*tail*/ sinpi((_2225 + 0.5));
-  if ((llvm_fcmp_oeq(_2227, 0))) {
-    _2304__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2305__PHI_TEMPORARY = (*(double*)&FPConstant2);   /* for PHI node */
-    goto _2310;
-  } else {
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_2310:
+  _2252 = _2252__PHI_TEMPORARY;
+  _2253 = _2253__PHI_TEMPORARY;
+  _2254 = _2254__PHI_TEMPORARY;
+  _2255 = llvm_add_u64(_2252, 1);
+  _2256 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u6coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(6, _2252)))])));
+  _2257 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2254, _2256);
+  _2258 = (_2254 * _2209) + (_2253 * _2208);
+  if ((_2255 == UINT64_C(6))) {
     goto _2311;
+  } else {
+    _2252__PHI_TEMPORARY = _2255;   /* for PHI node */
+    _2253__PHI_TEMPORARY = _2258;   /* for PHI node */
+    _2254__PHI_TEMPORARY = _2257;   /* for PHI node */
+    goto _2310;
   }
 
+  } while (1); /* end of syntactic loop '' */
 _2311:
-  _2229 = -(_2225);
-  _2230 = -(_2226);
-  _2231 = _2227 * _2229;
-  _2232 = (_2227 * _2230) - (((_2225 * 3.1415926535897962) * _2226) * _2228);
-  _2233__PHI_TEMPORARY = _2232;   /* for PHI node */
-  _2234__PHI_TEMPORARY = _2231;   /* for PHI node */
-  _2235__PHI_TEMPORARY = _2230;   /* for PHI node */
-  _2236__PHI_TEMPORARY = _2229;   /* for PHI node */
-  goto _2309;
+  _2259 = ((&((uint8_t*)(&_2210))[((int64_t)-8)]));
+  _2260__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2261__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2262__PHI_TEMPORARY = -28.212072558200244;   /* for PHI node */
+  goto _2312;
 
-_2309:
-  _2233 = _2233__PHI_TEMPORARY;
-  _2234 = _2234__PHI_TEMPORARY;
-  _2235 = _2235__PHI_TEMPORARY;
-  _2236 = _2236__PHI_TEMPORARY;
-  _2237 =  /*tail*/ llvm_OC_fabs_OC_f64(_2236);
-  if ((llvm_fcmp_ueq(_2237, (*(double*)&FPConstant1)))) {
-    _2304__PHI_TEMPORARY = _2235;   /* for PHI node */
-    _2305__PHI_TEMPORARY = _2236;   /* for PHI node */
-    goto _2310;
+  do {     /* Syntactic loop '' to make GCC happy */
+_2312:
+  _2260 = _2260__PHI_TEMPORARY;
+  _2261 = _2261__PHI_TEMPORARY;
+  _2262 = _2262__PHI_TEMPORARY;
+  _2263 = llvm_add_u64(_2260, 1);
+  _2264 = *(double*)(((&((double*)_2259)[((int64_t)(llvm_sub_u64(5, _2260)))])));
+  _2265 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2262, _2264);
+  _2266 = (_2262 * _2209) + (_2261 * _2208);
+  if ((_2263 == UINT64_C(5))) {
+    goto _2313;
   } else {
+    _2260__PHI_TEMPORARY = _2263;   /* for PHI node */
+    _2261__PHI_TEMPORARY = _2266;   /* for PHI node */
+    _2262__PHI_TEMPORARY = _2265;   /* for PHI node */
     goto _2312;
   }
 
-_2312:
-  if ((llvm_fcmp_ogt(_2236, 11.5))) {
-    goto _2313;
+  } while (1); /* end of syntactic loop '' */
+_2313:
+  _2267 = ((&((uint8_t*)(&_2211))[((int64_t)-8)]));
+  _2268__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2269__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2270__PHI_TEMPORARY = 4.6695844234262474;   /* for PHI node */
+  goto _2314;
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2314:
+  _2268 = _2268__PHI_TEMPORARY;
+  _2269 = _2269__PHI_TEMPORARY;
+  _2270 = _2270__PHI_TEMPORARY;
+  _2271 = llvm_add_u64(_2268, 1);
+  _2272 = *(double*)(((&((double*)_2267)[((int64_t)(llvm_sub_u64(4, _2268)))])));
+  _2273 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2270, _2272);
+  _2274 = (_2270 * _2209) + (_2269 * _2208);
+  if ((_2271 == UINT64_C(4))) {
+    _2275__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2276__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2277__PHI_TEMPORARY = -1.0258125964506173;   /* for PHI node */
+    goto _2315;
   } else {
+    _2268__PHI_TEMPORARY = _2271;   /* for PHI node */
+    _2269__PHI_TEMPORARY = _2274;   /* for PHI node */
+    _2270__PHI_TEMPORARY = _2273;   /* for PHI node */
     goto _2314;
   }
 
-_2314:
-  if ((llvm_fcmp_ult(_2236, 3))) {
-    _2263__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2264__PHI_TEMPORARY = 1;   /* for PHI node */
-    _2265__PHI_TEMPORARY = _2236;   /* for PHI node */
-    goto _2315;
-  } else {
-    _2266__PHI_TEMPORARY = _2236;   /* for PHI node */
-    _2267__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2268__PHI_TEMPORARY = 1;   /* for PHI node */
-    goto _2316;
-  }
-
-_2313:
-  _2238 = 1 / _2236;
-  _2239 = 1 / (_2236 * _2236);
-  _2240__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2241__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2242__PHI_TEMPORARY = 7.1473913781436109E-4;   /* for PHI node */
-  goto _2317;
-
+  } while (1); /* end of syntactic loop '' */
   do {     /* Syntactic loop '' to make GCC happy */
-_2317:
-  _2240 = _2240__PHI_TEMPORARY;
-  _2241 = _2241__PHI_TEMPORARY;
-  _2242 = _2242__PHI_TEMPORARY;
-  _2243 = llvm_add_u64(_2240, 1);
-  _2244 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_gamma_OC_coefs))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(9, _2240)))])));
-  _2245 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2238, _2242, _2244);
-  _2246 = (_2241 * _2238) - ((_2235 * _2242) * _2239);
-  if ((_2243 == UINT64_C(9))) {
-    goto _2318;
+_2315:
+  _2275 = _2275__PHI_TEMPORARY;
+  _2276 = _2276__PHI_TEMPORARY;
+  _2277 = _2277__PHI_TEMPORARY;
+  _2278 = llvm_add_u64(_2275, 1);
+  _2279 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u3coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2275)))])));
+  _2280 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2277, _2279);
+  _2281 = (_2277 * _2209) + (_2276 * _2208);
+  if ((_2278 == UINT64_C(3))) {
+    _2282__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2283__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2284__PHI_TEMPORARY = 0.3342013888888889;   /* for PHI node */
+    goto _2316;
   } else {
-    _2240__PHI_TEMPORARY = _2243;   /* for PHI node */
-    _2241__PHI_TEMPORARY = _2246;   /* for PHI node */
-    _2242__PHI_TEMPORARY = _2245;   /* for PHI node */
-    goto _2317;
+    _2275__PHI_TEMPORARY = _2278;   /* for PHI node */
+    _2276__PHI_TEMPORARY = _2281;   /* for PHI node */
+    _2277__PHI_TEMPORARY = _2280;   /* for PHI node */
+    goto _2315;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2318:
-  _2247 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2236, 0.5, -0.25);
-  _2248 =  /*tail*/ pow(_2236, _2247);
-  _2249 =  /*tail*/ pow(_2236, (_2247 + -1));
-  _2250 =  /*tail*/ pow(_2236, _2247);
-  _2251 = log(_2236);
-  _2252 = ((_2249 * _2247) + ((_2251 * 0.5) * _2250)) * _2235;
-  _2253 = _2248 * 2.5066282746310002;
-  _2254 =  /*tail*/ exp(_2236);
-  _2255 =  /*tail*/ exp(_2236);
-  _2256 = _2248 / _2254;
-  _2257 = _2253 * _2256;
-  _2258 = _2245 * _2257;
-  _2259 = ((((((_2252 * _2254) - ((_2248 * _2235) * _2255)) * _2253) / (_2254 * _2254)) + ((_2256 * 2.5066282746310002) * _2252)) * _2245) + (_2257 * _2246);
-  _2260 = _2234 * _2258;
-  _2261 = llvm_select_f64((llvm_fcmp_olt(_2225, 0)), ((((_2259 * _2234) + (_2258 * _2233)) * -3.1415926535897931) / (_2260 * _2260)), _2259);
-  _2262 = llvm_select_f64((llvm_fcmp_olt(_2225, 0)), (3.1415926535897931 / _2260), _2258);
-  _2304__PHI_TEMPORARY = _2261;   /* for PHI node */
-  _2305__PHI_TEMPORARY = _2262;   /* for PHI node */
-  goto _2310;
-
-_2315:
-  _2263 = _2263__PHI_TEMPORARY;
-  _2264 = _2264__PHI_TEMPORARY;
-  _2265 = _2265__PHI_TEMPORARY;
-  if ((llvm_fcmp_olt(_2265, 2))) {
-    _2272__PHI_TEMPORARY = _2265;   /* for PHI node */
-    _2273__PHI_TEMPORARY = _2263;   /* for PHI node */
-    _2274__PHI_TEMPORARY = _2264;   /* for PHI node */
-    goto _2319;
-  } else {
-    _2278__PHI_TEMPORARY = _2263;   /* for PHI node */
-    _2279__PHI_TEMPORARY = _2264;   /* for PHI node */
-    _2280__PHI_TEMPORARY = _2265;   /* for PHI node */
-    goto _2320;
-  }
-
   do {     /* Syntactic loop '' to make GCC happy */
 _2316:
-  _2266 = _2266__PHI_TEMPORARY;
-  _2267 = _2267__PHI_TEMPORARY;
-  _2268 = _2268__PHI_TEMPORARY;
-  _2269 = _2266 + -1;
-  _2270 = _2269 * _2268;
-  _2271 = (_2268 * _2235) + (_2267 * _2269);
-  if ((llvm_fcmp_ult(_2269, 3))) {
-    _2263__PHI_TEMPORARY = _2271;   /* for PHI node */
-    _2264__PHI_TEMPORARY = _2270;   /* for PHI node */
-    _2265__PHI_TEMPORARY = _2269;   /* for PHI node */
-    goto _2315;
-  } else {
-    _2266__PHI_TEMPORARY = _2269;   /* for PHI node */
-    _2267__PHI_TEMPORARY = _2271;   /* for PHI node */
-    _2268__PHI_TEMPORARY = _2270;   /* for PHI node */
-    goto _2316;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2319:
-  _2272 = _2272__PHI_TEMPORARY;
-  _2273 = _2273__PHI_TEMPORARY;
-  _2274 = _2274__PHI_TEMPORARY;
-  _2275 = _2274 / _2272;
-  _2276 = ((_2273 * _2272) - (_2274 * _2235)) / (_2272 * _2272);
-  _2277 = _2272 + 1;
-  if ((llvm_fcmp_olt(_2277, 2))) {
-    _2272__PHI_TEMPORARY = _2277;   /* for PHI node */
-    _2273__PHI_TEMPORARY = _2276;   /* for PHI node */
-    _2274__PHI_TEMPORARY = _2275;   /* for PHI node */
-    goto _2319;
-  } else {
-    _2278__PHI_TEMPORARY = _2276;   /* for PHI node */
-    _2279__PHI_TEMPORARY = _2275;   /* for PHI node */
-    _2280__PHI_TEMPORARY = _2277;   /* for PHI node */
-    goto _2320;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2320:
-  _2278 = _2278__PHI_TEMPORARY;
-  _2279 = _2279__PHI_TEMPORARY;
-  _2280 = _2280__PHI_TEMPORARY;
-  _2281 = _2280 + -2;
-  _2282__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2283__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2284__PHI_TEMPORARY = 4.2127604874716217E-5;   /* for PHI node */
-  goto _2321;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2321:
   _2282 = _2282__PHI_TEMPORARY;
   _2283 = _2283__PHI_TEMPORARY;
   _2284 = _2284__PHI_TEMPORARY;
   _2285 = llvm_add_u64(_2282, 1);
-  _2286 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_gamma_OC_P))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(7, _2282)))])));
-  _2287 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2281, _2284, _2286);
-  _2288 = (_2284 * _2235) + (_2283 * _2281);
-  if ((_2285 == UINT64_C(7))) {
-    _2289__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2290__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2291__PHI_TEMPORARY = -1.3971485174761705E-5;   /* for PHI node */
-    goto _2322;
+  _2286 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2282)))])));
+  _2287 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, _2284, _2286);
+  _2288 = (_2284 * _2209) + (_2283 * _2208);
+  if ((_2285 == UINT64_C(2))) {
+    goto _2317;
   } else {
     _2282__PHI_TEMPORARY = _2285;   /* for PHI node */
     _2283__PHI_TEMPORARY = _2288;   /* for PHI node */
     _2284__PHI_TEMPORARY = _2287;   /* for PHI node */
-    goto _2321;
+    goto _2316;
   }
 
   } while (1); /* end of syntactic loop '' */
+_2317:
+  _2289 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2208, -0.20833333333333334, 0.125);
+  *((double*)&_2212) = 0;
+  *((double*)&_2223) = 1;
+  *(double*)_2213 = (_2209 * -0.20833333333333334);
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)8)]))) = _2289;
+  *(double*)_2214 = _2288;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)16)]))) = _2287;
+  *(double*)_2215 = _2281;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)24)]))) = _2280;
+  *(double*)_2216 = _2274;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)32)]))) = _2273;
+  *(double*)_2217 = _2266;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)40)]))) = _2265;
+  *(double*)_2218 = _2258;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)48)]))) = _2257;
+  *(double*)_2219 = _2251;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)56)]))) = _2250;
+  *(double*)_2220 = _2244;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)64)]))) = _2243;
+  *(double*)_2221 = _2237;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)72)]))) = _2236;
+  *(double*)_2222 = _2230;
+  *(double*)(((&((uint8_t*)(&_2223))[((int64_t)80)]))) = _2229;
+  _2290 = (-(_2204)) / _2206;
+  _2291 = (_2207 * _2204) - (_2206 * _2205);
+  _2292 = ((&((uint8_t*)(&_2212))[((int64_t)-8)]));
+  _2293 = ((&((uint8_t*)(&_2223))[((int64_t)-8)]));
+  _2294 = 1 / (_2206 * _2206);
+  _2295__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2296__PHI_TEMPORARY = _2230;   /* for PHI node */
+  _2297__PHI_TEMPORARY = _2229;   /* for PHI node */
+  goto _2318;
+
   do {     /* Syntactic loop '' to make GCC happy */
-_2322:
-  _2289 = _2289__PHI_TEMPORARY;
-  _2290 = _2290__PHI_TEMPORARY;
-  _2291 = _2291__PHI_TEMPORARY;
-  _2292 = llvm_add_u64(_2289, 1);
-  _2293 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_gamma_OC_Q))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(8, _2289)))])));
-  _2294 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2281, _2291, _2293);
-  _2295 = (_2291 * _2235) + (_2290 * _2281);
-  if ((_2292 == UINT64_C(8))) {
-    goto _2323;
+_2318:
+  _2295 = _2295__PHI_TEMPORARY;
+  _2296 = _2296__PHI_TEMPORARY;
+  _2297 = _2297__PHI_TEMPORARY;
+  _2298 = llvm_add_u64(_2295, 1);
+  _2299 = llvm_sub_u64(10, _2295);
+  _2300 = *(double*)(((&((double*)_2292)[((int64_t)_2299)])));
+  _2301 = *(double*)(((&((double*)_2293)[((int64_t)_2299)])));
+  _2302 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2290, _2297, _2301);
+  _2303 = (_2300 + (_2296 * _2290)) + ((_2291 * _2297) * _2294);
+  if ((_2298 == UINT64_C(10))) {
+    goto _2319;
   } else {
-    _2289__PHI_TEMPORARY = _2292;   /* for PHI node */
-    _2290__PHI_TEMPORARY = _2295;   /* for PHI node */
-    _2291__PHI_TEMPORARY = _2294;   /* for PHI node */
-    goto _2322;
+    _2295__PHI_TEMPORARY = _2298;   /* for PHI node */
+    _2296__PHI_TEMPORARY = _2303;   /* for PHI node */
+    _2297__PHI_TEMPORARY = _2302;   /* for PHI node */
+    goto _2318;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2323:
-  if ((llvm_fcmp_olt(_2225, 0))) {
-    goto _2324;
-  } else {
-    goto _2325;
-  }
-
-_2324:
-  _2296 = _2294 * 3.1415926535897931;
-  _2297 = _2234 * _2279;
-  _2298 = _2297 * _2287;
-  _2299 = _2296 / _2298;
-  _2300 = (((_2298 * 3.1415926535897931) * _2295) - (_2296 * ((_2287 * ((_2279 * _2233) + (_2278 * _2234))) + (_2288 * _2297)))) / (_2298 * _2298);
-  _2304__PHI_TEMPORARY = _2300;   /* for PHI node */
-  _2305__PHI_TEMPORARY = _2299;   /* for PHI node */
-  goto _2310;
-
-_2325:
-  _2301 = _2279 * _2287;
-  _2302 = _2301 / _2294;
-  _2303 = ((_2294 * ((_2287 * _2278) + (_2288 * _2279))) - (_2295 * _2301)) / (_2294 * _2294);
-  _2304__PHI_TEMPORARY = _2303;   /* for PHI node */
-  _2305__PHI_TEMPORARY = _2302;   /* for PHI node */
-  goto _2310;
-
-_2310:
-  _2304 = _2304__PHI_TEMPORARY;
-  _2305 = _2305__PHI_TEMPORARY;
-  _2306 = llvm_ctor_unnamed_1(0, 0);
-  _2306.field0 = _2305;
-  _2307 = _2306;
-  _2307.field1 = _2304;
-  return _2307;
+_2319:
+  _2304 = llvm_ctor_unnamed_1(0, 0);
+  _2304.field0 = _2302;
+  _2305 = _2304;
+  _2305.field1 = _2303;
+  return _2305;
 }
 
 
-static struct l_unnamed_1 fwddiffeUk_poly_Kn_OC_3(double _2326, double _2327, double _2328, double _2329, double _2330) {
-  __PREFIXALIGN__(16) struct l_array_6_double _2331 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_5_double _2332 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_11_double _2333 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  void* _2334;
-  void* _2335;
-  void* _2336;
-  void* _2337;
-  void* _2338;
-  void* _2339;
-  void* _2340;
-  void* _2341;
-  void* _2342;
-  void* _2343;
-  __PREFIXALIGN__(16) struct l_array_11_double _2344 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  uint64_t _2345;
-  uint64_t _2345__PHI_TEMPORARY;
+static void fixderivative_isconverged(void* _2320, void* _2321, void* _2322, void* _2323) {
+   /*tail*/ disconverged(_2320, _2321, _2322, /*UNDEF*/((void*)/*NULL*/0));
+}
+
+
+static void fixderivative_levin(void* _2324, void* _2325, void* _2326, void* _2327) {
+   /*tail*/ derivative_levin(_2324, _2325, _2326, _2327);
+}
+
+
+static void fixderivative_isconverged_OC_1(void* _2328, void* _2329, void* _2330, void* _2331) {
+   /*tail*/ disconverged(_2328, _2329, _2330, /*UNDEF*/((void*)/*NULL*/0));
+}
+
+
+static struct l_unnamed_1 fwddiffegamma(double _2332, double _2333) {
+  double _2334;
+  double _2335;
+  double _2336;
+  double _2337;
+  double _2338;
+  double _2339;
+  double _2340;
+  double _2340__PHI_TEMPORARY;
+  double _2341;
+  double _2341__PHI_TEMPORARY;
+  double _2342;
+  double _2342__PHI_TEMPORARY;
+  double _2343;
+  double _2343__PHI_TEMPORARY;
+  double _2344;
+  double _2345;
   double _2346;
-  double _2346__PHI_TEMPORARY;
-  double _2347;
-  double _2347__PHI_TEMPORARY;
-  uint64_t _2348;
+  uint64_t _2347;
+  uint64_t _2347__PHI_TEMPORARY;
+  double _2348;
+  double _2348__PHI_TEMPORARY;
   double _2349;
-  double _2350;
+  double _2349__PHI_TEMPORARY;
+  uint64_t _2350;
   double _2351;
-  uint64_t _2352;
-  uint64_t _2352__PHI_TEMPORARY;
+  double _2352;
   double _2353;
-  double _2353__PHI_TEMPORARY;
   double _2354;
-  double _2354__PHI_TEMPORARY;
-  uint64_t _2355;
+  double _2355;
   double _2356;
   double _2357;
   double _2358;
-  uint64_t _2359;
-  uint64_t _2359__PHI_TEMPORARY;
+  double _2359;
   double _2360;
-  double _2360__PHI_TEMPORARY;
   double _2361;
-  double _2361__PHI_TEMPORARY;
-  uint64_t _2362;
+  double _2362;
   double _2363;
   double _2364;
   double _2365;
-  uint64_t _2366;
-  uint64_t _2366__PHI_TEMPORARY;
+  double _2366;
   double _2367;
-  double _2367__PHI_TEMPORARY;
   double _2368;
-  double _2368__PHI_TEMPORARY;
-  uint64_t _2369;
+  double _2369;
   double _2370;
+  double _2370__PHI_TEMPORARY;
   double _2371;
+  double _2371__PHI_TEMPORARY;
   double _2372;
-  uint64_t _2373;
-  uint64_t _2373__PHI_TEMPORARY;
+  double _2372__PHI_TEMPORARY;
+  double _2373;
+  double _2373__PHI_TEMPORARY;
   double _2374;
   double _2374__PHI_TEMPORARY;
   double _2375;
   double _2375__PHI_TEMPORARY;
-  uint64_t _2376;
+  double _2376;
   double _2377;
   double _2378;
   double _2379;
-  void* _2380;
-  uint64_t _2381;
-  uint64_t _2381__PHI_TEMPORARY;
+  double _2379__PHI_TEMPORARY;
+  double _2380;
+  double _2380__PHI_TEMPORARY;
+  double _2381;
+  double _2381__PHI_TEMPORARY;
   double _2382;
-  double _2382__PHI_TEMPORARY;
   double _2383;
-  double _2383__PHI_TEMPORARY;
-  uint64_t _2384;
+  double _2384;
   double _2385;
+  double _2385__PHI_TEMPORARY;
   double _2386;
+  double _2386__PHI_TEMPORARY;
   double _2387;
-  void* _2388;
+  double _2387__PHI_TEMPORARY;
+  double _2388;
   uint64_t _2389;
   uint64_t _2389__PHI_TEMPORARY;
   double _2390;
@@ -7602,398 +7608,363 @@ static struct l_unnamed_1 fwddiffeUk_poly_Kn_OC_3(double _2326, double _2327, do
   double _2400;
   double _2401;
   double _2402;
-  uint64_t _2403;
-  uint64_t _2403__PHI_TEMPORARY;
+  double _2403;
   double _2404;
-  double _2404__PHI_TEMPORARY;
   double _2405;
-  double _2405__PHI_TEMPORARY;
-  uint64_t _2406;
+  double _2406;
   double _2407;
   double _2408;
   double _2409;
   double _2410;
   double _2411;
+  double _2411__PHI_TEMPORARY;
   double _2412;
-  void* _2413;
-  void* _2414;
-  double _2415;
-  uint64_t _2416;
-  uint64_t _2416__PHI_TEMPORARY;
-  double _2417;
-  double _2417__PHI_TEMPORARY;
-  double _2418;
-  double _2418__PHI_TEMPORARY;
-  uint64_t _2419;
-  uint64_t _2420;
-  double _2421;
-  double _2422;
-  double _2423;
-  double _2424;
-  struct l_unnamed_1 _2425;
-  struct l_unnamed_1 _2426;
+  double _2412__PHI_TEMPORARY;
+  struct l_unnamed_1 _2413;
+  struct l_unnamed_1 _2414;
 
-  _2334 = ((&((uint8_t*)(&_2333))[((int64_t)8)]));
-  _2335 = ((&((uint8_t*)(&_2333))[((int64_t)16)]));
-  _2336 = ((&((uint8_t*)(&_2333))[((int64_t)24)]));
-  _2337 = ((&((uint8_t*)(&_2333))[((int64_t)32)]));
-  _2338 = ((&((uint8_t*)(&_2333))[((int64_t)40)]));
-  _2339 = ((&((uint8_t*)(&_2333))[((int64_t)48)]));
-  _2340 = ((&((uint8_t*)(&_2333))[((int64_t)56)]));
-  _2341 = ((&((uint8_t*)(&_2333))[((int64_t)64)]));
-  _2342 = ((&((uint8_t*)(&_2333))[((int64_t)72)]));
-  _2343 = ((&((uint8_t*)(&_2333))[((int64_t)80)]));
-  *((double*)&_2331) = 0.22710800170898438;
-  *(double*)(((&((uint8_t*)(&_2331))[((int64_t)8)]))) = -7.3687943594796321;
-  *(double*)(((&((uint8_t*)(&_2331))[((int64_t)16)]))) = 42.534998745388457;
-  *(double*)(((&((uint8_t*)(&_2331))[((int64_t)24)]))) = -91.81824154324002;
-  *(double*)(((&((uint8_t*)(&_2331))[((int64_t)32)]))) = 84.636217674600729;
-  *(double*)(((&((uint8_t*)(&_2331))[((int64_t)40)]))) = -28.212072558200244;
-  *((double*)&_2332) = 0.112152099609375;
-  *(double*)(((&((uint8_t*)(&_2332))[((int64_t)8)]))) = -2.3640869140624998;
-  *(double*)(((&((uint8_t*)(&_2332))[((int64_t)16)]))) = 8.78912353515625;
-  *(double*)(((&((uint8_t*)(&_2332))[((int64_t)24)]))) = -11.207002616222994;
-  *(double*)(((&((uint8_t*)(&_2332))[((int64_t)32)]))) = 4.6695844234262474;
-  _2345__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2346__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2347__PHI_TEMPORARY = 3284469.8530720379;   /* for PHI node */
-  goto _2427;
+  if ((llvm_fcmp_olt(_2332, 0))) {
+    goto _2415;
+  } else {
+    _2340__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2342__PHI_TEMPORARY = _2333;   /* for PHI node */
+    _2343__PHI_TEMPORARY = _2332;   /* for PHI node */
+    goto _2416;
+  }
+
+_2415:
+  _2334 =  /*tail*/ sinpi(_2332);
+  _2335 =  /*tail*/ sinpi((_2332 + 0.5));
+  if ((llvm_fcmp_oeq(_2334, 0))) {
+    _2411__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2412__PHI_TEMPORARY = (*(double*)&FPConstant2);   /* for PHI node */
+    goto _2417;
+  } else {
+    goto _2418;
+  }
+
+_2418:
+  _2336 = -(_2332);
+  _2337 = -(_2333);
+  _2338 = _2334 * _2336;
+  _2339 = (_2334 * _2337) - (((_2332 * 3.1415926535897962) * _2333) * _2335);
+  _2340__PHI_TEMPORARY = _2339;   /* for PHI node */
+  _2341__PHI_TEMPORARY = _2338;   /* for PHI node */
+  _2342__PHI_TEMPORARY = _2337;   /* for PHI node */
+  _2343__PHI_TEMPORARY = _2336;   /* for PHI node */
+  goto _2416;
+
+_2416:
+  _2340 = _2340__PHI_TEMPORARY;
+  _2341 = _2341__PHI_TEMPORARY;
+  _2342 = _2342__PHI_TEMPORARY;
+  _2343 = _2343__PHI_TEMPORARY;
+  _2344 =  /*tail*/ llvm_OC_fabs_OC_f64(_2343);
+  if ((llvm_fcmp_ueq(_2344, (*(double*)&FPConstant1)))) {
+    _2411__PHI_TEMPORARY = _2342;   /* for PHI node */
+    _2412__PHI_TEMPORARY = _2343;   /* for PHI node */
+    goto _2417;
+  } else {
+    goto _2419;
+  }
+
+_2419:
+  if ((llvm_fcmp_ogt(_2343, 11.5))) {
+    goto _2420;
+  } else {
+    goto _2421;
+  }
+
+_2421:
+  if ((llvm_fcmp_ult(_2343, 3))) {
+    _2370__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2371__PHI_TEMPORARY = 1;   /* for PHI node */
+    _2372__PHI_TEMPORARY = _2343;   /* for PHI node */
+    goto _2422;
+  } else {
+    _2373__PHI_TEMPORARY = _2343;   /* for PHI node */
+    _2374__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2375__PHI_TEMPORARY = 1;   /* for PHI node */
+    goto _2423;
+  }
+
+_2420:
+  _2345 = 1 / _2343;
+  _2346 = 1 / (_2343 * _2343);
+  _2347__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2348__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2349__PHI_TEMPORARY = 7.1473913781436109E-4;   /* for PHI node */
+  goto _2424;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2427:
-  _2345 = _2345__PHI_TEMPORARY;
-  _2346 = _2346__PHI_TEMPORARY;
+_2424:
   _2347 = _2347__PHI_TEMPORARY;
-  _2348 = llvm_add_u64(_2345, 1);
-  _2349 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u10coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(10, _2345)))])));
-  _2350 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2347, _2349);
-  _2351 = (_2347 * _2330) + (_2346 * _2329);
-  if ((_2348 == UINT64_C(10))) {
-    _2352__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2353__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2354__PHI_TEMPORARY = -242919.18790055133;   /* for PHI node */
-    goto _2428;
+  _2348 = _2348__PHI_TEMPORARY;
+  _2349 = _2349__PHI_TEMPORARY;
+  _2350 = llvm_add_u64(_2347, 1);
+  _2351 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_gamma_OC_coefs))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(9, _2347)))])));
+  _2352 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2345, _2349, _2351);
+  _2353 = (_2348 * _2345) - ((_2342 * _2349) * _2346);
+  if ((_2350 == UINT64_C(9))) {
+    goto _2425;
   } else {
-    _2345__PHI_TEMPORARY = _2348;   /* for PHI node */
-    _2346__PHI_TEMPORARY = _2351;   /* for PHI node */
     _2347__PHI_TEMPORARY = _2350;   /* for PHI node */
+    _2348__PHI_TEMPORARY = _2353;   /* for PHI node */
+    _2349__PHI_TEMPORARY = _2352;   /* for PHI node */
+    goto _2424;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2425:
+  _2354 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2343, 0.5, -0.25);
+  _2355 =  /*tail*/ pow(_2343, _2354);
+  _2356 =  /*tail*/ pow(_2343, (_2354 + -1));
+  _2357 =  /*tail*/ pow(_2343, _2354);
+  _2358 = log(_2343);
+  _2359 = ((_2356 * _2354) + ((_2358 * 0.5) * _2357)) * _2342;
+  _2360 = _2355 * 2.5066282746310002;
+  _2361 =  /*tail*/ exp(_2343);
+  _2362 =  /*tail*/ exp(_2343);
+  _2363 = _2355 / _2361;
+  _2364 = _2360 * _2363;
+  _2365 = _2352 * _2364;
+  _2366 = ((((((_2359 * _2361) - ((_2355 * _2342) * _2362)) * _2360) / (_2361 * _2361)) + ((_2363 * 2.5066282746310002) * _2359)) * _2352) + (_2364 * _2353);
+  _2367 = _2341 * _2365;
+  _2368 = llvm_select_f64((llvm_fcmp_olt(_2332, 0)), ((((_2366 * _2341) + (_2365 * _2340)) * -3.1415926535897931) / (_2367 * _2367)), _2366);
+  _2369 = llvm_select_f64((llvm_fcmp_olt(_2332, 0)), (3.1415926535897931 / _2367), _2365);
+  _2411__PHI_TEMPORARY = _2368;   /* for PHI node */
+  _2412__PHI_TEMPORARY = _2369;   /* for PHI node */
+  goto _2417;
+
+_2422:
+  _2370 = _2370__PHI_TEMPORARY;
+  _2371 = _2371__PHI_TEMPORARY;
+  _2372 = _2372__PHI_TEMPORARY;
+  if ((llvm_fcmp_olt(_2372, 2))) {
+    _2379__PHI_TEMPORARY = _2372;   /* for PHI node */
+    _2380__PHI_TEMPORARY = _2370;   /* for PHI node */
+    _2381__PHI_TEMPORARY = _2371;   /* for PHI node */
+    goto _2426;
+  } else {
+    _2385__PHI_TEMPORARY = _2370;   /* for PHI node */
+    _2386__PHI_TEMPORARY = _2371;   /* for PHI node */
+    _2387__PHI_TEMPORARY = _2372;   /* for PHI node */
     goto _2427;
+  }
+
+  do {     /* Syntactic loop '' to make GCC happy */
+_2423:
+  _2373 = _2373__PHI_TEMPORARY;
+  _2374 = _2374__PHI_TEMPORARY;
+  _2375 = _2375__PHI_TEMPORARY;
+  _2376 = _2373 + -1;
+  _2377 = _2376 * _2375;
+  _2378 = (_2375 * _2342) + (_2374 * _2376);
+  if ((llvm_fcmp_ult(_2376, 3))) {
+    _2370__PHI_TEMPORARY = _2378;   /* for PHI node */
+    _2371__PHI_TEMPORARY = _2377;   /* for PHI node */
+    _2372__PHI_TEMPORARY = _2376;   /* for PHI node */
+    goto _2422;
+  } else {
+    _2373__PHI_TEMPORARY = _2376;   /* for PHI node */
+    _2374__PHI_TEMPORARY = _2378;   /* for PHI node */
+    _2375__PHI_TEMPORARY = _2377;   /* for PHI node */
+    goto _2423;
   }
 
   } while (1); /* end of syntactic loop '' */
   do {     /* Syntactic loop '' to make GCC happy */
+_2426:
+  _2379 = _2379__PHI_TEMPORARY;
+  _2380 = _2380__PHI_TEMPORARY;
+  _2381 = _2381__PHI_TEMPORARY;
+  _2382 = _2381 / _2379;
+  _2383 = ((_2380 * _2379) - (_2381 * _2342)) / (_2379 * _2379);
+  _2384 = _2379 + 1;
+  if ((llvm_fcmp_olt(_2384, 2))) {
+    _2379__PHI_TEMPORARY = _2384;   /* for PHI node */
+    _2380__PHI_TEMPORARY = _2383;   /* for PHI node */
+    _2381__PHI_TEMPORARY = _2382;   /* for PHI node */
+    goto _2426;
+  } else {
+    _2385__PHI_TEMPORARY = _2383;   /* for PHI node */
+    _2386__PHI_TEMPORARY = _2382;   /* for PHI node */
+    _2387__PHI_TEMPORARY = _2384;   /* for PHI node */
+    goto _2427;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2427:
+  _2385 = _2385__PHI_TEMPORARY;
+  _2386 = _2386__PHI_TEMPORARY;
+  _2387 = _2387__PHI_TEMPORARY;
+  _2388 = _2387 + -2;
+  _2389__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2390__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2391__PHI_TEMPORARY = 4.2127604874716217E-5;   /* for PHI node */
+  goto _2428;
+
+  do {     /* Syntactic loop '' to make GCC happy */
 _2428:
-  _2352 = _2352__PHI_TEMPORARY;
-  _2353 = _2353__PHI_TEMPORARY;
-  _2354 = _2354__PHI_TEMPORARY;
-  _2355 = llvm_add_u64(_2352, 1);
-  _2356 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u9coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(9, _2352)))])));
-  _2357 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2354, _2356);
-  _2358 = (_2354 * _2330) + (_2353 * _2329);
-  if ((_2355 == UINT64_C(9))) {
-    _2359__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2360__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2361__PHI_TEMPORARY = 20204.291330966149;   /* for PHI node */
+  _2389 = _2389__PHI_TEMPORARY;
+  _2390 = _2390__PHI_TEMPORARY;
+  _2391 = _2391__PHI_TEMPORARY;
+  _2392 = llvm_add_u64(_2389, 1);
+  _2393 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_gamma_OC_P))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(7, _2389)))])));
+  _2394 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2388, _2391, _2393);
+  _2395 = (_2391 * _2342) + (_2390 * _2388);
+  if ((_2392 == UINT64_C(7))) {
+    _2396__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2397__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2398__PHI_TEMPORARY = -1.3971485174761705E-5;   /* for PHI node */
     goto _2429;
   } else {
-    _2352__PHI_TEMPORARY = _2355;   /* for PHI node */
-    _2353__PHI_TEMPORARY = _2358;   /* for PHI node */
-    _2354__PHI_TEMPORARY = _2357;   /* for PHI node */
+    _2389__PHI_TEMPORARY = _2392;   /* for PHI node */
+    _2390__PHI_TEMPORARY = _2395;   /* for PHI node */
+    _2391__PHI_TEMPORARY = _2394;   /* for PHI node */
     goto _2428;
   }
 
   } while (1); /* end of syntactic loop '' */
   do {     /* Syntactic loop '' to make GCC happy */
 _2429:
-  _2359 = _2359__PHI_TEMPORARY;
-  _2360 = _2360__PHI_TEMPORARY;
-  _2361 = _2361__PHI_TEMPORARY;
-  _2362 = llvm_add_u64(_2359, 1);
-  _2363 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u8coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(8, _2359)))])));
-  _2364 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2361, _2363);
-  _2365 = (_2361 * _2330) + (_2360 * _2329);
-  if ((_2362 == UINT64_C(8))) {
-    _2366__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2367__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2368__PHI_TEMPORARY = -1919.4576623184071;   /* for PHI node */
-    goto _2430;
-  } else {
-    _2359__PHI_TEMPORARY = _2362;   /* for PHI node */
-    _2360__PHI_TEMPORARY = _2365;   /* for PHI node */
-    _2361__PHI_TEMPORARY = _2364;   /* for PHI node */
-    goto _2429;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2430:
-  _2366 = _2366__PHI_TEMPORARY;
-  _2367 = _2367__PHI_TEMPORARY;
-  _2368 = _2368__PHI_TEMPORARY;
-  _2369 = llvm_add_u64(_2366, 1);
-  _2370 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u7coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(7, _2366)))])));
-  _2371 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2368, _2370);
-  _2372 = (_2368 * _2330) + (_2367 * _2329);
-  if ((_2369 == UINT64_C(7))) {
-    _2373__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2374__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2375__PHI_TEMPORARY = 212.57013003921713;   /* for PHI node */
-    goto _2431;
-  } else {
-    _2366__PHI_TEMPORARY = _2369;   /* for PHI node */
-    _2367__PHI_TEMPORARY = _2372;   /* for PHI node */
-    _2368__PHI_TEMPORARY = _2371;   /* for PHI node */
-    goto _2430;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2431:
-  _2373 = _2373__PHI_TEMPORARY;
-  _2374 = _2374__PHI_TEMPORARY;
-  _2375 = _2375__PHI_TEMPORARY;
-  _2376 = llvm_add_u64(_2373, 1);
-  _2377 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u6coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(6, _2373)))])));
-  _2378 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2375, _2377);
-  _2379 = (_2375 * _2330) + (_2374 * _2329);
-  if ((_2376 == UINT64_C(6))) {
-    goto _2432;
-  } else {
-    _2373__PHI_TEMPORARY = _2376;   /* for PHI node */
-    _2374__PHI_TEMPORARY = _2379;   /* for PHI node */
-    _2375__PHI_TEMPORARY = _2378;   /* for PHI node */
-    goto _2431;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2432:
-  _2380 = ((&((uint8_t*)(&_2331))[((int64_t)-8)]));
-  _2381__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2382__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2383__PHI_TEMPORARY = -28.212072558200244;   /* for PHI node */
-  goto _2433;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2433:
-  _2381 = _2381__PHI_TEMPORARY;
-  _2382 = _2382__PHI_TEMPORARY;
-  _2383 = _2383__PHI_TEMPORARY;
-  _2384 = llvm_add_u64(_2381, 1);
-  _2385 = *(double*)(((&((double*)_2380)[((int64_t)(llvm_sub_u64(5, _2381)))])));
-  _2386 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2383, _2385);
-  _2387 = (_2383 * _2330) + (_2382 * _2329);
-  if ((_2384 == UINT64_C(5))) {
-    goto _2434;
-  } else {
-    _2381__PHI_TEMPORARY = _2384;   /* for PHI node */
-    _2382__PHI_TEMPORARY = _2387;   /* for PHI node */
-    _2383__PHI_TEMPORARY = _2386;   /* for PHI node */
-    goto _2433;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2434:
-  _2388 = ((&((uint8_t*)(&_2332))[((int64_t)-8)]));
-  _2389__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2390__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2391__PHI_TEMPORARY = 4.6695844234262474;   /* for PHI node */
-  goto _2435;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2435:
-  _2389 = _2389__PHI_TEMPORARY;
-  _2390 = _2390__PHI_TEMPORARY;
-  _2391 = _2391__PHI_TEMPORARY;
-  _2392 = llvm_add_u64(_2389, 1);
-  _2393 = *(double*)(((&((double*)_2388)[((int64_t)(llvm_sub_u64(4, _2389)))])));
-  _2394 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2391, _2393);
-  _2395 = (_2391 * _2330) + (_2390 * _2329);
-  if ((_2392 == UINT64_C(4))) {
-    _2396__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2397__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2398__PHI_TEMPORARY = -1.0258125964506173;   /* for PHI node */
-    goto _2436;
-  } else {
-    _2389__PHI_TEMPORARY = _2392;   /* for PHI node */
-    _2390__PHI_TEMPORARY = _2395;   /* for PHI node */
-    _2391__PHI_TEMPORARY = _2394;   /* for PHI node */
-    goto _2435;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2436:
   _2396 = _2396__PHI_TEMPORARY;
   _2397 = _2397__PHI_TEMPORARY;
   _2398 = _2398__PHI_TEMPORARY;
   _2399 = llvm_add_u64(_2396, 1);
-  _2400 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u3coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2396)))])));
-  _2401 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2398, _2400);
-  _2402 = (_2398 * _2330) + (_2397 * _2329);
-  if ((_2399 == UINT64_C(3))) {
-    _2403__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2404__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2405__PHI_TEMPORARY = 0.3342013888888889;   /* for PHI node */
-    goto _2437;
+  _2400 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_gamma_OC_Q))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(8, _2396)))])));
+  _2401 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2388, _2398, _2400);
+  _2402 = (_2398 * _2342) + (_2397 * _2388);
+  if ((_2399 == UINT64_C(8))) {
+    goto _2430;
   } else {
     _2396__PHI_TEMPORARY = _2399;   /* for PHI node */
     _2397__PHI_TEMPORARY = _2402;   /* for PHI node */
     _2398__PHI_TEMPORARY = _2401;   /* for PHI node */
-    goto _2436;
+    goto _2429;
   }
 
   } while (1); /* end of syntactic loop '' */
-  do {     /* Syntactic loop '' to make GCC happy */
-_2437:
-  _2403 = _2403__PHI_TEMPORARY;
-  _2404 = _2404__PHI_TEMPORARY;
-  _2405 = _2405__PHI_TEMPORARY;
-  _2406 = llvm_add_u64(_2403, 1);
-  _2407 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2403)))])));
-  _2408 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, _2405, _2407);
-  _2409 = (_2405 * _2330) + (_2404 * _2329);
-  if ((_2406 == UINT64_C(2))) {
-    goto _2438;
+_2430:
+  if ((llvm_fcmp_olt(_2332, 0))) {
+    goto _2431;
   } else {
-    _2403__PHI_TEMPORARY = _2406;   /* for PHI node */
-    _2404__PHI_TEMPORARY = _2409;   /* for PHI node */
-    _2405__PHI_TEMPORARY = _2408;   /* for PHI node */
-    goto _2437;
+    goto _2432;
   }
 
-  } while (1); /* end of syntactic loop '' */
-_2438:
-  _2410 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2329, -0.20833333333333334, 0.125);
-  *((double*)&_2333) = 0;
-  *((double*)&_2344) = 1;
-  *(double*)_2334 = (_2330 * -0.20833333333333334);
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)8)]))) = _2410;
-  *(double*)_2335 = _2409;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)16)]))) = _2408;
-  *(double*)_2336 = _2402;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)24)]))) = _2401;
-  *(double*)_2337 = _2395;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)32)]))) = _2394;
-  *(double*)_2338 = _2387;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)40)]))) = _2386;
-  *(double*)_2339 = _2379;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)48)]))) = _2378;
-  *(double*)_2340 = _2372;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)56)]))) = _2371;
-  *(double*)_2341 = _2365;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)64)]))) = _2364;
-  *(double*)_2342 = _2358;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)72)]))) = _2357;
-  *(double*)_2343 = _2351;
-  *(double*)(((&((uint8_t*)(&_2344))[((int64_t)80)]))) = _2350;
-  _2411 = (-(_2326)) / _2328;
-  _2412 = _2327 * _2328;
-  _2413 = ((&((uint8_t*)(&_2333))[((int64_t)-8)]));
-  _2414 = ((&((uint8_t*)(&_2344))[((int64_t)-8)]));
-  _2415 = 1 / (_2328 * _2328);
-  _2416__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2417__PHI_TEMPORARY = _2351;   /* for PHI node */
-  _2418__PHI_TEMPORARY = _2350;   /* for PHI node */
-  goto _2439;
+_2431:
+  _2403 = _2401 * 3.1415926535897931;
+  _2404 = _2341 * _2386;
+  _2405 = _2404 * _2394;
+  _2406 = _2403 / _2405;
+  _2407 = (((_2405 * 3.1415926535897931) * _2402) - (_2403 * ((_2394 * ((_2386 * _2340) + (_2385 * _2341))) + (_2395 * _2404)))) / (_2405 * _2405);
+  _2411__PHI_TEMPORARY = _2407;   /* for PHI node */
+  _2412__PHI_TEMPORARY = _2406;   /* for PHI node */
+  goto _2417;
 
-  do {     /* Syntactic loop '' to make GCC happy */
-_2439:
-  _2416 = _2416__PHI_TEMPORARY;
-  _2417 = _2417__PHI_TEMPORARY;
-  _2418 = _2418__PHI_TEMPORARY;
-  _2419 = llvm_add_u64(_2416, 1);
-  _2420 = llvm_sub_u64(10, _2416);
-  _2421 = *(double*)(((&((double*)_2413)[((int64_t)_2420)])));
-  _2422 = *(double*)(((&((double*)_2414)[((int64_t)_2420)])));
-  _2423 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2411, _2418, _2422);
-  _2424 = ((_2417 * _2411) - ((_2412 * _2418) * _2415)) + _2421;
-  if ((_2419 == UINT64_C(10))) {
-    goto _2440;
-  } else {
-    _2416__PHI_TEMPORARY = _2419;   /* for PHI node */
-    _2417__PHI_TEMPORARY = _2424;   /* for PHI node */
-    _2418__PHI_TEMPORARY = _2423;   /* for PHI node */
-    goto _2439;
-  }
+_2432:
+  _2408 = _2386 * _2394;
+  _2409 = _2408 / _2401;
+  _2410 = ((_2401 * ((_2394 * _2385) + (_2395 * _2386))) - (_2402 * _2408)) / (_2401 * _2401);
+  _2411__PHI_TEMPORARY = _2410;   /* for PHI node */
+  _2412__PHI_TEMPORARY = _2409;   /* for PHI node */
+  goto _2417;
 
-  } while (1); /* end of syntactic loop '' */
-_2440:
-  _2425 = llvm_ctor_unnamed_1(0, 0);
-  _2425.field0 = _2423;
-  _2426 = _2425;
-  _2426.field1 = _2424;
-  return _2426;
+_2417:
+  _2411 = _2411__PHI_TEMPORARY;
+  _2412 = _2412__PHI_TEMPORARY;
+  _2413 = llvm_ctor_unnamed_1(0, 0);
+  _2413.field0 = _2412;
+  _2414 = _2413;
+  _2414.field1 = _2411;
+  return _2414;
 }
 
 
-static struct l_unnamed_2 fwddiffebesselk_temme_series_OC_4(double _2441, double _2442, double _2443) {
-  __PREFIXALIGN__(16) struct l_array_5_double _2444 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2445;    /* Address-exposed local */
-  double _2446;    /* Address-exposed local */
-  double _2447;    /* Address-exposed local */
-  double _2448;    /* Address-exposed local */
-  double _2449;    /* Address-exposed local */
-  double _2450;    /* Address-exposed local */
-  double _2451;    /* Address-exposed local */
-  double _2452;    /* Address-exposed local */
+static struct l_unnamed_1 fwddiffeUk_poly_Kn_OC_3(double _2433, double _2434, double _2435, double _2436, double _2437) {
+  __PREFIXALIGN__(16) struct l_array_6_double _2438 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_5_double _2439 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  __PREFIXALIGN__(16) struct l_array_11_double _2440 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  void* _2441;
+  void* _2442;
+  void* _2443;
+  void* _2444;
+  void* _2445;
+  void* _2446;
+  void* _2447;
+  void* _2448;
+  void* _2449;
+  void* _2450;
+  __PREFIXALIGN__(16) struct l_array_11_double _2451 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  uint64_t _2452;
+  uint64_t _2452__PHI_TEMPORARY;
   double _2453;
+  double _2453__PHI_TEMPORARY;
   double _2454;
-  double _2455;
-  uint64_t _2456;
-  uint64_t _2456__PHI_TEMPORARY;
+  double _2454__PHI_TEMPORARY;
+  uint64_t _2455;
+  double _2456;
   double _2457;
-  double _2457__PHI_TEMPORARY;
-  uint64_t _2458;
-  double _2459;
+  double _2458;
+  uint64_t _2459;
+  uint64_t _2459__PHI_TEMPORARY;
   double _2460;
+  double _2460__PHI_TEMPORARY;
   double _2461;
+  double _2461__PHI_TEMPORARY;
   uint64_t _2462;
-  uint64_t _2462__PHI_TEMPORARY;
   double _2463;
-  double _2463__PHI_TEMPORARY;
-  uint64_t _2464;
+  double _2464;
   double _2465;
-  double _2466;
-  uint64_t _2467;
-  uint64_t _2467__PHI_TEMPORARY;
+  uint64_t _2466;
+  uint64_t _2466__PHI_TEMPORARY;
+  double _2467;
+  double _2467__PHI_TEMPORARY;
   double _2468;
   double _2468__PHI_TEMPORARY;
   uint64_t _2469;
   double _2470;
   double _2471;
   double _2472;
-  double _2473;
+  uint64_t _2473;
+  uint64_t _2473__PHI_TEMPORARY;
   double _2474;
+  double _2474__PHI_TEMPORARY;
   double _2475;
-  double _2476;
-  void* _2477;
+  double _2475__PHI_TEMPORARY;
+  uint64_t _2476;
+  double _2477;
   double _2478;
-  uint64_t _2479;
-  uint64_t _2479__PHI_TEMPORARY;
-  double _2480;
-  double _2480__PHI_TEMPORARY;
+  double _2479;
+  uint64_t _2480;
+  uint64_t _2480__PHI_TEMPORARY;
   double _2481;
   double _2481__PHI_TEMPORARY;
-  uint64_t _2482;
-  double _2483;
+  double _2482;
+  double _2482__PHI_TEMPORARY;
+  uint64_t _2483;
   double _2484;
   double _2485;
   double _2486;
-  double _2487;
-  double _2488;
+  void* _2487;
+  uint64_t _2488;
+  uint64_t _2488__PHI_TEMPORARY;
   double _2489;
+  double _2489__PHI_TEMPORARY;
   double _2490;
-  double _2491;
+  double _2490__PHI_TEMPORARY;
+  uint64_t _2491;
   double _2492;
   double _2493;
-  uint64_t _2494;
-  uint64_t _2494__PHI_TEMPORARY;
-  double _2495;
-  double _2495__PHI_TEMPORARY;
+  double _2494;
+  void* _2495;
   uint64_t _2496;
+  uint64_t _2496__PHI_TEMPORARY;
   double _2497;
+  double _2497__PHI_TEMPORARY;
   double _2498;
-  double _2499;
+  double _2498__PHI_TEMPORARY;
+  uint64_t _2499;
   double _2500;
   double _2501;
   double _2502;
@@ -8001,393 +7972,412 @@ static struct l_unnamed_2 fwddiffebesselk_temme_series_OC_4(double _2441, double
   uint64_t _2503__PHI_TEMPORARY;
   double _2504;
   double _2504__PHI_TEMPORARY;
-  uint64_t _2505;
-  double _2506;
+  double _2505;
+  double _2505__PHI_TEMPORARY;
+  uint64_t _2506;
   double _2507;
   double _2508;
   double _2509;
-  double _2510;
+  uint64_t _2510;
+  uint64_t _2510__PHI_TEMPORARY;
   double _2511;
+  double _2511__PHI_TEMPORARY;
   double _2512;
-  double _2513;
+  double _2512__PHI_TEMPORARY;
+  uint64_t _2513;
   double _2514;
   double _2515;
-  uint32_t _2516;
-  uint32_t _2516__PHI_TEMPORARY;
+  double _2516;
   double _2517;
-  double _2517__PHI_TEMPORARY;
   double _2518;
-  double _2518__PHI_TEMPORARY;
   double _2519;
-  double _2519__PHI_TEMPORARY;
-  double _2520;
-  double _2520__PHI_TEMPORARY;
-  double _2521;
-  double _2521__PHI_TEMPORARY;
+  void* _2520;
+  void* _2521;
   double _2522;
-  double _2522__PHI_TEMPORARY;
-  double _2523;
-  double _2523__PHI_TEMPORARY;
+  uint64_t _2523;
+  uint64_t _2523__PHI_TEMPORARY;
   double _2524;
   double _2524__PHI_TEMPORARY;
   double _2525;
   double _2525__PHI_TEMPORARY;
-  double _2526;
-  double _2526__PHI_TEMPORARY;
-  double _2527;
-  double _2527__PHI_TEMPORARY;
+  uint64_t _2526;
+  uint64_t _2527;
   double _2528;
-  double _2528__PHI_TEMPORARY;
   double _2529;
   double _2530;
   double _2531;
-  double _2532;
-  double _2533;
-  double _2534;
-  double _2535;
-  double _2536;
-  double _2537;
-  double _2538;
-  double _2539;
-  double _2540;
-  uint32_t _2541;
-  double _2542;
-  double _2543;
-  double _2544;
-  double _2545;
-  double _2546;
-  double _2547;
-  double _2548;
-  double _2549;
-  double _2550;
-  double _2551;
-  double _2552;
-  double _2553;
-  double _2554;
-  double _2555;
-  struct l_unnamed_1 _2556;
-  struct l_unnamed_1 _2557;
-  struct l_unnamed_1 _2558;
-  struct l_unnamed_1 _2559;
-  struct l_unnamed_2 _2560;
-  struct l_unnamed_2 _2561;
+  struct l_unnamed_1 _2532;
+  struct l_unnamed_1 _2533;
 
-  _2453 = _2442 * 0.5;
-  *((double*)&_2444) = 1;
-  *(double*)(((&((uint8_t*)(&_2444))[((int64_t)8)]))) = 0.16666666666666666;
-  *(double*)(((&((uint8_t*)(&_2444))[((int64_t)16)]))) = 0.0083333333333333332;
-  *(double*)(((&((uint8_t*)(&_2444))[((int64_t)24)]))) = 1.9841269841269841E-4;
-  *(double*)(((&((uint8_t*)(&_2444))[((int64_t)32)]))) = 2.7557319223985893E-6;
-  _2454 =  /*tail*/ log(_2442);
-  _2455 = _2441 * _2441;
-  _2456__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2457__PHI_TEMPORARY = 1.9711021825948702;   /* for PHI node */
-  goto _2562;
+  _2441 = ((&((uint8_t*)(&_2440))[((int64_t)8)]));
+  _2442 = ((&((uint8_t*)(&_2440))[((int64_t)16)]));
+  _2443 = ((&((uint8_t*)(&_2440))[((int64_t)24)]));
+  _2444 = ((&((uint8_t*)(&_2440))[((int64_t)32)]));
+  _2445 = ((&((uint8_t*)(&_2440))[((int64_t)40)]));
+  _2446 = ((&((uint8_t*)(&_2440))[((int64_t)48)]));
+  _2447 = ((&((uint8_t*)(&_2440))[((int64_t)56)]));
+  _2448 = ((&((uint8_t*)(&_2440))[((int64_t)64)]));
+  _2449 = ((&((uint8_t*)(&_2440))[((int64_t)72)]));
+  _2450 = ((&((uint8_t*)(&_2440))[((int64_t)80)]));
+  *((double*)&_2438) = 0.22710800170898438;
+  *(double*)(((&((uint8_t*)(&_2438))[((int64_t)8)]))) = -7.3687943594796321;
+  *(double*)(((&((uint8_t*)(&_2438))[((int64_t)16)]))) = 42.534998745388457;
+  *(double*)(((&((uint8_t*)(&_2438))[((int64_t)24)]))) = -91.81824154324002;
+  *(double*)(((&((uint8_t*)(&_2438))[((int64_t)32)]))) = 84.636217674600729;
+  *(double*)(((&((uint8_t*)(&_2438))[((int64_t)40)]))) = -28.212072558200244;
+  *((double*)&_2439) = 0.112152099609375;
+  *(double*)(((&((uint8_t*)(&_2439))[((int64_t)8)]))) = -2.3640869140624998;
+  *(double*)(((&((uint8_t*)(&_2439))[((int64_t)16)]))) = 8.78912353515625;
+  *(double*)(((&((uint8_t*)(&_2439))[((int64_t)24)]))) = -11.207002616222994;
+  *(double*)(((&((uint8_t*)(&_2439))[((int64_t)32)]))) = 4.6695844234262474;
+  _2452__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2453__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2454__PHI_TEMPORARY = 3284469.8530720379;   /* for PHI node */
+  goto _2534;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2562:
-  _2456 = _2456__PHI_TEMPORARY;
-  _2457 = _2457__PHI_TEMPORARY;
-  _2458 = llvm_add_u64(_2456, 1);
-  _2459 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_spcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2456)))])));
-  _2460 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2455, _2457, _2459);
-  if ((_2458 == UINT64_C(3))) {
-    goto _2563;
+_2534:
+  _2452 = _2452__PHI_TEMPORARY;
+  _2453 = _2453__PHI_TEMPORARY;
+  _2454 = _2454__PHI_TEMPORARY;
+  _2455 = llvm_add_u64(_2452, 1);
+  _2456 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u10coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(10, _2452)))])));
+  _2457 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2454, _2456);
+  _2458 = (_2454 * _2437) + (_2453 * _2436);
+  if ((_2455 == UINT64_C(10))) {
+    _2459__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2460__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2461__PHI_TEMPORARY = -242919.18790055133;   /* for PHI node */
+    goto _2535;
   } else {
-    _2456__PHI_TEMPORARY = _2458;   /* for PHI node */
-    _2457__PHI_TEMPORARY = _2460;   /* for PHI node */
-    goto _2562;
+    _2452__PHI_TEMPORARY = _2455;   /* for PHI node */
+    _2453__PHI_TEMPORARY = _2458;   /* for PHI node */
+    _2454__PHI_TEMPORARY = _2457;   /* for PHI node */
+    goto _2534;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2563:
-  _2461 = _2443 * 0.5;
-  _2462__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2463__PHI_TEMPORARY = 0.042197734555544306;   /* for PHI node */
-  goto _2564;
-
   do {     /* Syntactic loop '' to make GCC happy */
-_2564:
-  _2462 = _2462__PHI_TEMPORARY;
-  _2463 = _2463__PHI_TEMPORARY;
-  _2464 = llvm_add_u64(_2462, 1);
-  _2465 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g1coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2462)))])));
-  _2466 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2455, _2463, _2465);
-  if ((_2464 == UINT64_C(2))) {
+_2535:
+  _2459 = _2459__PHI_TEMPORARY;
+  _2460 = _2460__PHI_TEMPORARY;
+  _2461 = _2461__PHI_TEMPORARY;
+  _2462 = llvm_add_u64(_2459, 1);
+  _2463 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u9coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(9, _2459)))])));
+  _2464 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2461, _2463);
+  _2465 = (_2461 * _2437) + (_2460 * _2436);
+  if ((_2462 == UINT64_C(9))) {
+    _2466__PHI_TEMPORARY = 0;   /* for PHI node */
     _2467__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2468__PHI_TEMPORARY = 0.16653861138229145;   /* for PHI node */
-    goto _2565;
+    _2468__PHI_TEMPORARY = 20204.291330966149;   /* for PHI node */
+    goto _2536;
   } else {
-    _2462__PHI_TEMPORARY = _2464;   /* for PHI node */
-    _2463__PHI_TEMPORARY = _2466;   /* for PHI node */
-    goto _2564;
+    _2459__PHI_TEMPORARY = _2462;   /* for PHI node */
+    _2460__PHI_TEMPORARY = _2465;   /* for PHI node */
+    _2461__PHI_TEMPORARY = _2464;   /* for PHI node */
+    goto _2535;
   }
 
   } while (1); /* end of syntactic loop '' */
   do {     /* Syntactic loop '' to make GCC happy */
-_2565:
+_2536:
+  _2466 = _2466__PHI_TEMPORARY;
   _2467 = _2467__PHI_TEMPORARY;
   _2468 = _2468__PHI_TEMPORARY;
-  _2469 = llvm_add_u64(_2467, 1);
-  _2470 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2467)))])));
-  _2471 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2455, _2468, _2470);
-  if ((_2469 == UINT64_C(2))) {
-    goto _2566;
+  _2469 = llvm_add_u64(_2466, 1);
+  _2470 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u8coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(8, _2466)))])));
+  _2471 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2468, _2470);
+  _2472 = (_2468 * _2437) + (_2467 * _2436);
+  if ((_2469 == UINT64_C(8))) {
+    _2473__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2474__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2475__PHI_TEMPORARY = -1919.4576623184071;   /* for PHI node */
+    goto _2537;
   } else {
-    _2467__PHI_TEMPORARY = _2469;   /* for PHI node */
+    _2466__PHI_TEMPORARY = _2469;   /* for PHI node */
+    _2467__PHI_TEMPORARY = _2472;   /* for PHI node */
     _2468__PHI_TEMPORARY = _2471;   /* for PHI node */
-    goto _2565;
+    goto _2536;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2566:
-  _2472 = 0.69314718055994529 - _2454;
-  _2473 = (-(_2443)) / _2442;
-  _2474 = _2472 * _2441;
-  _2475 = _2473 * _2441;
-  _2476 = _2474 * _2474;
-  _2477 = ((&((uint8_t*)(&_2444))[((int64_t)-8)]));
-  _2478 = (_2475 * 2) * _2474;
-  _2479__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2480__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2481__PHI_TEMPORARY = 2.7557319223985893E-6;   /* for PHI node */
-  goto _2567;
-
   do {     /* Syntactic loop '' to make GCC happy */
-_2567:
-  _2479 = _2479__PHI_TEMPORARY;
+_2537:
+  _2473 = _2473__PHI_TEMPORARY;
+  _2474 = _2474__PHI_TEMPORARY;
+  _2475 = _2475__PHI_TEMPORARY;
+  _2476 = llvm_add_u64(_2473, 1);
+  _2477 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u7coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(7, _2473)))])));
+  _2478 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2475, _2477);
+  _2479 = (_2475 * _2437) + (_2474 * _2436);
+  if ((_2476 == UINT64_C(7))) {
+    _2480__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2481__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2482__PHI_TEMPORARY = 212.57013003921713;   /* for PHI node */
+    goto _2538;
+  } else {
+    _2473__PHI_TEMPORARY = _2476;   /* for PHI node */
+    _2474__PHI_TEMPORARY = _2479;   /* for PHI node */
+    _2475__PHI_TEMPORARY = _2478;   /* for PHI node */
+    goto _2537;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_2538:
   _2480 = _2480__PHI_TEMPORARY;
   _2481 = _2481__PHI_TEMPORARY;
-  _2482 = llvm_add_u64(_2479, 1);
-  _2483 = *(double*)(((&((double*)_2477)[((int64_t)(llvm_sub_u64(4, _2479)))])));
-  _2484 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2476, _2481, _2483);
-  _2485 = (_2478 * _2481) + (_2480 * _2476);
-  if ((_2482 == UINT64_C(4))) {
-    goto _2568;
+  _2482 = _2482__PHI_TEMPORARY;
+  _2483 = llvm_add_u64(_2480, 1);
+  _2484 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u6coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(6, _2480)))])));
+  _2485 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2482, _2484);
+  _2486 = (_2482 * _2437) + (_2481 * _2436);
+  if ((_2483 == UINT64_C(6))) {
+    goto _2539;
   } else {
-    _2479__PHI_TEMPORARY = _2482;   /* for PHI node */
-    _2480__PHI_TEMPORARY = _2485;   /* for PHI node */
-    _2481__PHI_TEMPORARY = _2484;   /* for PHI node */
-    goto _2567;
+    _2480__PHI_TEMPORARY = _2483;   /* for PHI node */
+    _2481__PHI_TEMPORARY = _2486;   /* for PHI node */
+    _2482__PHI_TEMPORARY = _2485;   /* for PHI node */
+    goto _2538;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2568:
-  _2486 = _2453 * _2453;
-  _2487 =  /*tail*/ sinh(_2474);
-  _2488 = _2471 * _2484;
-  _2489 = (_2488 * _2473) + ((_2471 * _2472) * _2485);
-  _2490 = (_2466 * _2475) * _2487;
-  _2491 =  /*tail*/ pow(_2453, _2441);
-  _2492 =  /*tail*/ pow(_2453, (_2441 + -1));
-  _2493 = _2461 * _2441;
-  _2494__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2495__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
-  goto _2569;
+_2539:
+  _2487 = ((&((uint8_t*)(&_2438))[((int64_t)-8)]));
+  _2488__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2489__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2490__PHI_TEMPORARY = -28.212072558200244;   /* for PHI node */
+  goto _2540;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2569:
-  _2494 = _2494__PHI_TEMPORARY;
-  _2495 = _2495__PHI_TEMPORARY;
-  _2496 = llvm_add_u64(_2494, 1);
-  _2497 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2494)))])));
-  _2498 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2441, _2495, _2497);
-  if ((_2496 == UINT64_C(3))) {
-    goto _2570;
+_2540:
+  _2488 = _2488__PHI_TEMPORARY;
+  _2489 = _2489__PHI_TEMPORARY;
+  _2490 = _2490__PHI_TEMPORARY;
+  _2491 = llvm_add_u64(_2488, 1);
+  _2492 = *(double*)(((&((double*)_2487)[((int64_t)(llvm_sub_u64(5, _2488)))])));
+  _2493 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2490, _2492);
+  _2494 = (_2490 * _2437) + (_2489 * _2436);
+  if ((_2491 == UINT64_C(5))) {
+    goto _2541;
   } else {
-    _2494__PHI_TEMPORARY = _2496;   /* for PHI node */
-    _2495__PHI_TEMPORARY = _2498;   /* for PHI node */
-    goto _2569;
+    _2488__PHI_TEMPORARY = _2491;   /* for PHI node */
+    _2489__PHI_TEMPORARY = _2494;   /* for PHI node */
+    _2490__PHI_TEMPORARY = _2493;   /* for PHI node */
+    goto _2540;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2570:
-  _2499 =  /*tail*/ cosh(_2474);
-  _2500 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2466, _2499, (_2472 * _2488));
-  _2501 = _2493 * _2492;
-  _2502 = -(_2441);
-  _2503__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2504__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
-  goto _2571;
+_2541:
+  _2495 = ((&((uint8_t*)(&_2439))[((int64_t)-8)]));
+  _2496__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2497__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2498__PHI_TEMPORARY = 4.6695844234262474;   /* for PHI node */
+  goto _2542;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2571:
+_2542:
+  _2496 = _2496__PHI_TEMPORARY;
+  _2497 = _2497__PHI_TEMPORARY;
+  _2498 = _2498__PHI_TEMPORARY;
+  _2499 = llvm_add_u64(_2496, 1);
+  _2500 = *(double*)(((&((double*)_2495)[((int64_t)(llvm_sub_u64(4, _2496)))])));
+  _2501 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2498, _2500);
+  _2502 = (_2498 * _2437) + (_2497 * _2436);
+  if ((_2499 == UINT64_C(4))) {
+    _2503__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2504__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2505__PHI_TEMPORARY = -1.0258125964506173;   /* for PHI node */
+    goto _2543;
+  } else {
+    _2496__PHI_TEMPORARY = _2499;   /* for PHI node */
+    _2497__PHI_TEMPORARY = _2502;   /* for PHI node */
+    _2498__PHI_TEMPORARY = _2501;   /* for PHI node */
+    goto _2542;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  do {     /* Syntactic loop '' to make GCC happy */
+_2543:
   _2503 = _2503__PHI_TEMPORARY;
   _2504 = _2504__PHI_TEMPORARY;
-  _2505 = llvm_add_u64(_2503, 1);
-  _2506 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2503)))])));
-  _2507 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2502, _2504, _2506);
-  if ((_2505 == UINT64_C(3))) {
-    goto _2572;
+  _2505 = _2505__PHI_TEMPORARY;
+  _2506 = llvm_add_u64(_2503, 1);
+  _2507 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u3coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2503)))])));
+  _2508 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2505, _2507);
+  _2509 = (_2505 * _2437) + (_2504 * _2436);
+  if ((_2506 == UINT64_C(3))) {
+    _2510__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2511__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2512__PHI_TEMPORARY = 0.3342013888888889;   /* for PHI node */
+    goto _2544;
   } else {
-    _2503__PHI_TEMPORARY = _2505;   /* for PHI node */
-    _2504__PHI_TEMPORARY = _2507;   /* for PHI node */
-    goto _2571;
+    _2503__PHI_TEMPORARY = _2506;   /* for PHI node */
+    _2504__PHI_TEMPORARY = _2509;   /* for PHI node */
+    _2505__PHI_TEMPORARY = _2508;   /* for PHI node */
+    goto _2543;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2572:
-  _2508 = _2491 * 2;
-  _2509 = _2460 * _2500;
-  _2510 = (_2489 + _2490) * _2460;
-  _2511 = _2498 / _2508;
-  _2512 = ((_2501 * -2) * _2498) / (_2508 * _2508);
-  _2513 = (_2491 * _2507) * 0.5;
-  _2514 = (_2501 * 0.5) * _2507;
-  _2515 = (_2453 * _2461) * 2;
-  _2516__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2517__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2518__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2519__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2520__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2521__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2522__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2523__PHI_TEMPORARY = _2514;   /* for PHI node */
-  _2524__PHI_TEMPORARY = _2513;   /* for PHI node */
-  _2525__PHI_TEMPORARY = _2512;   /* for PHI node */
-  _2526__PHI_TEMPORARY = _2511;   /* for PHI node */
-  _2527__PHI_TEMPORARY = _2510;   /* for PHI node */
-  _2528__PHI_TEMPORARY = _2509;   /* for PHI node */
-  goto _2573;
+  do {     /* Syntactic loop '' to make GCC happy */
+_2544:
+  _2510 = _2510__PHI_TEMPORARY;
+  _2511 = _2511__PHI_TEMPORARY;
+  _2512 = _2512__PHI_TEMPORARY;
+  _2513 = llvm_add_u64(_2510, 1);
+  _2514 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_Uk_poly_Kn_OC_u2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2510)))])));
+  _2515 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, _2512, _2514);
+  _2516 = (_2512 * _2437) + (_2511 * _2436);
+  if ((_2513 == UINT64_C(2))) {
+    goto _2545;
+  } else {
+    _2510__PHI_TEMPORARY = _2513;   /* for PHI node */
+    _2511__PHI_TEMPORARY = _2516;   /* for PHI node */
+    _2512__PHI_TEMPORARY = _2515;   /* for PHI node */
+    goto _2544;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+_2545:
+  _2517 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2436, -0.20833333333333334, 0.125);
+  *((double*)&_2440) = 0;
+  *((double*)&_2451) = 1;
+  *(double*)_2441 = (_2437 * -0.20833333333333334);
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)8)]))) = _2517;
+  *(double*)_2442 = _2516;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)16)]))) = _2515;
+  *(double*)_2443 = _2509;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)24)]))) = _2508;
+  *(double*)_2444 = _2502;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)32)]))) = _2501;
+  *(double*)_2445 = _2494;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)40)]))) = _2493;
+  *(double*)_2446 = _2486;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)48)]))) = _2485;
+  *(double*)_2447 = _2479;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)56)]))) = _2478;
+  *(double*)_2448 = _2472;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)64)]))) = _2471;
+  *(double*)_2449 = _2465;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)72)]))) = _2464;
+  *(double*)_2450 = _2458;
+  *(double*)(((&((uint8_t*)(&_2451))[((int64_t)80)]))) = _2457;
+  _2518 = (-(_2433)) / _2435;
+  _2519 = _2434 * _2435;
+  _2520 = ((&((uint8_t*)(&_2440))[((int64_t)-8)]));
+  _2521 = ((&((uint8_t*)(&_2451))[((int64_t)-8)]));
+  _2522 = 1 / (_2435 * _2435);
+  _2523__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2524__PHI_TEMPORARY = _2458;   /* for PHI node */
+  _2525__PHI_TEMPORARY = _2457;   /* for PHI node */
+  goto _2546;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2573:
-  _2516 = _2516__PHI_TEMPORARY;
-  _2517 = _2517__PHI_TEMPORARY;
-  _2518 = _2518__PHI_TEMPORARY;
-  _2519 = _2519__PHI_TEMPORARY;
-  _2520 = _2520__PHI_TEMPORARY;
-  _2521 = _2521__PHI_TEMPORARY;
-  _2522 = _2522__PHI_TEMPORARY;
+_2546:
   _2523 = _2523__PHI_TEMPORARY;
   _2524 = _2524__PHI_TEMPORARY;
   _2525 = _2525__PHI_TEMPORARY;
-  _2526 = _2526__PHI_TEMPORARY;
-  _2527 = _2527__PHI_TEMPORARY;
-  _2528 = _2528__PHI_TEMPORARY;
-  _2529 = _2522 * _2528;
-  _2530 = (_2528 * _2521) + (_2527 * _2522);
-  _2445 = _2530;
-  _2446 = _2529;
-  _2531 = ((double)(uint32_t)_2516);
-  _2532 =  /*tail*/ llvm_OC_fmuladd_OC_f64((-(_2531)), _2528, _2526);
-  _2533 = _2522 * _2532;
-  _2534 = (_2532 * _2521) + ((_2525 - (_2527 * _2531)) * _2522);
-  _2447 = _2534;
-  _2448 = _2533;
-  _2535 = _2520 + _2529;
-  _2536 = _2530 + _2519;
-  _2537 = _2518 + _2533;
-  _2538 = _2534 + _2517;
-  fixderivative_isconverged((&_2446), (&_2445), (&_2450), (&_2449));
-  fixderivative_isconverged_OC_1((&_2448), (&_2447), (&_2452), (&_2451));
-  _2539 = _2450;
-  _2540 = _2452;
-  if ((llvm_select_bool((llvm_fcmp_olt(_2539, 0)), (llvm_fcmp_olt(_2540, 0)), 0))) {
-    goto _2574;
+  _2526 = llvm_add_u64(_2523, 1);
+  _2527 = llvm_sub_u64(10, _2523);
+  _2528 = *(double*)(((&((double*)_2520)[((int64_t)_2527)])));
+  _2529 = *(double*)(((&((double*)_2521)[((int64_t)_2527)])));
+  _2530 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2518, _2525, _2529);
+  _2531 = ((_2524 * _2518) - ((_2519 * _2525) * _2522)) + _2528;
+  if ((_2526 == UINT64_C(10))) {
+    goto _2547;
   } else {
-    goto _2575;
-  }
-
-_2575:
-  _2541 = llvm_add_u32(_2516, 1);
-  _2542 = ((double)(uint32_t)_2541);
-  _2543 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2542, _2528, _2526);
-  _2544 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2502, _2441, (((double)(uint32_t)(llvm_mul_u32(_2541, _2541)))));
-  _2545 = (_2524 + _2543) / _2544;
-  _2546 = (((_2525 + _2523) + (_2527 * _2542)) * _2544) / (_2544 * _2544);
-  _2547 = _2542 - _2441;
-  _2548 = _2526 / _2547;
-  _2549 = (_2525 * _2547) / (_2547 * _2547);
-  _2550 = _2542 + _2441;
-  _2551 = _2524 / _2550;
-  _2552 = (_2523 * _2550) / (_2550 * _2550);
-  _2553 = _2486 / _2542;
-  _2554 = _2553 * _2522;
-  _2555 = (((_2515 * _2542) * _2522) / (_2542 * _2542)) + (_2521 * _2553);
-  if ((_2541 == 500u)) {
-    goto _2574;
-  } else {
-    _2516__PHI_TEMPORARY = _2541;   /* for PHI node */
-    _2517__PHI_TEMPORARY = _2538;   /* for PHI node */
-    _2518__PHI_TEMPORARY = _2537;   /* for PHI node */
-    _2519__PHI_TEMPORARY = _2536;   /* for PHI node */
-    _2520__PHI_TEMPORARY = _2535;   /* for PHI node */
-    _2521__PHI_TEMPORARY = _2555;   /* for PHI node */
-    _2522__PHI_TEMPORARY = _2554;   /* for PHI node */
-    _2523__PHI_TEMPORARY = _2552;   /* for PHI node */
-    _2524__PHI_TEMPORARY = _2551;   /* for PHI node */
-    _2525__PHI_TEMPORARY = _2549;   /* for PHI node */
-    _2526__PHI_TEMPORARY = _2548;   /* for PHI node */
-    _2527__PHI_TEMPORARY = _2546;   /* for PHI node */
-    _2528__PHI_TEMPORARY = _2545;   /* for PHI node */
-    goto _2573;
+    _2523__PHI_TEMPORARY = _2526;   /* for PHI node */
+    _2524__PHI_TEMPORARY = _2531;   /* for PHI node */
+    _2525__PHI_TEMPORARY = _2530;   /* for PHI node */
+    goto _2546;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2574:
-  _2556 = llvm_ctor_unnamed_1(0, 0);
-  _2556.field0 = _2536;
-  _2557 = llvm_ctor_unnamed_1(0, 0);
-  _2557.field0 = _2535;
-  _2558 = _2556;
-  _2558.field1 = (((_2538 * _2453) - (_2537 * _2461)) / _2486);
-  _2559 = _2557;
-  _2559.field1 = (_2537 / _2453);
-  _2560 = llvm_ctor_unnamed_2(llvm_ctor_unnamed_1(0, 0), llvm_ctor_unnamed_1(0, 0));
-  _2560.field0 = _2559;
-  _2561 = _2560;
-  _2561.field1 = _2558;
-  return _2561;
+_2547:
+  _2532 = llvm_ctor_unnamed_1(0, 0);
+  _2532.field0 = _2530;
+  _2533 = _2532;
+  _2533.field1 = _2531;
+  return _2533;
 }
 
 
-static double fwddiffebesselk_power_series_OC_5(double _2576, double _2577) {
-  double _2578;    /* Address-exposed local */
-  double _2579;    /* Address-exposed local */
-  double _2580;    /* Address-exposed local */
-  double _2581;    /* Address-exposed local */
+static struct l_unnamed_2 fwddiffebesselk_temme_series_OC_4(double _2548, double _2549, double _2550) {
+  __PREFIXALIGN__(16) struct l_array_5_double _2551 __POSTFIXALIGN__(16);    /* Address-exposed local */
+  double _2552;    /* Address-exposed local */
+  double _2553;    /* Address-exposed local */
+  double _2554;    /* Address-exposed local */
+  double _2555;    /* Address-exposed local */
+  double _2556;    /* Address-exposed local */
+  double _2557;    /* Address-exposed local */
+  double _2558;    /* Address-exposed local */
+  double _2559;    /* Address-exposed local */
+  double _2560;
+  double _2561;
+  double _2562;
+  uint64_t _2563;
+  uint64_t _2563__PHI_TEMPORARY;
+  double _2564;
+  double _2564__PHI_TEMPORARY;
+  uint64_t _2565;
+  double _2566;
+  double _2567;
+  double _2568;
+  uint64_t _2569;
+  uint64_t _2569__PHI_TEMPORARY;
+  double _2570;
+  double _2570__PHI_TEMPORARY;
+  uint64_t _2571;
+  double _2572;
+  double _2573;
+  uint64_t _2574;
+  uint64_t _2574__PHI_TEMPORARY;
+  double _2575;
+  double _2575__PHI_TEMPORARY;
+  uint64_t _2576;
+  double _2577;
+  double _2578;
+  double _2579;
+  double _2580;
+  double _2581;
   double _2582;
   double _2583;
-  double _2584;
+  void* _2584;
   double _2585;
-  double _2585__PHI_TEMPORARY;
-  double _2586;
-  double _2586__PHI_TEMPORARY;
-  uint32_t _2587;
-  uint32_t _2587__PHI_TEMPORARY;
+  uint64_t _2586;
+  uint64_t _2586__PHI_TEMPORARY;
+  double _2587;
+  double _2587__PHI_TEMPORARY;
   double _2588;
   double _2588__PHI_TEMPORARY;
-  double _2589;
-  double _2589__PHI_TEMPORARY;
+  uint64_t _2589;
   double _2590;
-  double _2590__PHI_TEMPORARY;
   double _2591;
-  double _2591__PHI_TEMPORARY;
   double _2592;
-  double _2592__PHI_TEMPORARY;
   double _2593;
-  double _2593__PHI_TEMPORARY;
   double _2594;
-  double _2594__PHI_TEMPORARY;
-  uint32_t _2595;
+  double _2595;
   double _2596;
   double _2597;
   double _2598;
   double _2599;
   double _2600;
-  double _2601;
+  uint64_t _2601;
+  uint64_t _2601__PHI_TEMPORARY;
   double _2602;
-  double _2603;
+  double _2602__PHI_TEMPORARY;
+  uint64_t _2603;
   double _2604;
   double _2605;
   double _2606;
   double _2607;
   double _2608;
   double _2609;
-  double _2610;
+  uint64_t _2610;
+  uint64_t _2610__PHI_TEMPORARY;
   double _2611;
-  double _2612;
+  double _2611__PHI_TEMPORARY;
+  uint64_t _2612;
   double _2613;
   double _2614;
   double _2615;
@@ -8395,119 +8385,51 @@ static double fwddiffebesselk_power_series_OC_5(double _2576, double _2577) {
   double _2617;
   double _2618;
   double _2619;
-
-  _2582 =  /*tail*/ gamma(_2576);
-  _2583 = _2577 * _2577;
-  _2584 = _2577 * 2;
-  _2581 = 1;
-  _2585__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2586__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2587__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2588__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2589__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2590__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2591__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2592__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2593__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2594__PHI_TEMPORARY = 4;   /* for PHI node */
-  goto _2620;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2620:
-  _2585 = _2585__PHI_TEMPORARY;
-  _2586 = _2586__PHI_TEMPORARY;
-  _2587 = _2587__PHI_TEMPORARY;
-  _2588 = _2588__PHI_TEMPORARY;
-  _2589 = _2589__PHI_TEMPORARY;
-  _2590 = _2590__PHI_TEMPORARY;
-  _2591 = _2591__PHI_TEMPORARY;
-  _2592 = _2592__PHI_TEMPORARY;
-  _2593 = _2593__PHI_TEMPORARY;
-  _2594 = _2594__PHI_TEMPORARY;
-  _2595 = llvm_add_u32(_2587, 1);
-  _2596 = _2589 + _2585;
-  _2597 = _2586 + _2588;
-  _2598 = _2591 + _2593;
-  _2599 = _2592 + _2590;
-  _2600 = ((double)(uint32_t)_2595);
-  _2601 = (_2600 - _2576) * _2594;
-  _2602 = _2583 / _2601;
-  _2603 = _2602 * _2585;
-  _2604 = (((_2601 * _2584) * _2585) / (_2601 * _2601)) + (_2602 * _2586);
-  _2578 = _2604;
-  _2579 = _2603;
-  fixderivative_isconverged((&_2579), (&_2578), (&_2581), (&_2580));
-  _2605 = _2581;
-  if ((llvm_fcmp_olt(_2605, 0))) {
-    goto _2621;
-  } else {
-    goto _2622;
-  }
-
-_2622:
-  _2606 = (_2600 + _2576) * _2594;
-  _2607 = _2583 / _2606;
-  _2608 = _2593 * _2607;
-  _2609 = (((_2593 * _2584) * _2606) / (_2606 * _2606)) + (_2607 * _2592);
-  _2610 = _2594 + 4;
-  if ((_2595 == 49u)) {
-    goto _2621;
-  } else {
-    _2585__PHI_TEMPORARY = _2603;   /* for PHI node */
-    _2586__PHI_TEMPORARY = _2604;   /* for PHI node */
-    _2587__PHI_TEMPORARY = _2595;   /* for PHI node */
-    _2588__PHI_TEMPORARY = _2597;   /* for PHI node */
-    _2589__PHI_TEMPORARY = _2596;   /* for PHI node */
-    _2590__PHI_TEMPORARY = _2599;   /* for PHI node */
-    _2591__PHI_TEMPORARY = _2598;   /* for PHI node */
-    _2592__PHI_TEMPORARY = _2609;   /* for PHI node */
-    _2593__PHI_TEMPORARY = _2608;   /* for PHI node */
-    _2594__PHI_TEMPORARY = _2610;   /* for PHI node */
-    goto _2620;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2621:
-  _2611 =  /*tail*/ sinpi((-(_2576)));
-  _2612 = 3.1415926535897931 / ((_2582 * _2611) * _2576);
-  _2613 = _2577 * 0.5;
-  _2614 =  /*tail*/ pow(_2613, _2576);
-  _2615 =  /*tail*/ pow(_2613, (_2576 + -1));
-  _2616 = _2615 * _2576;
-  _2617 = (_2614 * _2614) * _2612;
-  _2618 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2582, _2596, (_2598 * _2617));
-  _2619 = _2614 * 2;
-  return ((((((_2617 * _2599) + (_2597 * _2582)) + (((_2614 * _2598) * _2616) * _2612)) * _2619) - (_2618 * _2616)) / (_2619 * _2619));
-}
-
-
-static struct l_unnamed_1 fwddiffebesselk_OC_7(double _2623, double _2624, double _2625) {
-  double _2626;    /* Address-exposed local */
-  double _2627;    /* Address-exposed local */
-  double _2628;    /* Address-exposed local */
-  double _2629;    /* Address-exposed local */
-  double _2630;    /* Address-exposed local */
-  double _2631;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _2632 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  void* _2633;
-  __PREFIXALIGN__(16) struct l_array_32_double _2634 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2635;    /* Address-exposed local */
-  void* _2636;
-  double _2637;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _2638 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  void* _2639;
-  __PREFIXALIGN__(16) struct l_array_32_double _2640 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2641;    /* Address-exposed local */
-  void* _2642;
-  double _2643;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _2644 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  void* _2645;
-  __PREFIXALIGN__(16) struct l_array_32_double _2646 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2647;    /* Address-exposed local */
-  void* _2648;
-  double _2649;    /* Address-exposed local */
-  double _2650;    /* Address-exposed local */
-  double _2651;    /* Address-exposed local */
+  double _2620;
+  double _2621;
+  double _2622;
+  uint32_t _2623;
+  uint32_t _2623__PHI_TEMPORARY;
+  double _2624;
+  double _2624__PHI_TEMPORARY;
+  double _2625;
+  double _2625__PHI_TEMPORARY;
+  double _2626;
+  double _2626__PHI_TEMPORARY;
+  double _2627;
+  double _2627__PHI_TEMPORARY;
+  double _2628;
+  double _2628__PHI_TEMPORARY;
+  double _2629;
+  double _2629__PHI_TEMPORARY;
+  double _2630;
+  double _2630__PHI_TEMPORARY;
+  double _2631;
+  double _2631__PHI_TEMPORARY;
+  double _2632;
+  double _2632__PHI_TEMPORARY;
+  double _2633;
+  double _2633__PHI_TEMPORARY;
+  double _2634;
+  double _2634__PHI_TEMPORARY;
+  double _2635;
+  double _2635__PHI_TEMPORARY;
+  double _2636;
+  double _2637;
+  double _2638;
+  double _2639;
+  double _2640;
+  double _2641;
+  double _2642;
+  double _2643;
+  double _2644;
+  double _2645;
+  double _2646;
+  double _2647;
+  uint32_t _2648;
+  double _2649;
+  double _2650;
+  double _2651;
   double _2652;
   double _2653;
   double _2654;
@@ -8519,2109 +8441,279 @@ static struct l_unnamed_1 fwddiffebesselk_OC_7(double _2623, double _2624, doubl
   double _2660;
   double _2661;
   double _2662;
-  double _2663;
-  double _2664;
-  double _2665;
-  double _2666;
-  double _2667;
-  double _2668;
-  double _2669;
-  double _2670;
-  double _2671;
-  double _2672;
-  double _2673;
-  struct l_unnamed_1 _2674;
-  double _2675;
-  double _2676;
-  double _2677;
-  double _2678;
-  double _2679;
-  double _2680;
-  double _2681;
-  double _2682;
-  double _2683;
-  double _2684;
-  double _2685;
-  double _2686;
-  double _2686__PHI_TEMPORARY;
-  double _2687;
-  double _2687__PHI_TEMPORARY;
-  uint32_t _2688;
-  uint32_t _2688__PHI_TEMPORARY;
-  double _2689;
-  double _2689__PHI_TEMPORARY;
-  double _2690;
-  double _2690__PHI_TEMPORARY;
-  uint32_t _2691;
-  uint32_t _2692;
-  double _2693;
-  double _2694;
-  double _2695;
-  double _2696;
-  double _2697;
-  double _2698;
-  double _2699;
-  double _2700;
-  double _2701;
-  double _2702;
-  double _2703;
-  double _2704;
-  double _2705;
-  double _2706;
-  double _2707;
-  double _2708;
-  double _2709;
-  double _2710;
-  void* _2711;
-  double _2712;
-  double _2713;
-  double _2714;
-  uint64_t _2715;
-  uint64_t _2715__PHI_TEMPORARY;
-  double _2716;
-  double _2716__PHI_TEMPORARY;
-  double _2717;
-  double _2717__PHI_TEMPORARY;
-  double _2718;
-  double _2718__PHI_TEMPORARY;
-  double _2719;
-  double _2719__PHI_TEMPORARY;
-  uint64_t _2720;
-  double _2721;
-  double _2722;
-  double _2723;
-  double _2724;
-  double _2725;
-  double _2726;
-  double _2727;
-  double _2728;
-  double _2729;
-  double _2730;
-  double _2731;
-  double _2732;
-  double _2733;
-  double _2734;
-  double _2735;
-  double _2736;
-  double _2737;
-  double _2738;
-  double _2739;
-  double _2740;
-  double _2741;
-  double _2742;
-  void* _2743;
-  double _2744;
-  double _2745;
-  double _2746;
-  uint64_t _2747;
-  uint64_t _2747__PHI_TEMPORARY;
-  double _2748;
-  double _2748__PHI_TEMPORARY;
-  double _2749;
-  double _2749__PHI_TEMPORARY;
-  double _2750;
-  double _2750__PHI_TEMPORARY;
-  double _2751;
-  double _2751__PHI_TEMPORARY;
-  uint64_t _2752;
-  double _2753;
-  double _2754;
-  double _2755;
-  double _2756;
-  double _2757;
-  double _2758;
-  double _2759;
-  double _2760;
-  double _2761;
-  double _2762;
-  double _2763;
-  double _2764;
-  double _2765;
-  double _2766;
-  double _2767;
-  double _2768;
-  double _2769;
-  void* _2770;
-  double _2771;
-  uint64_t _2772;
-  uint64_t _2772__PHI_TEMPORARY;
-  double _2773;
-  double _2773__PHI_TEMPORARY;
-  double _2774;
-  double _2774__PHI_TEMPORARY;
-  double _2775;
-  double _2775__PHI_TEMPORARY;
-  double _2776;
-  double _2776__PHI_TEMPORARY;
-  uint64_t _2777;
-  double _2778;
-  double _2779;
-  double _2780;
-  double _2781;
-  double _2782;
-  double _2783;
-  double _2784;
-  double _2785;
-  double _2786;
-  double _2787;
-  double _2788;
-  double _2789;
-  double _2790;
-  double _2791;
-  double _2792;
-  double _2793;
-  double _2794;
-  double _2795;
-  double _2796;
-  double _2797;
-  double _2798;
-  double _2799;
-  double _2799__PHI_TEMPORARY;
-  double _2800;
-  double _2800__PHI_TEMPORARY;
-  double _2801;
-  double _2801__PHI_TEMPORARY;
-  double _2802;
-  double _2802__PHI_TEMPORARY;
-  double _2803;
-  double _2803__PHI_TEMPORARY;
-  double _2804;
-  double _2805;
-  double _2806;
-  double _2807;
-  double _2807__PHI_TEMPORARY;
-  double _2808;
-  double _2808__PHI_TEMPORARY;
-  double _2809;
-  double _2810;
-  double _2811;
-  double _2812;
-  double _2813;
-  double _2814;
-  double _2815;
-  double _2816;
-  struct l_unnamed_2 _2817;
-  struct l_unnamed_1 _2818;
-  struct l_unnamed_1 _2819;
-  double _2820;
-  double _2821;
-  double _2822;
-  double _2823;
-  double _2824;
-  double _2825;
-  double _2826;
-  double _2827;
-  double _2828;
-  double _2829;
-  double _2829__PHI_TEMPORARY;
-  double _2830;
-  double _2830__PHI_TEMPORARY;
-  double _2831;
-  double _2831__PHI_TEMPORARY;
-  double _2832;
-  double _2832__PHI_TEMPORARY;
-  double _2833;
-  double _2833__PHI_TEMPORARY;
-  double _2834;
-  double _2835;
-  double _2836;
-  double _2837;
-  double _2838;
-  double _2839;
-  double _2840;
-  double _2840__PHI_TEMPORARY;
-  double _2841;
-  double _2841__PHI_TEMPORARY;
-  uint32_t _2842;
-  uint32_t _2842__PHI_TEMPORARY;
-  double _2843;
-  double _2843__PHI_TEMPORARY;
-  double _2844;
-  double _2844__PHI_TEMPORARY;
-  double _2845;
-  double _2845__PHI_TEMPORARY;
-  double _2846;
-  double _2846__PHI_TEMPORARY;
-  double _2847;
-  double _2847__PHI_TEMPORARY;
-  double _2848;
-  double _2848__PHI_TEMPORARY;
-  double _2849;
-  double _2849__PHI_TEMPORARY;
-  uint32_t _2850;
-  double _2851;
-  double _2852;
-  double _2853;
-  double _2854;
-  double _2855;
-  double _2856;
-  double _2857;
-  double _2858;
-  double _2859;
-  double _2860;
-  double _2861;
-  double _2862;
-  double _2863;
-  double _2864;
-  double _2865;
-  double _2866;
-  double _2867;
-  double _2868;
-  double _2869;
-  double _2870;
-  double _2871;
-  double _2872;
-  double _2873;
-  double _2874;
-  double _2875;
-  double _2876;
-  double _2877;
-  double _2877__PHI_TEMPORARY;
-  double _2878;
-  double _2878__PHI_TEMPORARY;
-  struct l_unnamed_1 _2879;
-  struct l_unnamed_1 _2880;
+  struct l_unnamed_1 _2663;
+  struct l_unnamed_1 _2664;
+  struct l_unnamed_1 _2665;
+  struct l_unnamed_1 _2666;
+  struct l_unnamed_2 _2667;
+  struct l_unnamed_2 _2668;
 
-  _2633 = ((&((uint8_t*)(&_2632))[((int64_t)128)]));
-  _2636 = memset((&_2632), 0, 256);
-  _2639 = ((&((uint8_t*)(&_2638))[((int64_t)128)]));
-  _2642 = memset((&_2638), 0, 256);
-  _2645 = ((&((uint8_t*)(&_2644))[((int64_t)128)]));
-  _2648 = memset((&_2644), 0, 256);
-  _2652 =  /*tail*/ llvm_OC_fabs_OC_f64(_2623);
-  if ((llvm_fcmp_ugt(_2624, 0))) {
-    goto _2881;
-  } else {
-    _2877__PHI_TEMPORARY = 0;   /* for PHI node */
-    _2878__PHI_TEMPORARY = (*(double*)&FPConstant2);   /* for PHI node */
-    goto _2882;
-  }
-
-_2881:
-  if (((llvm_fcmp_ogt(_2652, 25)) | (llvm_fcmp_ogt(_2624, 35)))) {
-    goto _2883;
-  } else {
-    goto _2884;
-  }
-
-_2883:
-  _2653 = _2624 / _2652;
-  _2654 = _2623 * _2623;
-  _2655 = (_2652 * _2625) / _2654;
-  _2656 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2653, _2653, 1);
-  _2657 =  /*tail*/ llvm_OC_sqrt_OC_f64(_2656);
-  _2658 = llvm_select_f64((llvm_fcmp_ueq(_2656, 0)), 0, (((_2653 * 2) * _2655) / (_2657 * 2)));
-  _2659 =  /*tail*/ log(_2653);
-  _2660 = _2657 + 1;
-  _2661 =  /*tail*/ log(_2660);
-  _2662 =  /*tail*/ llvm_OC_sqrt_OC_f64((1 / _2652));
-  _2663 = _2662 * 1.2533141373155001;
-  _2664 = -(_2652);
-  _2665 = ((_2657 + _2659) - _2661) * _2664;
-  _2666 =  /*tail*/ exp(_2665);
-  _2667 =  /*tail*/ exp(_2665);
-  _2668 = _2663 * _2666;
-  _2669 =  /*tail*/ llvm_OC_sqrt_OC_f64(_2657);
-  _2670 = _2668 / _2669;
-  _2671 = llvm_select_f64((llvm_fcmp_ole(_2652, _2624)), _2624, _2652);
-  _2672 = llvm_select_f64((llvm_fcmp_ole(_2652, _2624)), _2652, _2624);
-  _2673 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2671, _2671, (_2672 * _2672));
-  _2674 =  /*tail*/ fwddiffeUk_poly_Kn_OC_3((1 / _2657), ((-(_2658)) / _2656), _2652, (_2654 / _2673), (((_2654 * -2) * (((llvm_select_f64((llvm_fcmp_ole(_2652, _2624)), _2625, 0)) * _2671) + ((llvm_select_f64((llvm_fcmp_ole(_2652, _2624)), 0, _2625)) * _2672))) / (_2673 * _2673)));
-  _2675 = (_2674.field0);
-  _2676 = _2670 * _2675;
-  _2677 = (((((((_2663 * _2664) * _2669) * ((_2658 + (_2655 / _2653)) - (_2658 / _2660))) * _2667) - (_2668 * (llvm_select_f64((llvm_fcmp_ueq(_2657, 0)), 0, (_2658 / (_2669 * 2)))))) * _2675) / _2657) + (((_2674.field1)) * _2670);
-  _2877__PHI_TEMPORARY = _2677;   /* for PHI node */
-  _2878__PHI_TEMPORARY = _2676;   /* for PHI node */
-  goto _2882;
-
-_2884:
-  if ((llvm_fcmp_olt((((_2623 * _2623) / 36) + 24), _2624))) {
-    goto _2885;
-  } else {
-    goto _2886;
-  }
-
-_2885:
-  _2678 = _2624 * -0.5;
-  _2679 =  /*tail*/ exp(_2678);
-  _2680 =  /*tail*/ exp(_2678);
-  _2681 = _2624 * 8;
-  _2682 = 1 / _2681;
-  _2683 = _2625 * 8;
-  _2684 = _2652 * 4;
-  _2685 = 1 / (_2681 * _2681);
-  _2686__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2687__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2688__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2689__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2690__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _2887;
+  _2560 = _2549 * 0.5;
+  *((double*)&_2551) = 1;
+  *(double*)(((&((uint8_t*)(&_2551))[((int64_t)8)]))) = 0.16666666666666666;
+  *(double*)(((&((uint8_t*)(&_2551))[((int64_t)16)]))) = 0.0083333333333333332;
+  *(double*)(((&((uint8_t*)(&_2551))[((int64_t)24)]))) = 1.9841269841269841E-4;
+  *(double*)(((&((uint8_t*)(&_2551))[((int64_t)32)]))) = 2.7557319223985893E-6;
+  _2561 =  /*tail*/ log(_2549);
+  _2562 = _2548 * _2548;
+  _2563__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2564__PHI_TEMPORARY = 1.9711021825948702;   /* for PHI node */
+  goto _2669;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2887:
-  _2686 = _2686__PHI_TEMPORARY;
-  _2687 = _2687__PHI_TEMPORARY;
-  _2688 = _2688__PHI_TEMPORARY;
-  _2689 = _2689__PHI_TEMPORARY;
-  _2690 = _2690__PHI_TEMPORARY;
-  _2691 = llvm_add_u32(_2688, 1);
-  _2692 = llvm_add_u32((_2691 << 1), -1);
-  _2693 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2684, _2652, (-((((double)(uint32_t)(llvm_mul_u32(_2692, _2692)))))));
-  _2694 = _2693 / (((double)(uint32_t)_2691));
-  _2695 = _2682 * _2694;
-  _2696 = _2686 * _2695;
-  _2697 = (_2695 * _2687) - (((_2683 * _2686) * _2694) * _2685);
-  _2650 = _2697;
-  _2651 = _2696;
-  _2698 = _2690 + _2696;
-  _2699 = _2697 + _2689;
-  fixderivative_isconverged((&_2651), (&_2650), (&_2649), (&_2647));
-  _2700 = _2649;
-  if ((llvm_select_bool((llvm_fcmp_olt(_2700, 0)), 1, (_2691 == 20u)))) {
-    goto _2888;
+_2669:
+  _2563 = _2563__PHI_TEMPORARY;
+  _2564 = _2564__PHI_TEMPORARY;
+  _2565 = llvm_add_u64(_2563, 1);
+  _2566 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_spcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2563)))])));
+  _2567 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2562, _2564, _2566);
+  if ((_2565 == UINT64_C(3))) {
+    goto _2670;
   } else {
-    _2686__PHI_TEMPORARY = _2696;   /* for PHI node */
-    _2687__PHI_TEMPORARY = _2697;   /* for PHI node */
-    _2688__PHI_TEMPORARY = _2691;   /* for PHI node */
-    _2689__PHI_TEMPORARY = _2699;   /* for PHI node */
-    _2690__PHI_TEMPORARY = _2698;   /* for PHI node */
-    goto _2887;
+    _2563__PHI_TEMPORARY = _2565;   /* for PHI node */
+    _2564__PHI_TEMPORARY = _2567;   /* for PHI node */
+    goto _2669;
   }
 
   } while (1); /* end of syntactic loop '' */
-_2888:
-  _2701 = (_2625 * -0.5) * _2680;
-  _2702 = _2624 * 2;
-  _2703 = 3.1415926535897931 / _2702;
-  _2704 =  /*tail*/ sqrt(_2703);
-  _2705 =  /*tail*/ sqrt(_2703);
-  _2706 = _2698 * _2704;
-  _2707 = _2679 * _2706;
-  _2708 = _2679 * _2707;
-  _2709 = ((((((llvm_select_f64((llvm_fcmp_ueq(_2703, 0)), 0, ((_2625 * -6.2831853071795862) / (((_2624 * 4) * _2702) * _2705)))) * _2698) + (_2704 * _2699)) * _2679) + (_2706 * _2701)) * _2679) + (_2707 * _2701);
-  _2877__PHI_TEMPORARY = _2709;   /* for PHI node */
-  _2878__PHI_TEMPORARY = _2708;   /* for PHI node */
-  goto _2882;
-
-_2886:
-  _2710 =  /*tail*/ llvm_OC_floor_OC_f64(_2652);
-  if ((llvm_fcmp_ogt(_2624, 1.5))) {
-    goto _2889;
-  } else {
-    goto _2890;
-  }
-
-_2889:
-  if ((llvm_fcmp_olt(_2652, 2))) {
-    goto _2891;
-  } else {
-    goto _2892;
-  }
-
-_2891:
-  _2641 = 0;
-  _2643 = 0;
-  _2711 = ((&((uint8_t*)(&_2646))[((int64_t)128)]));
-  _2712 = _2652 * (_2652 * 4);
-  _2713 = _2624 * 8;
-  _2714 = _2625 * 8;
-  _2715__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2716__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2717__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2718__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2719__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _2893;
+_2670:
+  _2568 = _2550 * 0.5;
+  _2569__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2570__PHI_TEMPORARY = 0.042197734555544306;   /* for PHI node */
+  goto _2671;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_2893:
-  _2715 = _2715__PHI_TEMPORARY;
-  _2716 = _2716__PHI_TEMPORARY;
-  _2717 = _2717__PHI_TEMPORARY;
-  _2718 = _2718__PHI_TEMPORARY;
-  _2719 = _2719__PHI_TEMPORARY;
-  _2720 = llvm_add_u64(_2715, 1);
-  _2721 = _2717 + _2719;
-  _2722 = _2718 + _2716;
-  _2723 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_2715)])));
-  _2724 = _2712 - _2723;
-  _2725 = ((double)(uint32_t)(((uint32_t)_2720)));
-  _2726 = _2713 * _2725;
-  _2727 = _2724 / _2726;
-  _2728 = _2719 * _2727;
-  _2729 = (_2727 * _2718) - ((((_2714 * _2725) * _2719) * _2724) / (_2726 * _2726));
-  *(double*)(((&((double*)(&_2644))[((int64_t)_2715)]))) = _2722;
-  *(double*)(((&((double*)(&_2646))[((int64_t)_2715)]))) = _2721;
-  *(double*)(((&((double*)_2645)[((int64_t)_2715)]))) = _2729;
-  *(double*)(((&((double*)_2711)[((int64_t)_2715)]))) = _2728;
-  if ((_2720 == UINT64_C(16))) {
-    goto _2894;
+_2671:
+  _2569 = _2569__PHI_TEMPORARY;
+  _2570 = _2570__PHI_TEMPORARY;
+  _2571 = llvm_add_u64(_2569, 1);
+  _2572 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g1coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2569)))])));
+  _2573 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2562, _2570, _2572);
+  if ((_2571 == UINT64_C(2))) {
+    _2574__PHI_TEMPORARY = 0;   /* for PHI node */
+    _2575__PHI_TEMPORARY = 0.16653861138229145;   /* for PHI node */
+    goto _2672;
   } else {
-    _2715__PHI_TEMPORARY = _2720;   /* for PHI node */
-    _2716__PHI_TEMPORARY = _2722;   /* for PHI node */
-    _2717__PHI_TEMPORARY = _2721;   /* for PHI node */
-    _2718__PHI_TEMPORARY = _2729;   /* for PHI node */
-    _2719__PHI_TEMPORARY = _2728;   /* for PHI node */
-    goto _2893;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2894:
-  fixderivative_levin((&_2643), (&_2641), (&_2646), (&_2644));
-  _2730 = _2624 * 2;
-  _2731 = 3.1415926535897931 / _2730;
-  _2732 =  /*tail*/ sqrt(_2731);
-  _2733 =  /*tail*/ sqrt(_2731);
-  _2734 = _2641;
-  _2735 = _2643;
-  _2736 = _2732 * _2735;
-  _2737 = -(_2624);
-  _2738 =  /*tail*/ exp(_2737);
-  _2739 =  /*tail*/ exp(_2737);
-  _2740 = _2736 * _2738;
-  _2741 = ((((llvm_select_f64((llvm_fcmp_ueq(_2731, 0)), 0, ((_2625 * -6.2831853071795862) / (((_2624 * 4) * _2730) * _2733)))) * _2735) + (_2734 * _2732)) * _2738) - ((_2736 * _2625) * _2739);
-  _2877__PHI_TEMPORARY = _2741;   /* for PHI node */
-  _2878__PHI_TEMPORARY = _2740;   /* for PHI node */
-  goto _2882;
-
-_2892:
-  _2742 = _2652 - _2710;
-  _2635 = 0;
-  _2637 = 0;
-  _2743 = ((&((uint8_t*)(&_2640))[((int64_t)128)]));
-  _2744 = _2742 * (_2742 * 4);
-  _2745 = _2624 * 8;
-  _2746 = _2625 * -8;
-  _2747__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2748__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2749__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2750__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2751__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _2895;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2895:
-  _2747 = _2747__PHI_TEMPORARY;
-  _2748 = _2748__PHI_TEMPORARY;
-  _2749 = _2749__PHI_TEMPORARY;
-  _2750 = _2750__PHI_TEMPORARY;
-  _2751 = _2751__PHI_TEMPORARY;
-  _2752 = llvm_add_u64(_2747, 1);
-  _2753 = _2749 + _2751;
-  _2754 = _2750 + _2748;
-  _2755 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_2747)])));
-  _2756 = _2744 - _2755;
-  _2757 = ((double)(uint32_t)(((uint32_t)_2752)));
-  _2758 = _2745 * _2757;
-  _2759 = _2756 / _2758;
-  _2760 = _2751 * _2759;
-  _2761 = ((((_2746 * _2757) * _2751) * _2756) / (_2758 * _2758)) + (_2759 * _2750);
-  *(double*)(((&((double*)(&_2638))[((int64_t)_2747)]))) = _2754;
-  *(double*)(((&((double*)(&_2640))[((int64_t)_2747)]))) = _2753;
-  *(double*)(((&((double*)_2639)[((int64_t)_2747)]))) = _2761;
-  *(double*)(((&((double*)_2743)[((int64_t)_2747)]))) = _2760;
-  if ((_2752 == UINT64_C(16))) {
-    goto _2896;
-  } else {
-    _2747__PHI_TEMPORARY = _2752;   /* for PHI node */
-    _2748__PHI_TEMPORARY = _2754;   /* for PHI node */
-    _2749__PHI_TEMPORARY = _2753;   /* for PHI node */
-    _2750__PHI_TEMPORARY = _2761;   /* for PHI node */
-    _2751__PHI_TEMPORARY = _2760;   /* for PHI node */
-    goto _2895;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2896:
-  fixderivative_levin((&_2637), (&_2635), (&_2640), (&_2638));
-  _2762 = _2624 * 2;
-  _2763 = 3.1415926535897931 / _2762;
-  _2764 =  /*tail*/ sqrt(_2763);
-  _2765 =  /*tail*/ sqrt(_2763);
-  _2766 = (_2625 * -6.2831853071795862) / (((_2624 * 4) * _2762) * _2765);
-  _2767 = _2635;
-  _2768 = _2637;
-  _2769 = _2742 + 1;
-  _2630 = 0;
-  _2631 = 0;
-  _2770 = ((&((uint8_t*)(&_2634))[((int64_t)128)]));
-  _2771 = _2769 * (_2769 * 4);
-  _2772__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2773__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2774__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2775__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2776__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _2897;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2897:
-  _2772 = _2772__PHI_TEMPORARY;
-  _2773 = _2773__PHI_TEMPORARY;
-  _2774 = _2774__PHI_TEMPORARY;
-  _2775 = _2775__PHI_TEMPORARY;
-  _2776 = _2776__PHI_TEMPORARY;
-  _2777 = llvm_add_u64(_2772, 1);
-  _2778 = _2774 + _2776;
-  _2779 = _2775 + _2773;
-  _2780 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_2772)])));
-  _2781 = _2771 - _2780;
-  _2782 = ((double)(uint32_t)(((uint32_t)_2777)));
-  _2783 = _2745 * _2782;
-  _2784 = _2781 / _2783;
-  _2785 = _2776 * _2784;
-  _2786 = ((((_2746 * _2782) * _2776) * _2781) / (_2783 * _2783)) + (_2784 * _2775);
-  *(double*)(((&((double*)(&_2632))[((int64_t)_2772)]))) = _2779;
-  *(double*)(((&((double*)(&_2634))[((int64_t)_2772)]))) = _2778;
-  *(double*)(((&((double*)_2633)[((int64_t)_2772)]))) = _2786;
-  *(double*)(((&((double*)_2770)[((int64_t)_2772)]))) = _2785;
-  if ((_2777 == UINT64_C(16))) {
-    goto _2898;
-  } else {
-    _2772__PHI_TEMPORARY = _2777;   /* for PHI node */
-    _2773__PHI_TEMPORARY = _2779;   /* for PHI node */
-    _2774__PHI_TEMPORARY = _2778;   /* for PHI node */
-    _2775__PHI_TEMPORARY = _2786;   /* for PHI node */
-    _2776__PHI_TEMPORARY = _2785;   /* for PHI node */
-    goto _2897;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2898:
-  _2787 = llvm_select_f64((llvm_fcmp_ueq(_2763, 0)), 0, _2766);
-  _2788 = _2764 * _2768;
-  _2789 = (_2787 * _2768) + (_2767 * _2764);
-  fixderivative_levin((&_2631), (&_2630), (&_2634), (&_2632));
-  _2790 =  /*tail*/ sqrt(_2763);
-  _2791 = 2 / _2624;
-  _2792 = _2625 * -2;
-  _2793 = _2652 + 0.5;
-  if ((llvm_fcmp_ogt(_2793, _2769))) {
-    goto _2899;
-  } else {
-    _2807__PHI_TEMPORARY = _2789;   /* for PHI node */
-    _2808__PHI_TEMPORARY = _2788;   /* for PHI node */
-    goto _2900;
-  }
-
-_2899:
-  _2794 = _2631;
-  _2795 = _2630;
-  _2796 = _2790 * _2794;
-  _2797 = (_2795 * _2790) + (_2794 * _2787);
-  _2798 = 1 / (_2624 * _2624);
-  _2799__PHI_TEMPORARY = _2797;   /* for PHI node */
-  _2800__PHI_TEMPORARY = _2796;   /* for PHI node */
-  _2801__PHI_TEMPORARY = _2789;   /* for PHI node */
-  _2802__PHI_TEMPORARY = _2788;   /* for PHI node */
-  _2803__PHI_TEMPORARY = _2769;   /* for PHI node */
-  goto _2901;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2901:
-  _2799 = _2799__PHI_TEMPORARY;
-  _2800 = _2800__PHI_TEMPORARY;
-  _2801 = _2801__PHI_TEMPORARY;
-  _2802 = _2802__PHI_TEMPORARY;
-  _2803 = _2803__PHI_TEMPORARY;
-  _2804 = _2791 * _2803;
-  _2805 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2804, _2800, _2802);
-  _2806 = _2803 + 1;
-  if ((llvm_fcmp_olt(_2806, _2793))) {
-    _2799__PHI_TEMPORARY = (((_2804 * _2799) + _2801) + (((_2792 * _2800) * _2803) * _2798));   /* for PHI node */
-    _2800__PHI_TEMPORARY = _2805;   /* for PHI node */
-    _2801__PHI_TEMPORARY = _2799;   /* for PHI node */
-    _2802__PHI_TEMPORARY = _2800;   /* for PHI node */
-    _2803__PHI_TEMPORARY = _2806;   /* for PHI node */
-    goto _2901;
-  } else {
-    _2807__PHI_TEMPORARY = _2799;   /* for PHI node */
-    _2808__PHI_TEMPORARY = _2800;   /* for PHI node */
-    goto _2900;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2900:
-  _2807 = _2807__PHI_TEMPORARY;
-  _2808 = _2808__PHI_TEMPORARY;
-  _2809 = -(_2624);
-  _2810 =  /*tail*/ exp(_2809);
-  _2811 =  /*tail*/ exp(_2809);
-  _2812 = _2808 * _2810;
-  _2813 = (_2810 * _2807) - ((_2808 * _2625) * _2811);
-  _2877__PHI_TEMPORARY = _2813;   /* for PHI node */
-  _2878__PHI_TEMPORARY = _2812;   /* for PHI node */
-  goto _2882;
-
-_2890:
-  _2814 = round(_2652);
-  _2815 =  /*tail*/ llvm_OC_fabs_OC_f64((_2652 - _2814));
-  if ((llvm_fcmp_olt(_2815, 1.0000000000000001E-5))) {
-    goto _2902;
-  } else {
-    goto _2903;
-  }
-
-_2902:
-  _2816 = _2652 - (llvm_select_f64((llvm_fcmp_ogt((_2652 - _2710), 0.5)), (_2710 + -1), _2710));
-  _2817 =  /*tail*/ fwddiffebesselk_temme_series_OC_4(_2816, _2624, _2625);
-  _2818 = (_2817.field0);
-  _2819 = (_2817.field1);
-  _2820 = (_2818.field0);
-  _2821 = (_2819.field0);
-  _2822 = _2816 + 1;
-  _2823 = 2 / _2624;
-  _2824 = _2625 * -2;
-  _2825 = _2652 + 0.5;
-  if ((llvm_fcmp_ogt(_2825, _2822))) {
-    goto _2904;
-  } else {
-    _2877__PHI_TEMPORARY = _2821;   /* for PHI node */
-    _2878__PHI_TEMPORARY = _2820;   /* for PHI node */
-    goto _2882;
-  }
-
-_2904:
-  _2826 = (_2818.field1);
-  _2827 = (_2819.field1);
-  _2828 = 1 / (_2624 * _2624);
-  _2829__PHI_TEMPORARY = _2827;   /* for PHI node */
-  _2830__PHI_TEMPORARY = _2826;   /* for PHI node */
-  _2831__PHI_TEMPORARY = _2821;   /* for PHI node */
-  _2832__PHI_TEMPORARY = _2820;   /* for PHI node */
-  _2833__PHI_TEMPORARY = _2822;   /* for PHI node */
-  goto _2905;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2905:
-  _2829 = _2829__PHI_TEMPORARY;
-  _2830 = _2830__PHI_TEMPORARY;
-  _2831 = _2831__PHI_TEMPORARY;
-  _2832 = _2832__PHI_TEMPORARY;
-  _2833 = _2833__PHI_TEMPORARY;
-  _2834 = _2823 * _2833;
-  _2835 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2834, _2830, _2832);
-  _2836 = _2833 + 1;
-  if ((llvm_fcmp_olt(_2836, _2825))) {
-    _2829__PHI_TEMPORARY = (((_2834 * _2829) + _2831) + (((_2824 * _2830) * _2833) * _2828));   /* for PHI node */
-    _2830__PHI_TEMPORARY = _2835;   /* for PHI node */
-    _2831__PHI_TEMPORARY = _2829;   /* for PHI node */
-    _2832__PHI_TEMPORARY = _2830;   /* for PHI node */
-    _2833__PHI_TEMPORARY = _2836;   /* for PHI node */
-    goto _2905;
-  } else {
-    _2877__PHI_TEMPORARY = _2829;   /* for PHI node */
-    _2878__PHI_TEMPORARY = _2830;   /* for PHI node */
-    goto _2882;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2903:
-  _2837 =  /*tail*/ gamma(_2652);
-  _2838 = _2624 * _2624;
-  _2839 = (_2624 * 2) * _2625;
-  _2629 = 1;
-  _2840__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2841__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2842__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2843__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2844__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2845__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2846__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2847__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2848__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2849__PHI_TEMPORARY = 4;   /* for PHI node */
-  goto _2906;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_2906:
-  _2840 = _2840__PHI_TEMPORARY;
-  _2841 = _2841__PHI_TEMPORARY;
-  _2842 = _2842__PHI_TEMPORARY;
-  _2843 = _2843__PHI_TEMPORARY;
-  _2844 = _2844__PHI_TEMPORARY;
-  _2845 = _2845__PHI_TEMPORARY;
-  _2846 = _2846__PHI_TEMPORARY;
-  _2847 = _2847__PHI_TEMPORARY;
-  _2848 = _2848__PHI_TEMPORARY;
-  _2849 = _2849__PHI_TEMPORARY;
-  _2850 = llvm_add_u32(_2842, 1);
-  _2851 = _2840 + _2844;
-  _2852 = _2843 + _2841;
-  _2853 = _2846 + _2848;
-  _2854 = _2847 + _2845;
-  _2855 = ((double)(uint32_t)_2850);
-  _2856 = (_2855 - _2652) * _2849;
-  _2857 = _2838 / _2856;
-  _2858 = _2840 * _2857;
-  _2859 = (((_2840 * _2839) * _2856) / (_2856 * _2856)) + (_2857 * _2841);
-  _2626 = _2859;
-  _2627 = _2858;
-  fixderivative_isconverged((&_2627), (&_2626), (&_2629), (&_2628));
-  _2860 = _2629;
-  if ((llvm_fcmp_olt(_2860, 0))) {
-    goto _2907;
-  } else {
-    goto _2908;
-  }
-
-_2908:
-  _2861 = (_2652 + _2855) * _2849;
-  _2862 = _2838 / _2861;
-  _2863 = _2848 * _2862;
-  _2864 = (((_2848 * _2839) * _2861) / (_2861 * _2861)) + (_2862 * _2847);
-  _2865 = _2849 + 4;
-  if ((_2850 == 49u)) {
-    goto _2907;
-  } else {
-    _2840__PHI_TEMPORARY = _2858;   /* for PHI node */
-    _2841__PHI_TEMPORARY = _2859;   /* for PHI node */
-    _2842__PHI_TEMPORARY = _2850;   /* for PHI node */
-    _2843__PHI_TEMPORARY = _2852;   /* for PHI node */
-    _2844__PHI_TEMPORARY = _2851;   /* for PHI node */
-    _2845__PHI_TEMPORARY = _2854;   /* for PHI node */
-    _2846__PHI_TEMPORARY = _2853;   /* for PHI node */
-    _2847__PHI_TEMPORARY = _2864;   /* for PHI node */
-    _2848__PHI_TEMPORARY = _2863;   /* for PHI node */
-    _2849__PHI_TEMPORARY = _2865;   /* for PHI node */
-    goto _2906;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_2907:
-  _2866 =  /*tail*/ sinpi((-(_2652)));
-  _2867 = 3.1415926535897931 / (_2652 * (_2837 * _2866));
-  _2868 = _2624 * 0.5;
-  _2869 =  /*tail*/ pow(_2868, _2652);
-  _2870 =  /*tail*/ pow(_2868, (_2652 + -1));
-  _2871 = ((_2652 * _2625) * 0.5) * _2870;
-  _2872 = (_2869 * _2869) * _2867;
-  _2873 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2837, _2851, (_2853 * _2872));
-  _2874 = _2869 * 2;
-  _2875 = _2873 / _2874;
-  _2876 = (((((_2872 * _2854) + (_2852 * _2837)) + ((((_2853 * 2) * _2869) * _2871) * _2867)) * _2874) - ((_2871 * 2) * _2873)) / (_2874 * _2874);
-  _2877__PHI_TEMPORARY = _2876;   /* for PHI node */
-  _2878__PHI_TEMPORARY = _2875;   /* for PHI node */
-  goto _2882;
-
-_2882:
-  _2877 = _2877__PHI_TEMPORARY;
-  _2878 = _2878__PHI_TEMPORARY;
-  _2879 = llvm_ctor_unnamed_1(0, 0);
-  _2879.field0 = _2878;
-  _2880 = _2879;
-  _2880.field1 = _2877;
-  return _2880;
-}
-
-
-static struct l_unnamed_1 fwddiffebesselk_OC_10(double _2909, double _2910, double _2911) {
-  double _2912;    /* Address-exposed local */
-  double _2913;    /* Address-exposed local */
-  double _2914;    /* Address-exposed local */
-  double _2915;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_5_double _2916 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2917;    /* Address-exposed local */
-  double _2918;    /* Address-exposed local */
-  double _2919;    /* Address-exposed local */
-  double _2920;    /* Address-exposed local */
-  double _2921;    /* Address-exposed local */
-  double _2922;    /* Address-exposed local */
-  double _2923;    /* Address-exposed local */
-  double _2924;    /* Address-exposed local */
-  double _2925;    /* Address-exposed local */
-  double _2926;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _2927 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  void* _2928;
-  __PREFIXALIGN__(16) struct l_array_32_double _2929 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2930;    /* Address-exposed local */
-  void* _2931;
-  double _2932;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _2933 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  void* _2934;
-  __PREFIXALIGN__(16) struct l_array_32_double _2935 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2936;    /* Address-exposed local */
-  void* _2937;
-  double _2938;    /* Address-exposed local */
-  __PREFIXALIGN__(16) struct l_array_32_double _2939 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  void* _2940;
-  __PREFIXALIGN__(16) struct l_array_32_double _2941 __POSTFIXALIGN__(16);    /* Address-exposed local */
-  double _2942;    /* Address-exposed local */
-  void* _2943;
-  double _2944;    /* Address-exposed local */
-  double _2945;    /* Address-exposed local */
-  double _2946;    /* Address-exposed local */
-  double _2947;
-  double _2948;
-  double _2949;
-  double _2950;
-  double _2951;
-  double _2952;
-  double _2953;
-  double _2954;
-  double _2955;
-  double _2956;
-  double _2957;
-  double _2958;
-  double _2959;
-  double _2960;
-  double _2961;
-  double _2962;
-  double _2963;
-  double _2964;
-  double _2965;
-  double _2966;
-  double _2967;
-  double _2968;
-  double _2969;
-  double _2970;
-  double _2971;
-  struct l_unnamed_1 _2972;
-  double _2973;
-  double _2974;
-  double _2975;
-  double _2976;
-  double _2977;
-  double _2978;
-  double _2979;
-  double _2980;
-  double _2981;
-  double _2982;
-  double _2983;
-  double _2984;
-  double _2985;
-  double _2985__PHI_TEMPORARY;
-  double _2986;
-  double _2986__PHI_TEMPORARY;
-  uint32_t _2987;
-  uint32_t _2987__PHI_TEMPORARY;
-  double _2988;
-  double _2988__PHI_TEMPORARY;
-  double _2989;
-  double _2989__PHI_TEMPORARY;
-  uint32_t _2990;
-  uint32_t _2991;
-  double _2992;
-  double _2993;
-  double _2994;
-  double _2995;
-  double _2996;
-  double _2997;
-  double _2998;
-  double _2999;
-  double _3000;
-  double _3001;
-  double _3002;
-  double _3003;
-  double _3004;
-  double _3005;
-  double _3006;
-  double _3007;
-  double _3008;
-  double _3009;
-  double _3010;
-  void* _3011;
-  double _3012;
-  double _3013;
-  double _3014;
-  double _3015;
-  uint64_t _3016;
-  uint64_t _3016__PHI_TEMPORARY;
-  double _3017;
-  double _3017__PHI_TEMPORARY;
-  double _3018;
-  double _3018__PHI_TEMPORARY;
-  double _3019;
-  double _3019__PHI_TEMPORARY;
-  double _3020;
-  double _3020__PHI_TEMPORARY;
-  uint64_t _3021;
-  double _3022;
-  double _3023;
-  double _3024;
-  double _3025;
-  double _3026;
-  double _3027;
-  double _3028;
-  double _3029;
-  double _3030;
-  double _3031;
-  double _3032;
-  double _3033;
-  double _3034;
-  double _3035;
-  double _3036;
-  double _3037;
-  double _3038;
-  double _3039;
-  double _3040;
-  double _3041;
-  double _3042;
-  double _3043;
-  void* _3044;
-  double _3045;
-  double _3046;
-  double _3047;
-  double _3048;
-  double _3049;
-  double _3050;
-  uint64_t _3051;
-  uint64_t _3051__PHI_TEMPORARY;
-  double _3052;
-  double _3052__PHI_TEMPORARY;
-  double _3053;
-  double _3053__PHI_TEMPORARY;
-  double _3054;
-  double _3054__PHI_TEMPORARY;
-  double _3055;
-  double _3055__PHI_TEMPORARY;
-  uint64_t _3056;
-  double _3057;
-  double _3058;
-  double _3059;
-  double _3060;
-  double _3061;
-  double _3062;
-  double _3063;
-  double _3064;
-  double _3065;
-  double _3066;
-  double _3067;
-  double _3068;
-  double _3069;
-  double _3070;
-  double _3071;
-  double _3072;
-  double _3073;
-  void* _3074;
-  double _3075;
-  double _3076;
-  double _3077;
-  uint64_t _3078;
-  uint64_t _3078__PHI_TEMPORARY;
-  double _3079;
-  double _3079__PHI_TEMPORARY;
-  double _3080;
-  double _3080__PHI_TEMPORARY;
-  double _3081;
-  double _3081__PHI_TEMPORARY;
-  double _3082;
-  double _3082__PHI_TEMPORARY;
-  uint64_t _3083;
-  double _3084;
-  double _3085;
-  double _3086;
-  double _3087;
-  double _3088;
-  double _3089;
-  double _3090;
-  double _3091;
-  double _3092;
-  double _3093;
-  double _3094;
-  double _3095;
-  double _3096;
-  double _3097;
-  double _3098;
-  double _3099;
-  double _3100;
-  double _3101;
-  double _3102;
-  double _3103;
-  double _3104;
-  double _3105;
-  double _3106;
-  double _3106__PHI_TEMPORARY;
-  double _3107;
-  double _3107__PHI_TEMPORARY;
-  double _3108;
-  double _3108__PHI_TEMPORARY;
-  double _3109;
-  double _3109__PHI_TEMPORARY;
-  double _3110;
-  double _3110__PHI_TEMPORARY;
-  double _3111;
-  double _3112;
-  double _3113;
-  double _3114;
-  double _3114__PHI_TEMPORARY;
-  double _3115;
-  double _3115__PHI_TEMPORARY;
-  double _3116;
-  double _3117;
-  double _3118;
-  double _3119;
-  double _3120;
-  double _3121;
-  double _3122;
-  double _3123;
-  double _3124;
-  double _3125;
-  double _3126;
-  uint64_t _3127;
-  uint64_t _3127__PHI_TEMPORARY;
-  double _3128;
-  double _3128__PHI_TEMPORARY;
-  double _3129;
-  double _3129__PHI_TEMPORARY;
-  uint64_t _3130;
-  double _3131;
-  double _3132;
-  double _3133;
-  double _3134;
-  uint64_t _3135;
-  uint64_t _3135__PHI_TEMPORARY;
-  double _3136;
-  double _3136__PHI_TEMPORARY;
-  double _3137;
-  double _3137__PHI_TEMPORARY;
-  uint64_t _3138;
-  double _3139;
-  double _3140;
-  double _3141;
-  uint64_t _3142;
-  uint64_t _3142__PHI_TEMPORARY;
-  double _3143;
-  double _3143__PHI_TEMPORARY;
-  double _3144;
-  double _3144__PHI_TEMPORARY;
-  uint64_t _3145;
-  double _3146;
-  double _3147;
-  double _3148;
-  double _3149;
-  double _3150;
-  double _3151;
-  double _3152;
-  double _3153;
-  void* _3154;
-  double _3155;
-  uint64_t _3156;
-  uint64_t _3156__PHI_TEMPORARY;
-  double _3157;
-  double _3157__PHI_TEMPORARY;
-  double _3158;
-  double _3158__PHI_TEMPORARY;
-  uint64_t _3159;
-  double _3160;
-  double _3161;
-  double _3162;
-  double _3163;
-  double _3164;
-  double _3165;
-  double _3166;
-  double _3167;
-  double _3168;
-  double _3169;
-  double _3170;
-  double _3171;
-  uint64_t _3172;
-  uint64_t _3172__PHI_TEMPORARY;
-  double _3173;
-  double _3173__PHI_TEMPORARY;
-  double _3174;
-  double _3174__PHI_TEMPORARY;
-  uint64_t _3175;
-  double _3176;
-  double _3177;
-  double _3178;
-  double _3179;
-  double _3180;
-  double _3181;
-  double _3182;
-  double _3183;
-  double _3184;
-  uint64_t _3185;
-  uint64_t _3185__PHI_TEMPORARY;
-  double _3186;
-  double _3186__PHI_TEMPORARY;
-  double _3187;
-  double _3187__PHI_TEMPORARY;
-  uint64_t _3188;
-  double _3189;
-  double _3190;
-  double _3191;
-  double _3192;
-  double _3193;
-  double _3194;
-  double _3195;
-  double _3196;
-  double _3197;
-  double _3198;
-  double _3199;
-  double _3200;
-  double _3201;
-  double _3202;
-  double _3203;
-  double _3204;
-  uint32_t _3205;
-  uint32_t _3205__PHI_TEMPORARY;
-  double _3206;
-  double _3206__PHI_TEMPORARY;
-  double _3207;
-  double _3207__PHI_TEMPORARY;
-  double _3208;
-  double _3208__PHI_TEMPORARY;
-  double _3209;
-  double _3209__PHI_TEMPORARY;
-  double _3210;
-  double _3210__PHI_TEMPORARY;
-  double _3211;
-  double _3211__PHI_TEMPORARY;
-  double _3212;
-  double _3212__PHI_TEMPORARY;
-  double _3213;
-  double _3213__PHI_TEMPORARY;
-  double _3214;
-  double _3214__PHI_TEMPORARY;
-  double _3215;
-  double _3215__PHI_TEMPORARY;
-  double _3216;
-  double _3216__PHI_TEMPORARY;
-  double _3217;
-  double _3217__PHI_TEMPORARY;
-  double _3218;
-  double _3219;
-  double _3220;
-  double _3221;
-  double _3222;
-  double _3223;
-  double _3224;
-  double _3225;
-  double _3226;
-  double _3227;
-  double _3228;
-  double _3229;
-  uint32_t _3230;
-  double _3231;
-  double _3232;
-  double _3233;
-  double _3234;
-  double _3235;
-  double _3236;
-  double _3237;
-  double _3238;
-  double _3239;
-  double _3240;
-  double _3241;
-  double _3242;
-  double _3243;
-  double _3244;
-  double _3245;
-  double _3246;
-  double _3247;
-  double _3248;
-  double _3249;
-  double _3250;
-  double _3251;
-  double _3252;
-  double _3253;
-  double _3254;
-  double _3254__PHI_TEMPORARY;
-  double _3255;
-  double _3255__PHI_TEMPORARY;
-  double _3256;
-  double _3256__PHI_TEMPORARY;
-  double _3257;
-  double _3257__PHI_TEMPORARY;
-  double _3258;
-  double _3258__PHI_TEMPORARY;
-  double _3259;
-  double _3260;
-  double _3261;
-  struct l_unnamed_1 _3262;
-  double _3263;
-  double _3264;
-  double _3265;
-  double _3266;
-  double _3267;
-  double _3267__PHI_TEMPORARY;
-  double _3268;
-  double _3268__PHI_TEMPORARY;
-  uint32_t _3269;
-  uint32_t _3269__PHI_TEMPORARY;
-  double _3270;
-  double _3270__PHI_TEMPORARY;
-  double _3271;
-  double _3271__PHI_TEMPORARY;
-  double _3272;
-  double _3272__PHI_TEMPORARY;
-  double _3273;
-  double _3273__PHI_TEMPORARY;
-  double _3274;
-  double _3274__PHI_TEMPORARY;
-  double _3275;
-  double _3275__PHI_TEMPORARY;
-  double _3276;
-  double _3276__PHI_TEMPORARY;
-  uint32_t _3277;
-  double _3278;
-  double _3279;
-  double _3280;
-  double _3281;
-  double _3282;
-  double _3283;
-  double _3284;
-  double _3285;
-  double _3286;
-  double _3287;
-  double _3288;
-  double _3289;
-  double _3290;
-  double _3291;
-  double _3292;
-  double _3293;
-  double _3294;
-  double _3295;
-  double _3296;
-  double _3297;
-  double _3298;
-  double _3299;
-  double _3300;
-  double _3301;
-  double _3302;
-  double _3303;
-  double _3304;
-  double _3305;
-  double _3306;
-  double _3307;
-  double _3308;
-  double _3309;
-  double _3310;
-  double _3311;
-  double _3312;
-  double _3312__PHI_TEMPORARY;
-  double _3313;
-  double _3313__PHI_TEMPORARY;
-  struct l_unnamed_1 _3314;
-  struct l_unnamed_1 _3315;
-
-  _2928 = ((&((uint8_t*)(&_2927))[((int64_t)128)]));
-  _2931 = memset((&_2927), 0, 256);
-  _2934 = ((&((uint8_t*)(&_2933))[((int64_t)128)]));
-  _2937 = memset((&_2933), 0, 256);
-  _2940 = ((&((uint8_t*)(&_2939))[((int64_t)128)]));
-  _2943 = memset((&_2939), 0, 256);
-  _2947 =  /*tail*/ llvm_OC_fabs_OC_f64(_2909);
-  _2948 = llvm_select_f64((llvm_fcmp_olt(_2909, 0)), -1, 1);
-  if ((llvm_fcmp_ugt(_2910, 0))) {
-    goto _3316;
-  } else {
-    _3312__PHI_TEMPORARY = 0;   /* for PHI node */
-    _3313__PHI_TEMPORARY = (*(double*)&FPConstant2);   /* for PHI node */
-    goto _3317;
-  }
-
-_3316:
-  if (((llvm_fcmp_ogt(_2947, 25)) | (llvm_fcmp_ogt(_2910, 35)))) {
-    goto _3318;
-  } else {
-    goto _3319;
-  }
-
-_3318:
-  _2949 = _2910 / _2947;
-  _2950 = _2909 * _2909;
-  _2951 = ((_2947 * _2911) - (_2948 * _2910)) / _2950;
-  _2952 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2949, _2949, 1);
-  _2953 =  /*tail*/ llvm_OC_sqrt_OC_f64(_2952);
-  _2954 = llvm_select_f64((llvm_fcmp_ueq(_2952, 0)), 0, (((_2949 * 2) * _2951) / (_2953 * 2)));
-  _2955 =  /*tail*/ log(_2949);
-  _2956 = _2953 + 1;
-  _2957 =  /*tail*/ log(_2956);
-  _2958 = (_2953 + _2955) - _2957;
-  _2959 = 1 / _2947;
-  _2960 =  /*tail*/ llvm_OC_sqrt_OC_f64(_2959);
-  _2961 = _2950 * 2;
-  _2962 = _2960 * 1.2533141373155001;
-  _2963 = _2958 * (-(_2947));
-  _2964 =  /*tail*/ exp(_2963);
-  _2965 =  /*tail*/ exp(_2963);
-  _2966 = _2962 * _2964;
-  _2967 =  /*tail*/ llvm_OC_sqrt_OC_f64(_2953);
-  _2968 = _2966 / _2967;
-  _2969 = llvm_select_f64((llvm_fcmp_ole(_2947, _2910)), _2910, _2947);
-  _2970 = llvm_select_f64((llvm_fcmp_ole(_2947, _2910)), _2947, _2910);
-  _2971 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2969, _2969, (_2970 * _2970));
-  _2972 =  /*tail*/ fwddiffeUk_poly_Kn((1 / _2953), ((-(_2954)) / _2952), _2947, _2948, (_2950 / _2971), ((((_2909 * 2) * _2971) - (_2961 * (((llvm_select_f64((llvm_fcmp_ole(_2947, _2910)), _2911, _2948)) * _2969) + ((llvm_select_f64((llvm_fcmp_ole(_2947, _2910)), _2948, _2911)) * _2970)))) / (_2971 * _2971)));
-  _2973 = (_2972.field0);
-  _2974 = _2968 * _2973;
-  _2975 = (((((((_2965 * _2962) * ((_2958 * (-(_2948))) - (((_2954 + (_2951 / _2949)) - (_2954 / _2956)) * _2947))) + (_2964 * (llvm_select_f64((llvm_fcmp_ueq(_2959, 0)), 0, ((_2948 * -1.2533141373155001) / (_2961 * _2960)))))) * _2967) - (_2966 * (llvm_select_f64((llvm_fcmp_ueq(_2953, 0)), 0, (_2954 / (_2967 * 2)))))) * _2973) / _2953) + (((_2972.field1)) * _2968);
-  _3312__PHI_TEMPORARY = _2975;   /* for PHI node */
-  _3313__PHI_TEMPORARY = _2974;   /* for PHI node */
-  goto _3317;
-
-_3319:
-  if ((llvm_fcmp_olt((((_2909 * _2909) / 36) + 24), _2910))) {
-    goto _3320;
-  } else {
-    goto _3321;
-  }
-
-_3320:
-  _2976 = _2910 * -0.5;
-  _2977 =  /*tail*/ exp(_2976);
-  _2978 =  /*tail*/ exp(_2976);
-  _2979 = _2910 * 8;
-  _2980 = 1 / _2979;
-  _2981 = _2911 * 8;
-  _2982 = _2947 * 4;
-  _2983 = (_2980 * _2948) * (_2947 * 8);
-  _2984 = 1 / (_2979 * _2979);
-  _2985__PHI_TEMPORARY = 1;   /* for PHI node */
-  _2986__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2987__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2988__PHI_TEMPORARY = 0;   /* for PHI node */
-  _2989__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _3322;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3322:
-  _2985 = _2985__PHI_TEMPORARY;
-  _2986 = _2986__PHI_TEMPORARY;
-  _2987 = _2987__PHI_TEMPORARY;
-  _2988 = _2988__PHI_TEMPORARY;
-  _2989 = _2989__PHI_TEMPORARY;
-  _2990 = llvm_add_u32(_2987, 1);
-  _2991 = llvm_add_u32((_2990 << 1), -1);
-  _2992 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2982, _2947, (-((((double)(uint32_t)(llvm_mul_u32(_2991, _2991)))))));
-  _2993 = ((double)(uint32_t)_2990);
-  _2994 = _2992 / _2993;
-  _2995 = _2980 * _2994;
-  _2996 = _2985 * _2995;
-  _2997 = ((((_2983 * _2993) / (_2993 * _2993)) - ((_2981 * _2994) * _2984)) * _2985) + (_2995 * _2986);
-  _2945 = _2997;
-  _2946 = _2996;
-  _2998 = _2989 + _2996;
-  _2999 = _2997 + _2988;
-  fixderivative_isconverged((&_2946), (&_2945), (&_2944), (&_2942));
-  _3000 = _2944;
-  if ((llvm_select_bool((llvm_fcmp_olt(_3000, 0)), 1, (_2990 == 20u)))) {
-    goto _3323;
-  } else {
-    _2985__PHI_TEMPORARY = _2996;   /* for PHI node */
-    _2986__PHI_TEMPORARY = _2997;   /* for PHI node */
-    _2987__PHI_TEMPORARY = _2990;   /* for PHI node */
-    _2988__PHI_TEMPORARY = _2999;   /* for PHI node */
-    _2989__PHI_TEMPORARY = _2998;   /* for PHI node */
-    goto _3322;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_3323:
-  _3001 = (_2911 * -0.5) * _2978;
-  _3002 = _2910 * 2;
-  _3003 = 3.1415926535897931 / _3002;
-  _3004 =  /*tail*/ sqrt(_3003);
-  _3005 =  /*tail*/ sqrt(_3003);
-  _3006 = _2998 * _3004;
-  _3007 = _2977 * _3006;
-  _3008 = _2977 * _3007;
-  _3009 = ((((((llvm_select_f64((llvm_fcmp_ueq(_3003, 0)), 0, ((_2911 * -6.2831853071795862) / (((_2910 * 4) * _3002) * _3005)))) * _2998) + (_3004 * _2999)) * _2977) + (_3006 * _3001)) * _2977) + (_3007 * _3001);
-  _3312__PHI_TEMPORARY = _3009;   /* for PHI node */
-  _3313__PHI_TEMPORARY = _3008;   /* for PHI node */
-  goto _3317;
-
-_3321:
-  _3010 =  /*tail*/ llvm_OC_floor_OC_f64(_2947);
-  if ((llvm_fcmp_ogt(_2910, 1.5))) {
-    goto _3324;
-  } else {
-    goto _3325;
-  }
-
-_3324:
-  if ((llvm_fcmp_olt(_2947, 2))) {
-    goto _3326;
-  } else {
-    goto _3327;
-  }
-
-_3326:
-  _2936 = 0;
-  _2938 = 0;
-  _3011 = ((&((uint8_t*)(&_2941))[((int64_t)128)]));
-  _3012 = _2947 * (_2947 * 4);
-  _3013 = (_2947 * 8) * _2948;
-  _3014 = _2910 * 8;
-  _3015 = _2911 * 8;
-  _3016__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3017__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3018__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3019__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3020__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _3328;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3328:
-  _3016 = _3016__PHI_TEMPORARY;
-  _3017 = _3017__PHI_TEMPORARY;
-  _3018 = _3018__PHI_TEMPORARY;
-  _3019 = _3019__PHI_TEMPORARY;
-  _3020 = _3020__PHI_TEMPORARY;
-  _3021 = llvm_add_u64(_3016, 1);
-  _3022 = _3018 + _3020;
-  _3023 = _3019 + _3017;
-  _3024 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_3016)])));
-  _3025 = _3012 - _3024;
-  _3026 = ((double)(uint32_t)(((uint32_t)_3021)));
-  _3027 = _3014 * _3026;
-  _3028 = _3025 / _3027;
-  _3029 = _3020 * _3028;
-  _3030 = ((((_3013 * _3027) - ((_3015 * _3026) * _3025)) * _3020) / (_3027 * _3027)) + (_3028 * _3019);
-  *(double*)(((&((double*)(&_2939))[((int64_t)_3016)]))) = _3023;
-  *(double*)(((&((double*)(&_2941))[((int64_t)_3016)]))) = _3022;
-  *(double*)(((&((double*)_2940)[((int64_t)_3016)]))) = _3030;
-  *(double*)(((&((double*)_3011)[((int64_t)_3016)]))) = _3029;
-  if ((_3021 == UINT64_C(16))) {
-    goto _3329;
-  } else {
-    _3016__PHI_TEMPORARY = _3021;   /* for PHI node */
-    _3017__PHI_TEMPORARY = _3023;   /* for PHI node */
-    _3018__PHI_TEMPORARY = _3022;   /* for PHI node */
-    _3019__PHI_TEMPORARY = _3030;   /* for PHI node */
-    _3020__PHI_TEMPORARY = _3029;   /* for PHI node */
-    goto _3328;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_3329:
-  fixderivative_levin((&_2938), (&_2936), (&_2941), (&_2939));
-  _3031 = _2910 * 2;
-  _3032 = 3.1415926535897931 / _3031;
-  _3033 =  /*tail*/ sqrt(_3032);
-  _3034 =  /*tail*/ sqrt(_3032);
-  _3035 = _2936;
-  _3036 = _2938;
-  _3037 = _3033 * _3036;
-  _3038 = -(_2910);
-  _3039 =  /*tail*/ exp(_3038);
-  _3040 =  /*tail*/ exp(_3038);
-  _3041 = _3037 * _3039;
-  _3042 = ((((llvm_select_f64((llvm_fcmp_ueq(_3032, 0)), 0, ((_2911 * -6.2831853071795862) / (((_2910 * 4) * _3031) * _3034)))) * _3036) + (_3035 * _3033)) * _3039) - ((_3037 * _2911) * _3040);
-  _3312__PHI_TEMPORARY = _3042;   /* for PHI node */
-  _3313__PHI_TEMPORARY = _3041;   /* for PHI node */
-  goto _3317;
-
-_3327:
-  _3043 = _2947 - _3010;
-  _2930 = 0;
-  _2932 = 0;
-  _3044 = ((&((uint8_t*)(&_2935))[((int64_t)128)]));
-  _3045 = _3043 * 4;
-  _3046 = _2948 * 4;
-  _3047 = _3043 * _3045;
-  _3048 = (_3045 * _2948) + (_3046 * _3043);
-  _3049 = _2910 * 8;
-  _3050 = _2911 * 8;
-  _3051__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3052__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3053__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3054__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3055__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _3330;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3330:
-  _3051 = _3051__PHI_TEMPORARY;
-  _3052 = _3052__PHI_TEMPORARY;
-  _3053 = _3053__PHI_TEMPORARY;
-  _3054 = _3054__PHI_TEMPORARY;
-  _3055 = _3055__PHI_TEMPORARY;
-  _3056 = llvm_add_u64(_3051, 1);
-  _3057 = _3053 + _3055;
-  _3058 = _3054 + _3052;
-  _3059 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_3051)])));
-  _3060 = _3047 - _3059;
-  _3061 = ((double)(uint32_t)(((uint32_t)_3056)));
-  _3062 = _3049 * _3061;
-  _3063 = _3060 / _3062;
-  _3064 = _3055 * _3063;
-  _3065 = ((((_3062 * _3048) - ((_3050 * _3061) * _3060)) * _3055) / (_3062 * _3062)) + (_3063 * _3054);
-  *(double*)(((&((double*)(&_2933))[((int64_t)_3051)]))) = _3058;
-  *(double*)(((&((double*)(&_2935))[((int64_t)_3051)]))) = _3057;
-  *(double*)(((&((double*)_2934)[((int64_t)_3051)]))) = _3065;
-  *(double*)(((&((double*)_3044)[((int64_t)_3051)]))) = _3064;
-  if ((_3056 == UINT64_C(16))) {
-    goto _3331;
-  } else {
-    _3051__PHI_TEMPORARY = _3056;   /* for PHI node */
-    _3052__PHI_TEMPORARY = _3058;   /* for PHI node */
-    _3053__PHI_TEMPORARY = _3057;   /* for PHI node */
-    _3054__PHI_TEMPORARY = _3065;   /* for PHI node */
-    _3055__PHI_TEMPORARY = _3064;   /* for PHI node */
-    goto _3330;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_3331:
-  fixderivative_levin((&_2932), (&_2930), (&_2935), (&_2933));
-  _3066 = _2910 * 2;
-  _3067 = 3.1415926535897931 / _3066;
-  _3068 =  /*tail*/ sqrt(_3067);
-  _3069 =  /*tail*/ sqrt(_3067);
-  _3070 = (_2911 * -6.2831853071795862) / (((_2910 * 4) * _3066) * _3069);
-  _3071 = _2930;
-  _3072 = _2932;
-  _3073 = _3043 + 1;
-  _2925 = 0;
-  _2926 = 0;
-  _3074 = ((&((uint8_t*)(&_2929))[((int64_t)128)]));
-  _3075 = _3073 * 4;
-  _3076 = _3073 * _3075;
-  _3077 = (_3075 * _2948) + (_3073 * _3046);
-  _3078__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3079__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3080__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3081__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3082__PHI_TEMPORARY = 1;   /* for PHI node */
-  goto _3332;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3332:
-  _3078 = _3078__PHI_TEMPORARY;
-  _3079 = _3079__PHI_TEMPORARY;
-  _3080 = _3080__PHI_TEMPORARY;
-  _3081 = _3081__PHI_TEMPORARY;
-  _3082 = _3082__PHI_TEMPORARY;
-  _3083 = llvm_add_u64(_3078, 1);
-  _3084 = _3080 + _3082;
-  _3085 = _3081 + _3079;
-  _3086 = *(double*)(((&(&__const_OC_besselkx_levin_OC_powk_levin)->array[((int64_t)_3078)])));
-  _3087 = _3076 - _3086;
-  _3088 = ((double)(uint32_t)(((uint32_t)_3083)));
-  _3089 = _3049 * _3088;
-  _3090 = _3087 / _3089;
-  _3091 = _3082 * _3090;
-  _3092 = ((((_3089 * _3077) - ((_3050 * _3088) * _3087)) * _3082) / (_3089 * _3089)) + (_3090 * _3081);
-  *(double*)(((&((double*)(&_2927))[((int64_t)_3078)]))) = _3085;
-  *(double*)(((&((double*)(&_2929))[((int64_t)_3078)]))) = _3084;
-  *(double*)(((&((double*)_2928)[((int64_t)_3078)]))) = _3092;
-  *(double*)(((&((double*)_3074)[((int64_t)_3078)]))) = _3091;
-  if ((_3083 == UINT64_C(16))) {
-    goto _3333;
-  } else {
-    _3078__PHI_TEMPORARY = _3083;   /* for PHI node */
-    _3079__PHI_TEMPORARY = _3085;   /* for PHI node */
-    _3080__PHI_TEMPORARY = _3084;   /* for PHI node */
-    _3081__PHI_TEMPORARY = _3092;   /* for PHI node */
-    _3082__PHI_TEMPORARY = _3091;   /* for PHI node */
-    goto _3332;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_3333:
-  _3093 = llvm_select_f64((llvm_fcmp_ueq(_3067, 0)), 0, _3070);
-  _3094 = _3068 * _3072;
-  _3095 = (_3093 * _3072) + (_3071 * _3068);
-  fixderivative_levin((&_2926), (&_2925), (&_2929), (&_2927));
-  _3096 =  /*tail*/ sqrt(_3067);
-  _3097 = 2 / _2910;
-  _3098 = _2947 + 0.5;
-  if ((llvm_fcmp_ogt(_3098, _3073))) {
-    goto _3334;
-  } else {
-    _3114__PHI_TEMPORARY = _3095;   /* for PHI node */
-    _3115__PHI_TEMPORARY = _3094;   /* for PHI node */
-    goto _3335;
-  }
-
-_3334:
-  _3099 = _2911 * 2;
-  _3100 = _2926;
-  _3101 = _2925;
-  _3102 = _3096 * _3100;
-  _3103 = (_3101 * _3096) + (_3100 * _3093);
-  _3104 = _3097 * _2948;
-  _3105 = 1 / (_2910 * _2910);
-  _3106__PHI_TEMPORARY = _3103;   /* for PHI node */
-  _3107__PHI_TEMPORARY = _3102;   /* for PHI node */
-  _3108__PHI_TEMPORARY = _3095;   /* for PHI node */
-  _3109__PHI_TEMPORARY = _3094;   /* for PHI node */
-  _3110__PHI_TEMPORARY = _3073;   /* for PHI node */
-  goto _3336;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3336:
-  _3106 = _3106__PHI_TEMPORARY;
-  _3107 = _3107__PHI_TEMPORARY;
-  _3108 = _3108__PHI_TEMPORARY;
-  _3109 = _3109__PHI_TEMPORARY;
-  _3110 = _3110__PHI_TEMPORARY;
-  _3111 = _3097 * _3110;
-  _3112 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3111, _3107, _3109);
-  _3113 = _3110 + 1;
-  if ((llvm_fcmp_olt(_3113, _3098))) {
-    _3106__PHI_TEMPORARY = (((_3111 * _3106) + _3108) + ((_3104 - ((_3099 * _3110) * _3105)) * _3107));   /* for PHI node */
-    _3107__PHI_TEMPORARY = _3112;   /* for PHI node */
-    _3108__PHI_TEMPORARY = _3106;   /* for PHI node */
-    _3109__PHI_TEMPORARY = _3107;   /* for PHI node */
-    _3110__PHI_TEMPORARY = _3113;   /* for PHI node */
-    goto _3336;
-  } else {
-    _3114__PHI_TEMPORARY = _3106;   /* for PHI node */
-    _3115__PHI_TEMPORARY = _3107;   /* for PHI node */
-    goto _3335;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_3335:
-  _3114 = _3114__PHI_TEMPORARY;
-  _3115 = _3115__PHI_TEMPORARY;
-  _3116 = -(_2910);
-  _3117 =  /*tail*/ exp(_3116);
-  _3118 =  /*tail*/ exp(_3116);
-  _3119 = _3115 * _3117;
-  _3120 = (_3117 * _3114) - ((_3115 * _2911) * _3118);
-  _3312__PHI_TEMPORARY = _3120;   /* for PHI node */
-  _3313__PHI_TEMPORARY = _3119;   /* for PHI node */
-  goto _3317;
-
-_3325:
-  _3121 = round(_2947);
-  _3122 =  /*tail*/ llvm_OC_fabs_OC_f64((_2947 - _3121));
-  if ((llvm_fcmp_olt(_3122, 1.0000000000000001E-5))) {
-    goto _3337;
-  } else {
-    goto _3338;
-  }
-
-_3337:
-  _3123 = _2947 - (llvm_select_f64((llvm_fcmp_ogt((_2947 - _3010), 0.5)), (_3010 + -1), _3010));
-  *((double*)&_2916) = 1;
-  *(double*)(((&((uint8_t*)(&_2916))[((int64_t)8)]))) = 0.16666666666666666;
-  *(double*)(((&((uint8_t*)(&_2916))[((int64_t)16)]))) = 0.0083333333333333332;
-  *(double*)(((&((uint8_t*)(&_2916))[((int64_t)24)]))) = 1.9841269841269841E-4;
-  *(double*)(((&((uint8_t*)(&_2916))[((int64_t)32)]))) = 2.7557319223985893E-6;
-  _3124 =  /*tail*/ log(_2910);
-  _3125 = _3123 * _3123;
-  _3126 = (_2948 * 2) * _3123;
-  _3127__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3128__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3129__PHI_TEMPORARY = 1.9711021825948702;   /* for PHI node */
-  goto _3339;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3339:
-  _3127 = _3127__PHI_TEMPORARY;
-  _3128 = _3128__PHI_TEMPORARY;
-  _3129 = _3129__PHI_TEMPORARY;
-  _3130 = llvm_add_u64(_3127, 1);
-  _3131 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_spcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _3127)))])));
-  _3132 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3125, _3129, _3131);
-  _3133 = (_3129 * _3126) + (_3128 * _3125);
-  if ((_3130 == UINT64_C(3))) {
-    goto _3340;
-  } else {
-    _3127__PHI_TEMPORARY = _3130;   /* for PHI node */
-    _3128__PHI_TEMPORARY = _3133;   /* for PHI node */
-    _3129__PHI_TEMPORARY = _3132;   /* for PHI node */
-    goto _3339;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_3340:
-  _3134 = _2910 * 0.5;
-  _3135__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3136__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3137__PHI_TEMPORARY = 0.042197734555544306;   /* for PHI node */
-  goto _3341;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3341:
-  _3135 = _3135__PHI_TEMPORARY;
-  _3136 = _3136__PHI_TEMPORARY;
-  _3137 = _3137__PHI_TEMPORARY;
-  _3138 = llvm_add_u64(_3135, 1);
-  _3139 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g1coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _3135)))])));
-  _3140 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3125, _3137, _3139);
-  _3141 = (_3137 * _3126) + (_3136 * _3125);
-  if ((_3138 == UINT64_C(2))) {
-    _3142__PHI_TEMPORARY = 0;   /* for PHI node */
-    _3143__PHI_TEMPORARY = 0;   /* for PHI node */
-    _3144__PHI_TEMPORARY = 0.16653861138229145;   /* for PHI node */
-    goto _3342;
-  } else {
-    _3135__PHI_TEMPORARY = _3138;   /* for PHI node */
-    _3136__PHI_TEMPORARY = _3141;   /* for PHI node */
-    _3137__PHI_TEMPORARY = _3140;   /* for PHI node */
-    goto _3341;
+    _2569__PHI_TEMPORARY = _2571;   /* for PHI node */
+    _2570__PHI_TEMPORARY = _2573;   /* for PHI node */
+    goto _2671;
   }
 
   } while (1); /* end of syntactic loop '' */
   do {     /* Syntactic loop '' to make GCC happy */
-_3342:
-  _3142 = _3142__PHI_TEMPORARY;
-  _3143 = _3143__PHI_TEMPORARY;
-  _3144 = _3144__PHI_TEMPORARY;
-  _3145 = llvm_add_u64(_3142, 1);
-  _3146 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _3142)))])));
-  _3147 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3125, _3144, _3146);
-  _3148 = (_3144 * _3126) + (_3143 * _3125);
-  if ((_3145 == UINT64_C(2))) {
-    goto _3343;
+_2672:
+  _2574 = _2574__PHI_TEMPORARY;
+  _2575 = _2575__PHI_TEMPORARY;
+  _2576 = llvm_add_u64(_2574, 1);
+  _2577 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_f0_local_expansion_OC_g2coef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(2, _2574)))])));
+  _2578 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2562, _2575, _2577);
+  if ((_2576 == UINT64_C(2))) {
+    goto _2673;
   } else {
-    _3142__PHI_TEMPORARY = _3145;   /* for PHI node */
-    _3143__PHI_TEMPORARY = _3148;   /* for PHI node */
-    _3144__PHI_TEMPORARY = _3147;   /* for PHI node */
-    goto _3342;
+    _2574__PHI_TEMPORARY = _2576;   /* for PHI node */
+    _2575__PHI_TEMPORARY = _2578;   /* for PHI node */
+    goto _2672;
   }
 
   } while (1); /* end of syntactic loop '' */
-_3343:
-  _3149 = 0.69314718055994529 - _3124;
-  _3150 = (-(_2911)) / _2910;
-  _3151 = _3123 * _3149;
-  _3152 = (_3149 * _2948) + (_3123 * _3150);
-  _3153 = _3151 * _3151;
-  _3154 = ((&((uint8_t*)(&_2916))[((int64_t)-8)]));
-  _3155 = (_3151 * 2) * _3152;
-  _3156__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3157__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3158__PHI_TEMPORARY = 2.7557319223985893E-6;   /* for PHI node */
-  goto _3344;
+_2673:
+  _2579 = 0.69314718055994529 - _2561;
+  _2580 = (-(_2550)) / _2549;
+  _2581 = _2579 * _2548;
+  _2582 = _2580 * _2548;
+  _2583 = _2581 * _2581;
+  _2584 = ((&((uint8_t*)(&_2551))[((int64_t)-8)]));
+  _2585 = (_2582 * 2) * _2581;
+  _2586__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2587__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2588__PHI_TEMPORARY = 2.7557319223985893E-6;   /* for PHI node */
+  goto _2674;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_3344:
-  _3156 = _3156__PHI_TEMPORARY;
-  _3157 = _3157__PHI_TEMPORARY;
-  _3158 = _3158__PHI_TEMPORARY;
-  _3159 = llvm_add_u64(_3156, 1);
-  _3160 = *(double*)(((&((double*)_3154)[((int64_t)(llvm_sub_u64(4, _3156)))])));
-  _3161 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3153, _3158, _3160);
-  _3162 = (_3155 * _3158) + (_3157 * _3153);
-  if ((_3159 == UINT64_C(4))) {
-    goto _3345;
+_2674:
+  _2586 = _2586__PHI_TEMPORARY;
+  _2587 = _2587__PHI_TEMPORARY;
+  _2588 = _2588__PHI_TEMPORARY;
+  _2589 = llvm_add_u64(_2586, 1);
+  _2590 = *(double*)(((&((double*)_2584)[((int64_t)(llvm_sub_u64(4, _2586)))])));
+  _2591 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2583, _2588, _2590);
+  _2592 = (_2585 * _2588) + (_2587 * _2583);
+  if ((_2589 == UINT64_C(4))) {
+    goto _2675;
   } else {
-    _3156__PHI_TEMPORARY = _3159;   /* for PHI node */
-    _3157__PHI_TEMPORARY = _3162;   /* for PHI node */
-    _3158__PHI_TEMPORARY = _3161;   /* for PHI node */
-    goto _3344;
+    _2586__PHI_TEMPORARY = _2589;   /* for PHI node */
+    _2587__PHI_TEMPORARY = _2592;   /* for PHI node */
+    _2588__PHI_TEMPORARY = _2591;   /* for PHI node */
+    goto _2674;
   }
 
   } while (1); /* end of syntactic loop '' */
-_3345:
-  _3163 =  /*tail*/ cosh(_3151);
-  _3164 = _3147 * _3161;
-  _3165 = _3163 * _3141;
-  _3166 = (((_3161 * _3148) + (_3162 * _3147)) * _3149) + (_3164 * _3150);
-  _3167 =  /*tail*/ pow(_3134, _3123);
-  _3168 =  /*tail*/ pow(_3134, (_3123 + -1));
-  _3169 =  /*tail*/ pow(_3134, _3123);
-  _3170 = log(_3134);
-  _3171 = _3170 * _2948;
-  _3172__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3173__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3174__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
-  goto _3346;
+_2675:
+  _2593 = _2560 * _2560;
+  _2594 =  /*tail*/ sinh(_2581);
+  _2595 = _2578 * _2591;
+  _2596 = (_2595 * _2580) + ((_2578 * _2579) * _2592);
+  _2597 = (_2573 * _2582) * _2594;
+  _2598 =  /*tail*/ pow(_2560, _2548);
+  _2599 =  /*tail*/ pow(_2560, (_2548 + -1));
+  _2600 = _2568 * _2548;
+  _2601__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2602__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
+  goto _2676;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_3346:
-  _3172 = _3172__PHI_TEMPORARY;
-  _3173 = _3173__PHI_TEMPORARY;
-  _3174 = _3174__PHI_TEMPORARY;
-  _3175 = llvm_add_u64(_3172, 1);
-  _3176 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _3172)))])));
-  _3177 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3123, _3174, _3176);
-  _3178 = (_3174 * _2948) + (_3173 * _3123);
-  if ((_3175 == UINT64_C(3))) {
-    goto _3347;
+_2676:
+  _2601 = _2601__PHI_TEMPORARY;
+  _2602 = _2602__PHI_TEMPORARY;
+  _2603 = llvm_add_u64(_2601, 1);
+  _2604 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2601)))])));
+  _2605 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2548, _2602, _2604);
+  if ((_2603 == UINT64_C(3))) {
+    goto _2677;
   } else {
-    _3172__PHI_TEMPORARY = _3175;   /* for PHI node */
-    _3173__PHI_TEMPORARY = _3178;   /* for PHI node */
-    _3174__PHI_TEMPORARY = _3177;   /* for PHI node */
-    goto _3346;
+    _2601__PHI_TEMPORARY = _2603;   /* for PHI node */
+    _2602__PHI_TEMPORARY = _2605;   /* for PHI node */
+    goto _2676;
   }
 
   } while (1); /* end of syntactic loop '' */
-_3347:
-  _3179 = _2911 * 0.5;
-  _3180 = _3140 * _3152;
-  _3181 = _3171 * _3169;
-  _3182 = _3149 * _3164;
-  _3183 = (_3123 * _3179) * _3168;
-  _3184 = -(_3123);
-  _3185__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3186__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3187__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
-  goto _3348;
+_2677:
+  _2606 =  /*tail*/ cosh(_2581);
+  _2607 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2573, _2606, (_2579 * _2595));
+  _2608 = _2600 * _2599;
+  _2609 = -(_2548);
+  _2610__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2611__PHI_TEMPORARY = -0.23263776388631713;   /* for PHI node */
+  goto _2678;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_3348:
-  _3185 = _3185__PHI_TEMPORARY;
-  _3186 = _3186__PHI_TEMPORARY;
-  _3187 = _3187__PHI_TEMPORARY;
-  _3188 = llvm_add_u64(_3185, 1);
-  _3189 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _3185)))])));
-  _3190 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3184, _3187, _3189);
-  _3191 = (_3186 * _3184) - (_3187 * _2948);
-  if ((_3188 == UINT64_C(3))) {
-    goto _3349;
+_2678:
+  _2610 = _2610__PHI_TEMPORARY;
+  _2611 = _2611__PHI_TEMPORARY;
+  _2612 = llvm_add_u64(_2610, 1);
+  _2613 = *(double*)(((&((double*)(((&((uint8_t*)(&__const_OC_besselk_temme_series_OC_pqkcoef))[((int64_t)-8)]))))[((int64_t)(llvm_sub_u64(3, _2610)))])));
+  _2614 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2609, _2611, _2613);
+  if ((_2612 == UINT64_C(3))) {
+    goto _2679;
   } else {
-    _3185__PHI_TEMPORARY = _3188;   /* for PHI node */
-    _3186__PHI_TEMPORARY = _3191;   /* for PHI node */
-    _3187__PHI_TEMPORARY = _3190;   /* for PHI node */
-    goto _3348;
+    _2610__PHI_TEMPORARY = _2612;   /* for PHI node */
+    _2611__PHI_TEMPORARY = _2614;   /* for PHI node */
+    goto _2678;
   }
 
   } while (1); /* end of syntactic loop '' */
-_3349:
-  _3192 =  /*tail*/ sinh(_3151);
-  _3193 = _3167 * 2;
-  _3194 = _3134 * _3134;
-  _3195 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3140, _3163, _3182);
-  _3196 = _3181 + _3183;
-  _3197 = _3132 * _3195;
-  _3198 = (((_3166 + _3165) + (_3180 * _3192)) * _3132) + (_3195 * _3133);
-  _3199 = _3177 / _3193;
-  _3200 = ((_3178 * _3193) - ((_3196 * 2) * _3177)) / (_3193 * _3193);
-  _3201 = (_3167 * _3190) * 0.5;
-  _3202 = ((_3190 * _3196) + (_3191 * _3167)) * 0.5;
-  _3203 = (_3184 - _3123) * _2948;
-  _3204 = (_3134 * _3179) * 2;
-  _3205__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3206__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3207__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3208__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3209__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3210__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3211__PHI_TEMPORARY = 1;   /* for PHI node */
-  _3212__PHI_TEMPORARY = _3202;   /* for PHI node */
-  _3213__PHI_TEMPORARY = _3201;   /* for PHI node */
-  _3214__PHI_TEMPORARY = _3200;   /* for PHI node */
-  _3215__PHI_TEMPORARY = _3199;   /* for PHI node */
-  _3216__PHI_TEMPORARY = _3198;   /* for PHI node */
-  _3217__PHI_TEMPORARY = _3197;   /* for PHI node */
-  goto _3350;
+_2679:
+  _2615 = _2598 * 2;
+  _2616 = _2567 * _2607;
+  _2617 = (_2596 + _2597) * _2567;
+  _2618 = _2605 / _2615;
+  _2619 = ((_2608 * -2) * _2605) / (_2615 * _2615);
+  _2620 = (_2598 * _2614) * 0.5;
+  _2621 = (_2608 * 0.5) * _2614;
+  _2622 = (_2560 * _2568) * 2;
+  _2623__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2624__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2625__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2626__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2627__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2628__PHI_TEMPORARY = 0;   /* for PHI node */
+  _2629__PHI_TEMPORARY = 1;   /* for PHI node */
+  _2630__PHI_TEMPORARY = _2621;   /* for PHI node */
+  _2631__PHI_TEMPORARY = _2620;   /* for PHI node */
+  _2632__PHI_TEMPORARY = _2619;   /* for PHI node */
+  _2633__PHI_TEMPORARY = _2618;   /* for PHI node */
+  _2634__PHI_TEMPORARY = _2617;   /* for PHI node */
+  _2635__PHI_TEMPORARY = _2616;   /* for PHI node */
+  goto _2680;
 
   do {     /* Syntactic loop '' to make GCC happy */
-_3350:
-  _3205 = _3205__PHI_TEMPORARY;
-  _3206 = _3206__PHI_TEMPORARY;
-  _3207 = _3207__PHI_TEMPORARY;
-  _3208 = _3208__PHI_TEMPORARY;
-  _3209 = _3209__PHI_TEMPORARY;
-  _3210 = _3210__PHI_TEMPORARY;
-  _3211 = _3211__PHI_TEMPORARY;
-  _3212 = _3212__PHI_TEMPORARY;
-  _3213 = _3213__PHI_TEMPORARY;
-  _3214 = _3214__PHI_TEMPORARY;
-  _3215 = _3215__PHI_TEMPORARY;
-  _3216 = _3216__PHI_TEMPORARY;
-  _3217 = _3217__PHI_TEMPORARY;
-  _3218 = _3211 * _3217;
-  _3219 = (_3217 * _3210) + (_3216 * _3211);
-  _2917 = _3219;
-  _2918 = _3218;
-  _3220 = ((double)(uint32_t)_3205);
-  _3221 =  /*tail*/ llvm_OC_fmuladd_OC_f64((-(_3220)), _3217, _3215);
-  _3222 = _3211 * _3221;
-  _3223 = (_3221 * _3210) + ((_3214 - (_3216 * _3220)) * _3211);
-  _2919 = _3223;
-  _2920 = _3222;
-  _3224 = _3209 + _3218;
-  _3225 = _3219 + _3208;
-  _3226 = _3207 + _3222;
-  _3227 = _3223 + _3206;
-  fixderivative_isconverged((&_2918), (&_2917), (&_2922), (&_2921));
-  fixderivative_isconverged_OC_1((&_2920), (&_2919), (&_2924), (&_2923));
-  _3228 = _2922;
-  _3229 = _2924;
-  if ((llvm_select_bool((llvm_fcmp_olt(_3228, 0)), (llvm_fcmp_olt(_3229, 0)), 0))) {
-    goto _3351;
+_2680:
+  _2623 = _2623__PHI_TEMPORARY;
+  _2624 = _2624__PHI_TEMPORARY;
+  _2625 = _2625__PHI_TEMPORARY;
+  _2626 = _2626__PHI_TEMPORARY;
+  _2627 = _2627__PHI_TEMPORARY;
+  _2628 = _2628__PHI_TEMPORARY;
+  _2629 = _2629__PHI_TEMPORARY;
+  _2630 = _2630__PHI_TEMPORARY;
+  _2631 = _2631__PHI_TEMPORARY;
+  _2632 = _2632__PHI_TEMPORARY;
+  _2633 = _2633__PHI_TEMPORARY;
+  _2634 = _2634__PHI_TEMPORARY;
+  _2635 = _2635__PHI_TEMPORARY;
+  _2636 = _2629 * _2635;
+  _2637 = (_2635 * _2628) + (_2634 * _2629);
+  _2552 = _2637;
+  _2553 = _2636;
+  _2638 = ((double)(uint32_t)_2623);
+  _2639 =  /*tail*/ llvm_OC_fmuladd_OC_f64((-(_2638)), _2635, _2633);
+  _2640 = _2629 * _2639;
+  _2641 = (_2639 * _2628) + ((_2632 - (_2634 * _2638)) * _2629);
+  _2554 = _2641;
+  _2555 = _2640;
+  _2642 = _2627 + _2636;
+  _2643 = _2637 + _2626;
+  _2644 = _2625 + _2640;
+  _2645 = _2641 + _2624;
+  fixderivative_isconverged((&_2553), (&_2552), (&_2557), (&_2556));
+  fixderivative_isconverged_OC_1((&_2555), (&_2554), (&_2559), (&_2558));
+  _2646 = _2557;
+  _2647 = _2559;
+  if ((llvm_select_bool((llvm_fcmp_olt(_2646, 0)), (llvm_fcmp_olt(_2647, 0)), 0))) {
+    goto _2681;
   } else {
-    goto _3352;
+    goto _2682;
   }
 
-_3352:
-  _3230 = llvm_add_u32(_3205, 1);
-  _3231 = ((double)(uint32_t)_3230);
-  _3232 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3231, _3217, _3215);
-  _3233 = _3213 + _3232;
-  _3234 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3184, _3123, (((double)(uint32_t)(llvm_mul_u32(_3230, _3230)))));
-  _3235 = _3233 / _3234;
-  _3236 = ((((_3214 + _3212) + (_3216 * _3231)) * _3234) - (_3203 * _3233)) / (_3234 * _3234);
-  _3237 = _3231 - _3123;
-  _3238 = _3215 / _3237;
-  _3239 = ((_3215 * _2948) + (_3214 * _3237)) / (_3237 * _3237);
-  _3240 = _3123 + _3231;
-  _3241 = _3213 / _3240;
-  _3242 = ((_3212 * _3240) - (_3213 * _2948)) / (_3240 * _3240);
-  _3243 = _3194 / _3231;
-  _3244 = _3243 * _3211;
-  _3245 = (((_3204 * _3231) * _3211) / (_3231 * _3231)) + (_3210 * _3243);
-  if ((_3230 == 500u)) {
-    goto _3351;
+_2682:
+  _2648 = llvm_add_u32(_2623, 1);
+  _2649 = ((double)(uint32_t)_2648);
+  _2650 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2649, _2635, _2633);
+  _2651 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_2609, _2548, (((double)(uint32_t)(llvm_mul_u32(_2648, _2648)))));
+  _2652 = (_2631 + _2650) / _2651;
+  _2653 = (((_2632 + _2630) + (_2634 * _2649)) * _2651) / (_2651 * _2651);
+  _2654 = _2649 - _2548;
+  _2655 = _2633 / _2654;
+  _2656 = (_2632 * _2654) / (_2654 * _2654);
+  _2657 = _2649 + _2548;
+  _2658 = _2631 / _2657;
+  _2659 = (_2630 * _2657) / (_2657 * _2657);
+  _2660 = _2593 / _2649;
+  _2661 = _2660 * _2629;
+  _2662 = (((_2622 * _2649) * _2629) / (_2649 * _2649)) + (_2628 * _2660);
+  if ((_2648 == 500u)) {
+    goto _2681;
   } else {
-    _3205__PHI_TEMPORARY = _3230;   /* for PHI node */
-    _3206__PHI_TEMPORARY = _3227;   /* for PHI node */
-    _3207__PHI_TEMPORARY = _3226;   /* for PHI node */
-    _3208__PHI_TEMPORARY = _3225;   /* for PHI node */
-    _3209__PHI_TEMPORARY = _3224;   /* for PHI node */
-    _3210__PHI_TEMPORARY = _3245;   /* for PHI node */
-    _3211__PHI_TEMPORARY = _3244;   /* for PHI node */
-    _3212__PHI_TEMPORARY = _3242;   /* for PHI node */
-    _3213__PHI_TEMPORARY = _3241;   /* for PHI node */
-    _3214__PHI_TEMPORARY = _3239;   /* for PHI node */
-    _3215__PHI_TEMPORARY = _3238;   /* for PHI node */
-    _3216__PHI_TEMPORARY = _3236;   /* for PHI node */
-    _3217__PHI_TEMPORARY = _3235;   /* for PHI node */
-    goto _3350;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_3351:
-  _3246 = _3123 + 1;
-  _3247 = 2 / _2910;
-  _3248 = _2947 + 0.5;
-  if ((llvm_fcmp_ogt(_3248, _3246))) {
-    goto _3353;
-  } else {
-    _3312__PHI_TEMPORARY = _3225;   /* for PHI node */
-    _3313__PHI_TEMPORARY = _3224;   /* for PHI node */
-    goto _3317;
-  }
-
-_3353:
-  _3249 = _2911 * 2;
-  _3250 = ((_3227 * _3134) - (_3226 * _3179)) / _3194;
-  _3251 = _3226 / _3134;
-  _3252 = _3247 * _2948;
-  _3253 = 1 / (_2910 * _2910);
-  _3254__PHI_TEMPORARY = _3250;   /* for PHI node */
-  _3255__PHI_TEMPORARY = _3251;   /* for PHI node */
-  _3256__PHI_TEMPORARY = _3225;   /* for PHI node */
-  _3257__PHI_TEMPORARY = _3224;   /* for PHI node */
-  _3258__PHI_TEMPORARY = _3246;   /* for PHI node */
-  goto _3354;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3354:
-  _3254 = _3254__PHI_TEMPORARY;
-  _3255 = _3255__PHI_TEMPORARY;
-  _3256 = _3256__PHI_TEMPORARY;
-  _3257 = _3257__PHI_TEMPORARY;
-  _3258 = _3258__PHI_TEMPORARY;
-  _3259 = _3247 * _3258;
-  _3260 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3259, _3255, _3257);
-  _3261 = _3258 + 1;
-  if ((llvm_fcmp_olt(_3261, _3248))) {
-    _3254__PHI_TEMPORARY = (((_3259 * _3254) + _3256) + ((_3252 - ((_3249 * _3258) * _3253)) * _3255));   /* for PHI node */
-    _3255__PHI_TEMPORARY = _3260;   /* for PHI node */
-    _3256__PHI_TEMPORARY = _3254;   /* for PHI node */
-    _3257__PHI_TEMPORARY = _3255;   /* for PHI node */
-    _3258__PHI_TEMPORARY = _3261;   /* for PHI node */
-    goto _3354;
-  } else {
-    _3312__PHI_TEMPORARY = _3254;   /* for PHI node */
-    _3313__PHI_TEMPORARY = _3255;   /* for PHI node */
-    goto _3317;
+    _2623__PHI_TEMPORARY = _2648;   /* for PHI node */
+    _2624__PHI_TEMPORARY = _2645;   /* for PHI node */
+    _2625__PHI_TEMPORARY = _2644;   /* for PHI node */
+    _2626__PHI_TEMPORARY = _2643;   /* for PHI node */
+    _2627__PHI_TEMPORARY = _2642;   /* for PHI node */
+    _2628__PHI_TEMPORARY = _2662;   /* for PHI node */
+    _2629__PHI_TEMPORARY = _2661;   /* for PHI node */
+    _2630__PHI_TEMPORARY = _2659;   /* for PHI node */
+    _2631__PHI_TEMPORARY = _2658;   /* for PHI node */
+    _2632__PHI_TEMPORARY = _2656;   /* for PHI node */
+    _2633__PHI_TEMPORARY = _2655;   /* for PHI node */
+    _2634__PHI_TEMPORARY = _2653;   /* for PHI node */
+    _2635__PHI_TEMPORARY = _2652;   /* for PHI node */
+    goto _2680;
   }
 
   } while (1); /* end of syntactic loop '' */
-_3338:
-  _3262 =  /*tail*/ fwddiffegamma(_2947, _2948);
-  _3263 =  /*tail*/ sinpi((0.5 - _2947));
-  _3264 = _2910 * _2910;
-  _3265 = (_2910 * 2) * _2911;
-  _2915 = 1;
-  _3266 = _2948 * _3264;
-  _3267__PHI_TEMPORARY = 1;   /* for PHI node */
-  _3268__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3269__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3270__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3271__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3272__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3273__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3274__PHI_TEMPORARY = 0;   /* for PHI node */
-  _3275__PHI_TEMPORARY = 1;   /* for PHI node */
-  _3276__PHI_TEMPORARY = 4;   /* for PHI node */
-  goto _3355;
-
-  do {     /* Syntactic loop '' to make GCC happy */
-_3355:
-  _3267 = _3267__PHI_TEMPORARY;
-  _3268 = _3268__PHI_TEMPORARY;
-  _3269 = _3269__PHI_TEMPORARY;
-  _3270 = _3270__PHI_TEMPORARY;
-  _3271 = _3271__PHI_TEMPORARY;
-  _3272 = _3272__PHI_TEMPORARY;
-  _3273 = _3273__PHI_TEMPORARY;
-  _3274 = _3274__PHI_TEMPORARY;
-  _3275 = _3275__PHI_TEMPORARY;
-  _3276 = _3276__PHI_TEMPORARY;
-  _3277 = llvm_add_u32(_3269, 1);
-  _3278 = _3267 + _3271;
-  _3279 = _3270 + _3268;
-  _3280 = _3273 + _3275;
-  _3281 = _3274 + _3272;
-  _3282 = ((double)(uint32_t)_3277);
-  _3283 = (_3282 - _2947) * _3276;
-  _3284 = _3264 / _3283;
-  _3285 = _3266 * _3276;
-  _3286 = _3267 * _3284;
-  _3287 = ((((_3283 * _3265) + _3285) * _3267) / (_3283 * _3283)) + (_3284 * _3268);
-  _2912 = _3287;
-  _2913 = _3286;
-  fixderivative_isconverged((&_2913), (&_2912), (&_2915), (&_2914));
-  _3288 = _2915;
-  if ((llvm_fcmp_olt(_3288, 0))) {
-    goto _3356;
-  } else {
-    goto _3357;
-  }
-
-_3357:
-  _3289 = (_2947 + _3282) * _3276;
-  _3290 = _3264 / _3289;
-  _3291 = _3275 * _3290;
-  _3292 = ((((_3289 * _3265) - _3285) * _3275) / (_3289 * _3289)) + (_3290 * _3274);
-  _3293 = _3276 + 4;
-  if ((_3277 == 49u)) {
-    goto _3356;
-  } else {
-    _3267__PHI_TEMPORARY = _3286;   /* for PHI node */
-    _3268__PHI_TEMPORARY = _3287;   /* for PHI node */
-    _3269__PHI_TEMPORARY = _3277;   /* for PHI node */
-    _3270__PHI_TEMPORARY = _3279;   /* for PHI node */
-    _3271__PHI_TEMPORARY = _3278;   /* for PHI node */
-    _3272__PHI_TEMPORARY = _3281;   /* for PHI node */
-    _3273__PHI_TEMPORARY = _3280;   /* for PHI node */
-    _3274__PHI_TEMPORARY = _3292;   /* for PHI node */
-    _3275__PHI_TEMPORARY = _3291;   /* for PHI node */
-    _3276__PHI_TEMPORARY = _3293;   /* for PHI node */
-    goto _3355;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-_3356:
-  _3294 =  /*tail*/ sinpi((-(_2947)));
-  _3295 = (_3262.field1);
-  _3296 = (_3262.field0);
-  _3297 = _3296 * _3294;
-  _3298 = _2947 * _3297;
-  _3299 = 3.1415926535897931 / _3298;
-  _3300 = _2910 * 0.5;
-  _3301 =  /*tail*/ pow(_3300, _2947);
-  _3302 =  /*tail*/ pow(_3300, (_2947 + -1));
-  _3303 =  /*tail*/ pow(_3300, _2947);
-  _3304 = log(_3300);
-  _3305 = ((_3304 * _2948) * _3303) + (((_2911 * 0.5) * _2947) * _3302);
-  _3306 = _3301 * _3301;
-  _3307 = _3306 * _3299;
-  _3308 = _3301 * 2;
-  _3309 =  /*tail*/ llvm_OC_fmuladd_OC_f64(_3296, _3278, (_3280 * _3307));
-  _3310 = _3309 / _3308;
-  _3311 = ((((((_3278 * _3295) + (_3279 * _3296)) + (_3307 * _3281)) + ((((_3299 * _3308) * _3305) - (((_3306 * 3.1415926535897931) * ((((_3294 * _3295) - (((_2948 * 3.1415926535897962) * _3263) * _3296)) * _2947) + (_3297 * _2948))) / (_3298 * _3298))) * _3280)) * _3308) - ((_3305 * 2) * _3309)) / (_3308 * _3308);
-  _3312__PHI_TEMPORARY = _3311;   /* for PHI node */
-  _3313__PHI_TEMPORARY = _3310;   /* for PHI node */
-  goto _3317;
-
-_3317:
-  _3312 = _3312__PHI_TEMPORARY;
-  _3313 = _3313__PHI_TEMPORARY;
-  _3314 = llvm_ctor_unnamed_1(0, 0);
-  _3314.field0 = _3313;
-  _3315 = _3314;
-  _3315.field1 = _3312;
-  return _3315;
+_2681:
+  _2663 = llvm_ctor_unnamed_1(0, 0);
+  _2663.field0 = _2643;
+  _2664 = llvm_ctor_unnamed_1(0, 0);
+  _2664.field0 = _2642;
+  _2665 = _2663;
+  _2665.field1 = (((_2645 * _2560) - (_2644 * _2568)) / _2593);
+  _2666 = _2664;
+  _2666.field1 = (_2644 / _2560);
+  _2667 = llvm_ctor_unnamed_2(llvm_ctor_unnamed_1(0, 0), llvm_ctor_unnamed_1(0, 0));
+  _2667.field0 = _2666;
+  _2668 = _2667;
+  _2668.field1 = _2665;
+  return _2668;
 }
 

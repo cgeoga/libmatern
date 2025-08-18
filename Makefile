@@ -5,13 +5,13 @@ OPT=opt
 RHOME=/usr/share/R
 
 runtest: 
-	gcc test/test_script.c -o test_script -L. -Wl,-rpath=$$(pwd) lib/libmatern.so -lm
+	gcc test/test_script.c -o test_script -L. -Wl,-rpath=$$(pwd) src/libmatern.so -lm
 	./test_script
 	rm -f test_script
 
 cbe:
 	make linux_ir
-	llvm-cbe -O3 lib/libmatern.ll
+	llvm-cbe lib/libmatern.ll
 	mv lib/libmatern.cbe.c src/libmatern.cbe.c
 
 linux:
