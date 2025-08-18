@@ -1,8 +1,8 @@
 Package: libmatern
 Title: Modified Second-Kind Bessel Functions, the Matern Covariance function, and their derivatives with respect to all parameters and arguments.
 Version: 0.0.1
-Authors@R: c(person("George", "Maney", "17.gmaney@gmail.com", role=c("cre")),
-             person("Chris",  "Geoga", "geoga@wisc.edu", role=c("aut")))
+Authors@R: c(person("George", "Maney", email="17.gmaney@gmail.com", role=c("cre")),
+             person("Chris",  "Geoga", email="geoga@wisc.edu",      role=c("aut")))
 Description: Routines for the modified second-kind Bessel function and its derivatives with respect to both smoothness and argument. Routines are also provided for the Matern covariance function and its derivatives with respect to parameters.
 LinkingTo:
     Rcpp
