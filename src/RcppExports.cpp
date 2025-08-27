@@ -22,6 +22,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cbesselK_vec
+NumericVector cbesselK_vec(NumericVector x_list, double v);
+RcppExport SEXP _libmatern_cbesselK_vec(SEXP x_listSEXP, SEXP vSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x_list(x_listSEXP);
+    Rcpp::traits::input_parameter< double >::type v(vSEXP);
+    rcpp_result_gen = Rcpp::wrap(cbesselK_vec(x_list, v));
+    return rcpp_result_gen;
+END_RCPP
+}
 // cbesselK_dv
 double cbesselK_dv(double x, double v);
 RcppExport SEXP _libmatern_cbesselK_dv(SEXP xSEXP, SEXP vSEXP) {
@@ -105,6 +117,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_libmatern_cbesselK", (DL_FUNC) &_libmatern_cbesselK, 2},
+    {"_libmatern_cbesselK_vec", (DL_FUNC) &_libmatern_cbesselK_vec, 2},
     {"_libmatern_cbesselK_dv", (DL_FUNC) &_libmatern_cbesselK_dv, 2},
     {"_libmatern_cbesselK_dx", (DL_FUNC) &_libmatern_cbesselK_dx, 2},
     {"_libmatern_cmatern", (DL_FUNC) &_libmatern_cmatern, 4},

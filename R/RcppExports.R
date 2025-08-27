@@ -5,6 +5,10 @@ cbesselK <- function(x, v) {
     .Call('_libmatern_cbesselK', PACKAGE = 'libmatern', x, v)
 }
 
+cbesselK_vec <- function(x_list, v) {
+    .Call('_libmatern_cbesselK_vec', PACKAGE = 'libmatern', x_list, v)
+}
+
 cbesselK_dv <- function(x, v) {
     .Call('_libmatern_cbesselK_dv', PACKAGE = 'libmatern', x, v)
 }
