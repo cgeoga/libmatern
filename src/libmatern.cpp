@@ -18,14 +18,13 @@ double cbesselK(double x, double v) {
 // [[Rcpp::export]]
 NumericVector cbesselK_vec(NumericVector x_list, double v) {
 
-    int len = x_list.size();
-    NumericVector out(len);
+    std::vector<double> buf = stdVec(x_list.begin(), x_list.end());
 
-    for (int i = 0; i < len; i++) {
-        out[i] = besselk(v, x_list[i]);
+    for (int i=0; i < buf.size(); i++){
+      buf[i] = besselk(v, buf[i]);
     }
 
-    return out;
+    return wrap(buf);
 }
 
 //' The derivative of the modified second-kind Bessel function K_v(x) with respect
