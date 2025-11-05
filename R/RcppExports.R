@@ -11,7 +11,19 @@ NULL
 #' The derivative of the modified second-kind Bessel function K_v(x) with respect
 NULL
 
+#'
+#' @param x the argument
+#' @param v the order
+#' @return the evaluation (d/dv) K_v(x)
+NULL
+
 #' The derivative of the modified second-kind Bessel function K_v(x) with respect
+NULL
+
+#'
+#' @param x the argument
+#' @param v the order
+#' @return the evaluation (d/dx) K_v(x)
 NULL
 
 .cbesselK_bufX <- function(x_list, v) {
@@ -30,20 +42,36 @@ NULL
     .Call('_libmatern_cbesselK_scalar', PACKAGE = 'libmatern', x, v)
 }
 
-#'
-#' @param x the argument
-#' @param v the order
-#' @return the evaluation (d/dv) K_v(x)
-cbesselK_dv <- function(x, v) {
-    .Call('_libmatern_cbesselK_dv', PACKAGE = 'libmatern', x, v)
+.cbesselKdv_bufX <- function(x_list, v) {
+    .Call('_libmatern_cbesselKdv_bufX', PACKAGE = 'libmatern', x_list, v)
 }
 
-#'
-#' @param x the argument
-#' @param v the order
-#' @return the evaluation (d/dx) K_v(x)
-cbesselK_dx <- function(x, v) {
-    .Call('_libmatern_cbesselK_dx', PACKAGE = 'libmatern', x, v)
+.cbesselKdv_bufV <- function(x, v_list) {
+    .Call('_libmatern_cbesselKdv_bufV', PACKAGE = 'libmatern', x, v_list)
+}
+
+.cbesselKdv_bufBoth <- function(x_list, v_list) {
+    .Call('_libmatern_cbesselKdv_bufBoth', PACKAGE = 'libmatern', x_list, v_list)
+}
+
+.cbesselKdv_scalar <- function(x, v) {
+    .Call('_libmatern_cbesselKdv_scalar', PACKAGE = 'libmatern', x, v)
+}
+
+.cbesselKdx_bufX <- function(x_list, v) {
+    .Call('_libmatern_cbesselKdx_bufX', PACKAGE = 'libmatern', x_list, v)
+}
+
+.cbesselKdx_bufV <- function(x, v_list) {
+    .Call('_libmatern_cbesselKdx_bufV', PACKAGE = 'libmatern', x, v_list)
+}
+
+.cbesselKdx_bufBoth <- function(x_list, v_list) {
+    .Call('_libmatern_cbesselKdx_bufBoth', PACKAGE = 'libmatern', x_list, v_list)
+}
+
+.cbesselKdx_scalar <- function(x, v) {
+    .Call('_libmatern_cbesselKdx_scalar', PACKAGE = 'libmatern', x, v)
 }
 
 #' The Matern covariance function as paramterized by [wikipedia](https://en.wikipedia.org/wiki/Mat%C3%A9rn_covariance_function).

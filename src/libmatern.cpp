@@ -1,6 +1,5 @@
 #include "Rcpp.h"
 using namespace Rcpp;
-using namespace std;
 
 extern "C" {
     #include "libmatern.cbe.h"
@@ -18,8 +17,8 @@ double cbesselK(double x, double v) {
 */
 
 template <typename T>
-vector<double> NumericVecX(NumericVector x_list, double v, T func) {
-    vector<double> buf(x_list.begin(), x_list.end());
+std::vector<double> NumericVecX(NumericVector x_list, double v, T func) {
+    std::vector<double> buf(x_list.begin(), x_list.end());
 
     for (int i=0; i < buf.size(); i++){
       buf[i] = func(v, buf[i]);
@@ -28,8 +27,8 @@ vector<double> NumericVecX(NumericVector x_list, double v, T func) {
     return buf;
 }
 template <typename T>
-vector<double> NumericVecV(double x, NumericVector v_list, T func) {
-    vector<double> buf(v_list.begin(), v_list.end());
+std::vector<double> NumericVecV(double x, NumericVector v_list, T func) {
+    std::vector<double> buf(v_list.begin(), v_list.end());
 
     for (int i=0; i < buf.size(); i++){
       buf[i] = func(buf[i], x);
@@ -40,8 +39,8 @@ vector<double> NumericVecV(double x, NumericVector v_list, T func) {
 // TODO deal with NumericVecs of different sizes. Currently R/PrettyExports.R does this, but still vulnerable from calling .cbesselK_bufBoth directly
 template <typename T>
 std::vector<double> NumericVecBoth(NumericVector x_list, NumericVector v_list, T func) {
-    vector<double> bufX(x_list.begin(), v_list.end());
-    vector<double> bufV(v_list.begin(), v_list.end());
+    std::vector<double> bufX(x_list.begin(), x_list.end());
+    std::vector<double> bufV(v_list.begin(), v_list.end());
 
     for (int i=0; i < bufX.size(); i++){
       bufX[i] = func(bufV[i], bufX[i]);
@@ -75,19 +74,45 @@ double cbesselK_scalar(double x, double v) {
 }
 
 /*
-NumericVector cbesselK(NumericVector x_list, NumericVector v_list) {
+ * CBESSELKDV
+ */
 
-    std::vector<double> buf_x(x_list.begin(), x_list.end());
-    std::vector<double> buf_v(v_list.begin(), v_list.end());
-
-    for (int i=0; i < buf_x.size(); i++){
-      buf_x[i] = besselk(buf_v[i], buf_x[i]);
-    }
-
-    return wrap(buf);
+// [[Rcpp::export(name = ".cbesselKdv_bufX")]]
+std::vector<double> cbesselKdv_bufX(NumericVector x_list, double v) {
+    return NumericVecX(x_list, v, besselk_dv);
 }
-*/
+// [[Rcpp::export(name = ".cbesselKdv_bufV")]]
+std::vector<double> cbesselKdv_bufV(double x, NumericVector v_list) {
+    return NumericVecV(x, v_list, besselk_dv);
+}
+// [[Rcpp::export(name = ".cbesselKdv_bufBoth")]]
+std::vector<double> cbesselKdv_bufBoth(NumericVector x_list, NumericVector v_list) {
+    return NumericVecBoth(x_list, v_list, besselk_dv);
+}
+// [[Rcpp::export(name = ".cbesselKdv_scalar")]]
+double cbesselKdv_scalar(double x, double v) {
+    return Scalar(x, v, besselk_dv);
+}
 
+/*
+ * DBESSELKDX
+ */
+// [[Rcpp::export(name = ".cbesselKdx_bufX")]]
+std::vector<double> cbesselKdx_bufX(NumericVector x_list, double v) {
+    return NumericVecX(x_list, v, besselk_dx);
+}
+// [[Rcpp::export(name = ".cbesselKdx_bufV")]]
+std::vector<double> cbesselKdx_bufV(double x, NumericVector v_list) {
+    return NumericVecV(x, v_list, besselk_dx);
+}
+// [[Rcpp::export(name = ".cbesselKdx_bufBoth")]]
+std::vector<double> cbesselKdx_bufBoth(NumericVector x_list, NumericVector v_list) {
+    return NumericVecBoth(x_list, v_list, besselk_dx);
+}
+// [[Rcpp::export(name = ".cbesselKdx_scalar")]]
+double cbesselKdx_scalar(double x, double v) {
+    return Scalar(x, v, besselk_dx);
+}
 
 //' The derivative of the modified second-kind Bessel function K_v(x) with respect
 //  to the order v.
@@ -95,10 +120,11 @@ NumericVector cbesselK(NumericVector x_list, NumericVector v_list) {
 //' @param x the argument
 //' @param v the order
 //' @return the evaluation (d/dv) K_v(x)
-// [[Rcpp::export]]
+/*
 double cbesselK_dv(double x, double v) {
     return besselk_dv(v, x);
 }
+*/
 
 //' The derivative of the modified second-kind Bessel function K_v(x) with respect
 //  to the order x.
@@ -106,10 +132,11 @@ double cbesselK_dv(double x, double v) {
 //' @param x the argument
 //' @param v the order
 //' @return the evaluation (d/dx) K_v(x)
-// [[Rcpp::export]]
+/*
 double cbesselK_dx(double x, double v) {
     return besselk_dx(v, x);
 }
+*/
 
 //' The Matern covariance function as paramterized by [wikipedia](https://en.wikipedia.org/wiki/Mat%C3%A9rn_covariance_function).
 //'
