@@ -69,7 +69,7 @@ std::vector<double> cbesselK_bufV(double x, NumericVector v_list) {
 std::vector<double> cbesselK_bufBoth(NumericVector x_list, NumericVector v_list) {
     return NumericVecBoth(x_list, v_list, besselk);
 }
-// [[Rcpp::export(name = ".cbesselK_scalar)]]
+// [[Rcpp::export(name = ".cbesselK_scalar")]]
 double cbesselK_scalar(double x, double v) {
     return Scalar(x, v, besselk);
 }
