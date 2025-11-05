@@ -38,10 +38,6 @@ cbesselK_dv <- function(x, v) {
     .Call('_libmatern_cbesselK_dv', PACKAGE = 'libmatern', x, v)
 }
 
-cbesselK_dvbuf <- function(x_list, v) {
-    .Call('_libmatern_cbesselK_dvbuf', PACKAGE = 'libmatern', x_list, v)
-}
-
 #'
 #' @param x the argument
 #' @param v the order
