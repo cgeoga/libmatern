@@ -1,5 +1,6 @@
 #include "Rcpp.h"
 using namespace Rcpp;
+using namespace std;
 
 extern "C" {
     #include "libmatern.cbe.h"
@@ -10,22 +11,83 @@ extern "C" {
 //' @param x the argument
 //' @param v the order
 //' @return the evaluation K_v(x)
-// [[Rcpp::export]]
+/*
 double cbesselK(double x, double v) {
     return besselk(v, x);
 }
+*/
 
-// [[Rcpp::export]]
-NumericVector cbesselK_vec(NumericVector x_list, double v) {
-
-    std::vector<double> buf = stdVec(x_list.begin(), x_list.end());
+template <typename T>
+vector<double> NumericVecX(NumericVector x_list, double v, T func) {
+    vector<double> buf(x_list.begin(), x_list.end());
 
     for (int i=0; i < buf.size(); i++){
-      buf[i] = besselk(v, buf[i]);
+      buf[i] = func(v, buf[i]);
+    }
+
+    return buf;
+}
+template <typename T>
+vector<double> NumericVecV(double x, NumericVector v_list, T func) {
+    vector<double> buf(v_list.begin(), v_list.end());
+
+    for (int i=0; i < buf.size(); i++){
+      buf[i] = func(buf[i], x);
+    }
+
+    return buf;
+}
+// TODO deal with NumericVecs of different sizes. Currently R/PrettyExports.R does this, but still vulnerable from calling .cbesselK_bufBoth directly
+template <typename T>
+std::vector<double> NumericVecBoth(NumericVector x_list, NumericVector v_list, T func) {
+    vector<double> bufX(x_list.begin(), v_list.end());
+    vector<double> bufV(v_list.begin(), v_list.end());
+
+    for (int i=0; i < bufX.size(); i++){
+      bufX[i] = func(bufV[i], bufX[i]);
+    }
+
+    return bufX;
+}
+template <typename T>
+double Scalar(double x, double v, T func) {
+    return func(v, x);
+}
+
+/*
+ * CBESSELK
+ */
+// [[Rcpp::export(name = ".cbesselK_bufX")]]
+std::vector<double> cbesselK_bufX(NumericVector x_list, double v) {
+    return NumericVecX(x_list, v, besselk);
+}
+// [[Rcpp::export(name = ".cbesselK_bufV")]]
+std::vector<double> cbesselK_bufV(double x, NumericVector v_list) {
+    return NumericVecV(x, v_list, besselk);
+}
+// [[Rcpp::export(name = ".cbesselK_bufBoth")]]
+std::vector<double> cbesselK_bufBoth(NumericVector x_list, NumericVector v_list) {
+    return NumericVecBoth(x_list, v_list, besselk);
+}
+// [[Rcpp::export(name = ".cbesselK_scalar)]]
+double cbesselK_scalar(double x, double v) {
+    return Scalar(x, v, besselk);
+}
+
+/*
+NumericVector cbesselK(NumericVector x_list, NumericVector v_list) {
+
+    std::vector<double> buf_x(x_list.begin(), x_list.end());
+    std::vector<double> buf_v(v_list.begin(), v_list.end());
+
+    for (int i=0; i < buf_x.size(); i++){
+      buf_x[i] = besselk(buf_v[i], buf_x[i]);
     }
 
     return wrap(buf);
 }
+*/
+
 
 //' The derivative of the modified second-kind Bessel function K_v(x) with respect
 //  to the order v.

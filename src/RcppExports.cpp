@@ -10,27 +10,51 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// cbesselK
-double cbesselK(double x, double v);
-RcppExport SEXP _libmatern_cbesselK(SEXP xSEXP, SEXP vSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(cbesselK(x, v));
-    return rcpp_result_gen;
-END_RCPP
-}
-// cbesselK_vec
-NumericVector cbesselK_vec(NumericVector x_list, double v);
-RcppExport SEXP _libmatern_cbesselK_vec(SEXP x_listSEXP, SEXP vSEXP) {
+// cbesselK_bufX
+std::vector<double> cbesselK_bufX(NumericVector x_list, double v);
+RcppExport SEXP _libmatern_cbesselK_bufX(SEXP x_listSEXP, SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type x_list(x_listSEXP);
     Rcpp::traits::input_parameter< double >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(cbesselK_vec(x_list, v));
+    rcpp_result_gen = Rcpp::wrap(cbesselK_bufX(x_list, v));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cbesselK_bufV
+std::vector<double> cbesselK_bufV(double x, NumericVector v_list);
+RcppExport SEXP _libmatern_cbesselK_bufV(SEXP xSEXP, SEXP v_listSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type v_list(v_listSEXP);
+    rcpp_result_gen = Rcpp::wrap(cbesselK_bufV(x, v_list));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cbesselK_bufBoth
+std::vector<double> cbesselK_bufBoth(NumericVector x_list, NumericVector v_list);
+RcppExport SEXP _libmatern_cbesselK_bufBoth(SEXP x_listSEXP, SEXP v_listSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x_list(x_listSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type v_list(v_listSEXP);
+    rcpp_result_gen = Rcpp::wrap(cbesselK_bufBoth(x_list, v_list));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cbesselK_scalar
+double cbesselK_scalar(double x, double v);
+RcppExport SEXP _libmatern_cbesselK_scalar(SEXP xSEXP, SEXP vSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type v(vSEXP);
+    rcpp_result_gen = Rcpp::wrap(cbesselK_scalar(x, v));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -43,6 +67,18 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type v(vSEXP);
     rcpp_result_gen = Rcpp::wrap(cbesselK_dv(x, v));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cbesselK_dvbuf
+std::vector<double> cbesselK_dvbuf(NumericVector x_list, double v);
+RcppExport SEXP _libmatern_cbesselK_dvbuf(SEXP x_listSEXP, SEXP vSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x_list(x_listSEXP);
+    Rcpp::traits::input_parameter< double >::type v(vSEXP);
+    rcpp_result_gen = Rcpp::wrap(cbesselK_dvbuf(x_list, v));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -116,9 +152,12 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_libmatern_cbesselK", (DL_FUNC) &_libmatern_cbesselK, 2},
-    {"_libmatern_cbesselK_vec", (DL_FUNC) &_libmatern_cbesselK_vec, 2},
+    {"_libmatern_cbesselK_bufX", (DL_FUNC) &_libmatern_cbesselK_bufX, 2},
+    {"_libmatern_cbesselK_bufV", (DL_FUNC) &_libmatern_cbesselK_bufV, 2},
+    {"_libmatern_cbesselK_bufBoth", (DL_FUNC) &_libmatern_cbesselK_bufBoth, 2},
+    {"_libmatern_cbesselK_scalar", (DL_FUNC) &_libmatern_cbesselK_scalar, 2},
     {"_libmatern_cbesselK_dv", (DL_FUNC) &_libmatern_cbesselK_dv, 2},
+    {"_libmatern_cbesselK_dvbuf", (DL_FUNC) &_libmatern_cbesselK_dvbuf, 2},
     {"_libmatern_cbesselK_dx", (DL_FUNC) &_libmatern_cbesselK_dx, 2},
     {"_libmatern_cmatern", (DL_FUNC) &_libmatern_cmatern, 4},
     {"_libmatern_cmatern_dsig", (DL_FUNC) &_libmatern_cmatern_dsig, 4},

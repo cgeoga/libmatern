@@ -1,9 +1,8 @@
 /* Provide Declarations */
 #include <stdint.h>
 #include <math.h>
-#include <stdbool.h>
-#include "libmatern.cbe.h"
 #ifndef __cplusplus
+typedef unsigned char bool;
 #endif
 
 typedef uint64_t ConstantDoubleTy;
@@ -60,9 +59,13 @@ struct l_unnamed_2;
 
 /* Function definitions */
 
-static struct l_unnamed_1 fwddiffegamma(double _2332, double _2333);
+struct l_unnamed_1 fwddiffegamma(double _2332, double _2333);
 
 double gamma(double _71);
+
+double gamma(double _71);
+
+struct l_unnamed_1 fwddiffegamma(double _2332, double _2333);
 
 /* Types Definitions */
 struct l_struct_struct_OC_doublepair {
@@ -176,7 +179,7 @@ static void fixderivative_isconverged(void* _2320, void* _2321, void* _2322, voi
 static void fixderivative_levin(void* _2324, void* _2325, void* _2326, void* _2327) __ATTRIBUTELIST__((nothrow));
 double sinh(double _2688) __ATTRIBUTELIST__((nothrow));
 static void fixderivative_isconverged_OC_1(void* _2328, void* _2329, void* _2330, void* _2331) __ATTRIBUTELIST__((nothrow));
-static struct l_unnamed_1 fwddiffegamma(double _2332, double _2333) __ATTRIBUTELIST__((nothrow));
+struct l_unnamed_1 fwddiffegamma(double _2332, double _2333) __ATTRIBUTELIST__((nothrow));
 static struct l_unnamed_1 fwddiffeUk_poly_Kn_OC_3(double _2433, double _2434, double _2435, double _2436, double _2437) __ATTRIBUTELIST__((nothrow));
 static struct l_unnamed_2 fwddiffebesselk_temme_series_OC_4(double _2548, double _2549, double _2550) __ATTRIBUTELIST__((nothrow));
 double round(double _2689);
@@ -7513,7 +7516,7 @@ static void fixderivative_isconverged_OC_1(void* _2328, void* _2329, void* _2330
 }
 
 
-static struct l_unnamed_1 fwddiffegamma(double _2332, double _2333) {
+struct l_unnamed_1 fwddiffegamma(double _2332, double _2333) {
   double _2334;
   double _2335;
   double _2336;
