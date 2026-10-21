@@ -49,11 +49,6 @@ double _fma(double x, double y, double z){
   return x*y + z;
 }
 
-struct doublepair {
-  double x1;
-  double x2;
-};
-
 // Same as _fma: eventually, {o1,o2} should be created with an actual fma, for
 // both speed and accuracy.
 struct doublepair fmadd(struct doublepair a, double b, struct doublepair c){
@@ -65,7 +60,29 @@ struct doublepair fmadd(struct doublepair a, double b, struct doublepair c){
   return out;
 }
 
-bool isnearint(double x){
-  return (fabs(x - round(x)) < 1e-5);
+double _cheby_clenshaw(double x, const double *coefs, size_t size) {
+    double twox = x + x;
+    double bkp1 = 0.0;
+    double bkp2 = bkp1; 
+
+    for (size_t j = size;  j > 1; j--) {
+        double bk = _fma(twox, bkp1, coefs[j-1]) - bkp2;
+        bkp2 = bkp1; 
+        bkp1 = bk;
+    }
+    return (_fma(x, bkp1, coefs[0]) - bkp2);
 }
 
+double _cheby2d(double sx, double sy, const double *coefs,
+                              size_t nrows, size_t ncols) {
+    double twoy = sy + sy;
+    double bkp1 = 0.0, bkp2 = 0.0;
+
+    for (size_t i = nrows; i-- > 1; ) {
+        double ci = _cheby_clenshaw(sx, coefs + i*ncols, ncols);  
+        double bk = _fma(twoy, bkp1, ci) - bkp2;
+        bkp2 = bkp1;
+        bkp1 = bk;
+    }
+    return _fma(sy, bkp1, _cheby_clenshaw(sx, coefs, ncols)) - bkp2;
+}

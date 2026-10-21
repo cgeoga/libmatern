@@ -1,4 +1,4 @@
-#include "internal.h"
+#include "internals.h"
 
 double gamma(double _x) {
 

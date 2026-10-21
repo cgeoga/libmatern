@@ -11,5 +11,6 @@ int enzyme_const, enzyme_dup, enzyme_dupnoneed;   // defined exactly once double
 #include "besselk_large_orders.c"
 #include "besselk_levin.c"
 #include "besselk_temme.c"
+#include "besselk_intermediate.c"
 #include "besselk.c"
 #include "matern.c"
