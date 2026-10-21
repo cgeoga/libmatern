@@ -18,6 +18,9 @@ linux:
 	mkdir -p lib
 	$(CLANG) reposrc/libmatern.c -fplugin=$(CLANG_ENZYME) -O3 -lm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -Wall -pedantic -shared -fPIC -o lib/libmatern.so
 
+linux_pre:
+	mkdir -p lib
+	$(CLANG) -I$(RHOME)/include reposrc/libmatern.c -O3 -E -o lib/libmatern.i
 linux_bitcode:
 	mkdir -p lib
 	$(CLANG) reposrc/libmatern.c -fplugin=$(CLANG_ENZYME) -O3 -Wall -pedantic -c -emit-llvm -fno-vectorize -fno-slp-vectorize -fno-unroll-loops -o lib/libmatern.bc
