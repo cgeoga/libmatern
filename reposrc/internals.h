@@ -21,6 +21,14 @@ struct doublepair {
   double x2;
 };
 
+// Orders used by the intermediate Chebyshev routine (besselk_intermediate.c).
+typedef struct {
+    double order_cur;   // p[1]
+    double order_prev;  // p[2]
+    double order_start; // p[3]
+    int    nsteps;      // p[4]
+} PairOrders;
+
 // Enzyme hooks. The markers are DEFINED once, in libmatern.c.
 extern int enzyme_const, enzyme_dup, enzyme_dupnoneed;
 double __enzyme_fwddiff(void*, ...);
@@ -62,6 +70,17 @@ double besselkx_levin(double v, double x);
 // From besselk_temme.c
 double f0_local_expansion(double v, double x);
 struct doublepair besselk_temme_series(double v, double x);
+
+// From besselk_intermediate.c
+double _intermediate_small_base(double v, double x);
+double _intermediate_large_base(double v, double x);
+PairOrders intermediate_pair_orders(double v, double delta);
+double _intermediate_forward_recurrence(double kprev, double kcur, double alpha,
+                                        size_t niter, double x);
+double _intermediate_besselkx(double v, double x, double delta,
+                              double (*base)(double, double));
+double _intermediate_besselkx_2(double v, double x);
+double _besselk_intermediate(double v, double x, bool modify);
 
 // From besselk.c
 struct doublepair up_recurrence(double x, double jnu, double jnum1,
